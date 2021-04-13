@@ -114,13 +114,15 @@
 									Alert Type: Voucher
 								   </mat-panel-title>
 								   <mat-panel-description >
-									<button valign="top" (click)="newoverrideForm.reset()" type="submit"
+									<button valign="top" (click)="exportexcel('Voucher_Sheet', 'voucher-table')"
+									
+									 type="submit"
 									class="cqp-btn btn-space">Export details - Voucher</button>
 								   </mat-panel-description>
 								</mat-expansion-panel-header>
 								
 									<div class="div-1">
-										<table class="table">
+										<table class="table" id="voucher-table">
 										 <thead>
 										 <tr  bgcolor="#D3D9A4">
 										
@@ -437,7 +439,7 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: Call-In</td>
 				<td class="colheadactive" align="left">
-				<button valign="top" (click)="newoverrideForm.reset()" type="submit"
+				<button valign="top" (click)="exportexcel('Call-In_Sheet', 'call-in-table')" type="submit"
 					class="cqp-btn btn-space">Export details - Call-In</button>
 				</td>
 				<td align="right"><a class="returntotop"
@@ -450,7 +452,7 @@
 
 	<div id="ciplAlerts" style="display: block;" height="20">
 		<table width="870" align="center" border="0" cellspacing="1"
-			cellpadding="4" class="sortable" preserve_style="row">
+			cellpadding="4" class="sortable" preserve_style="row" id="call-in-table">
 			<tbody>
 				<tr bgcolor="#D3D9A4">
 					<td class="colheadactive" width="450"><a
@@ -508,7 +510,7 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: TPL</td>
 				<td class="colheadactive" align="left">
-				<button valign="top" (click)="newoverrideForm.reset()" type="submit"
+				<button valign="top" (click)="exportexcel('tpl_Sheet', 'tpl-table')" type="submit"
 					class="cqp-btn btn-space">Export details - TPL</button>
 				
 				</td>
@@ -520,7 +522,7 @@
 	</table>
 	<div id="tplAlerts" style="display: block;" height="20">
 		<table width="870" align="center" border="0" cellspacing="1"
-			cellpadding="4&quot;" class="sortable" preserve_style="row">
+			cellpadding="4&quot;" class="sortable" preserve_style="row" id ="tpl-table">
 			<tbody>
 				<tr bgcolor="#D3D9A4">
 					<td class="colheadactive" width="430"><a
@@ -1247,7 +1249,7 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: User</td>
 				<td class="colheadactive" align="left">
-				<button valign="top" (click)="newoverrideForm.reset()" type="submit"
+				<button valign="top" (click)="exportexcel('User_Sheet', 'user-table')" type="submit"
 					class="cqp-btn btn-space">Export details - User</button>
 				</td>
 				<td align="right"><a class="returntotop"
@@ -1259,7 +1261,7 @@
 	</table>
 	<div id="userAlerts" style="display: block;" height="20">
 		<table width="870" align="center" border="0" cellspacing="1"
-			cellpadding="4">
+			cellpadding="4" id="user-table">
 			<tbody>
 				<tr bgcolor="#D3D9A4">
 					<td class="colheadactive" colspan="2">Alert Text</td>
@@ -1299,7 +1301,7 @@
 				<td class="colheadactive" width="550">Alert Type: Voucher With
 					Amount Zero</td>
 				<td class="colheadactive" align="left">
-				<button valign="top" (click)="newoverrideForm.reset()" type="submit"
+				<button valign="top" (click)="exportexcel('Voucher_Amounts_Sheet', 'voucher-amount-table')" type="submit"
 					class="cqp-btn btn-space">Export details - Voucher Amounts</button>
 				</td>
 				<td align="right"><a class="returntotop"
@@ -1312,7 +1314,7 @@
 	</table>
 	<div id="voucherCostAlerts" style="display: block;" height="20">
 		<table width="870" align="center" border="0" cellspacing="1"
-			cellpadding="4">
+			cellpadding="4" id="voucher-amount-table">
 			<tbody>
 				<tr bgcolor="#D3D9A4">
 					<td class="colheadactive" width="40%">Supplier</td>

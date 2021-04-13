@@ -1,10 +1,12 @@
-
 import { Component, AfterViewInit, ViewChildren ,OnInit} from '@angular/core';
 import { Alert } from '../model/alert';
 import { AlertService } from '../service/alert.service';
 import { HomeDialogComponent } from './home.dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import * as XLSX from 'xlsx';
+
+
 //import { jsonpFactory } from '@angular/http/src/http_module';
 @Component({
   selector: 'app-home',
@@ -25,8 +27,24 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getAllAlerts();
     this.deleteAlertId();
+    
   }
 
+  exportexcel(sheetName, tableName): void 
+    {
+       /* table id is passed over here */   
+       console.log(tableName);
+       let element = document.getElementById(tableName); 
+       const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+       /* generate workbook and add the worksheet */
+       const wb: XLSX.WorkBook = XLSX.utils.book_new();
+       XLSX.utils.book_append_sheet(wb, ws, sheetName);
+ 
+       /* save to file */
+       XLSX.writeFile(wb, sheetName + '.xlsx');
+      
+    }
   deleteAlertId(){
     this.alertService.deleteAlertId(130).subscribe(data => {
       this.alerts = data;
