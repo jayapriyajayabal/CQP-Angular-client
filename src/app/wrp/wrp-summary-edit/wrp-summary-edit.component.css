@@ -1,0 +1,190 @@
+.myForm {
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 0.8em;
+width: 14em;
+padding: 1em;
+/* border: 1px solid #ccc; */
+}
+
+.myForm * {
+box-sizing: border-box;
+}
+
+.myForm fieldset {
+border: none;
+padding: 0;
+}
+
+.myForm legend,
+.myForm label {
+padding: 0;
+font-size: 0.9em;
+/* font-weight: bold; */
+}
+
+.myForm label.choice {
+font-size: 0.9em;
+font-weight: normal;
+}
+
+.myForm label {
+text-align: left;
+display: block;
+}
+
+.myForm input[type="text"],
+.myForm input[type="tel"],
+.myForm input[type="email"],
+.myForm input[type="datetime-local"],
+.myForm select,
+.myForm textarea {
+float: right;
+width: 60%;
+border: 1px solid #ccc;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 0.9em;
+padding: 0.3em;
+}
+
+.myForm textarea {
+height: 100px;
+}
+
+.myForm input[type="radio"],
+.myForm input[type="checkbox"] {
+margin-left: 40%;
+}
+
+.myForm button {
+padding: 1em;
+border-radius: 0.5em;
+background: #eee;
+border: none;
+font-weight: bold;
+margin-left: 40%;
+margin-top: 1.8em;
+}
+
+.myForm button:hover {
+background: #ccc;
+cursor: pointer;
+}
+
+
+.section1 {
+	grid-area: section1;
+}
+
+.section2-1 {
+	grid-area: section2-1;
+}
+
+.section2-2 {
+	grid-area: section2-2;
+}
+
+.section2-3 {
+	grid-area: section2-3;
+}
+
+.section2-4 {
+	grid-area: section2-4;
+}
+
+.section3-1 {
+	grid-area: section3-1;
+}
+
+.section4-1 {
+	grid-area: section4-1;
+}
+
+.section4-2 {
+	grid-area: section4-2;
+}
+
+.section5-1 {
+	grid-area: section5-1;
+}
+
+.section5-2 {
+	grid-area: section5-2;
+}
+
+.section5-3 {
+	grid-area: section5-3;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-areas:
+		'section1 section1 section1 section1 section1 section1'
+		'section2-1 section2-1 section2-2 section2-2 section2-3 section2-4'
+		'section3-1 section3-1 section3-1 section3-1 section3-1 section3-1'
+		'section4-1 section4-1 section4-1 section4-1 section4-2 section4-2'
+		'section5-1 section5-1 section5-1 section5-1 section5-2 section5-3';
+	grid-gap: 1px;
+	/* background-color: #2196F3; */
+	padding: 1px;
+}
+
+.grid-container>div {
+	background-color: rgba(255, 255, 255, 0.8);
+	text-align: left;
+	padding: 20px 0;
+	font-size: 20px;
+}
+
+div.box {
+	border-style: solid;
+	border-width: 1px;
+	width: 104px;
+	align-items: center;
+}
+
+div.section {
+	border-style: solid;
+	border-width: 1px;
+	width: 104px;
+	align-items: center;
+}
+
+.btn-group-vertical {
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.btn {
+	display: inline-block;
+	color: #ffffff;
+	background-color: #007bff;
+	cursor: pointer;
+	text-align: center;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	border-radius: .25rem;
+	transition: .15s ease-in-out;
+}
+
+.btn:hover {
+	background-color: #0069d9;
+}
+
+.btn-space-last {
+    margin-right: 1px;
+    margin-bottom: 4px;
+    width: 160px;
+    FONT-SIZE: 13px;
+}
+
+
+/* .mat-sidenav-container > .mat-sidenav > .mat-tab-group > .mat-tab-header > .mat-tab-label-container > .mat-tab-list > .mat-tab-labels {
+  .mat-tab-label[role^='tab'] {
+    max-width: 42px;
+  }
+} */
+
+
+ .mat-tab-label {
+ 	max-width: 42px;
+ }

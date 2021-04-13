@@ -1,0 +1,8 @@
+p.groove {
+	border-style: groove;
+}
+
+.withborder {
+	border: 1px solid black;
+}
+

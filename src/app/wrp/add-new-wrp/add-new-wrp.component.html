@@ -1,0 +1,85 @@
+<div class="screen-title"> 
+WRP - Add new WRP
+</div>
+<br>
+
+<form>
+	<table width="100%" align="center" border="0" cellpadding="2"
+		cellspacing="0">
+		<tbody>
+			<tr>
+				<td width="20%" class="data">WRP</td>
+				<td width="20%" bgcolor="#FFFFFF" class="data">Primary QIS#</td>
+				<td width="20%" bgcolor="#FFFFFF" class="data">Supplier #</td>
+				<td width="20%" bgcolor="#FFFFFF" class="data">Resp. Associate</td>
+				<td width="20%" bgcolor="#FFFFFF" class="data" colspan="2">Warranty
+					Type</td>
+			</tr>
+			<tr>
+				<td width="25%" class="data" valign="top">
+					<div class="form-group">
+						<input type="text" size="18px" id="primaryQis" name="primaryQis">
+					</div>
+				</td>
+				<td class="data" valign="top"><select name="primaryQis"
+					style="width: 150px" class="data"><option value="ALL"
+							selected="selected">ALL</option>
+
+						<option value="77930">77930-SENSOR, FR. CRASH</option>
+						<option value="77960">77960-SRS UNIT</option>
+						<option value="77970">77970-SENSOR, SIDE IMPACT</option>
+						<option value="77975">77975-SENSOR ASSY.</option></select>
+				</td>
+				<td class="data" valign="top"><select name="supplierno" 
+				    style="width: 150px" class="data"><option
+							value="ALL" selected="selected">ALL</option>
+
+						<option value="2008">2008</option>
+						<option value="2014">2014</option>
+						<option value="2015">2015</option>
+						<option value="2020">2020</option></select>
+				</td>
+				<td class="data" valign="top"><select name="respassociate" 
+				    style="width: 150px" class="data"><option
+							value="ALL" selected="selected">ALL</option>
+
+						<option value="2008">2008</option>
+						<option value="2014">2014</option>
+						<option value="2015">2015</option>
+						<option value="2020">2020</option></select>
+				</td>
+				<td class="data" valign="top"><select name="warrantytype" 
+				    style="width: 150px" class="data"><option
+							value="ALL" selected="selected">ALL</option>
+
+						<option value="2008">2008</option>
+						<option value="2014">2014</option>
+						<option value="2015">2015</option>
+						<option value="2020">2020</option></select>
+				</td>
+			</tr>
+
+
+		</tbody>
+	</table>
+
+	<br> <br>
+
+	<table width="970" align="center" border="0" cellpadding="0"
+		cellspacing="0">
+		<tbody>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="right">
+					<button (click)="newoverrideForm.reset()" type="submit" class="cqp-btn">Create new WRP</button>
+					&nbsp;&nbsp;&nbsp;
+					<button (click)="gotoList()" class="cqp-btn">Cancel</button>
+					<br> 
+
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>

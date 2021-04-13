@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.header-color {
+	background-color:#990000;
+}
+
+.cqp-btn {
+	 
+    BACKGROUND-COLOR: #990000;
+    BORDER-BOTTOM-COLOR: #990000;
+    BORDER-LEFT-COLOR: #990000;
+    BORDER-RIGHT-COLOR: #990000;
+    BORDER-TOP-COLOR: #990000;
+    COLOR: #FFFFFF;
+    font-size: 8;
+    /* FONT-WEIGHT: bold; */
+}
+
+.btn-space {
+    margin-right: 1px;
+    margin-bottom: 4px;
+    width: 90px;
+}
+
+.panel-body {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #ffffff; FONT-FAMILY: Arial, helvetica, sans serif, MS Sans Serif; TEXT-DECORATION: none
+}
+
+.supplier-panel-body {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px;  FONT-FAMILY: Arial, helvetica, sans serif, MS Sans Serif; TEXT-DECORATION: none
+}
+
+.colheadactive {
+    color: #000000;
+    font-family: Arial, helvetica, sans serif, MS Sans Serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+div.screen-title {
+  
+  background-color: #990000;
+  padding-top: 5px;
+  padding-right: 3px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  color:  #ffffff;
+  font-size: 12px;
+}
+
+div.example-screen-title {
+  
+  background-color: #98AAAF;
+  padding-top: 5px;
+  padding-right: 3px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  color:  #ffffff;
+  font-size: 12px;
+}
+
+
+div.slide-left {
+  width:100%;
+  overflow:hidden;
+}
+div.slide-left p {
+  animation: slide-left 10s;
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.mat-tab-label {
+	 opacity: 1;
+
+}

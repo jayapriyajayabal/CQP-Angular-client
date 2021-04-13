@@ -1,0 +1,71 @@
+<h2 mat-dialog-title>New WRP Application</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Develop across all platforms</h3>
+  <p>1.	The Warranty and CoReMQ tables which can be accessed from CQP directly will be used and these 
+  tables won’t be imported from the WRP database (MS ACCESS)..</p>
+
+  <h3>CQP tables</h3>
+  <p>2.	The below tables exist in the CQP application and thus will not be imported from the WRP database (MS ACCESS).
+		CQP tables:
+		I.	tblVOUCHER_SUMMARY
+		II.	tblVOUCHER_PLANT_SUMMARY
+		III.	tblCQ_SUPPPLIER_INFO
+		IV.	tblVOUCHER_ERROR_LOG
+		V.	tblUSER_PROFILE (Will be used in place of the Associates table)
+.</p>
+
+  <h3>CoReMQ tables referred in WRP</h3>
+  <p>3.	5.	The existing batch job (USP_LOAD_WRP_DATA) which updates data in WRP needs to be modified in order 
+  to update the new WRP tables in the CQP application.</p>
+
+  <h3>Programs</h3>
+  <p>7.	A program to enable upload of image files to a location needs to be created as there is no such program in CQP at present. 
+  Images can be stored on a folder on the server http://webspehere.ham.am.honda.com.</p>
+
+  <h3>Supplier?</h3>
+
+  <p>8.	The Supplier/User details i.e first name, last name, supplier id, user type, supplier number, 
+  roles will be created in SRM. 
+  Roles can be assigned to the supplier using the Administration --> User Role mapping menu</p>
+
+  <h3>Voucher overview</h3>
+
+  <p>12.	The voucher and the covering letter which will now be created will be a pdf file as opposed 
+  to the earlier Microsoft excel file.  (All data must be stored in new WRP tables). The manual voucher 
+  data will be stored in the table tblWRP_VoucherManual and the table will not be deleted. 
+  The monthly job needs to be modified so that it will store data in a table tblWRP_VoucherJob. 
+  The structure of the table tblWRP_VoucherJob will be like the table tblWRP_CoverSheetData and 
+  will be copied to the tblWRP_VoucherJob during inserting data into the table tblWRP_CoverSheetData 
+  and rebuilding the Voucher.</p>
+
+  <p>13.	The address editor screen will not be used anymore, and the details of the Supplier will be 
+  fetched from the CQP table tblCQ_SUPPLIER_INFO. The summary edit screen will have fields supplier number 
+  and supplier name to enter the supplier details, the corresponding supplier address will be fetched from 
+  the table tblCQ_SUPPLIER_INFO..</p>
+
+  <p>Components define views, which are sets of screen elements that Angular can choose among and
+  modify according to your program logic and data. Every app has at least a root component.</p>
+
+  <p>Components use services, which provide specific functionality not directly related to views.
+  Service providers can be injected into components as dependencies, making your code modular,
+  reusable, and efficient.</p>
+
+  <p>Both components and services are simply classes, with decorators that mark their type and
+  provide metadata that tells Angular how to use them.</p>
+
+  <p>The metadata for a component class associates it with a template that defines a view. A
+  template combines ordinary HTML with Angular directives and binding markup that allow Angular
+  to modify the HTML before rendering it for display.</p>
+
+  <p>The metadata for a service class provides the information Angular needs to make it available
+  to components through Dependency Injection (DI).</p>
+
+  <p>An app's components typically define many views, arranged hierarchically. Angular provides
+  the Router service to help you define navigation paths among views. The router provides
+  sophisticated in-browser navigational capabilities.</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Close</button>
+  <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+</mat-dialog-actions>
+

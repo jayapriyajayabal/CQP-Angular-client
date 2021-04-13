@@ -1,0 +1,569 @@
+<div class="screen-title">WRP - WRP Summary Edit</div>
+<br>
+<form>
+
+	<div class="grid-container">
+
+		<!-- ===================================  Section 1 ==================================== -->
+
+		<div class="section1">
+
+			<table width="100%" align="center" border="0" cellpadding="2"
+				cellspacing="0">
+
+				<tr>
+					<td width="3%" class="data">WRP:</td>
+					<td width="8%" align="left"><input type="text" name="refNo"
+						size="14" value="" class="data"></td>
+					<td width="6%" bgcolor="#FFFFFF" class="data">Title:</td>
+					<td width="8%"><input type="text" name="refNo" size="14"
+						value="" class="data"></td>
+					<td width="24%" bgcolor="#FFFFFF" class="data" colspan="2">Status:</td>
+					<td width="24%" bgcolor="#FFFFFF" class="data" colspan="2">INITIAL
+						SUMMARY</td>
+				</tr>
+
+				<tr>
+					<td width="4%" class="data">Issuer:</td>
+					<td width="20%" class="data" align="left"><select
+						name="status_name" class="data"><option value="ALL"
+								selected="selected">Select One</option>
+							<option value="issuer1">Issuer 1</option>
+							<option value="issuer1">Issuer 2</option>
+							<option value="issuer1">Issuer 3</option>
+							<option value="issuer1">Issuer 4</option>
+					</select></td>
+					<td width="21%" bgcolor="#FFFFFF" class="data">New
+						CalculationMethod?</td>
+					<td width="5%"><input type="checkbox" name="refNo"
+						class="data"></td>
+					<td width="5%" bgcolor="#FFFFFF" class="data">Warranty Type:</td>
+					<td width="15%" class="data"><select name="status_name"
+						class="data"><option value="ALL" selected="selected">Select
+								One</option>
+							<option value="type1">Type 1</option>
+							<option value="type1">Type 2</option>
+							<option value="type1">Type 3</option>
+							<option value="type1">Type 4</option>
+					</select></td>
+					<td width="6%" bgcolor="#FFFFFF" class="data" colspan="2">Mode
+						of Initial/Future Requirement:</td>
+					<td width="14%"><input type="text" name="refNo" maxlength="10"
+						size="10" value="" class="data"></td>
+				</tr>
+
+				<tr>
+					<td width="8%" class="data">OIS No:</td>
+					<td width="20%" class="data" align="left"><input type="text"
+						name="refNo" size="14" value="" class="data"></td>
+					<td width="21%" bgcolor="#FFFFFF" class="data">Resp Plant:</td>
+					<td width="25%" class="data"><select name="status_name"
+						class="data"><option value="ALL" selected="selected">Select
+								One</option>
+							<option value="type1">Plant 1</option>
+							<option value="type1">Plant 2</option>
+							<option value="type1">Plant 3</option>
+							<option value="type1">Plant 4</option>
+					</select></td>
+
+					<td width="5%" bgcolor="#FFFFFF" class="data">Defect Code:</td>
+					<td width="14%"><input type="text" name="refNo" maxlength="10"
+						size="10" value="" class="data"></td>
+					<td width="6%" bgcolor="#FFFFFF" class="data" colspan="2">Frequency
+						of Future Payments:</td>
+					<td width="14%"><input type="text" name="refNo" maxlength="10"
+						size="10" value="" class="data"></td>
+				</tr>
+
+				<tr>
+					<td bgcolor="#FFFFFF" class="data">Issued:</td>
+					<td bgcolor="#FFFFFF" class="data"><mat-form-field appearance="outline" class="dateBox">
+					<input matInput [matDatepickerFilter]="dateFilter"
+						[matDatepicker]="idpicker" placeholder="Choose a date"> <mat-datepicker-toggle
+						matSuffix [for]="idpicker"></mat-datepicker-toggle> <mat-datepicker
+						#idpicker></mat-datepicker> </mat-form-field>
+						</td>
+					
+					<td width="3%" class="data">Revision Date/Level:</td>
+					<td width="12%" align="left"><input type="text" name="refNo"
+						size="10" value="" class="data"> <input type="text"
+						name="refNo" size="10" value="" class="data"></td>
+
+					<td width="6%" bgcolor="#FFFFFF" class="data">Buyer:</td>
+					<td width="30%"><input type="text" name="refNo" size="10"
+						value="" class="data"></td>
+				</tr>
+			</table>
+
+			<table width="100%" align="center" border="0" cellpadding="0"
+				cellspacing="0">
+				<tbody>
+					<tr>
+						<td height="8"></td>
+					</tr>
+					<tr>
+						<td height="1" bgcolor="#999999"></td>
+					</tr>
+					<tr>
+						<td height="8"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- ===================================  Section 2 ==================================== -->
+		<div class="section2-1">
+			<table>
+				<tr >
+					<td width="100" class="data">Part Name:</td>
+					<td width="100" class="data" align="left"><input type="text"
+						name="refNo" size="14" value="" class="data"></td>
+				</tr>
+
+				<tr>
+					<td class="data">Part Number:</td>
+					<td class="data" align="left"><input type="text" name="refNo"
+						size="14" value="" class="data"></td>
+				</tr>
+
+				<tr>
+					<td class="data">Model(s):</td>
+					<td class="data" align="left"><input type="text" name="refNo"
+						size="14" value="" class="data"></td>
+				</tr>
+
+				<tr>
+					<td class="data">Model Year(s):</td>
+					<td class="data" align="left"><input type="text" name="refNo"
+						size="14" value="" class="data"></td>
+				</tr>
+
+				<tr>
+					<td class="data">Reference Report:</td>
+					<td class="data" align="left"><input type="text" name="refNo"
+						size="14" value="" class="data"></td>
+				</tr>
+
+				<tr>
+					<td class="data">Groups:</td>
+					<td class="data" align="left"><input type="text" name="refNo"
+						size="14" value="" class="data"></td>
+				</tr>
+
+
+
+			</table>
+		</div>
+		<div class="section2-2">
+			<table align="left">
+				<tr>
+					<td bgcolor="#FFFFFF" class="data">Claim Date Range:</td>
+					<td bgcolor="#FFFFFF" class="data"><mat-form-field appearance="outline" class="dateBox">
+					<input matInput [matDatepickerFilter]="dateFilter"
+						[matDatepicker]="cdpicker1" placeholder="Choose a date"> <mat-datepicker-toggle
+						matSuffix [for]="cdpicker1"></mat-datepicker-toggle> <mat-datepicker
+						#cdpicker1></mat-datepicker> </mat-form-field></td>
+				</tr>
+				<tr>
+					<td height="50" bgcolor="#FFFFFF" class="data">Build Date Range:</td>
+					<td bgcolor="#FFFFFF" class="data"><mat-form-field appearance="outline" class="dateBox">
+					<input matInput [matDatepickerFilter]="dateFilter"
+						[matDatepicker]="bdpicker1" placeholder="Choose a date"> <mat-datepicker-toggle
+						matSuffix [for]="bdpicker1"></mat-datepicker-toggle> <mat-datepicker
+						#bdpicker1></mat-datepicker> </mat-form-field></td>
+				</tr>
+
+				<tr>
+					<td valign="top">Supplier No:</td>
+					<td valign="top"><input type="text" name="refNo" size="18"
+						value="" class="data"></td>
+				</tr>
+
+				<tr>
+					<td valign="top">Supplier Name:</td>
+					<td valign="top"><input type="text" name="refNo" size="18"
+						value="" class="data"></td>
+				</tr>
+
+				<tr>
+					<td valign="top">Supplier Email:</td>
+					<td valign="top"><input type="text" name="refNo" size="18"
+						value="" class="data"></td>
+				</tr>
+
+				<tr>
+					<td valign="top">WRP Indexing:</td>
+					<td valign="bottom"><input type="checkbox" name="refNo"
+						class="data"></td>
+				</tr>
+			</table>
+
+		</div>
+		<div class="section2-3">
+			<table>
+				<tr align="left">
+					<td align="left" bgcolor="#FFFFFF" class="data">To:</td>
+					<td bgcolor="#FFFFFF" class="data"><mat-form-field appearance="outline" class="dateBox">
+					<input matInput [matDatepickerFilter]="dateFilter"
+						[matDatepicker]="cdpicker2" placeholder="Choose a date"> <mat-datepicker-toggle
+						matSuffix [for]="cdpicker2"></mat-datepicker-toggle> <mat-datepicker
+						#cdpicker2></mat-datepicker> </mat-form-field></td>
+				</tr>
+				<tr>
+					<td align="left" bgcolor="#FFFFFF" class="data">To:</td>
+					<td height="50"  bgcolor="#FFFFFF" class="data"><mat-form-field appearance="outline" class="dateBox">
+					<input matInput [matDatepickerFilter]="dateFilter"
+						[matDatepicker]="bdpicker2" placeholder="Choose a date"> <mat-datepicker-toggle
+						matSuffix [for]="bdpicker2"></mat-datepicker-toggle> <mat-datepicker
+						#bdpicker2></mat-datepicker> </mat-form-field></td>
+				</tr>
+
+				<tr>
+					<td valign="top">Plants</td>
+					<td><textarea id="plants" rows="4" cols="14">
+				HAM
+				</textarea></td>
+					<td align="left">
+						<button valign="top" (click)="newoverrideForm.reset()"
+							type="submit" class="cqp-btn btn-space">Add Plant</button>
+
+						<button valign="bottom" (click)="newoverrideForm.reset()"
+							type="submit" class="cqp-btn btn-space">Delete Plant</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="section2-4">
+			<table>
+				<tr>
+					<td width="100" class="data">Reimbursments:</td>
+					<td width="100" class="data" align="left"><input type="text"
+						name="refNo" size="14" value="" class="data"></td>
+				</tr>
+
+				<tr>
+					<td class="data">Adjustments:</td>
+					<td class="data" align="left"><input type="text" name="refNo"
+						size="14" value="" class="data"></td>
+				</tr>
+				<tr>
+					<td width="100" class="data"></td>
+					<td>
+						<div class="box btn-group-vertical">
+							<p>WRP BTO</p>
+							<button (click)="assignMTC()" type="button"
+								class="cqp-btn btn-space">Assign MTC</button>
+							<button type="button" class="cqp-btn btn-space">Assign
+								Parts</button>
+							<button (click)="setCriteria()" type="button"
+								class="cqp-btn btn-space">Set Criteria</button>
+
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="section3-1">
+
+			<table>
+				<tr>
+					<td align="left">
+						<button (click)="newoverrideForm.reset()" type="submit"
+							class="cqp-btn">Update</button>
+					</td>
+					<td><button (click)="newoverrideForm.reset()" type="submit"
+							class="cqp-btn">Cancel</button></td>
+					<td><button (click)="newoverrideForm.reset()" type="submit"
+							class="cqp-btn">Delete</button></td>
+				</tr>
+				<tr>
+
+				</tr>
+			</table>
+			<br>
+			<table width="100%" id="ctbl-004" border="1" class="colheadactive">
+				<thead>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+
+						<th scope="colgroup" colspan="4" bgcolor="#E9E9E9">HAM</th>
+						<th scope="colgroup" colspan="4" bgcolor="#E9E9E9">SUPPLIER</th>
+					</tr>
+					<tr bgcolor="#E9E9E9">
+						<th scope="col">Part Category</th>
+						<th scope="col">Name</th>
+						<th scope="col">Flat</th>
+						<th scope="col">Labor rate</th>
+						<th scope="col">FOB</th>
+						<th scope="col">Dir Net</th>
+						<th scope="col">Part Cost</th>
+						<th scope="col">Labor</th>
+						<th scope="col">Handling</th>
+						<th scope="col">Total</th>
+						<th scope="col">Part Cost</th>
+						<th scope="col">Labor</th>
+						<th scope="col">Handling</th>
+						<th scope="col">Total</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr>
+						<td>Wholesale</td>
+						<td>Name 1</td>
+						<td>$1.25</td>
+						<td>$1.20</td>
+						<td>$1.00</td>
+						<td>Wholesale</td>
+						<td>$1.00</td>
+						<td>$1.25</td>
+						<td>$1.20</td>
+						<td>$1.00</td>
+						<td>Wholesale</td>
+						<td>$1.00</td>
+						<td>$1.25</td>
+						<td>$1.20</td>
+					</tr>
+					<tr>
+						<td>Retail</td>
+						<td>Name 2</td>
+						<td>$3.00</td>
+						<td>$1.80</td>
+						<td>$1.60</td>
+						<td>Retail</td>
+						<td>$2.00</td>
+						<td>$3.00</td>
+						<td>$1.80</td>
+						<td>$1.60</td>
+						<td>Retail</td>
+						<td>$2.00</td>
+						<td>$3.00</td>
+						<td>$1.80</td>
+
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+		<div class="section4-1">
+			<table>
+				<tr>
+					<td align="left">
+						<button (click)="newoverrideForm.reset()" type="submit"
+							class="cqp-btn">Update</button>
+						<button style="margin: 4px;" (click)="newoverrideForm.reset()"
+							type="submit" class="cqp-btn">Cancel</button>
+						<button style="margin: 2px;" (click)="newoverrideForm.reset()"
+							type="submit" class="cqp-btn">Delete</button>
+					</td>
+				</tr>
+				<br>
+				<tr>
+					<table id="ctbl-004" border="1" class="colheadactive">
+						<colgroup>
+							<col span="1">
+							<col span="1">
+						</colgroup>
+						<colgroup span="2">
+						</colgroup>
+						<thead>
+
+							<tr bgcolor="#E9E9E9">
+								<th scope="col">Market</th>
+								<th scope="col">Part</th>
+								<th scope="col">Year</th>
+								<th scope="col">Model</th>
+								<th scope="col">Part Category</th>
+								<th scope="col">Qty Claim</th>
+								<th scope="col">Clm/Mth</th>
+								<th scope="col">Mth Left</th>
+								<th scope="col">Qty Analyzed</th>
+								<th scope="col">Qty w/Pblm</th>
+								<th scope="col">Sup Resp</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Wholesale</td>
+								<td>Part 1</td>
+								<td>2004</td>
+								<td>Civic</td>
+								<td>Wholesale</td>
+								<td>12</td>
+								<td>4</td>
+								<td>5</td>
+								<td>45</td>
+								<td>Wholesale</td>
+								<td>resp2</td>
+							</tr>
+							<tr>
+								<td>Retail</td>
+								<td>Part 2</td>
+								<td>2005</td>
+								<td>Honda</td>
+								<td>Retail</td>
+								<td>55</td>
+								<td>3</td>
+								<td>6</td>
+								<td>4</td>
+								<td>Retail</td>
+								<td>resp1</td>
+							</tr>
+						</tbody>
+					</table>
+				</tr>
+			</table>
+
+		</div>
+
+		<div class="section4-2" style="margin: 40px;">
+
+			<table border="1" class="colheadactive">
+				<col>
+				<colgroup span="2"></colgroup>
+				<colgroup span="2"></colgroup>
+
+				<tr bgcolor="#E9E9E9">
+					<th scope="col">Total</th>
+					<th scope="col">Plan</th>
+					<th scope="col">Actual</th>
+					<th scope="col">Actual Start Date</th>
+					<th scope="col">Finish</th>
+					<th scope="col">Gap (Days)</th>
+				</tr>
+				<tr>
+					<th scope="row" bgcolor="#E9E9E9">AQ Signature</th>
+					<td>50,000</td>
+					<td>30,000</td>
+					<td>2/3/2014</td>
+					<td>12/3/2014</td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<th scope="row" bgcolor="#E9E9E9">CPG Signature</th>
+					<td>10,000</td>
+					<td>5,000</td>
+					<td>2/3/2014</td>
+					<td>12/3/2014</td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<th scope="row" bgcolor="#E9E9E9">Supplier Response</th>
+					<td>10,000</td>
+					<td>5,000</td>
+					<td>2/3/2014</td>
+					<td>12/3/2014</td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<th scope="row" bgcolor="#E9E9E9">Supplier Signature</th>
+					<td>10,000</td>
+					<td>5,000</td>
+					<td>2/3/2014</td>
+					<td>12/3/2014</td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<th scope="row"></th>
+					<td>10,000</td>
+					<td>5,000</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="section5-1 section" style="width: 600px; text-align: center; font-size: 12px">
+		    
+			<div>			
+				<mat-tab-group animationDuration="0ms"> 
+					<mat-tab label="Problem Description"><br>
+					<textarea align="center" id="w3mission" rows="10" cols="80">
+					Description: The voucher and the covering letter which will now be created 
+					will be a pdf file as opposed to the earlier Microsoft excel file.  
+					(All data must be stored in new WRP tables). The manual voucher 
+					data will be stored in the table tblWRP_VoucherManual and the table 
+					will not be deleted. The monthly job needs to be modified so that 
+					it will store data in a table tblWRP_VoucherJob. The structure of 
+					the table tblWRP_VoucherJob will be like the table tblWRP_CoverSheetData 
+					and will be copied to the tblWRP_VoucherJob during inserting data 
+					into the table tblWRP_CoverSheetData and rebuilding the Voucher
+					</textarea>
+					
+					</mat-tab> 
+					<mat-tab label="Causes"><br>
+					<textarea align="center" id="w3mission" rows="10" cols="80">
+					Causes:	The address editor screen will not be used anymore, and the details 
+					of the Supplier will be fetched from the CQP table tblCQ_SUPPLIER_INFO. 
+					The summary edit screen will have fields supplier number and supplier 
+					name to enter the supplier details, the corresponding supplier address 
+					will be fetched from the table tblCQ_SUPPLIER_INFO.
+					</textarea>
+					</mat-tab> 
+					<mat-tab label="Countermeasure Contents"><br>
+					<textarea align="center" id="w3mission" rows="10" cols="80">
+					Contents:	The address editor screen will not be used anymore, and the details 
+					of the Supplier will be fetched from the CQP table tblCQ_SUPPLIER_INFO. 
+					The summary edit screen will have fields supplier number and supplier 
+					name to enter the supplier details, the corresponding supplier address 
+					will be fetched from the table tblCQ_SUPPLIER_INFO.
+					</textarea>
+					</mat-tab> 
+					<mat-tab label="General Notes">
+					<br>
+					<textarea align="center" id="w3mission" rows="10" cols="80">
+					General Notes:	The address editor screen will not be used anymore, and the details 
+					of the Supplier will be fetched from the CQP table tblCQ_SUPPLIER_INFO. 
+					The summary edit screen will have fields supplier number and supplier 
+					name to enter the supplier details, the corresponding supplier address 
+					will be fetched from the table tblCQ_SUPPLIER_INFO.
+					
+					The voucher and the covering letter which will now be created 
+					will be a pdf file as opposed to the earlier Microsoft excel file.  
+					(All data must be stored in new WRP tables). The manual voucher 
+					data will be stored in the table tblWRP_VoucherManual and the table 
+					will not be deleted. The monthly job needs to be modified so that 
+					it will store data in a table tblWRP_VoucherJob. The structure of 
+					the table tblWRP_VoucherJob will be like the table tblWRP_CoverSheetData 
+					and will be copied to the tblWRP_VoucherJob during inserting data 
+					into the table tblWRP_CoverSheetData and rebuilding the Voucher
+					</textarea>
+					</mat-tab> 
+					<mat-tab label="Claim Est">Claim Est</mat-tab> 
+					<mat-tab label="Add'l OIS Info">Addt'l OIS Info</mat-tab>
+					<mat-tab label="Status Notes">Status Notes</mat-tab> 
+				</mat-tab-group>
+			</div>
+
+		</div>
+		<div class="section5-2 btn-group-vertical"
+			style="margin: 40px; margin-top: 1px">
+			<button type="button" class="cqp-btn btn-space-last">Save</button>
+			<button type="button" class="cqp-btn btn-space-last">Cancel</button>
+			<button type="button" class="cqp-btn btn-space-last">Print</button>
+			<button (click)="addUpdateImages()" type="button"
+				class="cqp-btn btn-space-last">Add/Update Image</button>
+			<button type="button" class="cqp-btn btn-space-last">Close</button>
+			<button type="button" class="cqp-btn btn-space-last">Print
+				Status Notes</button>
+			<button type="button" class="cqp-btn btn-space-last">Send
+				for Approved</button>
+
+		</div>
+		<div class="section5-3 btn-group-vertical" style="margin: 10px;">
+			<button type="button" class="cqp-btn btn-space-last">Reject</button>
+			<button type="button" class="cqp-btn btn-space-last">Inactivate</button>
+			<br> <br> <br> <br> <br> <br> <br>
+		</div>
+
+	</div>
+</form>
+

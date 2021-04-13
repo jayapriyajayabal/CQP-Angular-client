@@ -1,0 +1,309 @@
+<div class="screen-title">WRP - Add/Update Images</div>
+<br>
+<form>
+	
+	
+	<!-- Main part -->
+	<div align="center">
+		<table border="1px">
+			<thead>
+				<tr bgcolor="#E9E9E9">
+					<th height="40">Image Location</th>
+					<th>Image Thumbnails</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			    <!-- Row 1 -->
+				<tr>				
+					<td height="80" width="160px" style="text-align: center">
+					<div>
+					<mat-form-field appearance="outline" style="width:60%;">
+						  <select matNativeControl required>
+						    <option value="bcm">BCM</option>
+						    <option value="acm">ACM</option>
+						    <option value="chart1">CHART 1</option>
+						    <option value="chart2">CHART 2</option>
+						    <option value="dwg">DWG</option>
+						    <option value="pivot">PIVOT</option>
+						  </select>
+					</mat-form-field>
+					</div>
+					</td>
+					<td width="180px" style="text-align: center">
+						<div class="image-preview mb-3" *ngIf="previewUrl1"> 
+							<img class="thumbnail" [src]="previewUrl1" height="70px" width="100px" />
+						</div>
+					</td>
+					<td width="300px" style="text-align: center">
+						
+						<div class="form-group">
+							<input type="file" name="image" (change)="fileProgress1($event)" /> 
+						</div>
+					<!-- <input type="file" (change)="fileChange($event)"> -->
+					</td>					
+				</tr>
+				<!-- Row 2 -->
+				<tr>				
+					<td height="80" width="160px" style="text-align: center">
+					<div>
+					<mat-form-field appearance="outline" style="width:60%;">
+						  <select matNativeControl required>
+						    <option value="bcm">BCM</option>
+						    <option value="acm">ACM</option>
+						    <option value="chart1">CHART 1</option>
+						    <option value="chart2">CHART 2</option>
+						    <option value="dwg">DWG</option>
+						    <option value="pivot">PIVOT</option>
+						  </select>
+					</mat-form-field>
+					</div>
+					</td>
+					<td width="180px" style="text-align: center">
+						<div class="image-preview mb-3" *ngIf="previewUrl2"> 
+							<img class="thumbnail" [src]="previewUrl2" height="70px" width="100px" />
+						</div>
+					</td>
+					<td width="300px" style="text-align: center">
+						
+						<div class="form-group">
+							<input type="file" name="image" (change)="fileProgress2($event)" /> 
+						</div>					
+					</td>					
+				</tr>
+				<!-- Row 3 -->
+				<tr>				
+					<td height="80" width="160px" style="text-align: center">
+					<div>
+					<mat-form-field appearance="outline" style="width:60%;">
+						  <select matNativeControl required>
+						    <option value="bcm">BCM</option>
+						    <option value="acm">ACM</option>
+						    <option value="chart1">CHART 1</option>
+						    <option value="chart2">CHART 2</option>
+						    <option value="dwg">DWG</option>
+						    <option value="pivot">PIVOT</option>
+						  </select>
+					</mat-form-field>
+					</div>
+					</td>
+					<td width="180px" style="text-align: center">
+						<div class="image-preview mb-3" *ngIf="previewUrl3"> 
+							<img class="thumbnail" [src]="previewUrl3" height="70px" width="100px" />
+						</div>
+					</td>
+					<td width="300px" style="text-align: center">
+						
+						<div class="form-group">
+							<input type="file" name="image" (change)="fileProgress3($event)" /> 
+						</div> 					
+					</td>					
+				</tr>
+				<!-- Row 4 -->
+				<tr>				
+					<td height="80" width="160px" style="text-align: center">
+					<div>
+					<mat-form-field appearance="outline" style="width:60%;">
+						  <select matNativeControl required>
+						    <option value="bcm">BCM</option>
+						    <option value="acm">ACM</option>
+						    <option value="chart1">CHART 1</option>
+						    <option value="chart2">CHART 2</option>
+						    <option value="dwg">DWG</option>
+						    <option value="pivot">PIVOT</option>
+						  </select>
+					</mat-form-field>
+					</div>
+					</td>
+					<td width="180px" style="text-align: center">
+						<div class="image-preview mb-3" *ngIf="previewUrl4"> 
+							<img class="thumbnail" [src]="previewUrl4" height="70px" width="100px" />
+						</div>
+					</td>
+					<td width="300px" style="text-align: center">
+						
+						<div class="form-group">
+							<input type="file" name="image" (change)="fileProgress4($event)" /> 
+						</div> 					
+					</td>					
+				</tr>
+				<!-- Row 5 -->
+				<tr>				
+					<td height="80" width="160px" style="text-align: center">
+					<div>
+					<mat-form-field appearance="outline" style="width:60%;">
+						  <select matNativeControl required>
+						    <option value="bcm">BCM</option>
+						    <option value="acm">ACM</option>
+						    <option value="chart1">CHART 1</option>
+						    <option value="chart2">CHART 2</option>
+						    <option value="dwg">DWG</option>
+						    <option value="pivot">PIVOT</option>
+						  </select>
+					</mat-form-field>
+					</div>
+					</td>
+					<td width="180px" style="text-align: center">
+						<div class="image-preview mb-3" *ngIf="previewUrl5"> 
+							<img class="thumbnail" [src]="previewUrl5" height="70px" width="100px" />
+						</div>
+					</td>
+					<td width="300px" style="text-align: center">
+						
+						<div class="form-group">
+							<input type="file" name="image" (change)="fileProgress5($event)" /> 
+						</div>
+					</td>					
+				</tr>
+				<!-- Row 6 -->
+				<tr>				
+					<td height="80" width="160px" style="text-align: center">
+					<div>
+					<mat-form-field appearance="outline" style="width:60%;">
+						  <select matNativeControl required>
+						    <option value="bcm">BCM</option>
+						    <option value="acm">ACM</option>
+						    <option value="chart1">CHART 1</option>
+						    <option value="chart2">CHART 2</option>
+						    <option value="dwg">DWG</option>
+						    <option value="pivot">PIVOT</option>
+						  </select>
+					</mat-form-field>
+					</div>
+					</td>
+					<td width="180px" style="text-align: center">
+						<div class="image-preview mb-3" *ngIf="previewUrl6"> 
+							<img class="thumbnail" [src]="previewUrl6" height="70px" width="100px" />
+						</div>
+					</td>
+					<td width="300px" style="text-align: center">
+						
+						<div class="form-group">
+							<input mat-raised-button type="file" name="image" (change)="fileProgress6($event)" />
+						</div> 					
+					</td>					
+				</tr>
+			
+		</table>	
+		<br>
+		<div class="relative"><button mat-raised-button>Submit</button></div>
+	</div>
+	<br>
+	
+	
+	<br>
+	
+	
+	
+	
+	<!-- <div align="center">
+		<table border="1px">
+			<thead>
+				<tr bgcolor="#E9E9E9">
+					<th>Image Location</th>
+					<th>Image Thumbnails</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+				<tr *ngFor="let data of datas;">	
+									
+					<td width="160px" style="text-align: center">
+					<div>
+					<mat-form-field appearance="outline" style="width:60%;">
+						  <select matNativeControl required>
+						    <option value="bcm">BCM</option>
+						    <option value="acm">ACM</option>
+						    <option value="chart1">CHART 1</option>
+						    <option value="chart2">CHART 2</option>
+						    <option value="dwg">DWG</option>
+						    <option value="pivot">PIVOT</option>
+						  </select>
+					</mat-form-field>
+					</div>
+					</td>
+					<td width="180px" style="text-align: center">
+						<div class="image-preview mb-3" *ngIf="data.preview"> 
+							<img class="thumbnail" [src]="data.preview" height="70px" width="100px" />
+						</div>
+					</td>
+					<td width="300px" style="text-align: center">
+						
+						<div class="form-group">
+							<input type="file" name="image" (change)='data.preview' /> 
+						</div>
+						<div>{{data.preview}}	<br>
+							{{data.file}}</div> 					
+					</td>					
+				</tr>
+			
+		</table>	
+	</div> -->
+	
+	<br>==========================================================================<br>
+	<div class="grid-container">
+		<div class="div1">
+			<table>
+				<tr>WRP :
+				</tr>
+				<tr>
+					<br>
+					<div class="form-group">
+						<input type="file" name="image" (change)="fileProgress($event)" />
+					</div>
+					
+					<!-- 
+					<td align="left"><input #file type="file" accept='image/*'
+						(change)="preview(file.files)" /></td>
+					<td></td> -->
+				</tr>
+
+				<br>
+				<tr>
+					Image locations:
+					<select name="status_name" class="data"><option
+							value="ALL" selected="selected">Select Location</option>
+						<option value="bcm">BCM</option>
+						<option value="acm">ACM</option>
+						<option value="chart1">Chart 1</option>
+						<option value="dwg">DWG</option>
+						<option value="pivot">PIVOT</option>
+					</select>
+				</tr>
+			</table>
+
+		</div>
+		<div class="div2">
+			<table>
+				<tr>
+					<td align="left">
+						<button (click)="onSubmit()" type="submit" class="cqp-btn">Save</button>
+					</td>
+				</tr>
+
+				<br>
+				<tr>
+					<td align="left">
+						<button (click)="newoverrideForm.reset()" type="submit"
+							class="cqp-btn">Close</button>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+		<div class="div3" align="center">
+			<!-- 
+			<span style="color: red;" *ngIf="message">{{message}}</span> <img
+				[src]="imgURL" height="250" *ngIf="imgURL"> -->
+
+			<div *ngIf="fileUploadProgress">Upload progress: {{
+				fileUploadProgress }}</div>
+			<div class="image-preview mb-3" *ngIf="previewUrl">
+				<img [src]="previewUrl" height="300" />
+			</div>
+
+			<div class="mb-3" *ngIf="uploadedFilePath">
+				{{uploadedFilePath}}</div>
+
+		</div>
+	</div>
+
+</form>

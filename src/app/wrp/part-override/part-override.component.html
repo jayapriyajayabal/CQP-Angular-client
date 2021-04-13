@@ -1,0 +1,188 @@
+<div class="screen-title"> 
+WRP - Part Override
+</div>
+<br>
+<div>
+<table width="970" align="center" border="0" cellpadding="2"
+	cellspacing="0">
+
+	<tr>
+		<td width="620px">
+			<div class="form-group">
+				<table mat-table [dataSource]="dataSource" matSort
+					class="mat-elevation-z8">
+					<tbody>
+						<ng-container matColumnDef="namePlate">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header>Name
+							Plate</th>
+						<td mat-cell *matCellDef="let element">{{element.namePlate}}
+						</td>
+						</ng-container>
+
+						<ng-container matColumnDef="shortPart">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header>Short
+							Part</th>
+						<td mat-cell *matCellDef="let element">{{element.shortPart}}
+						</td>
+						</ng-container>
+
+						<ng-container matColumnDef="dayOfService">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header>Days
+							Serv.</th>
+						<td mat-cell *matCellDef="let element">
+							{{element.dayOfService}}</td>
+						</ng-container>
+
+						<ng-container matColumnDef="odmMI">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header>Odom MI</th>
+						<td mat-cell *matCellDef="let element">{{element.odmMI}}</td>
+						</ng-container>
+
+						<ng-container matColumnDef="odomKM">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header>Odom KM</th>
+						<td mat-cell *matCellDef="let element">{{element.odomKM}}</td>
+						</ng-container>
+
+						<ng-container matColumnDef="includeCamp">
+						<th mat-header-cell *matHeaderCellDef mat-sort-header>Inc.
+							Campaign</th>
+						<td mat-cell *matCellDef="let element">
+							{{element.includeCamp}}</td>
+						</ng-container>
+
+
+						<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+						<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+					</tbody>
+				</table>
+				<mat-paginator fixed [pageSizeOptions]="[5, 10, 20, 30, 40, 50, 100]"
+					showFirstLastButtons></mat-paginator>
+				
+			</div>
+
+		</td>
+		<td width="350px" class="newpartoverride"><br>
+			<div [hidden]="submitted">
+				<form [formGroup]="overrideForm" (ngSubmit)="submitData()">
+				    <div>
+				    	<mat-form-field appearance="outline">
+				    	<mat-label>Plate Name</mat-label>
+				    		<mat-select>
+							    <mat-option *ngFor="let brand of brands" [value]="brand.value">
+							      {{brand.viewValue}}
+							    </mat-option>
+							  </mat-select>
+						</mat-form-field>
+				    </div>
+					<div>
+				    	<mat-form-field appearance="outline">				    	
+					    <mat-label>Short Part</mat-label>
+					    <input (keypress)="numberOnly($event)"  matInput formControlName="shortPart">
+					  </mat-form-field>						
+				    </div>
+				    <div>
+				    	<mat-form-field appearance="outline">				    	
+					    <mat-label>Day of Serv</mat-label>
+					    <input (keypress)="numberOnly($event)"  matInput formControlName="dayOfServ">
+					  </mat-form-field>						
+				    </div>
+				    <div>
+				    	<mat-form-field appearance="outline">				    	
+					    <mat-label>Odom MI</mat-label>
+					    <input (keypress)="numberOnly($event)" matInput formControlName="odomMI">
+					  </mat-form-field>						
+				    </div>
+				    <div>
+				    	<mat-form-field appearance="outline">				    	
+					    <mat-label>Odom KM</mat-label>
+					    <input matInput formControlName="odomKM">
+					  </mat-form-field>						
+				    </div>
+				
+				    <div>
+				        Override Campaign?
+				    	<mat-checkbox (change)='onChange($event)' ></mat-checkbox>
+				    </div>
+				    <br>
+				    <div align="right">
+				    	<button type="reset" mat-raised-button>Clear</button>&nbsp;&nbsp;&nbsp;
+				    	<button type="submit" [disabled]="!overrideForm.valid" mat-raised-button>Save</button>
+				    </div>
+
+				</form>
+
+			</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<!-- <div [hidden]="submitted">
+				<form (ngSubmit)="onSubmit()" [formGroup]="newoverrideForm">
+
+					<div class="form-group">
+						&nbsp;<b>Plate Name:</b> &nbsp;<select formControlName="brandName" style="width: 180px;">
+							<option *ngFor="let brand of brands"
+								value="{{brand.value}}">{{brand.viewValue}}</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						&nbsp;<b>Short Part:</b> &nbsp;&nbsp;&nbsp;<input formControlName="shortPart" type="text"
+							size="18px" id="shortPart" required
+							[(ngModel)]="partoverride.shortPart" name="shortPart">
+					</div>
+
+					<div class="form-group">
+						&nbsp;<b>Day of Serv:</b> &nbsp;<input formControlName="dayOfServ" type="text" size="18px"
+							id="dayOfService" required
+							[(ngModel)]="partoverride.dayOfService" name="dayOfService">
+					</div>
+
+					<div class="form-group">
+						&nbsp;<b>Odom MI:</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input formControlName="odomMI" type="text"
+							size="18px" id="odmMI" required [(ngModel)]="partoverride.odmMI"
+							name="odmMI">
+					</div>
+
+					<div class="form-group">
+						&nbsp;<b>Odom KM:</b> &nbsp;&nbsp;&nbsp;<input formControlName="odomKM" type="text"
+							size="18px" id="odomKM" required
+							[(ngModel)]="partoverride.odomKM" name="odomKM">
+					</div>
+					<br>
+
+					<div>
+						&nbsp;<b>Override Campaign?</b> &nbsp;<input  type="checkbox"
+							(change)="onChange(cartoon.name, $event.target.checked)" />
+
+					</div>
+
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<button (click)="newoverrideForm.reset()" type="submit" class="cqp-btn">Clear</button>
+					&nbsp;&nbsp;&nbsp;
+					<button (click)="gotoList()" class="cqp-btn">Save</button>
+					<br>
+
+				</form>
+
+			</div> -->
+			</td>
+	</tr>
+
+</table>
+
+</div>
+
+
+

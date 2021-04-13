@@ -1,0 +1,212 @@
+<div class="screen-title">WRP - Voucher Tracking Data</div>
+<br>
+<div class="grid-container">
+	<div class="div1" class="box">
+		<table>
+			<tr>
+				<td width="15%">WPR #:</td>
+				<td width="20%" class="data"><select name="status_name"
+					class="data"><option value="ALL" selected="selected">Select
+							One</option>
+						<option value="type1">WRP-9895443</option>
+						<option value="type1">WRP-9895443</option>
+						<option value="type1">WRP-9895443</option>
+						<option value="type1">WRP-9895443</option>
+				</select></td>
+				<td height="50" width="18%">Voucher Date:</td>
+				<td height="50"><mat-form-field appearance="outline" class="dateBox">
+					<input matInput [matDatepickerFilter]="dateFilter"
+						[matDatepicker]="vdpicker1" placeholder="Choose a date"> <mat-datepicker-toggle
+						matSuffix [for]="vdpicker1"></mat-datepicker-toggle> <mat-datepicker
+						#vdpicker1></mat-datepicker> </mat-form-field></td>
+				<td height="50">-</td>
+				<td height="50"><mat-form-field appearance="outline" class="dateBox">
+					<input matInput [matDatepickerFilter]="dateFilter"
+						[matDatepicker]="vdpicker2" placeholder="Choose a date"> <mat-datepicker-toggle
+						matSuffix [for]="vdpicker2"></mat-datepicker-toggle> <mat-datepicker
+						#vdpicker2></mat-datepicker> </mat-form-field></td>
+				<td width="20%" align="right">
+					<button valign="top" (click)="newoverrideForm.reset()"
+						type="submit" class="cqp-btn">Print Report</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Voucher #:</td>
+				<td class="data"><select name="status_name"><option
+							value="ALL" selected="selected">Select One</option>
+						<option value="type1">Voucher-98544</option>
+						<option value="type1">Voucher-98544</option>
+						<option value="type1">Voucher-98544</option>
+						<option value="type1">Voucher-98543</option>
+				</select></td>
+				<td height="50">Invoice Date</td>
+				<td height="50"><mat-form-field appearance="outline" class="dateBox">
+					<input matInput [matDatepickerFilter]="dateFilter"
+						[matDatepicker]="idpicker1" placeholder="Choose a date"> <mat-datepicker-toggle
+						matSuffix [for]="idpicker1"></mat-datepicker-toggle> <mat-datepicker
+						#idpicker1></mat-datepicker> </mat-form-field></td>
+				<td height="50">-</td>
+				<td height="50"><mat-form-field appearance="outline" class="dateBox">
+					<input matInput [matDatepickerFilter]="dateFilter"
+						[matDatepicker]="idpicker2" placeholder="Choose a date"> <mat-datepicker-toggle
+						matSuffix [for]="idpicker2"></mat-datepicker-toggle> <mat-datepicker
+						#idpicker2></mat-datepicker> </mat-form-field></td>
+
+				<td></td>
+			</tr>
+			<tr>
+				<td>Fiscal Period:</td>
+				<td class="data"><select name="status_name" class="data"><option
+							value="ALL" selected="selected">Select One</option>
+						<option value="type1">Period-235651</option>
+						<option value="type1">Period-134562</option>
+						<option value="type1">Period-032352</option>
+						<option value="type1">Period-226431</option>
+				</select></td>
+				<td>GL Date:</td>
+				<td><mat-form-field appearance="outline" class="dateBox">
+					<input matInput [matDatepickerFilter]="dateFilter"
+						[matDatepicker]="gdpicker1" placeholder="Choose a date"> <mat-datepicker-toggle
+						matSuffix [for]="gdpicker1"></mat-datepicker-toggle> <mat-datepicker
+						#gdpicker1></mat-datepicker> </mat-form-field></td>
+				<td>-</td>
+				<td><mat-form-field appearance="outline" class="dateBox">
+					<input matInput [matDatepickerFilter]="dateFilter"
+						[matDatepicker]="gdpicker2" placeholder="Choose a date"> <mat-datepicker-toggle
+						matSuffix [for]="gdpicker2"></mat-datepicker-toggle> <mat-datepicker
+						#gdpicker2></mat-datepicker> </mat-form-field></td>
+				<td></td>
+			</tr>
+
+		</table>
+
+	</div>
+	<div>
+		<table>
+			<tr>
+				<td>Filter</td>
+				<td>WRP #: <select name="status_name" class="data"><option
+							value="ALL" selected="selected">Select One</option>
+						<option value="type1">WRP-1985283452874</option>
+						<option value="type1">WRP-2985283452874</option>
+						<option value="type1">WRP-3985283452874</option>
+						<option value="type1">WRP-4985283452874</option>
+				</select> 
+				Voucher Month (mm/yyyy): <mat-form-field appearance="outline"
+						class="dateBox"> <!-- <mat-label>Month and Year</mat-label> -->
+					<input matInput [matDatepicker]="dp" placeholder="Month and Year"
+						[formControl]="date"> <mat-datepicker-toggle matSuffix
+						[for]="dp"></mat-datepicker-toggle> <mat-datepicker #dp
+						startView="multi-year" (yearSelected)="chosenYearHandler($event)"
+						(monthSelected)="chosenMonthHandler($event, dp)"
+						panelClass="example-month-picker"> </mat-datepicker> </mat-form-field> 
+						GL Date
+					(mm/yyyy): <mat-form-field appearance="outline"
+						class="dateBox"> <!-- <mat-label>Month and Year</mat-label> -->
+					<input matInput [matDatepicker]="gdp" placeholder="Month and Year"
+						[formControl]="date"> <mat-datepicker-toggle matSuffix
+						[for]="gdp"></mat-datepicker-toggle> <mat-datepicker #gdp
+						startView="multi-year" (yearSelected)="chosenYearHandler($event)"
+						(monthSelected)="chosenMonthHandler($event, gdp)"
+						panelClass="example-month-picker"> </mat-datepicker> </mat-form-field> &nbsp;&nbsp;
+					<button valign="top" (click)="newoverrideForm.reset()"
+						type="submit" class="cqp-btn">Update data from accounting</button>
+				</td>
+
+			</tr>
+		</table>
+
+		<br>
+		<table border="1" class="colheadactive">
+			<thead>
+				<tr bgcolor="#E9E9E9">
+					<th width="60%" scope="col">Title</th>
+					<th width="6%" scope="col">Proj No</th>
+					<th width="6%" scope="col">Voucher Date</th>
+					<th width="6%" scope="col">Invoice Date</th>
+					<th width="6%" scope="col">Req Amount</th>
+					<th width="6%" scope="col">Claim</th>
+					<th width="4%" scope="col">Plant</th>
+					<th width="4%" scope="col">Market</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>812891817 - 16M CRV Shift Lever Knob Broken</td>
+					<td class="select"><select>
+							<option value="civic">Civic</option>
+							<option value="pilot">Pilot</option>
+							<option value="accord">Accord</option>
+							<option value="crv">CR-V</option>
+					</select></td>
+					<td>Part 1</td>
+					<td>2004</td>
+					<td>Civic</td>
+					<td>Wholesale</td>
+					<td>12</td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>812891817 - 16M CRV Shift Lever Knob Broken</td>
+					<td class="select"><select>
+							<option value="civic">Civic</option>
+							<option value="pilot">Pilot</option>
+							<option value="accord">Accord</option>
+							<option value="crv">CR-V</option>
+					</select></td>
+					<td>Part 2</td>
+					<td>2005</td>
+					<td>Honda</td>
+					<td>Retail</td>
+					<td>55</td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>812891817 - 16M CRV Shift Lever Knob Broken</td>
+					<td class="select"><select>
+							<option value="civic">Civic</option>
+							<option value="pilot">Pilot</option>
+							<option value="accord">Accord</option>
+							<option value="crv">CR-V</option>
+					</select></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>812891817 - 16M CRV Shift Lever Knob Broken</td>
+					<td class="select"><select>
+							<option value="civic">Civic</option>
+							<option value="pilot">Pilot</option>
+							<option value="accord">Accord</option>
+							<option value="crv">CR-V</option>
+					</select></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Problem 3</td>
+					<td class="select"><select>
+							<option value="civic">Civic</option>
+							<option value="pilot">Pilot</option>
+							<option value="accord">Accord</option>
+							<option value="crv">CR-V</option>
+					</select></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>

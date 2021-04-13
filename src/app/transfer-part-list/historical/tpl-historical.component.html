@@ -1,0 +1,282 @@
+<div class="screen-title">
+    Transfer Part List - Historical
+</div>
+<br>
+
+<div class="example-screen-title">
+    Search for Historical Transfer Part List items:
+</div>
+<div class="details">&ensp;Provide criteria to search for Historical Transfer Part List items</div>
+
+<div class="panel panel-primary">
+    <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tbody>
+            &nbsp;
+            <tr>
+                <td width="2%">Supplier:</td>
+                <td width="45" bgcolor="#ffffff">
+                    <select #s (change)="callSupplier(s.value)" style="width: 30%;">
+                        <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
+                            {{supplier.supplierNo}}
+                            {{supplier.supplierName}}</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<hr>
+    <div class="supplier-panel-body">
+        <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="panel-heading" style="width: max-content;">
+                            TPL Item Status:
+                        </div>
+                        <div>
+                            Closed
+                        </div>
+                    </td>
+                    <td>
+                        <div class="panel-heading" style="width: max-content;">
+                            Year Analyzed:
+                        </div>
+                        <div>
+                            <select style="width: 100%;">
+                                <option value="0">All</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="panel-heading">
+                            Short Part No:
+                        </div>
+                        <div>
+                            <select style="width: 100%;">
+                                <option value="0">All</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="panel-heading">
+                            Model Year:
+                        </div>
+                        <div>
+                            <select style="width: 100%;">
+                                <option value="0">All</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="panel-heading">
+                            Model Name:
+                        </div>
+                        <div>
+                            <select style="width: 100%;">
+                                <option value="0">All</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="panel-heading">
+                            Category:
+                        </div>
+                        <div>
+                            <select style="width: 100%;">
+                                <option value="0">All</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="panel-heading">
+                            Conclusion:
+                        </div>
+                        <div>
+                            <select style="width: 100%;">
+                                <option value="0">All</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="panel-heading">
+                            Due Date Range:
+                        </div>
+                <tr>
+                    <td>
+                        From:
+                    </td>
+                    <td>
+                        <input type="date" >
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        To:
+                    </td>
+                    <td>
+                        <input type="date" >
+                    </td>
+                </tr>
+                </td>
+                <td>
+                    <div class="panel-heading">
+                        Submitted Date Range:
+                    </div>
+                    <tr>
+                        <td>
+                            From:
+                        </td>
+                        <td>
+                            <input type="date">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            To:
+                        </td>
+                        <td>
+                            <input type="date">
+                        </td>
+                    </tr>
+                </td>
+                <td>
+                    <div class="panel-heading">
+                        Assembly Off. Date:
+                    </div>
+                    <tr>
+                        <td>
+                            From:
+                        </td>
+                        <td>
+                            <input type="date">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            To:
+                        </td>
+                        <td>
+                            <input type="date">
+                        </td>
+                    </tr>
+                </td>
+                <td>
+                    <div class="panel-heading">
+                        TPL Ref. No:
+                    </div>
+                    <div>
+                        <input type="number" style="width: 100%;">
+                    </div><br>
+                    <div class="panel-heading">
+                        Claim No:
+                    </div>
+                    <div>
+                        <input type="number" style="width: 100%;">
+                    </div>
+                </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div class="panel-heading">
+                            Reviewed:
+                        </div>
+                        <div>
+                            <select style="width: 100%;">
+                                <option value="0">All</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="panel-heading">
+                            Market:
+                        </div>
+                        <div>
+                            <select style="width: 100%;">
+                                <option value="0">All</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                        &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp; &nbsp;<button
+                            class="cqp-btn">Create</button></td>
+
+
+
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
+
+        <ng-container *ngIf="show">
+            <div class="panel-body">
+                <table class="table table-striped" cellspacing="1" cellpadding="4" bordercolor="white" border="6">
+                    <thead>
+                        <tr class="list-header">
+                            <th></th>
+                            <th>Status</th>
+                            <th>TPL Ref. No.</th>
+                            <th>Short Part No.</th>
+                            <th>Seq. No.</th>
+                            <th>Model Year</th>
+                            <th>Model Name</th>
+                            <th>Pickup Date</th>
+                            <th>Due Date</th>
+                            <th>Reopen Due Date</th>
+                            <th>Dealer No</th>
+                            <th>Claim No</th>
+                            <th>ROYR </th>
+                            <th>Conclusion</th>
+                            <th>Mkt</th>
+                            <th>Reviewed?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tplitem of tplitems | async" class="list-row">
+                            <td><input type="checkbox" name="checkedPartno" value="0"></td>
+                            <td align="margin-left">{{findBySpecField(statues, 'statusId', tplitem.statusId,
+                                'statusName')}}
+                            </td>
+                            <!-- <td align="margin-left">{{tplitem.statusId}}</td> -->
+
+                            <td align="margin-left">{{tplitem.itemDetailId}}</td>
+                            <td align="margin-left">{{tplitem.detailId}}</td>
+                            <td align="margin-left">{{tplitem.sequenceNo}}</td>
+                            <td align="margin-left">2012</td>
+                            <td align="margin-left">CRV</td>
+                            <td align="margin-left">{{tplitem.lastUpdatedDate | date:'shortDate'}}</td>
+                            <td align="margin-left">{{tplitem.dueDate | date:'shortDate'}}</td>
+                            <td align="margin-left">{{tplitem.reopenedDueDate | date:'shortDate'}}</td>
+                            <td align="margin-left">12345</td>
+                            <td align="margin-left">710710</td>
+                            <td align="margin-left">2016</td>
+                            <!-- <td align="margin-left">{{tplitem.conclusionId}}</td> -->
+                            <td align="margin-left">
+                                {{findBySpecField(conclusions, 'conclusionId', tplitem.conclusionId, 'conclusionDesc')}}
+                            </td>
+                            <td align="margin-left">KA</td>
+                            <td><input type="checkbox" name="checkedPartno" value="0"></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </ng-container>
+    </div>
+</div>

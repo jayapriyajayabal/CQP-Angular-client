@@ -1,0 +1,47 @@
+<div class="example-screen-title"> 
+Example - Call Retrieve data API with Angular and Sprint Boot
+</div>
+<br>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>List of Transfer Part List Items</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped" cellspacing="1" cellpadding="4" bordercolor="white" border="6">
+      <thead>
+        <tr class="list-header">
+          <th>Status</th>
+          <th>TPL Ref. No.</th>
+          <th>Short Part No.</th>
+          <th>Seq. No.</th>
+          <th>Last Update Date</th>
+          <th>Due Date</th>
+          <th>Reopen Due Date</th>
+          <th>Conclusion</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tplitem of tplitems | async" class="list-row">
+          <td align="margin-left">{{tplitem.statusId}}</td>
+          <td align="margin-left">{{tplitem.itemDetailId}}</td>
+          <td align="margin-left">{{tplitem.detailId}}</td>
+          <td align="margin-left">{{tplitem.sequenceNo}}</td>
+          <td align="margin-left">{{tplitem.lastUpdatedDate | date:'shortDate'}}</td>
+          <td align="margin-left">{{tplitem.dueDate | date:'shortDate'}}</td>
+          <td align="margin-left">{{tplitem.reopenedDueDate | date:'shortDate'}}</td>
+          <td align="margin-left">{{tplitem.conclusionId}}</td>
+
+          <td align="margin-left"><button (click)="tplitemDetails(tplitem.itemDetailId)"
+              class="cqp-btn">Details</button>
+            <button (click)="updateTPLItem(tplitem.itemDetailId)" class="cqp-btn"
+              style="margin-left: 10px">Update</button>
+            <button (click)="deleteTPLItem(tplitem.itemDetailId)" class="cqp-btn"
+              style="margin-left: 10px">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

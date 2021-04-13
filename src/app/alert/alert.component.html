@@ -1,0 +1,22 @@
+<div>
+   <table class="table">
+    <thead>
+    <tr>
+   
+    <th>Supplier</th>
+    <th>Status</th>
+    <th>AlertType</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let alert of alerts">
+    <td>{{alert.supplier}}</td>
+    <td>{{alert.status}}</td>
+    <td>{{alert.alert_type}}</td>
+    </tr>
+   </tbody>
+    </table>
+   
+    </div>
+   

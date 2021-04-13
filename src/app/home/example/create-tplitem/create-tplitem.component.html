@@ -1,0 +1,69 @@
+<div class="example-screen-title"> 
+Example - Insert and Call Stored Procedure by RESTFul API
+</div>
+<br>
+
+<table>
+	<tr>
+		<th><h3>Create TPL Item Detail</h3></th>
+		<th></th>
+		<th><p>Call Stored Procedure: dbo.USP_HONDA_HOLIDAY1</p></th>
+	</tr>
+	<tr>
+		<td>
+			<div [hidden]="submitted" style="width: 400px;">
+				<form (ngSubmit)="onSubmit()">
+					<div class="form-group">
+						<label for="name">Item Detail Id</label> <input type="text"
+							class="form-control" id="itemDetailId" required
+							[(ngModel)]="tplitem.itemDetailId" name="itemDetailId">
+					</div>
+
+					<div class="form-group">
+						<label for="name">Item Id</label> <input type="text"
+							class="form-control" id="itemId" required
+							[(ngModel)]="tplitem.detailId" name="itemId">
+					</div>
+
+					<div class="form-group">
+						<label for="name">Sequence No</label> <input type="text"
+							class="form-control" id="sequenceNo" required
+							[(ngModel)]="tplitem.sequenceNo" name="sequenceNo">
+					</div>
+
+					<button type="submit" class="cqp-btn">Add</button>
+					&nbsp;
+					<button (click)="gotoList()" class="cqp-btn">Back to TPL
+						Item List</button>
+					<br>
+
+				</form>
+			</div>
+
+			<div [hidden]="!submitted">
+				<h4>A new item is added successfully!</h4>
+				<!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+			</div>
+		</td>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		<td><p>Current Date:</p>
+
+			<b>{{todayDate | date:'fullDate'}}</b>
+
+
+			<div>
+				<select #d (change)="callDays(d.value)" style="width: 50%;">
+					<option value="0">Choose your days</option>
+					<option *ngFor="let day of Days" value="{{day.id}}">
+						{{day.name}}</option>
+				</select>
+				&nbsp;&nbsp;
+				<button type="button" (click)="getDays(d.value)" class="cqp-btn">Get Day</button>
+			</div>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<p>New Date:</p>
+			<b>{{resultDay | date:'fullDate'}}</b>
+			</td>
+	</tr>
+
+</table>

@@ -1,0 +1,108 @@
+<div class="screen-title">Administration - User Role Mapping</div>
+<br>
+
+<table border="0" width="970" cellspacing="0" cellpadding="0"
+	align="center" bordercolor="#FFFFFF">
+	<tbody>
+		<tr>
+			<td nowrap="" colspan="5" class="alerthead2"
+				style="padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium"
+				bordercolor="#990000">Search for Users:</td>
+		</tr>
+		<tr>
+			<td class="data" colspan="2" valign="top">Provide criteria to
+				search for users.</td>
+		</tr>
+	</tbody>
+</table>
+
+<table width="970" align="center" border="0" cellpadding="0"
+	cellspacing="0">
+	<tbody>
+		<tr>
+			<td colspan="2" height="8"><img src="../../assets/clear.gif"
+				width="1" height="1" border="0"></td>
+		</tr>
+		<tr>
+			<td colspan="2" height="1"><hr size="1"></td>
+		</tr>
+		<tr>
+			<td colspan="2" height="8"><img src="../../assets/clear.gif"
+				width="1" height="1" border="0"></td>
+		</tr>
+	</tbody>
+</table>
+
+<table width="970" align="center" border="0" cellpadding="2"
+	cellspacing="0">
+	<tbody>
+		<tr>
+			<td width="20%" class="data">First Name:</td>
+			<td width="20%" valign="bottom" class="data">Last Name:</td>
+			<td width="20%" valign="bottom" class="data">User Id:</td>
+			<!--Start-Enhancement-Add Supp No Search-->
+			<td width="20%" valign="bottom" class="data">Supplier No.:</td>
+			<!--End-Enhancement-Add Supp No Search-->
+			<!-- Start-Enhancement-Add Role search -->
+			<td valign="bottom" class="data">Role:</td>
+			<!-- End-Enhancement-Add Role search -->
+		</tr>
+		<tr valign="top">
+			<td class="data"><input type="text" name="userFirstNameSrch"
+				maxlength="25" size="25" value="" class="data"></td>
+			<td class="data"><input type="text" name="userLastNameSrch"
+				maxlength="25" size="25" value="" class="data"></td>
+			<td class="data"><input type="text" name="userIdSrch"
+				maxlength="25" size="25" value="" class="data"></td>
+			<!--Start-Enhancement-Add Supp No Search-->
+			<td class="data"><input type="text" name="supplierNoSrch"
+				maxlength="6" size="25" value="" class="data"></td>
+			<!--End-Enhancement-Add Supp No Search-->
+			<!-- Start-Enhancement-Add Role search -->
+			<td class="data"><select name="roleIdSrch" class="data"><option
+						value="ALL" selected="selected">ALL</option>
+					<option value="NO_ROLES">No Roles</option>
+					<option value="1">CQ_ADMIN</option>
+					<option value="2">CQ_APPROVER</option>
+					<option value="16">CQ_BOM_ADMIN</option>
+					<option value="3">CQ_CALLIN_ACTIVATOR</option>
+					<option value="15">CQ_MQ_ANALYST</option>
+					<option value="4">CQ_PQPWG_ANALYST</option>
+					<option value="14">CQ_SHIPPING</option>
+					<option value="5">CQ_SUPPLIER_BUSINESS_APPROVER</option>
+					<option value="6">CQ_SUPPLIER_TECH_ANALYST</option>
+					<option value="7">CQ_SUPPLIER_TECH_APPROVER</option>
+					<option value="8">CQ_TFILE_CREATOR</option>
+					<option value="9">CQ_VIEWER</option>
+					<option value="10">CQ_VOUCHER_APPROVER</option>
+					<option value="11">CQ_VOUCHER_EDITOR</option>
+					<option value="12">Inactive Supplier</option>
+					<option value="13">Non participating Supplier</option></select></td>
+			<!-- End-Enhancement-Add Role search -->
+		</tr>
+	</tbody>
+</table>
+
+<table width="970" align="center" border="0" cellpadding="0"
+	cellspacing="0">
+
+
+
+	<tbody>
+		<tr>
+			<td height="200"></td>
+		</tr>
+
+		<tr>
+
+			<td align="right">
+				<button valign="top" (click)="newoverrideForm.reset()" type="submit"
+					class="cqp-btn btn-space">Search</button>
+
+				<button valign="bottom" (click)="newoverrideForm.reset()"
+					type="submit" class="cqp-btn btn-space">Reset</button>
+			</td>
+		</tr>
+
+	</tbody>
+</table>

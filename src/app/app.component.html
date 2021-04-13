@@ -1,0 +1,221 @@
+
+
+<table width="970" align="center" border="0" cellspacing="0"
+	cellpadding="0">
+	<tbody>
+
+		<img src="../assets/hst_banner.jpg" width="970" height="58"
+			alt="Honda Logo" border="0" align="center" />
+
+
+		<table cellspacing="0" cellpadding="0" border="0" align="center"
+			width="970" bordercolor="#FFFFFF">
+			<tbody>
+				<tr>
+					<td valign="middle" align="center" class="TDData"
+						bordercolor="#990000"
+						style="border-bottom-width: 0; border-top-width: 0; border-left-width: 0; border-right-width: 0">
+
+						<table width="400" border="0" align=center>
+							<tbody>
+								<tr>
+									<td align="right">Welcome&nbsp; CQP/WRP User</td>
+									<td align="center">{{todayDate | date:'full'}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table cellspacing="0" cellpadding="0" border="0" width="970"
+			bordercolor="FFFFFF">
+			<tbody>
+				<tr>
+					<td width="603" bgcolor="#FFFFFF"><font
+						face="verdana, arial, helvetica" size="2" color="#b00000">
+							<b>Challenge Quality - WRP </b>
+					</font></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<table cellspacing="0" cellpadding="0" border="0" width="970"
+			bordercolor="FFFFFF">
+			<tbody>
+				<tr>
+					<!-- Tab 0 - begins -->
+
+					<td width="40%" class="pagetitle" bgcolor="#FFFFFF"></td>
+					<td width="39%" bgcolor="#FFFFFF">
+						<div id="processMsgId"></div>
+					</td>
+					<td align="center" width="7%"><a name="linkAbout"
+						href="javascript:popupAbout('/CQPWeb/html/about.htm','PortalHelpWindow');"
+						class="ScreenLink">About</a></td>
+					<td align="center" width="7%"><a name="linkHelp"
+						class="ScreenLink"
+						href="javascript:OpenURL('/j_static/static/webhelp/cqp/cqp_index.htm#topics/cqp023_home_page_overview.htm')">
+							Help </a></td>
+					<td align="center" width="7%"><a name="linkLogout"
+						href="/CQPWeb/logonAction.do?action=Logout" class="ScreenLink">Log
+							Out</a></td>
+
+				</tr>
+			</tbody>
+		</table>
+
+
+		<table cellspacing="0" cellpadding="0" border="0" width="970"
+			bordercolor="#990000" align="center">
+
+			<tbody>
+				<tr style="border-color: #990000; height: 25">
+					<td bgcolor="#CCCC99" class="tab" width="12%"
+						style="border-top-style: solid; border-top-width: 1px; border-bottom-style: solid; border-bottom-width: 2; border-right-style: solid; border-right-width: 1px; border-left-style: solid; border-left-width: 1px; border-color: #990000">
+
+						<mat-tab-group (selectedTabChange)='moveToSelectedTab($event)'>  -->
+						<mat-tab label="Home"> <nav mat-tab-nav-bar>
+							<a mat-tab-link 
+								*ngFor="let tabLink of HomeTabLinks let i = index" id={{tabLink.label}} 
+								routerLink="{{tabLink.link}}" routerLinkActive="active">
+								{{tabLink.label}} </a>
+						</nav> </mat-tab> <mat-tab
+							label="Administration">
+						<nav mat-tab-nav-bar>
+							<a mat-tab-link
+								*ngFor="let tabLink of AdministrationTabLinks let i = index"
+								routerLink="{{tabLink.link}}" routerLinkActive="active">
+								{{tabLink.label}} </a>
+						</nav>
+						</mat-tab> <mat-tab label="Call-in Part List">
+						<nav mat-tab-nav-bar>
+							<a mat-tab-link
+								*ngFor="let tabLink of CallInPartListTabLinks let i = index"
+								routerLink="{{tabLink.link}}" routerLinkActive="active">
+								{{tabLink.label}} </a>
+						</nav>
+						</mat-tab> <mat-tab label="Transfer Part List">
+						<nav mat-tab-nav-bar>
+							<a mat-tab-link
+								*ngFor="let tabLink of TransferPartListTabLinks let i = index"
+								routerLink="{{tabLink.link}}" routerLinkActive="active">
+								{{tabLink.label}} </a>
+						</nav>
+						</mat-tab> <mat-tab label="Voucher">
+						<nav mat-tab-nav-bar>
+							<a mat-tab-link
+								*ngFor="let tabLink of VoucherTabLinks let i = index"
+								routerLink="{{tabLink.link}}" routerLinkActive="active">
+								{{tabLink.label}} </a>
+						</nav>
+						</mat-tab> <mat-tab label="Warranty Claim">
+						<nav mat-tab-nav-bar>
+							<a mat-tab-link
+								*ngFor="let tabLink of WarrantyClaimTabLinks let i = index"
+								routerLink="{{tabLink.link}}" routerLinkActive="active">
+								{{tabLink.label}} </a>
+						</nav>
+						</mat-tab> <mat-tab label="Maintenance">
+						<nav mat-tab-nav-bar>
+							<a mat-tab-link
+								*ngFor="let tabLink of MaintenanceTabLinks let i = index"
+								routerLink="{{tabLink.link}}" routerLinkActive="active">
+								{{tabLink.label}} </a>
+						</nav>
+						</mat-tab> <mat-tab label="Audit Trail">
+						<nav mat-tab-nav-bar>
+							<a mat-tab-link
+								*ngFor="let tabLink of AuditTrailTabLinks let i = index"
+								routerLink="{{tabLink.link}}" routerLinkActive="active">
+								{{tabLink.label}} </a>
+						</nav>
+						</mat-tab> <mat-tab label="WRP">
+						<nav mat-tab-nav-bar>
+							<a mat-tab-link *ngFor="let tabLink of WRPTabLinks let i = index"
+								routerLink="{{tabLink.link}}" routerLinkActive="active">
+								{{tabLink.label}} </a>
+						</nav>
+
+						</mat-tab> </mat-tab-group>
+					</td>
+
+				</tr>
+
+			</tbody>
+		</table>
+
+
+		<table width="970" align="center" border="0" cellspacing="0"
+			cellpadding="0" height="18">
+			<tbody>
+				<tr>
+					<td width="10%"><a name="linkgotobottom" class="returntotop"
+						href="javascript:goToBottom()">go to bottom of the page</a></td>
+					<td width="10%" align="right" class="data">Logged in as
+						vc027886</td>
+				</tr>
+
+				<tr>
+					<td class="alertRed" align="left" id="messagesId"></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+		<div class="container">
+			<br>
+			<!-- <h2 style="text-align: center;">CQP/WRP RESTful API and Angular Client Prototype</h2> -->
+			<!-- {{title}}</h2> -->
+			<hr>
+			<div class="card">
+				<div class="card-body">
+					<router-outlet></router-outlet>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+
+
+				<table width="970" align="center" border="0" cellspacing="0"
+					cellpadding="0">
+					<tbody>
+						<tr>
+							<td id="footer1" align="right"><a name="linkgototop"
+								class="returntotop" href="javascript:goToTop()">return to
+									top of the page </a> &nbsp;
+								<table width="100%" bgcolor="#000000" border="0">
+									<tbody>
+										<tr></tr>
+										<tr>
+											<td align="left"><font face="Arial" color="#ffffff"
+												size="1">&nbsp;<a class="appnav"
+													href="javascript:popupWindowResized('/CQPWeb/html/honda_privacy.htm','newWindow',500,780);">Privacy&nbsp;</a>&nbsp;
+													<a class="appnav"
+													href="javascript:popupWindowResized('/CQPWeb/html/terms_of_use.htm','newWindow',500,780);">Terms
+														of Use</a></font></td>
+											<td align="right"><font face="Arial" color="#ffffff"
+												size="1">Copyright </font><font face="Times New Roman"
+												color="#ffffff" size="1">© </font><font face="Arial"
+												color="#ffffff" size="1">2005 - 2020 Honda of America
+													Mfg., Inc.</font></td>
+										</tr>
+									</tbody>
+								</table> <a name="bottom"></a></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+		</footer>
+
+	</tbody>
+</table>
+
+
+

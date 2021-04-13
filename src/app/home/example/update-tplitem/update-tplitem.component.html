@@ -1,0 +1,29 @@
+<div class="example-screen-title"> 
+Example - Call Update API with Angular and Sprint Boot
+</div>
+<br>
+<div style="width: 400px;">
+<!-- <div [hidden]="submitted" style="width: 400px;"> -->
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Item Detail Id</label>
+      <input type="text" class="form-control" id="itemDetailId" required [(ngModel)]="tplitem.itemDetailId" name="itemDetailId">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Short Part No.</label>
+      <input type="text" class="form-control" id="itemId" required [(ngModel)]="tplitem.detailId" name="itemId">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Sequence No</label>
+      <input type="text" class="form-control" id="sequenceNo" required [(ngModel)]="tplitem.sequenceNo" name="sequenceNo">
+    </div>
+
+    <button type="submit" class="cqp-btn">Update</button>
+    
+   &nbsp;
+    <button (click)="gotoList()" class="cqp-btn">Back to TPL Item List</button><br>
+
+  </form>
+</div>

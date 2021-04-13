@@ -1,0 +1,30 @@
+.details{
+    font-size: 0.7em;
+}
+.panel-heading{
+    font-weight: bold;
+    font-size: small;
+}
+.list-row {
+	background-color: #F6F3B5;
+}
+
+.list-header {
+	background-color: #D3D9A4;
+}
+
+.table1 {
+    border-spacing: 0em;
+    
+}
+
+.bordercolor{
+    border: solid;
+}
+.newtable{
+    float: left;
+    border-left:1px solid rgba(0, 0, 0, 0.5);
+    border-right:1px solid rgba(0, 0, 0, 0.5);
+    border-bottom:1px solid rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+}

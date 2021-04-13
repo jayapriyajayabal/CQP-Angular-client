@@ -1,0 +1,47 @@
+<div class="example-screen-title"> 
+Example - Angular material table (Features)
+</div>
+<br>
+<div>
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="statusId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+      <td mat-cell *matCellDef="let element"> {{findBySpecField(statues, 'statusId', element.statusId, 'statusName')}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="itemDetailId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Detail Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.itemDetailId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sequenceNo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Sequence No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.sequenceNo}} </td>
+    </ng-container>
+
+     <ng-container matColumnDef="dueDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Due Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.dueDate | date:'mediumDate'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="reopenedDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Reopened Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.reopenedDate | date:'mediumDate'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="reopenedDueDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Reopened Due Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.reopenedDueDate | date:'mediumDate'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="conclusionId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Conclusion </th>
+      <td mat-cell *matCellDef="let element"> {{findBySpecField(conclusions, 'conclusionId', element.conclusionId, 'conclusionDesc')}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[10, 20, 30, 40, 50, 100]" showFirstLastButtons></mat-paginator>
+</div>

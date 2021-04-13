@@ -1,0 +1,33 @@
+export class TPLItem {
+	itemDetailId: number
+	detailId: string
+	sequenceNo: string
+	visualInspectionDetail: string
+	vip: string
+	functionInspectionDetail: string
+	fip: string
+	supplierAnalysisSummary: string
+	categoryId: number
+	supplierResponsibilityPct: number
+	cmReportNo: string
+	dueDate: string
+	reopenedDate: string
+	reopenedDueDate: string
+	reopenedAcceptedDate: string
+	reopenedSubmittedDate: string
+	customerContention: string
+	lotNo: string
+	lastUpdateByName: string
+	lastUpdatedDate: string
+	submittedDate: string
+	conclusionId: number
+	statusId: number
+	extensionFlag: string
+	rejectFlag: string
+	version: string
+	returnFlag: string
+	functionalInspectionReanalysisDetail: string
+	visualInspectionReanalysisDetail: string
+	returnedDate: string
+	pwgReviewFlag: string
+}

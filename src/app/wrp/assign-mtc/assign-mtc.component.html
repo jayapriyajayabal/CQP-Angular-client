@@ -1,0 +1,299 @@
+<div class="screen-title">WRP - WRP MTC Model Builder</div>
+<br>
+<form>
+	<div class="grid-container">
+		<div class="div1">
+			<table>
+				<tr>
+					<td>WRP</td>
+					<td><input type="text" name="refNo" size="24" value=""
+						class="data"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>PART CATEGORY&nbsp;&nbsp;</td>
+					<td><select name="status_name" class="dropdown data"><option
+								value="ALL" selected="selected"></option>
+							<option value="category1">Category 1</option>
+							<option value="category2">Category 2</option>
+							<option value="category3">Category 3</option>
+							<option value="category4">Category 4</option>
+					</select></td>
+				</tr>
+			</table>
+		</div>
+		<div class="div2">
+			<table>
+				<tr>
+					<td valign="top">MODEL&nbsp;&nbsp;</td>
+					<td><div>
+							<select id="thelist" size="5">
+								<option value="1">UNKNOWN</option>
+								<option value="2">LEGEND</option>
+								<option value="3">CL</option>
+								<option value="4">CITY</option>
+								<option value="5">ZDX</option>
+								<option value="6">ZDX-1</option>
+								<option value="7">ZDX-2</option>
+							</select>
+						</div></td>
+					<td valign="bottom">&nbsp;&nbsp;
+						<button (click)="assignMTC()" type="button"
+							class="cqp-btn btn-space">Search</button>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+
+		<div class="div3">
+			<br> <br>
+			<table border="1" width="100%" class="colheadactive">
+				<thead>
+					<tr bgcolor="#E9E9E9">
+						<th width="70" scope="col">Model</th>
+						<th width="6" scope="col">Plant</th>
+						<th width="4" scope="col">Year</th>
+						<th width="4" scope="col">MTC</th>
+						<th width="4" scope="col">Type</th>
+						<th width="4" scope="col">Option</th>
+						<th width="4" scope="col">Feature</th>
+						<th width="4" scope="col">Select</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Civic</td>
+						<td>North America Ohio</td>
+						<td>2004</td>
+						<td>2004-MTC</td>
+						<td>Civic</td>
+						<td>Wholesale</td>
+						<td>Auto Pilot</td>
+						<td><input type="checkbox" name="select" /></td>
+					</tr>
+					<tr>
+						<td>CR-V</td>
+						<td>North America Ohio</td>
+						<td>2004</td>
+						<td>2004-MTC</td>
+						<td>Civic</td>
+						<td>Wholesale</td>
+						<td>Auto Pilot</td>
+						<td><input type="checkbox" name="select" /></td>
+					</tr>
+					<tr>
+						<td>Accord</td>
+						<td>North America Ohio</td>
+						<td>2004</td>
+						<td>2004-MTC</td>
+						<td>Civic</td>
+						<td>Wholesale</td>
+						<td>Auto Pilot</td>
+						<td><input type="checkbox" name="select" /></td>
+					</tr>
+					<tr>
+						<td>Pilot</td>
+						<td>North America Ohio</td>
+						<td>2004</td>
+						<td>2004-MTC</td>
+						<td>Civic</td>
+						<td>Wholesale</td>
+						<td>Auto Pilot</td>
+						<td><input type="checkbox" name="select" /></td>
+					</tr>
+					<tr>
+						<td>CRV</td>
+						<td>North America Ohio</td>
+						<td>2004</td>
+						<td>2004-MTC</td>
+						<td>Civic</td>
+						<td>Wholesale</td>
+						<td>Auto Pilot</td>
+						<td><input type="checkbox" name="select"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="div4">
+			<br> <br>
+			<table>
+
+				<tr>
+					<td align="left">
+						<button (click)="newoverrideForm.reset()" type="submit"
+							class="cqp-btn">Update</button>
+					</td>
+					<td><button (click)="newoverrideForm.reset()" type="submit"
+							class="cqp-btn">Delete</button></td>
+					<td><button (click)="newoverrideForm.reset()" type="submit"
+							class="cqp-btn">Cancel</button></td>
+					<td><button (click)="newoverrideForm.reset()" type="submit"
+							class="cqp-btn">Cancel</button></td>
+				</tr>
+				<tr>
+
+				</tr>
+			</table>
+
+		</div>
+		<div class="div5"></div>
+		<div class="div6" id="table-scroll">
+			<table border="1" width="100%" class="colheadactive">
+				<thead>
+					<tr bgcolor="#E9E9E9">
+						<th scope="col">Part Category</th>
+						<th scope="col">WRP</th>
+						<th scope="col">Model</th>
+						<th scope="col">Plant</th>
+						<th scope="col">Year</th>
+						<th scope="col">MTC</th>
+						<th scope="col">Type</th>
+						<th scope="col">Option</th>
+						<th scope="col">Features</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr>
+						<td>Category part 1</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>Pilot</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part A</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>Accord</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-2</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part B</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>Cicic</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-3</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part C</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>Cicic</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-4</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part D</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>CRV</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-5</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part D</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>CRV</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-5</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part D</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>CRV</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-5</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part D</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>CRV</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-5</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part D</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>CRV</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-5</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part D</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>CRV</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-5</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part D</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>CRV</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-5</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part D</td>
+						<td>ID-WRP-q039478598234587</td>
+						<td>CRV</td>
+						<td>North America Plant</td>
+						<td>2014</td>
+						<td>MTC-5</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</form>

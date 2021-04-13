@@ -1,0 +1,38 @@
+/* table {
+  width: 100%;
+} */
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+
+.newpartoverride {
+	position: relative;
+}
+
+table td, table td * {
+    vertical-align: top; 
+}
+
+.mat-cell {
+    color: black;
+}
+
+mat-paginator {
+	display: flex;
+  position: absolute;
+  top:30;  
+  text-align: center;
+  margin: auto; 
+}
+
+mat-header-cell, mat-cell {
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+    font-family: Arial, helvetica, sans serif, MS Sans Serif;
+    font-size: 12px;
+}
+
+
+

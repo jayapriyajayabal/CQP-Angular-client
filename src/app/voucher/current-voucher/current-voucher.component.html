@@ -1,0 +1,288 @@
+<div class="screen-title">
+    Voucher - Current Voucher
+</div>
+<br>
+
+
+<b>Update Current Voucher Summary:</b>
+<p style="font-size: small;">Select a Supplier to display their Current Voucher Summary</p>
+
+<table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+    <tbody>
+        &nbsp;
+        <tr>
+            <td width="2%">Supplier:</td>
+            <td width="45" bgcolor="#ffffff">
+                <select #s (change)="callSupplier(s.value)" style="width: 30%;">
+                    <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
+                        {{supplier.supplierNo}}
+                        {{supplier.supplierName}}</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<table class="table table-borderless">
+    <tbody>
+        <tr>
+            <td>
+                <div class="panel-heading">
+                    Supplier Number:
+                </div>
+                <div>
+                    140290
+                </div>
+            </td>
+            <td>
+                <div class="panel-heading">
+                    Voucher Number:
+                </div>
+                <div>
+                    CQ1402900121
+                </div>
+            </td>
+            <td>
+                <div class="panel-heading">
+                    Claim Cluster:
+                </div>
+                <div>
+                    2
+                </div>
+            </td>
+            <td>
+                <div class="panel-heading">
+                    Issue Date:
+                </div>
+                <div>
+
+                </div>
+            </td>
+            <td>
+                <div class="panel-heading">
+                    Due Date:
+                </div>
+                <div>
+
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="panel-heading">
+                    Attention:
+                </div>
+                <div>
+
+                </div>
+            </td>
+            <td>
+                <div class="panel-heading">
+                    Return To:
+                </div>
+                <div>
+
+                </div>
+            </td>
+            <td>
+                <div class="panel-heading">
+                    Phone Number:
+                </div>
+                <div>
+
+                </div>
+            </td>
+            <td>
+                <div class="panel-heading">
+                    Fax Number:
+                </div>
+                <div>
+
+                </div>
+            </td>
+            <td>
+                <div class="panel-heading">
+                    Status:
+                </div>
+                <div>
+                    NEW
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<p style="font-size: smaller;"><b>TITLE:</b> N.A.CQ DENSO INTERNATIONAL AMERICA 97ki Quarter - 2(07-01-20 to 09-30-20)
+</p>
+<div class="slide-left">
+    <table class="table table-bordered bordercolor" style="border: solid;">
+        <colgroup span="6"></colgroup>
+        <colgroup span="5"></colgroup>
+        <colgroup span="2"></colgroup>
+        <thead>
+            <tr class="list-header">
+                <th class="bordercolor">PART#</th>
+                <th class="bordercolor">MY</th>
+                <th class="bordercolor">MKT</th>
+                <th class="bordercolor">MODEL TYPE</th>
+                <th class="bordercolor">REPLACEMENT / LABOR</th>
+                <th class="bordercolor">CLAIMS</th>
+                <th class="bordercolor" colspan="5" scope="colgroup">WARRANTY COSTS</th>
+                <th class="bordercolor">SUPPLIER RESP</th>
+                <th class="bordercolor">SUPPLIER CHARGE</th>
+            </tr>
+            <tr class="list-header ">
+                <th class="bordercolor" colspan="6" scope="colgroup"></th>
+                <th class="bordercolor">PARTS</th>
+                <th class="bordercolor">LABOR</th>
+                <th class="bordercolor">HANDLING</th>
+                <th class="bordercolor">OTHER</th>
+                <th class="bordercolor">TOTAL</th>
+                <th class="bordercolor" colspan="2" scope="colgroup">* as Fixed Resp exists ** as force create suplr
+                    resp pct exist</th>
+            </tr>
+            <tr>
+                <th class="bordercolor" colspan="13">HAM</th>
+            </tr>
+        </thead>
+        <tr class="bordercolor">
+            <td class="bordercolor">190106A0A01</td>
+            <td class="bordercolor">2018</td>
+            <td class="bordercolor">KA</td>
+            <td class="bordercolor">ACCORD</td>
+            <td class="bordercolor">REPLACEMENT</td>
+            <td class="bordercolor">21</td>
+            <td class="bordercolor">$26.00</td>
+            <td class="bordercolor">$270.60</td>
+            <td class="bordercolor">$26.73</td>
+            <td class="bordercolor">$707.57</td>
+            <td class="bordercolor">$7497.50</td>
+            <td class="bordercolor">5.00%</td>
+            <td class="bordercolor">$374.88</td>
+        </tr>
+    </table>
+</div>
+<table class="table newtable" style="width: 27%; ">
+    <tr>
+        <th>FOR HNA ACCOUNTING USE ONLY:</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>SUPPLIER NUMBER</th>
+        <td>140290</td>
+    </tr>
+    <tr>
+        <th>INVOICE NUMBER</th>
+        <td>CQ1402900121</td>
+    </tr>
+    <tr>
+        <th>PO#</th>
+        <td>AWARRANTY</td>
+    </tr>
+    <tr>
+        <th>INVOICE DATE</th>
+        <td>01/05/2021</td>
+    </tr>
+</table>
+<table class="table newtable" style="width: 40%;">
+    <th>DEPT#</th>
+    <th>ACCOUNT#</th>
+    <th>Plant</th>
+    <th>PROJECT NUMBER</th>
+    <th>TOTAL DEBIT AMOUNT</th>
+    <tr>
+        <td>A6179</td>
+        <td>69081</td>
+        <td>HAM</td>
+        <td>CQHAM</td>
+        <td>$23,052.68</td>
+    </tr>
+    <tr>
+        <td>A6179</td>
+        <td>69081</td>
+        <td>HAM</td>
+        <td>CQHAM</td>
+        <td>$23,052.68</td>
+    </tr>
+    <tr>
+        <td>A6179</td>
+        <td>69081</td>
+        <td>HAM</td>
+        <td>CQHAM</td>
+        <td>$23,052.68</td>
+    </tr>
+    <tr>
+        <td>A6179</td>
+        <td>69081</td>
+        <td>HAM</td>
+        <td>CQHAM</td>
+        <td>$23,052.68</td>
+    </tr>
+    <tr>
+        <td>A6179</td>
+        <td>69081</td>
+        <td>HAM</td>
+        <td>CQHAM</td>
+        <td>$23,052.68</td>
+    </tr>
+    <tr>
+        <td>A6179</td>
+        <td>69081</td>
+        <td>HAM</td>
+        <td>CQHAM</td>
+        <td>$23,052.68</td>
+    </tr>
+    <tr>
+        <td>A6179</td>
+        <td>69081</td>
+        <td>HAM</td>
+        <td>CQHAM</td>
+        <td>$23,052.68</td>
+    </tr>
+</table>
+<table class="table newtable" style="width: 32%;">
+    <tr>
+        <th>SUB TOTAL THIS VOUCHER US FUNDS</th>
+        <td>$26,976.56</td>
+    </tr>
+    <tr>
+        <th>ADDITIONAL SHIPPING CHARGES</th>
+        <td>$8894.58</td>
+    </tr>
+    <tr>
+        <th>SHIPPING PERCENT RESPONSIBILITY</th>
+        <td>6.83%</td>
+    </tr>
+    <tr>
+        <th>ADDITIONAL CHARGES(SHIPPING*RESP</th>
+        <td>$607.0</td>
+    </tr>
+    <tr>
+        <th>OVERALL ADJUSTMENTS</th>
+        <td>$0.00</td>
+    </tr>
+    <tr>
+        <th>DIAGNOSTIC CHARGES</th>
+        <td>$0.00</td>
+    </tr>
+    <tr>
+        <th>TOTAL THIS VOUCHER US FUNDS</th>
+        <td>$27</td>
+    </tr>
+</table>
+<div class="slide-left">
+    <p style="font-size: smaller;"><b>NOTE:</b> VOUCHERS NOT RETURNED TO MARKET QUALITY DEPARTMENT BY THE DUE DATE WILL
+        RESULT IN AN AUTOMATIC DEBIT AGAINST YOUR MONTHLY OEM CHECK</p>
+</div>
+<table class="table table-borderless">
+    <tr>
+        <td style="width: 33%;"></td>
+        <td align="right"><button (click)="toggle()" class="cqp-btn">Save</button> &nbsp;
+            &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp; &nbsp;<button
+                class="cqp-btn">Comments</button>&nbsp;&nbsp;<button (click)="toggle()" class="cqp-btn">Send For
+                Approval</button> &nbsp;
+            &nbsp;<button class="cqp-btn">Details</button> &nbsp; &nbsp;<button class="cqp-btn">Export
+                Details</button>&nbsp;&nbsp;<button (click)="toggle()" class="cqp-btn">Export Claim Data</button> &nbsp;
+            &nbsp;<button class="cqp-btn">Print Voucher</button></td>
+    </tr>
+</table>

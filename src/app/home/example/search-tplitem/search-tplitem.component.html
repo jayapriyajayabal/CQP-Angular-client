@@ -1,0 +1,118 @@
+<div class="example-screen-title"> 
+Example - Call API with Angular and Sprint Boot
+</div>
+<br>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>List of Transfer Part List Items</h4>
+  </div>
+
+  <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+    <tbody>
+      &nbsp;
+      <tr>
+        <td width="2%">Supplier:</td>
+        <td width="45" bgcolor="#ffffff">
+          <select #s (change)="callSupplier(s.value)" style="width: 30%;">
+            <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">{{supplier.supplierNo}}
+              {{supplier.supplierName}}</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="supplier-panel-body">
+    <table class="table table-striped" cellspacing="1" cellpadding="4" bordercolor="white" border="6">
+      <tbody>
+        <tr>
+          <td align="margin-left">
+
+            <div class="panel-heading">
+              TPL Item Status:
+            </div>
+            <div>
+              <select #s (change)="callStatus(s.value)" style="width: 50%;">
+                <option value="0">All</option>
+                <option *ngFor="let status of statues" value="{{status.statusId}}">{{status.statusName}}</option>
+              </select>
+            </div>
+          </td>
+          <td align="margin-left">
+            <div class="panel-heading">
+              Conclusion:
+            </div>
+
+            <div>
+              <select #c (change)="callConcluision(c.value)" style="width: 50%;">
+                <option value="0">All</option>
+                <option *ngFor="let conclusion of conclusions" value="{{conclusion.conclusionId}}">
+                  {{conclusion.conclusionDesc}}</option>
+              </select>
+            </div>
+          </td>
+
+          <td align="margin-left">
+            <div class="panel-heading">
+              &nbsp;
+            </div>
+            <button (click)="getTPLItemsListByStatusAndConclusion(s.value, c.value)" class="cqp-btn">Search</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+    <div class="panel-body">
+      <table class="table table-striped" cellspacing="1" cellpadding="4" bordercolor="white" border="6">
+        <thead>
+          <tr class="list-header">
+            <th></th>
+            <th>Status</th>
+            <th>TPL Ref. No.</th>
+            <th>Short Part No.</th>
+            <th>Seq. No.</th>
+            <th>Model Year</th>
+            <th>Model Name</th>
+            <th>Pickup Date</th>
+            <th>Due Date</th>
+            <th>Reopen Due Date</th>
+            <th>Dealer No</th>
+            <th>Claim No</th>
+            <th>ROYR </th>
+            <th>Conclusion</th>
+            <th>Mkt</th>
+            <th>Reviewed?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tplitem of tplitems | async" class="list-row">
+            <td><input type="checkbox" name="checkedPartno" value="0"></td>
+            <td align="margin-left">{{findBySpecField(statues, 'statusId', tplitem.statusId, 'statusName')}}</td>
+            <!-- <td align="margin-left">{{tplitem.statusId}}</td> -->
+
+            <td align="margin-left">{{tplitem.itemDetailId}}</td>
+            <td align="margin-left">{{tplitem.detailId}}</td>
+            <td align="margin-left">{{tplitem.sequenceNo}}</td>
+            <td align="margin-left">2012</td>
+            <td align="margin-left">CRV</td>
+            <td align="margin-left">{{tplitem.lastUpdatedDate | date:'shortDate'}}</td>
+            <td align="margin-left">{{tplitem.dueDate | date:'shortDate'}}</td>
+            <td align="margin-left">{{tplitem.reopenedDueDate | date:'shortDate'}}</td>
+            <td align="margin-left">12345</td>
+            <td align="margin-left">710710</td>
+            <td align="margin-left">2016</td>
+            <!-- <td align="margin-left">{{tplitem.conclusionId}}</td> -->
+            <td align="margin-left">
+              {{findBySpecField(conclusions, 'conclusionId', tplitem.conclusionId, 'conclusionDesc')}}</td>
+            <td align="margin-left">KA</td>
+            <td><input type="checkbox" name="checkedPartno" value="0"></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

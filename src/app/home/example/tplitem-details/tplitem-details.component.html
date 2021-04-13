@@ -1,0 +1,42 @@
+<div class="example-screen-title"> 
+Example - Call API with Angular and Sprint Boot
+</div>
+<br>
+
+<div *ngIf="tplitem">
+  <div>
+    <label><b>Item Detail Id: </b></label> {{tplitem.itemDetailId}}
+  </div>
+  <div>
+    <label><b>Short Part No.: </b></label> {{tplitem.detailId}}
+  </div>
+  <div>
+    <label><b>Sequence No: </b></label> {{tplitem.sequenceNo}}
+  </div>  
+
+  <div>
+    <label><b>LastUpdate Date: </b></label> {{tplitem.lastUpdatedDate | date:'shortDate'}}
+  </div>
+  <div>
+    <label><b>Due Date: </b></label> {{tplitem.dueDate | date:'shortDate'}}
+  </div>
+  <div>
+    <label><b>Reopen Due date: </b></label> {{tplitem.reopenedDueDate | date:'shortDate'}}
+  </div>
+
+  <div>
+    <label><b>Last Updated By: </b></label> {{tplitem.lastUpdateByName}}
+  </div>
+
+  <div>
+    <label><b>Functional Inspection Reanalysis: </b></label> {{tplitem.functionalInspectionReanalysisDetail}}
+  </div>
+  <div>
+    <label><b>Function Inspection Detail: </b></label> {{tplitem.functionInspectionDetail}}
+  </div>
+
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="cqp-btn">Back to TPL Item List</button><br>

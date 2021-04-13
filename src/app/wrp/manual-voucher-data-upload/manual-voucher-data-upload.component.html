@@ -1,0 +1,362 @@
+<div class="screen-title">WRP - Manual Voucher Data Upload</div>
+
+<br>
+
+<form>
+
+	<div class="grid-container">
+		<div class="div1 btn-group-vertical"
+			style="margin: 40px; margin-top: 1px">
+			<p>WRP: xxxxxx-xxxxx-xxxxx</p>
+			<br>
+			<button type="button" class="cqp-btn btn-space-last">Upload
+				Data</button>
+			<button type="button" class="cqp-btn btn-space-last">Upload
+				Data And Create Voucher</button>
+			<button (click)="addUpdateImages()" type="button"
+				class="cqp-btn btn-space-last">Clear</button>
+			<button type="button" class="cqp-btn btn-space-last">Import
+				Data From Excel File</button>
+		</div>
+		<div class="div2 table-scroll">
+			<table id="ctbl-004" border="1" >
+				<thead>
+					<tr bgcolor="#E9E9E9">
+						<th scope="col">Part_Category</th>
+						<th scope="col">War_Claim_Date</th>
+						<th scope="col">Partno_Actual</th>
+						<th scope="col">Partname_Actual</th>
+						<th scope="col">Partno_Actual_Short</th>
+						<th scope="col">Repl_Part_Nov
+						<th scope="col">Repl_Part_Name</th>
+						<th scope="col">Claim_Part_No</th>
+						<th scope="col">Claim_Part_Name</th>
+						<th scope="col">VIN</th>
+						<th scope="col">ContDesc</th>
+						<th scope="col">Ecufalcd</th>
+						<th scope="col">DaysServ</th>
+						<th scope="col">Warodom</th>
+						<th scope="col">Partschg</th>
+						<th scope="col">Laborchg</th>
+						<th scope="col">Hdlgchg</th>
+						<th scope="col">Totalchg</th>
+						<th scope="col">Afoffdt</th>
+						<th scope="col">Rodate</th>
+						<th scope="col">Recdt</th>
+						<th scope="col">Claim_No</th>
+						<th scope="col">Dealer_No</th>
+						<th scope="col">Royr</th>
+						<th scope="col">State</th>
+						<th scope="col">Vehdest</th>
+						<th scope="col">MTCModel</th>
+						<th scope="col">MTCType</th>
+						<th scope="col">Defectcd</th>
+						<th scope="col">Prilabcd</th>
+						<th scope="col">OrigDist</th>
+						<th scope="col">RespDist</th>
+						<th scope="col">Sublet1</th>
+						<th scope="col">Sublet2</th>
+						<th scope="col">Subl_Amt</th>
+						<th scope="col">Cstcde</th>
+						<th scope="col">Year</th>
+						<th scope="col">Factory</th>
+						<th scope="col">Model_Name</th>
+						<th scope="col">Transmission</th>
+						<th scope="col">Eng_Size</th>
+						<th scope="col">Doors</th>
+						<th scope="col">Shift</th>
+						<th scope="col">Engine_Disp</th>
+						<th scope="col">AF_Mth</th>
+						<th scope="col">RO_Mth</th>
+						<th scope="col">Campaign_Code</th>
+						<th scope="col">Exch_Rate</th>
+						<th scope="col">Proc_Line_AF_Off</th>
+						<th scope="col">Record_Desc</th>
+						<th scope="col">Record_Count</th>
+						<th scope="col">Repl_Part_Appl</th>
+						<th scope="col">Grade_Short</th>
+						<th scope="col">Clm_Labor_Hrs_Qty</th>
+						<th scope="col">Days_In_Serv_Qty</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+					<tr>
+						<td>Category part 1</td>
+						<td>12/21/2019</td>
+						<td>Pilot</td>
+						<td>North America</td>
+						<td>2014</td>
+						<td>MTC-1</td>
+						<td>Auto</td>
+						<td>Any one</td>
+						<td>Manually control</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</form>
