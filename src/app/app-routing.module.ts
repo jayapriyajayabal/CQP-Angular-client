@@ -61,7 +61,7 @@ import { VoucherComponent } from './audit-trail/voucher/voucher.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'tplitem', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'tplitems', component: TPLItemListComponent },
   { path: 'add', component: CreateTPLItemComponent },
   { path: 'search', component: SearchTPLItemComponent },

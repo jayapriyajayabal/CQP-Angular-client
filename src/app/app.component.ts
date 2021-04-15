@@ -58,16 +58,16 @@ export class AppComponent {
  
        ];		
 	
- HomeTabLinks = [
-	    {label: 'Home', link: 'home'},
-	    //The links below are temporary code used for showing how Angualar and RESTFul API work together for CQP/WRP project
-	    {label: 'API Persistence Example', link: 'tplitems'}, 
-	    {label: 'Material Table Example', link: 'table' },
-	    {label: 'Insert and Stored Procedure Example', link: 'add'}, 
-	    {label: 'Search API Example', link: 'search'}, 
-	    {label: 'WRP Database Example', link: 'part-override'},
-	    {label: 'Proposed UX', link: 'proposed-ux'},
-	  ];
+//  HomeTabLinks = [
+// 	    {label: 'Home', link: 'home'},
+// 	    //The links below are temporary code used for showing how Angualar and RESTFul API work together for CQP/WRP project
+// 	    {label: 'API Persistence Example', link: 'tplitems'}, 
+// 	    {label: 'Material Table Example', link: 'table' },
+// 	    {label: 'Insert and Stored Procedure Example', link: 'add'}, 
+// 	    {label: 'Search API Example', link: 'search'}, 
+// 	    {label: 'WRP Database Example', link: 'part-override'},
+// 	    {label: 'Proposed UX', link: 'proposed-ux'},
+// 	  ];
 	  	
  WRPTabLinks = [
 	    {label: 'Add new WRP', link: 'add-new-wrp'},

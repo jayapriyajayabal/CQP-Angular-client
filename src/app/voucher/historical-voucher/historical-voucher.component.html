@@ -4,6 +4,69 @@ Voucher - Historical Voucher
 <br>
 
 
-<div class="slide-left">
-<p>Under Construction .....</p>
-</div>
+<b>Historical Voucher Summary List:</b>
+<p style="font-size: small;">Select a Supplier to display their Historical Voucher Summary</p>
+
+<table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+    <tbody>
+        &nbsp;
+        <tr>
+            <td width="2%">Supplier:</td>
+            <td width="45" bgcolor="#ffffff">
+                <select #s (change)="callSupplier(s.value)" style="width: 30%;">
+                    <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
+                        {{supplier.supplierNo}}
+                        {{supplier.supplierName}}</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+
+
+<table class="table">
+    <tr>
+        <td><p style="font-size: x-small;">Click on a record to see th Voucher Summary below</p></td>
+        <td style="color:  brown;font-weight: bold;"> 60 records</td>
+        <td><select name="" id="">
+            <option value="1">1</option>
+        </select><a href="">&nbsp;Next</a></td>
+    </tr>
+</table>
+<table class="table table-hover">
+    <thead>
+        <tr class="list-header">
+            <td>Issue Date</td>
+            <td>Year</td>
+            <td>Quarter</td>
+            <td>Voucher</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="width: 25%;"><a href="">01/08/2021</a></td>
+            <td style="width: 25%;">2020</td>
+            <td style="width: 25%;">2</td>
+            <td style="width: 25%;">N.A.CQ DENSO INTERNATIONAL AMERICA 97ki Quarter - 2 (07-01-20 to 09-30-20)</td>
+        </tr>
+        <tr>
+            <td style="width: 25%;"><a href="">01/08/2021</a></td>
+            <td style="width: 25%;">2020</td>
+            <td style="width: 25%;">2</td>
+            <td style="width: 25%;">N.A.CQ DENSO INTERNATIONAL AMERICA 97ki Quarter - 2 (07-01-20 to 09-30-20)</td>
+        </tr>
+        <tr>
+            <td style="width: 25%;"><a href="">01/08/2021</a></td>
+            <td style="width: 25%;">2020</td>
+            <td style="width: 25%;">2</td>
+            <td style="width: 25%;">N.A.CQ DENSO INTERNATIONAL AMERICA 97ki Quarter - 2 (07-01-20 to 09-30-20)</td>
+        </tr>
+        <tr>
+            <td style="width: 25%;"><a href="">01/08/2021</a></td>
+            <td style="width: 25%;">2020</td>
+            <td style="width: 25%;">2</td>
+            <td style="width: 25%;">N.A.CQ DENSO INTERNATIONAL AMERICA 97ki Quarter - 2 (07-01-20 to 09-30-20)</td>
+        </tr>
+    </tbody>
+</table>
