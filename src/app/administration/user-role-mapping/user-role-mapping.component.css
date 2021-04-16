@@ -1,0 +1,14 @@
+.details{
+    font-size: 0.9em;
+}
+.panel-heading{
+    font-weight: bold;
+    font-size: small;
+}
+.list-row {
+	background-color: #F6F3B5;
+}
+
+.list-header {
+	background-color: #D3D9A4;
+}

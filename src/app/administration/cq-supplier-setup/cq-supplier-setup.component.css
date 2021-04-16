@@ -3,3 +3,17 @@
     margin-bottom: 4px;
     width: 100px;
 }
+.details{
+    font-size: 12px;
+}
+.panel-heading{
+    font-weight: bold;
+    font-size: small;
+}
+.list-row {
+	background-color: #F6F3B5;
+}
+
+.list-header {
+	background-color: #D3D9A4;
+}
