@@ -52,7 +52,7 @@ export class AppComponent {
        {label: 'Transfer Part List', link: '/transfer-part-current'},
        {label: 'Voucher', link: '/current-voucher'},
        {label: 'Warranty Claim', link: '/daily-warranty-claim'},
-       {label: 'Maintenance', link: '/manage-message-center'},
+       {label: 'Maintenance', link: '/shipping-cost'},
        {label: 'Audit Trail', link: '/call-in'},
        {label: 'WRP', link: '/add-new-wrp'},
  
