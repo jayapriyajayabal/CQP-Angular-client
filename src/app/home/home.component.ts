@@ -5,7 +5,8 @@ import { HomeDialogComponent } from './home.dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import * as XLSX from 'xlsx';
-
+import { DownloadService } from "../service/download.service";
+import { saveAs } from 'file-saver';
 
 //import { jsonpFactory } from '@angular/http/src/http_module';
 @Component({
@@ -22,12 +23,20 @@ export class HomeComponent implements OnInit {
   private delete =  this.deleteAlertId();
   private errorResponse : any;
   constructor(private router: Router,
-   private alertService: AlertService,public dialog: MatDialog) { }
+   private alertService: AlertService,
+   public dialog: MatDialog,
+   private DownloadService: DownloadService) { }
 
   ngOnInit() {
     this.getAllAlerts();
     this.deleteAlertId();
     
+  }
+
+  downloadFile(): void {
+    this.DownloadService
+      .download()
+      .subscribe(blob => saveAs(blob, "voucher-sheet.xlsx"));
   }
 
   exportexcel(sheetName, tableName): void 
