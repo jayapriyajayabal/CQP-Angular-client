@@ -3,7 +3,59 @@ Maintenance - Manage Categories
 </div>
 <br>
 
-
-<div class="slide-left">
-<p>Under Construction .....</p>
+<div class="example-screen-title">
+    Manage Categories:
 </div>
+<div class="details">&ensp;Provide criteria to search for the categories</div>
+<hr>
+
+<table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+    <tbody>
+        &nbsp;
+        <tr>
+            <td width="2%">Supplier:</td>
+            <td width="45" bgcolor="#ffffff">
+                <select #s (change)="callSupplier(s.value)" style="width: 30%;">
+                    <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
+                        {{supplier.supplierNo}}
+                        {{supplier.supplierName}}</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<table class="table table-borderless table-condensed">
+    <tr>
+        <td>
+            <div class="panel-heading">
+                Part No:
+            </div>
+            <div>
+                <input type="number" name="" id="">
+            </div>
+        </td>
+        <td>
+            <div class="panel-heading">
+                Category:
+            </div>
+            <div>
+                <input type="text" name="" id="">
+            </div>
+        </td>
+    </tr>
+</table>
+<table class="table table-borderless">
+    <tr>
+        <td style="width: 60%;"></td>
+        <td align="right">
+            <button (click)="toggle()" class="cqp-btn">Search</button> 
+            &nbsp;
+            &nbsp;
+            <button class="cqp-btn">Manage By TPLs</button> 
+            &nbsp; 
+            &nbsp;
+            <button type="reset" class="cqp-btn">Reset</button>
+            </td>
+    </tr>
+</table>
