@@ -27,7 +27,7 @@
     </table>
     <hr>
     <div class="supplier-panel-body">
-        <table class="table table-bordered">
+        <table class="table table-borderless">
             <tbody>
                 <tr>
                     <td>
@@ -153,7 +153,7 @@
                         </div>
                         <div>
                             <select class="form-control" [ngModel]="selectedToRemove" multiple name="myselecttsms"
-                                (ngModelChange)="chosenCarsToRemove($event)" style="height: 100%;width: 100%;">
+                                (ngModelChange)="chosenCarsToRemove($event)" style="height: 100%;width: 60%;">
                                 <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}</option>
                             </select>
                         </div>
