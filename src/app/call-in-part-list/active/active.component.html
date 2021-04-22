@@ -1,14 +1,22 @@
-<div class="screen-title">
+<!-- <div class="screen-title">
     Call-in Part List - Active
 </div>
-<br>
-
-<div class="example-screen-title">
-    Search for Active Call-In Part List items:
-</div>
-<div class="details">&ensp;Provide criteria to search for Call-In Part List items</div>
+<br> -->
 
 <div class="panel panel-primary">
+
+    <table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+
+        <tbody>
+            <tr>
+                <td class="alerthead2">Search for Active Call-In Part List items:</td>
+            </tr>
+            <tr>
+                <td class="details" colspan="2">Provide criteria to search for Call-In Part List items</td>
+            </tr>
+        </tbody>
+    </table>
+
     <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
         <tbody>
             &nbsp;
@@ -25,146 +33,200 @@
         </tbody>
     </table>
     <hr>
-    <div class="supplier-panel-body">
-        <table class="table table-borderless">
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="panel-heading">
-                            Request Status:
-                        </div>
-                        <div>
-                            Active
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Expiration Date Range:
-                        </div>
-                        <div>
-                <tr>
-                    <td>
-                        From:
-                    </td>
-                    <td>
-                        value
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>
-                        To:
-                    </td>
-                    <td>
-                        value
-                    </td>
-                </tr>
-    </div>
-    </td>
-    <td>
-        <div class="panel-heading">
-            Short Part No:
-        </div>
-        <div>
-            <select style="width: 100%;">
-                <option value="0">All</option>
-                <option value=""></option>
-            </select>
-        </div>
-    </td>
-    <td>
-        <div class="panel-heading">
-            Destination Name:
-        </div>
-        <div>
-            <select style="width: 70%;">
-                <option value="0">All</option>
-                <option value=""></option>
-            </select>
-        </div>
-    </td>
-    <td>
-        <div class="panel-heading">
-            Request Number:
-        </div>
-        <div>
-            <input type="number">
-        </div>
-    </td>
-    <td>
-        <div class="panel-heading">
-            CPL Ref No:
-        </div>
-        <div>
-            <input type="number">
-        </div>
-    </td>
-    </tr>
-    <tr>
-        <td colspan="6">
-            <hr>
-        </td>
-    </tr>
-    <tr>
-        <div style="font-size: x-small;">&ensp;Select Feature(s) to Retrieve By</div>
-    </tr>      
+    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+        <tbody>
             <tr>
-                <td>
-                    <div class="panel-heading">
-                        Available Features:
-                    </div>
-                    <div>
-                        <select style="width: 100%;">
-                            <option value="0">All</option>
-                            <option value=""></option>
-                        </select>
-                    </div>
-                </td>
-                <td colspan="2">
-                    <div class="panel-heading">
-                        Feature values :
-                    </div>
-                    <div>
-                        <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
-                        (ngModelChange)="chosenCars($event)" style="height: 100%;width: 100%;">
-                        <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
-                        </select>
-                    </div>
-                    
-                </td>
-                <td align="center">
-                    <br>
-                    <div class="panel-heading">
-                        <button (click)="assigne()" class="btn btn-sm btn-outline-info">
-                            ></button>
-                    </div>
-                    <br>
-                    <div class="panel-heading">
-                        <button (click)="unassigne()" class="btn btn-sm btn-outline-info">
-                            < </button>
-                    </div> 
-                </td>
-                <td colspan="2">
-                    <div class="panel-heading">
-                        Selected Feature values :
-                    </div>
-                    <div>
-                        <select class="form-control" [ngModel]="selectedToRemove" multiple name="myselecttsms"
-                        (ngModelChange)="chosenCarsToRemove($event)"  style="height: 100%;width: 70%;">
-                        <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}</option>
-                    </select>
-                    </div>
-                   
-                </td>
+                <td width="15%" class="data">Request Status: </td>
+                <td width="15%" class="data">Expiration Date Range: </td>
+                <td width="25%" class="data">Short Part No:</td>
+                <td width="20%" class="data">Destination Name:</td>
+                <td width="15%" class="data">Request Number:</td>
+                <td width="10%" class="data">CPL Ref No.:</td>
             </tr>
             <tr>
-                <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                    &nbsp;<button type="reset" class="cqp-btn">Reset</button> 
+                <td width="15%" class="data">Active</td>
+                <td width="15%" class="data">
+                    From&nbsp;
+                    :
+                    04/01/2021
+                </td>
+                <td width="25%" class="data">
+                    <select name="partNo" style="width: 180px" class="data">
+                        <option value="ALL">ALL</option>
+
+                        <option value="39540-COVER,DVD">39540-COVER,DVD</option>
+                        <option value="39540-DVD UNIT, NAVIGATOR">39540-DVD UNIT, NAVIGATOR</option>
+                        <option value="39710-DISPLAY ASSY.">39710-DISPLAY ASSY.</option>
+                    </select>
+                </td>
+                <td width="20%" class="data">
+                    <select name="destinationName" style="width: 100px" class="data">
+                        <option value="ALL">ALL</option>
+
+                        <option value="HAM">HAM</option>
+                    </select>
+                </td>
+                <td width="15%" class="data"> <input type="text" name="reqNo" maxlength="7" size="7" value=""
+                        class="data"> </td>
+                <td width="10%" class="data"> <input type="text" name="refNo" maxlength="10" size="10" value=""
+                        class="data"> </td>
+            </tr>
+            <tr>
+                <td width="20%" class="data"></td>
+                <td width="5%" class="data">
+                    To &nbsp;&nbsp;&nbsp;&nbsp;
+                    :
+                    06/30/2021
                 </td>
             </tr>
         </tbody>
     </table>
+    <hr>
+    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+        <tbody>
+            <tr>
+                <td class="data" width="524">
+                    <table width="850" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td class="data" width="450" height="25">
+                                    Select Feature(s) to Retrieve By.
+                                </td>
+                                <td align="left" style="display:none" id="imageId">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
 
-    <hr />
+            <tr>
+                <td class="data" valign="top">
+                    <table width="850" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="16%" class="data" valign="bottom" bgcolor="#FFFFFF">
+                                    Available Features:
+                                </td>
+                                <td width="35%" class="data" valign="bottom" bgcolor="#FFFFFF">
+                                    Feature Values:
+                                </td>
+                                <td width="12%" class="data" valign="bottom" bgcolor="#FFFFFF"></td>
+                                <td width="30%" class="data" valign="bottom" bgcolor="#FFFFFF">
+                                    Selected Feature Values:
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <!--logic to select feature name and values -->
+            <tr>
+                <td>
+                    <table width="850" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="15%" valign="top" class="data">
+                                    <select name="feature" onchange="getFeaturesVal(this);" class="data">
+                                        <option value="MODEL_YEAR" selected="selected">MODEL_YEAR</option>
+                                        <option value="MODEL_NAME">MODEL_NAME</option>
+                                        <option value="FAC_NAME">FAC_NAME</option>
+                                    </select>
+                                </td>
+                                <td width="35%" valign="top" class="data">
+                                    <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+                                        (ngModelChange)="chosenCars($event)" style="width: 280px;font-size: 11px;">
+                                        <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
+                                    </select>
+                                </td>
+                                <td align="center" width="25%" class="data">
+                                    <div class="panel-heading">
+                                        <button (click)="assigne()" class="cqp-btn">
+                                            -></button>
+                                    </div>
+                                    <br>
+                                    <div class="panel-heading">
+                                        <button (click)="unassigne()" class="cqp-btn">
+                                            <- </button>
+                                    </div>
+                                </td>
+                                <td width="25%" valign="top" class="data">
+                                    <select class="form-control" [ngModel]="selectedToRemove" multiple
+                                        name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)"
+                                        style="width: 280px;font-size: 11px;">
+                                        <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                    &nbsp;<button type="reset" class="cqp-btn">Reset</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-</div>
+<ng-container *ngIf="show">
+    <hr>
+    <table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td colspan="3" class="alertRed" align="left">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="alerthead2"> <a name="List"></a>List of Active Call-In Part List Items</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="data">
+                    Click on a record to see the details below or select desired records and an action to perform on
+                    them.
+                </td>
+            </tr>
+            <tr>
+                <td width="356" class="data" align="left">
+                    Supplier :
+                    011620 ALPINE ELECTRONICS OF AMERICA
+                </td>
+
+            </tr>
+            <tr>
+                <td height="10" colspan="3"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="panel-body">
+        <table class="table table-borderless table-striped" align="center" border="0" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr class="list-header" style="height: 20%;">
+                    <th></th>
+                    <th>Short Part No.</th>
+                    <th>CPL Ref No.</th>
+                    <th>Part Name</th>
+                    <th>Model Year</th>
+                    <th>Model Name</th>
+                    <th>Factory Name</th>
+                    <th>VIN Start</th>
+                    <th>VIN End</th>
+                    <th>End Date</th>
+                    <th>Fixed Responsibility</th>
+                    <th>Request No.</th>
+                    <th>Model Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="13">Call-in items matching the search criteria could not be found.</td>
+                </tr>
+                </tbody>
+                </table>
+                </div>
+</ng-container>

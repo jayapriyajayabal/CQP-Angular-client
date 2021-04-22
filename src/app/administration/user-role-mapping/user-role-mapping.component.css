@@ -1,5 +1,10 @@
+.short-btn-space {
+    margin-right: 2px;
+    margin-bottom: 4px;
+    width: 100px;
+}
 .details{
-    font-size: 0.9em;
+    font-size: 12px;
 }
 .panel-heading{
     font-weight: bold;

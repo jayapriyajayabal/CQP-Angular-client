@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./supplier-profile.component.css']
 })
 export class SupplierProfileComponent implements OnInit {
-
+  public show: boolean = false;
+  public hide: boolean = true;
   constructor() { }
 
   ngOnInit() {
+  }
+  toggle() {
+    this.show = !this.show;
+    this.hide = !this.hide;
   }
 
 }

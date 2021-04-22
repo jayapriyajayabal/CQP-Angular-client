@@ -7,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActiveComponent implements OnInit {
 
+  public show: boolean = false;
+  public hide: boolean = true;
   constructor() { }
 
   ngOnInit() {
   }
-  cars: any[] = [{id: 1, name: 'audi'}, {id: 2, name: 'opel'}, {id:3, name: 'bmw'}];
+  toggle() {
+    this.show = !this.show;
+    this.hide = !this.hide;
+  }
+  cars: any[] = [{id: 1, name: 'MODEL_YEAR-2021'}, {id: 2, name: 'MODEL_YEAR-2019'}, {id:3, name: 'MODEL_YEAR-2018'},{id:4, name: 'MODEL_YEAR-2017'}];
   selectedCars: any[] = [];
   selectedToAdd: any[] = [];
   selectedToRemove: any[] = [];

@@ -1,5 +1,5 @@
-<div class="screen-title">Administration - Supplier Profile</div>
-<br>
+<!-- <div class="screen-title">Administration - Supplier Profile</div>
+<br> -->
 
 <form>
 	<table width="970" align="center" border="0" cellspacing="0"
@@ -7,10 +7,10 @@
 
 		<tbody>
 			<tr>
-				<td class="alerthead2">Search for suppliers:</td>
+				<td class="alerthead2"><b>Search for suppliers:</b></td>
 			</tr>
 			<tr>
-				<td class="data" colspan="2">Provide criteria to search for
+				<td class="details" colspan="2">Provide criteria to search for
 					suppliers.</td>
 			</tr>
 			<!--
@@ -20,7 +20,7 @@
 		-->
 		</tbody>
 	</table>
-	<table width="970" align="center" border="0" cellpadding="0"
+	<!-- <table width="970" align="center" border="0" cellpadding="0"
 		cellspacing="0">
 		<tbody>
 			<tr>
@@ -36,8 +36,8 @@
 					width="1" height="1" border="0"></td>
 			</tr>
 		</tbody>
-	</table>
-
+	</table> -->
+<hr>
 	<table width="970" align="center" border="0" cellpadding="2"
 		cellspacing="0">
 		<tbody>
@@ -52,15 +52,15 @@
 
 				<td class="data" align="left" valign="top"><input type="text"
 					name="lastName" maxlength="50" size="25" value="" class="data"></td>
-				<td><input type="radio" name="radio" value="N">Non-Participating
-					<br> <input type="radio" name="radio" value="inactive">Inactive
+				<td><input type="radio" name="radio" value="N">&nbsp;Non-Participating
+					<br> <input type="radio" name="radio" value="inactive">&nbsp;Inactive
 					<br> <input type="radio" name="radio" value="active"
-					checked="checked">Active</td>
+					checked="checked">&nbsp;Active</td>
 			</tr>
 		</tbody>
 	</table>
 
-	<table width="970" align="center" border="0" cellpadding="0"
+	<!-- <table width="970" align="center" border="0" cellpadding="0"
 		cellspacing="0">
 
 		<tbody>
@@ -74,20 +74,20 @@
 			</tr>
 
 		</tbody>
-	</table>
+	</table> -->
 
 	<table width="970" align="center" border="0" cellpadding="0"
 		cellspacing="0">
 
 		<tbody>
+			<ng-container *ngIf="hide">
+				<tr>
+					<td height="100"></td>
+				</tr>
+			</ng-container>
 			<tr>
-				<td height="64"><img src="../../assets/clear.gif" width="1"
-					height="1" border="0"></td>
-			</tr>
-			<tr>
-				<td align="right"
-					style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 1"
-					bordercolor="#990000"><button valign="top" (click)="newoverrideForm.reset()" type="submit" 
+				<td align="right">
+					<button valign="top" (click)="toggle()" type="submit" 
 					class="cqp-btn short-btn-space">Search</button>
 					
 				<button valign="top" (click)="newoverrideForm.reset()" type="submit" 
@@ -95,7 +95,61 @@
 			</tr>
 		</tbody>
 	</table>
-
-
-
 </form>
+
+<ng-container *ngIf="show">
+	<tbody>
+		<tr>
+			<td nowrap="" colspan="5" class="alerthead2">
+				<b>Supplier List:</b>
+
+			</td>
+		</tr>
+		<tr>
+			<td class="" colspan="2" valign="top">
+				<div class="details">Select supplier(s) to inactive.</div>
+			</td>
+		</tr>
+	</tbody>
+	<div class="panel-body">
+		<table class="table table-borderless table-striped" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 50%;">
+			<thead>
+				<tr class="list-header" style="height: 20%;">
+					<th></th>
+					<th>Supplier No.</th>
+					<th>Supplier Name</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style="text-align: center;">
+					<td align="margin-left"><input type="checkbox" name="" id=""></td>
+					<td align="margin-left">011330</td>
+					<td align="margin-left">AGC AUTOMOTIVE AMERICAS</td>
+					<td align="margin-left">ACTIVE</td>
+				</tr>
+
+				<tr style="text-align: center;">
+					<td align="margin-left"><input type="checkbox" name="" id=""></td>
+					<td align="margin-left">011330</td>
+					<td align="margin-left">AGC AUTOMOTIVE AMERICAS</td>
+					<td align="margin-left">ACTIVE</td>
+				</tr>
+
+				<tr style="text-align: center;">
+					<td align="margin-left"><input type="checkbox" name="" id=""></td>
+					<td align="margin-left">011330</td>
+					<td align="margin-left">AGC AUTOMOTIVE AMERICAS</td>
+					<td align="margin-left">ACTIVE</td>
+				</tr>
+
+				<tr style="text-align: center;">
+					<td align="margin-left"><input type="checkbox" name="" id=""></td>
+					<td align="margin-left">011330</td>
+					<td align="margin-left">AGC AUTOMOTIVE AMERICAS</td>
+					<td align="margin-left">ACTIVE</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</ng-container>
