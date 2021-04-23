@@ -1,10 +1,419 @@
-<div class="screen-title"> 
-Warranty Claim - Warranty Reports
+<div class="screen-title">
+    Warranty Claim - Warranty Reports
 </div>
 <br>
 
+<div class="title" style="font-size: medium;">Select Report Option:</div>
+<p class="panel-heading">Click on appropriate link to view warranty detail data</p>
+<div class="panel panel-primary">
+    <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tbody>
+            &nbsp;
+            <tr>
+                <td width="2%">Supplier:</td>
+                <td width="45" bgcolor="#ffffff">
+                    <select #s (change)="callSupplier(s.value)" style="width: 30%;">
+                        <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
+                            {{supplier.supplierNo}}
+                            {{supplier.supplierName}}</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <td>
+                <button class="cqp-btn" (click)="select(1)">Stack Bar Chart</button> &nbsp; 
+                <button class="cqp-btn" (click)="select(2)">Overall Summary</button> &nbsp; 
+                <button class="cqp-btn" (click)="select(3)">Part No. Summary</button> &nbsp; 
+                <button class="cqp-btn" (click)="select(4)">Claim Details</button> &nbsp; 
+                <button class="cqp-btn" (click)="select(5)">Trend Data</button> &nbsp; 
+                <button class="cqp-btn" (click)="select(6)">Download Trend Analysis Tool</button><br><br>
+                <button class="cqp-btn" (click)="select(7)">Defect Summary</button>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <ng-container *ngIf="a==1">
+        <div>
+            <div style="display: block">
+              <canvas baseChart
+                      [datasets]="barChartData"
+                      [labels]="mbarChartLabels"
+                      [options]="barChartOptions"
+                      [colors]="barChartColors"
+                      [legend]="barChartLegend"
+                      [chartType]="barChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+            </div>
+          
+          
+          </div>
+    </ng-container>
+    <ng-container *ngIf="a==2">
+        <div class="title" style="font-size: medium;">Overall Summary:</div>
+        <div class="panel-heading">Select a Replacement Part to view  summary</div>
+        <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+            <tr>
+                <td style="width:30%">
+        <div class="panel-heading">
+            Short Part No :
+        </div>
+        <div >
+            <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+            (ngModelChange)="chosenItems($event)" style="height: 100%;width: 30%;">
+            <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+            </select>
+        </div>
+               </td>
+            </tr>
+        </table>
+        <hr>
+        <div class="title panel-heading">Select Feature(s) to Group By:</div>
+         <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <td >
+                <div class="panel-heading">
+                    Available Features :
+                </div>
+                <div>
+                    <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+                    (ngModelChange)="chosenItems($event)" style="height: 100%;width: 80%;">
+                    <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+                    </select>
+                </div>
+                
+            </td>
+            <td align="left" style="width:10%">
+                <br>
+                <div class="panel-heading">
+                    <button (click)="assigne()" class="btn btn-sm btn-outline-info">
+                        ></button>
+                </div>
+                <br>
+                <div class="panel-heading">
+                    <button (click)="unassigne()" class="btn btn-sm btn-outline-info">
+                         <</button>
+                </div> 
+            </td>
+            <td >
+                <div class="panel-heading">
+                    Selected Feature values :
+                </div>
+                <div>
+                    <select class="form-control" [ngModel]="selectedToRemove" multiple name="myselecttsms"
+                    (ngModelChange)="chosenItemsToRemove($event)"  style="height: 100%;width: 60%;">
+                    <option *ngFor="let item of selectedItems" [ngValue]="item">{{item.name}}</option>
+                </select>
+                </div>  
+            </td>
+        </tr>
+        <tr>
+            <td align="right" colspan="3"><button (click)="toggle()" class="cqp-btn">Submit</button> &nbsp;
+                &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp;
+                &nbsp;<button class="cqp-btn">Cancel</button></td>
+        </tr>
+    </table>   
+    </ng-container>
+    <ng-container *ngIf="a==3">
+        <div class="title" style="font-size: medium;">Part No. Summary:</div>
+        <div class="panel-heading">Select a Replacement Part to view  summary</div>
+        <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+            <tr>
+                <td style="width:30%">
+        <div class="panel-heading">
+            Short Part No :
+        </div>
+        <div >
+            <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+            (ngModelChange)="chosenItems($event)" style="height: 100%;width: 30%;">
+            <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+            </select>
+        </div>
+               </td>
+            </tr>
+        </table>
+        <hr>
+        <div class="title panel-heading">Select Feature(s) to Group By:</div>
+         <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <td >
+                <div class="panel-heading">
+                    Available Features :
+                </div>
+                <div>
+                    <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+                    (ngModelChange)="chosenItems($event)" style="height: 100%;width: 80%;">
+                    <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+                    </select>
+                </div>
+                
+            </td>
+            <td align="left" style="width:10%">
+                <br>
+                <div class="panel-heading">
+                    <button (click)="assigne()" class="btn btn-sm btn-outline-info">
+                        ></button>
+                </div>
+                <br>
+                <div class="panel-heading">
+                    <button (click)="unassigne()" class="btn btn-sm btn-outline-info">
+                         <</button>
+                </div> 
+            </td>
+            <td >
+                <div class="panel-heading">
+                    Selected Feature values :
+                </div>
+                <div>
+                    <select class="form-control" [ngModel]="selectedToRemove" multiple name="myselecttsms"
+                    (ngModelChange)="chosenItemsToRemove($event)"  style="height: 100%;width: 60%;">
+                    <option *ngFor="let item of selectedItems" [ngValue]="item">{{item.name}}</option>
+                </select>
+                </div>  
+            </td>
+        </tr>
+        <tr>
+            <td align="right" colspan="3"><button (click)="toggle()" class="cqp-btn">Submit</button> &nbsp;
+                &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp;
+                &nbsp;<button class="cqp-btn">Cancel</button></td>
+        </tr>
+    </table>   
+    </ng-container>
+    <ng-container *ngIf="a==4">
+        <div class="title" style="font-size: medium;">Claim Details:</div>
+    <div class="panel-heading">Select a Replacement Part to view its claim details</div>
+    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <td style="width:30%">
+    <div class="panel-heading">
+        Short Part No :
+    </div>
+    <div >
+        <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+        (ngModelChange)="chosenItems($event)" style="height: 100%;width: 30%;">
+        <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+        </select>
+    </div>
+           </td>
+        </tr>
+    </table>
+    <hr>
+     <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <div class="panel-heading">&ensp;Select Feature(s) to Retrieve By:</div>
+        </tr>
+        <br>
+        <tr>
+            <td style="width: 25%;">
+                <div class="panel-heading">
+                    Available Features:
+                </div>
+                <div>
+                    <select style="width: 100%;">
+                        <option value="0">All</option>
+                        <option value=""></option>
+                    </select>
+                </div>
+            </td>
+            <td colspan="2">
+                <div class="panel-heading">
+                    Feature values :
+                </div>
+                <div>
+                    <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+                        (ngModelChange)="chosenCars($event)" style="height: 100%;width: 100%;">
+                        <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
+                    </select>
+                </div>
 
-<div class="slide-left">
-<p>Under Construction .....</p>
+            </td>
+            <td align="center">
+                <br>
+                <div class="panel-heading">
+                    <button (click)="assigne()" class="btn btn-sm btn-outline-info">
+                        ></button>
+                </div>
+                <br>
+                <div class="panel-heading">
+                    <button (click)="unassigne()" class="btn btn-sm btn-outline-info">
+                        < </button>
+                </div>
+            </td>
+            <td colspan="2">
+                <div class="panel-heading">
+                    Selected Feature values :
+                </div>
+                <div>
+                    <select class="form-control" [ngModel]="selectedToRemove" multiple name="myselecttsms"
+                        (ngModelChange)="chosenCarsToRemove($event)" style="height: 100%;width: 66%;">
+                        <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}</option>
+                    </select>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Submit</button> &nbsp;
+                &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp;
+                &nbsp;<button class="cqp-btn">Cancel</button></td>
+        </tr>
+    
+</table>
+    </ng-container>
+    <ng-container *ngIf="a==5">
+        <div class="title" style="font-size: medium;">Trend Data:</div>
+    <div class="panel-heading">Select the sort order and submit to generate the report</div>
+    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <td style="width:30%">
+    <div class="panel-heading">
+        Short Part No :
+    </div>
+    <div >
+        <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+        (ngModelChange)="chosenItems($event)" style="height: 100%;width: 85%;">
+        <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+        </select>
+    </div>
+           </td>
+           <td class="panel-heading">
+               <div style="padding-top: 25px; padding-left: 125px;">
+            <input type="radio" id="opt1"  name="option" value="Defect % Data">
+            <label for="opt1">&nbsp;Defect % Data</label><br>
+            <input type="radio" id="opt2" name="option" value="Days to failure">
+            <label for="opt2">&nbsp;Days to failure"</label><br>
+            <input type="radio" id="op3t" name="option" value="odometer to failure">
+            <label for="opt3">&nbsp;odometer to failure</label>
+               </div>
+           </td>
+           <td style="width:30%">
+            <div class="panel-heading">
+                Model Year :
+            </div>
+            <div >
+                <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+                (ngModelChange)="chosenItems($event)" style="height: 100%;width: 85%;">
+                <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+                </select>
+            </div>   
+           </td>
+        </tr>
+    </table>
+    <hr>
+    <div class="title panel-heading">Select Feature(s) to Group By:</div>
+     <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+    <tr>
+        <td >
+            <div class="panel-heading">
+                Available Features :
+            </div>
+            <div>
+                <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+                (ngModelChange)="chosenItems($event)" style="height: 100%;width: 80%;">
+                <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+                </select>
+            </div>
+            
+        </td>
+        <td align="left" style="width:10%">
+            <br>
+            <div class="panel-heading">
+                <button (click)="assigne()" class="btn btn-sm btn-outline-info">
+                    ></button>
+            </div>
+            <br>
+            <div class="panel-heading">
+                <button (click)="unassigne()" class="btn btn-sm btn-outline-info">
+                     <</button>
+            </div> 
+        </td>
+        <td >
+            <div class="panel-heading">
+                Selected Feature values :
+            </div>
+            <div>
+                <select class="form-control" [ngModel]="selectedToRemove" multiple name="myselecttsms"
+                (ngModelChange)="chosenItemsToRemove($event)"  style="height: 100%;width: 60%;">
+                <option *ngFor="let item of selectedItems" [ngValue]="item">{{item.name}}</option>
+            </select>
+            </div>  
+        </td>
+    </tr>
+    <tr>
+        <td align="right" colspan="3"><button (click)="toggle()" class="cqp-btn">Submit</button> &nbsp;
+            &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp;
+            &nbsp;<button class="cqp-btn">Cancel</button></td>
+    </tr>
+</table>
+    </ng-container>
+    <ng-container *ngIf="a==6"></ng-container>
+    <ng-container *ngIf="a==7">
+    <div class="title" style="font-size: medium;">Defect Summary:</div>
+    <div class="panel-heading">Select a Replacement Part to view Defect summary</div>
+    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <td style="width:30%">
+    <div class="panel-heading">
+        Short Part No :
+    </div>
+    <div >
+        <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+        (ngModelChange)="chosenItems($event)" style="height: 100%;width: 30%;">
+        <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+        </select>
+    </div>
+           </td>
+        </tr>
+    </table>
+    <hr>
+    <div class="title panel-heading">Select Feature(s) to Group By:</div>
+     <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+    <tr>
+        <td >
+            <div class="panel-heading">
+                Available Features :
+            </div>
+            <div>
+                <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
+                (ngModelChange)="chosenItems($event)" style="height: 100%;width: 80%;">
+                <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+                </select>
+            </div>
+            
+        </td>
+        <td align="left" style="width:10%">
+            <br>
+            <div class="panel-heading">
+                <button (click)="assigne()" class="btn btn-sm btn-outline-info">
+                    ></button>
+            </div>
+            <br>
+            <div class="panel-heading">
+                <button (click)="unassigne()" class="btn btn-sm btn-outline-info">
+                     <</button>
+            </div> 
+        </td>
+        <td >
+            <div class="panel-heading">
+                Selected Feature values :
+            </div>
+            <div>
+                <select class="form-control" [ngModel]="selectedToRemove" multiple name="myselecttsms"
+                (ngModelChange)="chosenItemsToRemove($event)"  style="height: 100%;width: 60%;">
+                <option *ngFor="let item of selectedItems" [ngValue]="item">{{item.name}}</option>
+            </select>
+            </div>  
+        </td>
+    </tr>
+    <tr>
+        <td align="right" colspan="3"><button (click)="toggle()" class="cqp-btn">Submit</button> &nbsp;
+            &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp;
+            &nbsp;<button class="cqp-btn">Cancel</button></td>
+    </tr>
+</table>
+</ng-container>
 </div>
-

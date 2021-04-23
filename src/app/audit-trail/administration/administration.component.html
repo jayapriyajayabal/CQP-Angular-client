@@ -1,9 +1,57 @@
 <div class="screen-title"> 
-Audit Trail - Administration
-</div>
-<br>
-
-
-<div class="slide-left">
-<p>Under Construction .....</p>
-</div>
+    Audit Trail - Administration
+    </div>
+    <br>
+    
+    <form >
+    <div class="title" style="font-size: medium;">Search for Audit records for Admin:</div>
+    <p class="panel-heading">Enter User Id to search audit records for user.</p>
+    <hr>
+    
+    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <td style="width: 26%;">
+                <div class="panel-heading">
+                   User Id:
+                </div>
+                <div>
+                    <input type="text" style="width: 50%;">
+                </div>
+            </td>  
+            <td class="panel-heading" style="width: 26%;">
+               <div class="panel-heading"> Select Criteria:</div>
+                <div >
+             <input type="radio" id="opt1"  name="option" value="Role">
+             <label for="opt1">&nbsp;Role</label><br>
+             <input type="radio" id="opt2" name="option" value="Associated Supplier">
+             <label for="opt2">&nbsp;Associated Supplier</label><br>
+                </div>
+            </td>  
+            <td style="width: 26%;"></td>
+            </tr>
+            <tr>
+                <td align="right" colspan="3" ><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                    &nbsp;<button type="reset" class="cqp-btn">Reset</button></td>
+            </tr>
+    </table>
+    <hr>
+    <p class="panel-heading">Enter Supp. No. to search audit records for supplier.</p>
+    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <td style="width: 26%;">
+                <div class="panel-heading">
+                   Supp. No.:
+                </div>
+                <div>
+                    <input type="text" style="width: 33%;">
+                </div>
+            </td>  
+            <td style="width: 26%;"></td>
+            </tr>
+            <tr>
+                <td align="right" colspan="2" ><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                    &nbsp;<button type="reset" class="cqp-btn">Reset</button></td>
+            </tr>
+    </table>
+    </form>
+    

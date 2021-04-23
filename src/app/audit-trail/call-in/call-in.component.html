@@ -1,9 +1,26 @@
 <div class="screen-title"> 
-Audit Trail - Call-In
-</div>
-<br>
-
-
-<div class="slide-left">
-<p>Under Construction .....</p>
-</div>
+    Audit Trail - Call-In
+    </div>
+    <br>
+    <form >
+    <div class="title" style="font-size: medium;">Search for Audit records for Call-in:</div>
+    <p class="panel-heading">Enter reference number to search for audit records.</p>
+    <hr>
+    
+    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <td style="width: 26%;">
+                <div class="panel-heading">
+                   Ref No:
+                </div>
+                <div>
+                    <input type="text" style="width: 16%;">
+                </div>
+            </td>     
+            </tr>
+            <tr>
+                <td align="right" ><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                    &nbsp;<button type="reset" class="cqp-btn">Reset</button></td>
+            </tr>
+    </table>
+    </form>

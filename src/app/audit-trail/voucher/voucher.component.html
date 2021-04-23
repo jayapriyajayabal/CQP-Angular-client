@@ -1,9 +1,43 @@
 <div class="screen-title"> 
-Audit Trail - Voucher
-</div>
-<br>
-
-
-<div class="slide-left">
-<p>Under Construction .....</p>
-</div>
+    Audit Trail - Voucher
+    </div>
+    <br>
+    
+    
+    <div class="title" style="font-size: medium;">Search for Audit records for Voucher:</div>
+    <p class="panel-heading">Enter reference number to search for audit records.</p>
+    <hr>
+    
+    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <td style="width: 26%;">
+                <div class="panel-heading">
+                   Supplier No:
+                </div>
+                <div>
+                    <input type="text" style="width: 50%;">
+                </div>
+            </td>    
+            <td style="width: 26%;">
+                <div class="panel-heading">
+                   Qtr No:
+                </div>
+                <div>
+                    <input type="text" style="width: 50%;">
+                </div>
+            </td>
+            <td style="width: 26%;">
+                <div class="panel-heading">
+                   Qtr Year:
+                </div>
+                <div>
+                    <input type="text" style="width: 50%;">
+                </div>
+            </td> 
+            </tr>
+            <tr>
+                <td align="right" colspan="3" ><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                    &nbsp;<button type="reset" class="cqp-btn">Reset</button></td>
+            </tr>
+    </table>
+    

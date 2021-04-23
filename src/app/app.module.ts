@@ -71,6 +71,7 @@ import { VoucherComponent } from './audit-trail/voucher/voucher.component';
 import { AdministrationComponent } from './audit-trail/administration/administration.component';
 import { CategoryComponent } from './audit-trail/category/category.component';
 import { BillOfMaterialsComponent } from './audit-trail/bill-of-materials/bill-of-materials.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -152,7 +153,7 @@ import { BillOfMaterialsComponent } from './audit-trail/bill-of-materials/bill-o
 	    MatIconModule,
 	    GridModule,
 	    DropDownsModule,
-	   
+      ChartsModule,
 	   
     ],
   providers: [],

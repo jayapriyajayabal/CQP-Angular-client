@@ -1,9 +1,36 @@
 <div class="screen-title"> 
-Audit Trail - Bill Of Material
-</div>
-<br>
-
-
-<div class="slide-left">
-<p>Under Construction .....</p>
-</div>
+    Audit Trail - Bill Of Material
+    </div>
+    <br>
+    
+    
+    <div class="title" style="font-size: medium;">Search for Audit records for Bill of Materials:</div>
+    <p class="panel-heading">Enter Supplier No or Part No to search audit records for Bill of Materials.</p>
+    <hr>
+    
+    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tr>
+            <td style="width: 26%;">
+                <div class="panel-heading">
+                   Supplier No:
+                </div>
+                <div>
+                    <input type="text" style="width: 50%;">
+                </div>
+            </td>  
+            <td style="width: 26%;">
+                <div class="panel-heading">
+                  Short Part No:
+                </div>
+                <div>
+                    <input type="text" style="width: 50%;">
+                </div>
+            </td>   
+            <td style="width: 26%;"></td>
+            </tr>
+            <tr>
+                <td align="right" colspan="3" ><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                    &nbsp;<button type="reset" class="cqp-btn">Reset</button></td>
+            </tr>
+    </table>
+    
