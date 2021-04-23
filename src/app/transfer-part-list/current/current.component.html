@@ -1,21 +1,27 @@
-<div class="screen-title">
+<!-- <div class="screen-title">
     Transfer Part List - Current
 </div>
 <br>
-
-
-<div class="example-screen-title">
-    Search for Transfer Part List items:
-</div>
-<div class="details">&ensp;Provide criteria to search for Transfer Part List items</div>
-
+ -->
 <div class="panel panel-primary">
+    <table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+
+        <tbody>
+            <tr>
+                <td class="alerthead2">Search for Transfer Part List items:</td>
+            </tr>
+            <tr>
+                <td class="details" colspan="2">Provide criteria to search for Transfer Part List items</td>
+            </tr>
+        </tbody>
+    </table>
+
     <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
         <tbody>
             &nbsp;
             <tr>
                 <td width="2%">Supplier:</td>
-                <td width="45" bgcolor="#ffffff">
+                <td width="45" >
                     <select #s (change)="callSupplier(s.value)" style="width: 30%;">
                         <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
                             {{supplier.supplierNo}}
@@ -25,200 +31,214 @@
             </tr>
         </tbody>
     </table>
-<hr>
+    <hr>
+    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+        <tbody>
+            <tr>
+                <td width="16%" class="data">TPL Item Status:</td>
+                <td width="24%"  class="data">Short Part No:</td>
+                <td width="18%"  class="data">Model Year:</td>
+                <td width="18%"  class="data">Model Name:</td>
+                <td width="24%"  class="data" colspan="2">Category:</td>
+            </tr>
+            <tr>
+                <td width="25%" class="data" valign="top"><select name="status_name" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+
+                        <option value="NEW">NEW</option>
+                        <option value="ACTIVE">ACTIVE</option>
+                        <option value="AWAIT_EXTENSION">AWAIT_EXTENSION</option>
+                        <option value="AVAILABLE_FOR_REVIEW">AVAILABLE_FOR_REVIEW</option>
+                        <option value="READY_FOR_VOUCHER">READY_FOR_VOUCHER</option>
+                        <option value="REOPENED_FOR_ANALYSIS">REOPENED_FOR_ANALYSIS</option>
+                        <option value="VOUCHERED">VOUCHERED</option>
+                        <option value="REQUIRES_REVIEW">REQUIRES_REVIEW</option>
+                    </select></td>
+                <td class="data" valign="top"><select name="part_no" style="width: 200px" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+
+                        <option value="39540">39540-DVD UNIT, NAVIGATOR</option>
+                        <option value="39710">39710-HARN, INSTRUMENT</option>
+                    </select></td>
+                <td><select name="modelYear" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select></td>
+                <td><select name="modelName" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+
+                        <option value="ACCORD">ACCORD</option>
+                        <option value="MDX">MDX</option>
+                        <option value="ODYSSEY">ODYSSEY</option>
+                        <option value="PASSPORT">PASSPORT</option>
+                        <option value="PILOT">PILOT</option>
+                        <option value="RDX">RDX</option>
+                        <option value="TLX">TLX</option>
+                    </select></td>
+                <td colspan="2" valign="top"  class="data"><select name="categoryName"
+                        style="width: 220px" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+
+                        <option value="0">NO-CATEGORY</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td colspan="6"  class="data" height="20"><img src="/cqp_qa/cqpq/images/clear.gif"
+                        width="1" height="8"></td>
+            </tr>
+            <tr>
+                <td  class="data">Conclusion:</td>
+                <td  class="data">Due Date Range:</td>
+                <td  class="data">Submitted Date Range:</td>
+                <td  class="data">Assembly Off. Date:</td>
+                <td  class="data">TPL Ref. No.</td>
+                <td  class="data">Claim No.</td>
+            </tr>
+            <tr>
+                <td valign="top"  class="data"><select name="conclusionName" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+
+                        <option value="1">Customer abuse</option>
+                        <option value="2">Dealer Error</option>
+                        <option value="3">Supplier Mfg. Defect</option>
+                        <option value="4">NTF</option>
+                        <option value="5">Honda Mfg. Defect</option>
+                        <option value="6">Cause Unknown</option>
+                        <option value="8">Spec. Related-Honda Drawing</option>
+                        <option value="9">Spec. Related-Supplier Drawing</option>
+                        <option value="12">Honda Supplied Part</option>
+                        <option value="13">No Reply</option>
+                        <option value="14">Systems Related</option>
+                    </select></td>
+                <td>
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td  class="data">From:</td>
+                                <td  class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="data">To:</td>
+                                <td  class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td  class="data">From:</td>
+                                <td  class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="data">To:</td>
+                                <td  class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td  class="data">From:</td>
+                                <td  class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="data">To:</td>
+                                <td  class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td valign="top" ><input type="text" name="tplRefNo" maxlength="10" size="10" value=""
+                        class="data"></td>
+                <td valign="top" ><input type="text" name="claimNo" maxlength="10" size="10" value=""
+                        class="data"></td>
+            </tr>
+            <tr>
+                <td colspan="6" class="data"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="4"></td>
+            </tr>
+            <!-- Start - Enhancement - Add PWG review checkbox -->
+
+            <tr>
+                <td  class="data" align="left" colspan="1">Reviewed</td>
+                <td  class="data" align="left" colspan="1">Market</td>
+            </tr>
+            <tr>
+                <td  class="data" align="left" colspan="1"><select name="pwgReviewedSrch" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+                        <option value="Y">Reviewed</option>
+                        <option value="N">Not Reviewed</option>
+                    </select></td>
+                <td  class="data" align="left" colspan="1"><select name="selectedMarket" class="data">
+                        <option value="All">All</option>
+                        <option value="KA/KL">KA/KL</option>
+                        <option value="KC">KC</option>
+                    </select></td>
+
+            </tr>
+            <tr>
+                <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                    &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp; &nbsp;<button
+                        class="cqp-btn">Create</button></td>
+            </tr>
+        </tbody>
+    </table>
     <div class="supplier-panel-body">
-        <table class="table table-borderless">
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="panel-heading">
-                            TPL Item Status:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Short Part No:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Model Year:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Model Name:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td colspan="2">
-                        <div class="panel-heading">
-                            Category:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="panel-heading">
-                            Conclusion:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Due Date Range:
-                        </div>
-                        <tr>
-                            <td>
-                                From:
-                            </td>
-                            <td>
-                                <input type="date">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                To:
-                            </td>
-                            <td>
-                                <input type="date">
-                            </td>
-                        </tr>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Submitted Date Range:
-                        </div>
-                                        <tr>
-                                            <td>
-                                                From:
-                                            </td>
-                                            <td>
-                                                <input type="date">
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                To:
-                                            </td>
-                                            <td>
-                                                <input type="date">
-                                            </td>
-                                        </tr>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Assembly Off. Date:
-                        </div>
-                                        <tr>
-                                            <td>
-                                                From:
-                                            </td>
-                                            <td>
-                                                <input type="date">
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                To:
-                                            </td>
-                                            <td>
-                                                <input type="date">
-                                            </td>
-                                        </tr>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            TPL Ref. No:
-                        </div>
-                        <div>
-                            <input type="number" style="width: 100%;">
-                        </div><br>
-                        <div class="panel-heading">
-                            Claim No:
-                        </div>
-                        <div>
-                            <input type="number" style="width: 100%;">
-                        </div>
-                    </td>
-                   
-                </tr>
-                <tr>
-                    <td>
-                        <div class="panel-heading">
-                            Reviewed:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Market:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right" colspan="5"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                        &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp; &nbsp;<button
-                            class="cqp-btn">Create</button></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <hr />
-
         <ng-container *ngIf="show">
+            <hr />
+
             <div class="panel-body">
+                <table border="0" width="970" align="center" cellspacing="0" ellpadding="0" bordercolor="#000000">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" class="alerthead2">List of Transfer Part List Items:</td>
+                        </tr>
+                        <tr>
+                            <td width="60%" colspan="4" class="data">Click on a record to see the details below or
+                                select desired records and an action to perform on them.</td>
+                        </tr>
+
+                        <tr>
+                            <td width="50%" class="data">Supplier:&nbsp;&nbsp; 011620 ALPINE ELECTRONICS OF AMERICA</td>
+                            <td class="data" align="left"></td>
+                            <td width="38%" align="right" class="recordnumber">41 records</td>
+                            <td width="12%" align="center" class="data">
+                                &nbsp; <select name="listPageSelector" onchange="submitAction('gotoPageForListcq')"
+                                    class="data">
+                                    <option value="1" selected="selected">1</option>
+
+                                    <option value="2">2</option>
+
+                                    <option value="3">3</option>
+                                </select> <a href="">Next</a>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
                 <table class="table table-striped" cellspacing="1" cellpadding="4" bordercolor="white" border="6">
                     <thead>
-                        <tr class="list-header">
+                        <tr class="list-header" height="20%">
                             <th></th>
                             <th>Status</th>
                             <th>TPL Ref. No.</th>
@@ -267,6 +287,7 @@
                     </tbody>
                 </table>
             </div>
+            
         </ng-container>
     </div>
 </div>

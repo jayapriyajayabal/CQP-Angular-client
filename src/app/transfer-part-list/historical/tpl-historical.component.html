@@ -1,20 +1,27 @@
-<div class="screen-title">
+<!-- <div class="screen-title">
     Transfer Part List - Historical
 </div>
-<br>
-
-<div class="example-screen-title">
-    Search for Historical Transfer Part List items:
-</div>
-<div class="details">&ensp;Provide criteria to search for Historical Transfer Part List items</div>
+<br> -->
 
 <div class="panel panel-primary">
+    <table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+
+        <tbody>
+            <tr>
+                <td class="alerthead2">Search for Historical Transfer Part List items:</td>
+            </tr>
+            <tr>
+                <td class="details" colspan="2">Provide criteria to search for Historical Transfer Part List items</td>
+            </tr>
+        </tbody>
+    </table>
+
     <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
         <tbody>
             &nbsp;
             <tr>
                 <td width="2%">Supplier:</td>
-                <td width="45" bgcolor="#ffffff">
+                <td width="45">
                     <select #s (change)="callSupplier(s.value)" style="width: 30%;">
                         <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
                             {{supplier.supplierNo}}
@@ -24,255 +31,272 @@
             </tr>
         </tbody>
     </table>
-<hr>
+    <hr>
+    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+        <tbody>
+            <tr>
+                <td width="16%" class="data">TPL Item Status:</td>
+                <td bgcolor="#FFFFFF" class="data">Year Analyzed:</td>
+                <td width="24%" bgcolor="#FFFFFF" class="data">Short Part No:</td>
+                <td width="18%" bgcolor="#FFFFFF" class="data">Model Year:</td>
+                <td width="18%" bgcolor="#FFFFFF" class="data">Model Name:</td>
+                <td width="24%" bgcolor="#FFFFFF" class="data" colspan="2">Category:</td>
+            </tr>
+            <tr>
+                <td width="15%" class="data" valign="top">Closed</td>
+
+                <td width="15%" class="data" valign="top"><select name="analyzedYear" class="data">
+                        <option value="">No records</option>
+                    </select></td>
+
+                <td class="data" valign="top">
+                    <select name="part_no" style="width: 200px" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="modelYear" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="modelName" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+                    </select>
+                </td>
+                <td colspan="2" valign="top" bgcolor="#FFFFFF" class="data">
+                    <select name="categoryName" style="width: 220px" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+
+                        <option value="0">NO-CATEGORY</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" bgcolor="#FFFFFF" class="data" height="20">
+                    <img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="8">
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#FFFFFF" class="data" colspan="2">Conclusion:</td>
+                <td bgcolor="#FFFFFF" class="data">Due Date Range:</td>
+                <td bgcolor="#FFFFFF" class="data">Submitted Date Range:</td>
+                <td bgcolor="#FFFFFF" class="data">Assembly Off. Date:</td>
+                <td bgcolor="#FFFFFF" class="data">TPL Ref. No.</td>
+                <td bgcolor="#FFFFFF" class="data">Claim No.</td>
+            </tr>
+            <tr>
+                <td valign="top" bgcolor="#FFFFFF" class="data" colspan="2"><select name="conclusionName" class="data">
+                        <option value="ALL" selected="selected">ALL</option>
+
+                        <option value="1">Customer abuse</option>
+                        <option value="2">Dealer Error</option>
+                        <option value="3">Supplier Mfg. Defect</option>
+                        <option value="4">NTF</option>
+                        <option value="5">Honda Mfg. Defect</option>
+                        <option value="6">Cause Unknown</option>
+                        <option value="8">Spec. Related-Honda Drawing</option>
+                        <option value="9">Spec. Related-Supplier Drawing</option>
+                        <option value="12">Honda Supplied Part</option>
+                        <option value="13">No Reply</option>
+                        <option value="14">Systems Related</option>
+                    </select></td>
+                <td>
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="data">From:</td>
+                                <td bgcolor="#FFFFFF" class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="data">To:</td>
+                                <td bgcolor="#FFFFFF" class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="data">From:</td>
+                                <td bgcolor="#FFFFFF" class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="data">To:</td>
+                                <td bgcolor="#FFFFFF" class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="data">From:</td>
+                                <td bgcolor="#FFFFFF" class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="data">To:</td>
+                                <td bgcolor="#FFFFFF" class="data">
+                                    <input type="date" name="" id="">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td valign="top" bgcolor="#FFFFFF"><input type="text" name="tplRefNo" maxlength="10" size="10" value=""
+                        class="data"></td>
+                <td valign="top" bgcolor="#FFFFFF"><input type="text" name="claimNo" maxlength="10" size="10" value=""
+                        class="data"></td>
+            </tr>
+            <tr>
+                <td colspan="7" class="data"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="4"></td>
+            </tr>
+            <!-- Start - Enhancement - Add PWG review checkbox -->
+
+            <tr>
+                <td bgcolor="#FFFFFF" class="data" align="left" colspan="1">Reviewed</td>
+                <td bgcolor="#FFFFFF" class="data" align="left" colspan="1">Market</td>
+
+            </tr>
+            <tr>
+                <td bgcolor="#FFFFFF" class="data" align="left" colspan="1"><select name="pwgReviewedSrch" class="data">
+                        <option value="ALL">ALL</option>
+                        <option value="Y">Reviewed</option>
+                        <option value="N">Not Reviewed</option>
+                    </select>
+                </td>
+                <td bgcolor="#FFFFFF" class="data" align="left" colspan="1">
+                    <select name="selectedMarket" class="data">
+                        <option value="All">All</option>
+                        <option value="KA/KL">KA/KL</option>
+                        <option value="KC">KC</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="7"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                    &nbsp;<button type="reset" class="cqp-btn">Refresh</button> &nbsp; &nbsp;<button
+                        class="cqp-btn">Reset</button></td>
+            </tr>
+
+
+            <!-- End - Enhancement - Add PWG review checkbox -->
+        </tbody>
+    </table>
     <div class="supplier-panel-body">
-        <table class="table table-borderless">
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="panel-heading" style="width: max-content;">
-                            TPL Item Status:
-                        </div>
-                        <div>
-                            Closed
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading" style="width: max-content;">
-                            Year Analyzed:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Short Part No:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Model Year:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Model Name:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td colspan="2">
-                        <div class="panel-heading">
-                            Category:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div class="panel-heading">
-                            Conclusion:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Due Date Range:
-                        </div>
-                <tr>
-                    <td>
-                        From:
-                    </td>
-                    <td>
-                        <input type="date" >
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>
-                        To:
-                    </td>
-                    <td>
-                        <input type="date" >
-                    </td>
-                </tr>
-                </td>
-                <td>
-                    <div class="panel-heading">
-                        Submitted Date Range:
-                    </div>
-                    <tr>
-                        <td>
-                            From:
-                        </td>
-                        <td>
-                            <input type="date">
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            To:
-                        </td>
-                        <td>
-                            <input type="date">
-                        </td>
-                    </tr>
-                </td>
-                <td>
-                    <div class="panel-heading">
-                        Assembly Off. Date:
-                    </div>
-                    <tr>
-                        <td>
-                            From:
-                        </td>
-                        <td>
-                            <input type="date">
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            To:
-                        </td>
-                        <td>
-                            <input type="date">
-                        </td>
-                    </tr>
-                </td>
-                <td>
-                    <div class="panel-heading">
-                        TPL Ref. No:
-                    </div>
-                    <div>
-                        <input type="number" style="width: 100%;">
-                    </div><br>
-                    <div class="panel-heading">
-                        Claim No:
-                    </div>
-                    <div>
-                        <input type="number" style="width: 100%;">
-                    </div>
-                </td>
-
-                </tr>
-                <tr>
-                    <td>
-                        <div class="panel-heading">
-                            Reviewed:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="panel-heading">
-                            Market:
-                        </div>
-                        <div>
-                            <select style="width: 100%;">
-                                <option value="0">All</option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                        &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp; &nbsp;<button
-                            class="cqp-btn">Create</button></td>
-
-
-
-                </tr>
-            </tbody>
-        </table>
-
-        <hr />
-
         <ng-container *ngIf="show">
+            <hr>
+            <table border="0" width="970" align="center" cellspacing="0" cellpadding="0" bordercolor="#000000">
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="alerthead2"><a name="List"></a>List of Historical Transfer Part List
+                            Items.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="instructionSmall">Click on a record to see the details below or select
+                            desired records and an action to perform on them.</td>
+                    </tr>
+                    <tr>
+                        <td width="50%" class="data">
+                            Supplier:
+                            140290 DENSO INTERNATIONAL AMERICA
+                        </td>
+                        <td class="data" align="left"></td>
+                        <td width="38%" align="right" class="recordnumber">
+                            720
+                            records</td>
+                        <td width="12%" align="center" class="data">
+
+                            &nbsp;
+
+
+                            <select name="listPageSelector"
+                                onchange="forms[0].action.value='gotopage';forms[0].submit();" class="data">
+                                <option value="1" selected="selected">1</option>
+
+                                <option value="2">2</option>
+
+                                <option value="3">3</option>
+                            </select>
+
+
+                            <a href="">Next</a>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <div class="panel-body">
+
                 <table class="table table-striped" cellspacing="1" cellpadding="4" bordercolor="white" border="6">
                     <thead>
-                        <tr class="list-header">
-                            <th></th>
-                            <th>Status</th>
-                            <th>TPL Ref. No.</th>
-                            <th>Short Part No.</th>
-                            <th>Seq. No.</th>
-                            <th>Model Year</th>
-                            <th>Model Name</th>
-                            <th>Pickup Date</th>
-                            <th>Due Date</th>
-                            <th>Reopen Due Date</th>
-                            <th>Dealer No</th>
-                            <th>Claim No</th>
-                            <th>ROYR </th>
-                            <th>Conclusion</th>
-                            <th>Mkt</th>
-                            <th>Reviewed?</th>
+                        <tr align="left" valign="top" class="list-header   ">
+                            <td align="center">&nbsp;</td>
+                            <td><a href="" class="colhead"> Short Part No. </a></td>
+                            <td><a href="" class="colhead"> TPL Ref. No. </a></td>
+                            <td><a href="" class="colhead">Seq. No.</a></td>
+                            <td><a href="" class="colhead">Model Year</a></td>
+                            <td><a href="" class="colhead">Model Name</a></td>
+                            <td><a href="" class="colhead">Pickup Date</a></td>
+                            <td><a href="" class="colhead">Due Date</a></td>
+                            <td><a href="" class="colhead">Reopen Due Date</a></td>
+                            <td><a href="" class="colhead">Dealer No</a></td>
+                            <td><a href="" class="colhead">Claim No</a></td>
+                            <td><a href="" class="colhead">ROYR</a></td>
+                            <td><a href="" class="colhead">Conclusion</a></td>
+                            <td><a class="colhead">Mkt</a></td>
+                            <!-- Start - Enhancement - Add PWG review checkbox -->
+
+                            <td>Reviewed?</td>
+
+                            <!-- End - Enhancement - Add PWG review checkbox -->
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let tplitem of tplitems | async" class="list-row">
-                            <td><input type="checkbox" name="checkedPartno" value="0"></td>
-                            <td align="margin-left">{{findBySpecField(statues, 'statusId', tplitem.statusId,
-                                'statusName')}}
-                            </td>
-                            <!-- <td align="margin-left">{{tplitem.statusId}}</td> -->
+                        <tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
 
-                            <td align="margin-left">{{tplitem.itemDetailId}}</td>
-                            <td align="margin-left">{{tplitem.detailId}}</td>
-                            <td align="margin-left">{{tplitem.sequenceNo}}</td>
-                            <td align="margin-left">2012</td>
-                            <td align="margin-left">CRV</td>
-                            <td align="margin-left">{{tplitem.lastUpdatedDate | date:'shortDate'}}</td>
-                            <td align="margin-left">{{tplitem.dueDate | date:'shortDate'}}</td>
-                            <td align="margin-left">{{tplitem.reopenedDueDate | date:'shortDate'}}</td>
-                            <td align="margin-left">12345</td>
-                            <td align="margin-left">710710</td>
-                            <td align="margin-left">2016</td>
-                            <!-- <td align="margin-left">{{tplitem.conclusionId}}</td> -->
-                            <td align="margin-left">
-                                {{findBySpecField(conclusions, 'conclusionId', tplitem.conclusionId, 'conclusionDesc')}}
-                            </td>
-                            <td align="margin-left">KA</td>
-                            <td><input type="checkbox" name="checkedPartno" value="0"></td>
 
+
+                            <td><input type="checkbox" name="checkedPartno" value="0">
+                            </td>
+
+                            <!--Start - Enhancement - Highlight links after reviewing-->
+                            <td align="right"><a
+                                    href="/cqp_qa/cqpq/manageHistorical.do?action=Viewcq&amp;checkedPartno=0"
+                                    class="allLinkData"> 77960 </a></td>
+                            <!--End - Enhancement - Highlight links after reviewing-->
+
+                            <td align="right">759997</td>
+                            <td align="right">1/1</td>
+                            <td align="right">2018</td>
+                            <td>Civic</td>
+                            <td>11/27/2019</td>
+                            <td>01/08/2020</td>
+                            <td></td>
+                            <td align="right">206689</td>
+                            <td align="right">144570</td>
+                            <td align="right">2019</td>
+                            <td align="left">Customer abuse</td>
+                            <td align="left">KA</td>
+                            <!-- Start - Enhancement - Add PWG review checkbox -->
+
+                            <td align="left">
+                                <input type="checkbox" name="pwgReview" disabled="true">
+                            </td>
+
+                            <!-- End - Enhancement - Add PWG review checkbox -->
                         </tr>
                     </tbody>
                 </table>

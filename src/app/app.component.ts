@@ -115,7 +115,6 @@ export class AppComponent {
 	    {label: '              '},
 	    {label: '              '},
 	    {label: '              '},
-	    {label: '              '},
 	  ];
  
  VoucherTabLinks = [
