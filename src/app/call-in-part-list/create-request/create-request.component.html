@@ -20,7 +20,7 @@
             &nbsp;
             <tr>
                 <td width="2%">Supplier:</td>
-                <td width="45" bgcolor="#ffffff">
+                <td width="45">
                     <select #s (change)="callSupplier(s.value)" style="width: 30%;">
                         <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
                             {{supplier.supplierNo}}
@@ -97,14 +97,14 @@
                     <table width="850" border="0" cellpadding="0" cellspacing="0">
                         <tbody>
                             <tr>
-                                <td width="16%" class="data" valign="bottom" bgcolor="#FFFFFF">
+                                <td width="16%" class="data" valign="bottom">
                                     Available Features:
                                 </td>
-                                <td width="35%" class="data" valign="bottom" bgcolor="#FFFFFF">
+                                <td width="35%" class="data" valign="bottom">
                                     Feature Values:
                                 </td>
-                                <td width="12%" class="data" valign="bottom" bgcolor="#FFFFFF"></td>
-                                <td width="30%" class="data" valign="bottom" bgcolor="#FFFFFF">
+                                <td width="12%" class="data" valign="bottom"></td>
+                                <td width="30%" class="data" valign="bottom">
                                     Selected Feature Values:
                                 </td>
                             </tr>
@@ -218,10 +218,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td colspan="12" class="alertRed">Call-in items matching the search criteria could not be found.</td>
+                    <td colspan="12" class="alertRed">Call-in items matching the search criteria could not be found.
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    
+
 </ng-container>

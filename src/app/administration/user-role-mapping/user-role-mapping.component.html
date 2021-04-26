@@ -19,22 +19,6 @@
 		</tbody>
 	</table>
 	<div class="supplier-panel-body">
-		<!-- <table width="970" align="center" border="0" cellpadding="0"
-	cellspacing="0">
-	<tbody>
-		<tr>
-			<td colspan="2" height="8"><img src="../../assets/clear.gif"
-				width="1" height="1" border="0"></td>
-		</tr>
-		<tr>
-			<td colspan="2" height="1"><hr size="1"></td>
-		</tr>
-		<tr>
-			<td colspan="2" height="8"><img src="../../assets/clear.gif"
-				width="1" height="1" border="0"></td>
-		</tr>
-	</tbody>
-</table> -->
 		<hr>
 		<table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
 			<tbody>
@@ -42,12 +26,8 @@
 					<td width="20%" class="data">First Name:</td>
 					<td width="20%" valign="bottom" class="data">Last Name:</td>
 					<td width="20%" valign="bottom" class="data">User Id:</td>
-					<!--Start-Enhancement-Add Supp No Search-->
 					<td width="20%" valign="bottom" class="data">Supplier No.:</td>
-					<!--End-Enhancement-Add Supp No Search-->
-					<!-- Start-Enhancement-Add Role search -->
 					<td valign="bottom" class="data">Role:</td>
-					<!-- End-Enhancement-Add Role search -->
 				</tr>
 				<tr valign="top">
 					<td class="data"><input type="text" name="userFirstNameSrch" maxlength="25" size="25" value=""
@@ -56,11 +36,8 @@
 							class="data"></td>
 					<td class="data"><input type="text" name="userIdSrch" maxlength="25" size="25" value=""
 							class="data"></td>
-					<!--Start-Enhancement-Add Supp No Search-->
 					<td class="data"><input type="text" name="supplierNoSrch" maxlength="6" size="25" value=""
 							class="data"></td>
-					<!--End-Enhancement-Add Supp No Search-->
-					<!-- Start-Enhancement-Add Role search -->
 					<td class="data"><select name="roleIdSrch" class="data">
 							<option value="ALL" selected="selected">ALL</option>
 							<option value="NO_ROLES">No Roles</option>
@@ -81,7 +58,6 @@
 							<option value="12">Inactive Supplier</option>
 							<option value="13">Non participating Supplier</option>
 						</select></td>
-					<!-- End-Enhancement-Add Role search -->
 				</tr>
 			</tbody>
 		</table>
@@ -101,7 +77,7 @@
 					<td align="right">
 						<button valign="top" (click)="toggle()" type="submit" class="cqp-btn btn-space">Search</button>
 
-						<button valign="bottom" (click)="newoverrideForm.reset()" type="submit"
+						<button valign="bottom" type="submit"
 							class="cqp-btn btn-space">Reset</button>
 					</td>
 				</tr>
@@ -128,8 +104,8 @@
 				</tbody>
 			</table>
 			<div class="panel-body">
-				<table class="table table-borderless table-striped" align="center" border="0"
-					cellpadding="0" cellspacing="0">
+				<table class="table table-borderless table-striped" align="center" border="0" cellpadding="0"
+					cellspacing="0">
 					<thead>
 						<tr class="list-header" style="height: 20%;">
 							<th>First Name</th>
