@@ -1,6 +1,6 @@
-<div class="screen-title">
+<!-- <div class="screen-title">
     Warranty Claim - Warranty Reports
-</div>
+</div> -->
 <br>
 
 <div class="title" style="font-size: medium;">Select Report Option:</div>
@@ -30,7 +30,7 @@
                 <button class="cqp-btn" (click)="select(3)">Part No. Summary</button> &nbsp; 
                 <button class="cqp-btn" (click)="select(4)">Claim Details</button> &nbsp; 
                 <button class="cqp-btn" (click)="select(5)">Trend Data</button> &nbsp; 
-                <button class="cqp-btn" (click)="select(6)">Download Trend Analysis Tool</button><br><br>
+                <button class="cqp-btn" >Download Trend Analysis Tool</button><br><br>
                 <button class="cqp-btn" (click)="select(7)">Defect Summary</button>
             </td>
         </tr>
@@ -47,7 +47,7 @@
                       [legend]="barChartLegend"
                       [chartType]="barChartType"
                       (chartHover)="chartHovered($event)"
-                      (chartClick)="chartClicked($event)"></canvas>
+                      (chartClick)="chartClicked($event)" style="height: 400px; width:500px"></canvas>
             </div>
           
           

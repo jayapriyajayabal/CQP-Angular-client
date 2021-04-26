@@ -20,15 +20,15 @@ export class WarrantyReportsComponent implements OnInit {
 
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
-    responsive: true,
+    responsive: false,
     scales: {
-      x: {
-        stacked: true,
-      },
-      y: {
-        stacked: true
-      }
-    }
+      xAxes: [{
+          stacked: true
+      }],
+      yAxes: [{
+          stacked: true
+      }]
+            }
   };
 
     public mbarChartLabels:string[] = ['2012', '2013', '2014', '2015', '2016', '2017', '2018'];
@@ -53,6 +53,7 @@ export class WarrantyReportsComponent implements OnInit {
       pointHoverBorderColor: 'rgba(77,20,96,1)'
     }
   ];
+  
     public barChartData:any[] = [
       {data: [55, 60, 75, 82, 56, 62, 80], label: 'Company A'},
       {data: [58, 55, 60, 79, 66, 57, 90], label: 'Company B'}
