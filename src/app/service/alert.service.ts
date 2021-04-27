@@ -77,4 +77,11 @@ private handleError(error: any): Promise<Array<any>> {
  console.error('An error occurred', error);
  return Promise.reject(error.message || error);
  }*/
+
+ public getVouchers(): Observable<any> {
+    return this.http.get<any>(this.apiUrl+"voucher");
+ }
+public getUsers(): Observable<any> {
+  return this.http.get<any>(this.apiUrl+"users");
+}
 }

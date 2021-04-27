@@ -26,11 +26,12 @@ export class HomeComponent implements OnInit {
    private alertService: AlertService,
    public dialog: MatDialog,
    private DownloadService: DownloadService) { }
+   private vouchers:any;
 
   ngOnInit() {
     this.getAllAlerts();
     this.deleteAlertId();
-    
+    this.getVouchers();
   }
 
   downloadFile(): void {
@@ -84,6 +85,15 @@ export class HomeComponent implements OnInit {
         this.errorResponse = error.error;
       });
      
+    }
+
+    getVouchers(){
+      this.alertService.getVouchers().subscribe(data=>{
+       this.vouchers=data;
+       console.log(data);
+      }, error => {
+        this.errorResponse = error.error;
+      });
     }
 
 }
