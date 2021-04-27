@@ -11,8 +11,8 @@ export class DownloadService {
   constructor(private http: HttpClient) {
   }
 
-  download(): Observable<Blob> {
-    return this.http.get("http://localhost:8080/api/alerts/export/excel", {
+  download(fileName : String): Observable<Blob> {
+    return this.http.get("http://localhost:8080/api/alerts/voucher/export/excel", {
       responseType: 'blob'
     });
   }

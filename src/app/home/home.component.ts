@@ -4,7 +4,6 @@ import { AlertService } from '../service/alert.service';
 import { HomeDialogComponent } from './home.dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import * as XLSX from 'xlsx';
 import { DownloadService } from "../service/download.service";
 import { saveAs } from 'file-saver';
 
@@ -20,7 +19,6 @@ export class HomeComponent implements OnInit {
 
   private alerts: any[];
   private alerts1: object;
-  private delete =  this.deleteAlertId();
   private errorResponse : any;
   constructor(private router: Router,
    private alertService: AlertService,
@@ -29,45 +27,15 @@ export class HomeComponent implements OnInit {
    private vouchers:any;
 
   ngOnInit() {
-    this.getAllAlerts();
-    this.deleteAlertId();
     this.getVouchers();
   }
 
-  downloadFile(): void {
+  downloadFile(fileName : String): void {
     this.DownloadService
-      .download()
+      .download(fileName)
       .subscribe(blob => saveAs(blob, "voucher-sheet.xlsx"));
   }
 
-  exportexcel(sheetName, tableName): void 
-    {
-       /* table id is passed over here */   
-       console.log(tableName);
-       let element = document.getElementById(tableName); 
-       const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
- 
-       /* generate workbook and add the worksheet */
-       const wb: XLSX.WorkBook = XLSX.utils.book_new();
-       XLSX.utils.book_append_sheet(wb, ws, sheetName);
- 
-       /* save to file */
-       XLSX.writeFile(wb, sheetName + '.xlsx');
-      
-    }
-  deleteAlertId(){
-    this.alertService.deleteAlertId(130).subscribe(data => {
-      this.alerts = data;
-      console.log("json data"+JSON.stringify(data))
-      console.log("alert data"+this.alerts);
-      }, error => {
-      this.errorResponse = error.error;
-    });
-
-  
-    
-
-  }
   openDialog() {
     const dialogRef = this.dialog.open(HomeDialogComponent);
 
@@ -75,17 +43,6 @@ export class HomeComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-
-  getAllAlerts() {
-
-        this.alertService.findAll().subscribe(data => {
-        this.alerts = data;
-       
-        }, error => {
-        this.errorResponse = error.error;
-      });
-     
-    }
 
     getVouchers(){
       this.alertService.getVouchers().subscribe(data=>{
