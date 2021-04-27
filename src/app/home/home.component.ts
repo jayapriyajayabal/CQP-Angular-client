@@ -24,10 +24,12 @@ export class HomeComponent implements OnInit {
    private alertService: AlertService,
    public dialog: MatDialog,
    private DownloadService: DownloadService) { }
-   private vouchers:any;
+   public vouchers:any;
+   public users:any;
 
   ngOnInit() {
     this.getVouchers();
+    this.getUsers();
   }
 
   downloadFile(fileName : String): void {
@@ -47,6 +49,15 @@ export class HomeComponent implements OnInit {
     getVouchers(){
       this.alertService.getVouchers().subscribe(data=>{
        this.vouchers=data;
+       console.log(data);
+      }, error => {
+        this.errorResponse = error.error;
+      });
+    }
+
+    getUsers(){
+      this.alertService.getUsers().subscribe(data=>{
+       this.users=data;
        console.log(data);
       }, error => {
         this.errorResponse = error.error;

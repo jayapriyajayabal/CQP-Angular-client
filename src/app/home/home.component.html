@@ -92,7 +92,7 @@
 
 	<table width="870" align="center" border="0" cellspacing="0"
 		cellpadding="4">
-		<tbody>
+		<tbody > 
 			<tr bgcolor="#D3D9A4">
 				<!--<td class="colheadactive" width="550">Alert Type: Voucher</td>
 				
@@ -106,7 +106,7 @@
 						id="voucherAlertImage" title="Show" src="../../assets/show.gif"
 						border="0"></a></td>-->
 
-						<td   bgcolor="#D3D9A4">
+						<td bgcolor="#D3D9A4" >
 
 							<mat-expansion-panel >
 								<mat-expansion-panel-header >
@@ -133,10 +133,10 @@
 										 </tr>
 										 </thead>
 										 <tbody>
-											<tr *ngFor="let alert of alerts" > 
-												<td>{{alert.supplier}} </td>
-												<td>{{alert.status}}</td>
-												<td>{{alert.alert_test}} </td> 
+											<tr *ngFor="let voucher of vouchers" > 
+												<td>{{voucher.supplierNumber}} </td>
+												<td>{{voucher.supplierDesc}}</td>
+												<td>{{voucher.status}} </td> 
 												<td><button mat-button (click)="openDialog()">Delete</button></td>
 											 </tr> 
 										</tbody>
@@ -1270,7 +1270,7 @@
 
 				<tr bgcolor="#F6F3B5">
 					<td class="data" colspan="2">Number of users with no roles:
-						1419</td>
+						{{users}}</td>
 				</tr>
 
 			</tbody>
