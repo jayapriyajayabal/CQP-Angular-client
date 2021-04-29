@@ -1,405 +1,168 @@
-<!-- <div class="screen-title">
-    Warranty Claim - Daily Warranty Claim
-</div>
-<br> -->
-<div class="title" style="font-size: medium;">Search for Warranty Claim Items</div>
-<p class="panel-heading">Provide search criteria to search for Warranty Claims</p>
+<table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+
+    <tbody>
+        <tr>
+            <td class="alerthead2">Search for Warranty Claim Items</td>
+        </tr>
+        <tr>
+            <td class="details" colspan="2">Provide search criteria to search for Warranty Claims</td>
+        </tr>
+    </tbody>
+</table>
+
+<table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+    <tbody>
+        <tr>
+            <td width="2%">Supplier:</td>
+            <td width="45">
+                <select #s (change)="callSupplier(s.value)" style="width: 30%;">
+                    <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
+                        {{supplier.supplierNo}}
+                        {{supplier.supplierName}}</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr style='margin-top:0em; margin-bottom: 0em;background-color: grey;' />
 <div class="panel panel-primary">
-    <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+        <tbody><tr> <td class="instructionSmall" colspan="2">Choose by limiting criterion:</td></tr>
+        <tr>
+            <td class="data" width="25%">Short Part No:</td>
+            <td width="20%" class="data">DTF Range:</td>
+            <td width="60%" class="data">Received Date Range:</td>
+        </tr>
+        <tr>
+            <td class="data" valign="top">
+                <select name="partNo" style="width: 180px" class="data">
+                    <option value="ALL">ALL</option>
+                </select>
+            </td>
+            <td class="data">
+                <table>
+                    <tbody><tr>
+                        <td class="data">From:</td>
+                        <td>
+                            <input type="date" name="" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="data">To:</td>
+                        <td>
+                            <input type="date" name="" id="">
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+              <td colspan="3">
+                <table>
+                    <tbody><tr>
+                        <td bgcolor="#FFFFFF" class="data">From:</td>
+                         <td bgcolor="#FFFFFF" class="data">
+                            <input type="date" name="" id="">
+                         </td>
+                    </tr>
+                    <tr>
+                        <td width="35" class="data">To:</td>
+                        <td bgcolor="#FFFFFF" class="data">
+                            <input type="date" name="" id="">
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+      </tbody></table>
+      <hr style='margin-top:0em; margin-bottom: 0em;background-color: grey;' />
+      <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
         <tbody>
-            &nbsp;
             <tr>
-                <td width="2%">Supplier:</td>
-                <td width="45" bgcolor="#ffffff">
-                    <select #s (change)="callSupplier(s.value)" style="width: 30%;">
-                        <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
-                            {{supplier.supplierNo}}
-                            {{supplier.supplierName}}</option>
-                    </select>
+                <td class="data" width="524">
+                    <table width="850" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td class="data" width="450" height="25">
+                                    Select Feature(s) to Retrieve By.
+                                </td>
+                                <td align="left" style="display:none" id="imageId">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="data" valign="top">
+                    <table width="850" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="16%" class="data" valign="bottom">
+                                    Available Features:
+                                </td>
+                                <td width="35%" class="data" valign="bottom">
+                                    Feature Values:
+                                </td>
+                                <td width="12%" class="data" valign="bottom"></td>
+                                <td width="30%" class="data" valign="bottom">
+                                    Selected Feature Values:
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <!--logic to select feature name and values -->
+            <tr>
+                <td>
+                    <table width="850" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="15%" valign="top" class="data">
+                                    <select name="feature" onchange="getFeaturesVal(this);" class="data">
+                                        <option value="MODEL_YEAR" selected="selected">MODEL_YEAR</option>
+                                        <option value="MODEL_NAME">MODEL_NAME</option>
+                                        <option value="FAC_NAME">FAC_NAME</option>
+                                    </select>
+                                </td>
+                                <td width="35%" valign="top" class="data">
+                                    <select class="form-control" [ngModel]="selectedToAdd" multiple
+                                        name="myselecttsms2" (ngModelChange)="chosenCars($event)"
+                                        style="width: 280px;font-size: 11px;">
+                                        <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
+                                    </select>
+                                </td>
+                                <td align="center" width="25%" class="data">
+                                    <div class="panel-heading">
+                                        <button (click)="assigne()" class="cqp-btn">
+                                            -></button>
+                                    </div>
+                                    <br>
+                                    <div class="panel-heading">
+                                        <button (click)="unassigne()" class="cqp-btn">
+                                            <- </button>
+                                    </div>
+                                </td>
+                                <td width="25%" valign="top" class="data">
+                                    <select class="form-control" [ngModel]="selectedToRemove" multiple
+                                        name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)"
+                                        style="width: 280px;font-size: 11px;">
+                                        <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                    &nbsp;<button type="reset" class="cqp-btn">Reset</button>
                 </td>
             </tr>
         </tbody>
     </table>
-    <hr>
-    
-    <div class="panel-heading">Choose by limiting criterion:</div>
-    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
-        <tr>
-            <td style="width: 26%;">
-                <div class="panel-heading">
-                    Short Part No:
-                </div>
-                <div>
-                    <select style="width: 90%;">
-                        <option value="0">All</option>
-                        <option value=""></option>
-                    </select>
-                </div>
-            </td>            
-<td  style="width: 25%" >
-    <div class="panel-heading">
-        Recieved Date Range:
-    </div>
-    <div>
-        <tr>
-            <td>
-                From:
-            </td>
-            <td>
-                <input type="date">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                To:
-            </td>
-            <td>
-                <input type="date">
-            </td>
-        </tr>
-    </div>
-</td>
-<td>
-    <div class="panel-heading">
-        DTF Range:
-    </div>
-    <div>
-        <tr>
-            <td>
-                From:
-            </td>
-            <td>
-                value
-            </td>
-        </tr>
-        <tr>
-            <td>
-                To:
-            </td>
-            <td>
-                value
-            </td>
-        </tr>
-    </div>
-</td>
-</tr>
-<tr>
-    <td colspan="6">
-        <hr>
-    </td>
-</tr>
-        <div style="font-size: small;">Select Feature(s) to Retrieve By</div>
-        <br>
-        <tr>
-            <td>
-                <div class="panel-heading">
-                    Available Features:
-                </div>
-                <div>
-                    <select style="width: 60%;">
-                        <option value="0">All</option>
-                        <option value=""></option>
-                    </select>
-                </div>
-            </td>
-            <td >
-                <div class="panel-heading">
-                    Feature values :
-                </div>
-                <div>
-                    <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
-                    (ngModelChange)="chosenItems($event)" style="height: 100%;width: 100%;">
-                    <option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
-                    </select>
-                </div>
-                
-            </td>
-            <td align="center" style="width: 1%">
-                <br>
-                <div class="panel-heading">
-                    <button (click)="assigne()" class="btn btn-sm btn-outline-info">
-                        ></button>
-                </div>
-                <br>
-                <div class="panel-heading">
-                    <button (click)="unassigne()" class="btn btn-sm btn-outline-info">
-                         <</button>
-                </div> 
-            </td>
-            <td >
-                <div class="panel-heading">
-                    Selected Feature values :
-                </div>
-                <div>
-                    <select class="form-control" [ngModel]="selectedToRemove" multiple name="myselecttsms"
-                    (ngModelChange)="chosenItemsToRemove($event)"  style="height: 100%;width: 66%;">
-                    <option *ngFor="let item of selectedItems" [ngValue]="item">{{item.name}}</option>
-                </select>
-                </div>
-               
-            </td>
-        </tr>
-        <tr>
-            <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                &nbsp;<button type="reset" class="cqp-btn">Reset</button></td>
-        </tr>
-</table>
-</div>
-<hr>
-<!-- <hr>
-<hr> -->
-
-
-<!-- <div>View Warrant Claim Details:</div>
-<br>
-<div>Supplier: 140290 DENSO INTERNATIONAL AMERICA</div>
-<hr>
-<p>Queried features:</p>
-<hr>
-<table class="table table-borderless">
-    <tr>
-        <td>
-            <div>
-                Model Year:
-            </div>
-            <div>
-                2022
-            </div>
-        </td>
-        <td>
-            <div>
-                Model Name:
-            </div>
-            <div>
-                MDX
-            </div>
-        </td>
-        <td>
-            <div>
-                Factory Name:
-            </div>
-            <div>
-                ELP
-            </div>
-        </td>
-        <td>
-            <div>
-                Production Line:
-            </div>
-            <div>
-                3
-            </div>
-        </td>
-        <td>
-            <div>
-                Retail Sales:
-            </div>
-            <div>
-                02/25/2021
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div>
-                VIN:
-            </div>
-            <div>
-                SJBYE 1H86NL002010
-            </div>
-        </td>
-        <td>
-            <div>
-                Engine No:
-            </div>
-            <div>
-                135Y57653522
-            </div>
-        </td>
-        <td>
-            <div>
-                Transmission No:
-            </div>
-            <div>
-                P1DA1003463
-            </div>
-        </td>
-        <td>
-
-        </td>
-        <td>
-
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div>
-                A.F.Off Date:
-            </div>
-            <div>
-                02/03/2021
-            </div>
-        </td>
-        <td>
-            <div>
-                A.F.Off Month:
-            </div>
-            <div>
-                2021-02
-            </div>
-        </td>
-        <td>
-            <div>
-                Engine Off Date:
-
-            </div>
-            <div>
-                2021-02-01
-            </div>
-        </td>
-        <td>
-            <div>
-                Engine Off Month :
-            </div>
-            <div>
-                2021-02
-            </div>
-        </td>
-        <td>
-            <div>
-                Transmission Off:
-            </div>
-            <div>
-                01/25/2021
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="5">
-            <hr>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div>
-                Dealer No:
-            </div>
-            <div>
-                251087
-            </div>
-        </td>
-        <td>
-            <div>
-                Claim No:
-            </div>
-            <div>
-                676931
-            </div>
-        </td>
-        <td>
-            <div>
-                Dealer State:
-            </div>
-            <div>
-                KY
-            </div>
-        </td>
-        <td>
-            <div>
-                Short Part No:
-            </div>
-            <div>
-                36162
-            </div>
-        </td>
-        <td>
-            <div>
-                Part Name:
-            </div>
-            <div>
-                VALVE PUR CONT SOL
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div>
-                ROYR:
-            </div>
-            <div>
-                2021
-            </div>
-        </td>
-        <td>
-            <div>
-                RO Date:
-            </div>
-            <div>
-                03/18/2021
-            </div>
-        </td>
-        <td>
-            <div>
-                Received Date:
-            </div>
-            <div>
-                03/22/2021
-            </div>
-        </td>
-        <td>
-            <div>
-                ODOM:
-            </div>
-            <div>
-                697miles
-            </div>
-        </td>
-        <td>
-            <div>
-                DTF:
-            </div>
-            <div>
-                21days
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div>
-                Total Charge:
-            </div>
-            <div>
-                63.97
-            </div>
-        </td>
-    </tr>
-</table>
-<hr>
-<table class="table table-borderless">
-    <tr>
-        <td>
-            <div>
-                ECU Code:
-            </div>
-            <div>
-
-            </div>
-        </td>
-        <td colspan="4">
-
-            <div>
-                Customer Contention:
-            </div>
-            <div>
-                <p>MISCELLANEOUS CLIENT STATES THE CHECK ENGINE LIGHT IS <br>
-                    ILLUMINATED STATING THERE IS ANEMISSIONS PROBLEM AND POWER NOT
-                    WORKING PROPERLY OR AT ALL <br> MAY BE REDUCED. PLEASE CH</p>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td align="right" colspan="5"><button class="cqp-btn">Ok</button>
-            <hr>
-        </td>
-    </tr>
-</table> -->

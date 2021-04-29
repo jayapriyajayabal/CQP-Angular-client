@@ -1,13 +1,30 @@
-.panel-heading{
+.alertRed {
+    color: #CC0000;
+    font-family: Arial, helvetica, sans serif, MS Sans Serif;
+    font-size: 11px;
     font-weight: bold;
 }
+.alerthead2 {
+    color: #000000;
+    font-family: Arial, helvetica, sans serif, MS Sans Serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.data {
+    color: #000000;
+    font-family: Arial, helvetica, sans serif, MS Sans Serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-decoration: none;
+}
 .details{
-    font-size: 0.7em;
+    color: #000000;
+    font-family: Arial, helvetica, sans serif, MS Sans Serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-decoration: none;
 }
-.list-row {
-	background-color: #F6F3B5;
-}
-
-.list-header {
-	background-color: #D3D9A4;
+th{
+    text-align: left;
 }

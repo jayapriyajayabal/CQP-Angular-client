@@ -1,61 +1,55 @@
-<!-- <div class="screen-title"> 
-Maintenance - Manage Categories
-</div>
-<br> -->
-
-<div style=" font-weight: bold; ">
-    Manage Categories:
-</div>
-<div class="details">&ensp;Provide criteria to search for the categories</div>
-<hr>
-
-<table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+<tbody>
+    <tr>
+        <td nowrap="" class="alerthead2" colspan="5"
+            style="padding-left: 0; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium"
+            bordercolor="#990000">
+            Manage Categories:
+        </td>
+    </tr>
+    <tr>
+        <td class="data" colspan="2">
+            Provide criteria to search for the categories.
+        </td>
+    </tr>
+</tbody>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
     <tbody>
-        &nbsp;
         <tr>
-            <td width="2%">Supplier:</td>
-            <td width="45" bgcolor="#ffffff">
-                <select #s (change)="callSupplier(s.value)" style="width: 30%;">
-                    <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
-                        {{supplier.supplierNo}}
-                        {{supplier.supplierName}}</option>
+            <td class="data" width="3%">Supplier:</td>
+            <td bgcolor="#FFFFFF" class="data">
+                <select name="categoriesDTO.supplierNo" class="data" style="width:30%">
                 </select>
             </td>
         </tr>
     </tbody>
 </table>
-<hr>
-<table class="table table-borderless table-condensed">
-    <tr>
-        <td>
-            <div class="panel-heading">
-                Part No:
-            </div>
-            <div>
-                <input type="number" name="" id="">
-            </div>
-        </td>
-        <td>
-            <div class="panel-heading">
-                Category:
-            </div>
-            <div>
-                <input type="text" name="" id="">
-            </div>
-        </td>
-    </tr>
+<hr style='margin-top:0.5em;background-color: grey;' />
+
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td width="25%" class="data">
+                Part No:<br>
+                <input type="text" name="categoriesDTO.partNo" maxlength="5" value="" class="data">
+            </td>
+            <td align="left" class="data">
+                Category:<br>
+                <input type="text" name="categoriesDTO.categoryText" maxlength="100" value="" class="data">
+            </td>
+        </tr>
+    </tbody>
 </table>
 <table class="table table-borderless">
     <tr>
         <td style="width: 60%;"></td>
         <td align="right">
-            <button (click)="toggle()" class="cqp-btn">Search</button> 
+            <button (click)="toggle()" class="cqp-btn">Search</button>
             &nbsp;
             &nbsp;
-            <button class="cqp-btn">Manage By TPLs</button> 
-            &nbsp; 
+            <button class="cqp-btn">Manage By TPLs</button>
+            &nbsp;
             &nbsp;
             <button type="reset" class="cqp-btn">Reset</button>
-            </td>
+        </td>
     </tr>
 </table>

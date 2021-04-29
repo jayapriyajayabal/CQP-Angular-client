@@ -1,40 +1,85 @@
-<!-- <div class="screen-title"> 
-Maintenance - Manage Message Center
-</div>
-<br> -->
-
-<div style=" font-weight: bold; ">
-    Manage Message Center:
-</div>
-<div class="details">&ensp;Select user type and enter message for message center</div>
-<hr>
-<div class="panel panel-primary">
-        <table class="table table-borderless" align="left" style="width: 50%;">
-            <tr>
-                <td>Select type of user:</td>
-                <td>
-                    <select name="" id="">
-                        <option value="1"></option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Expiry Date:</td>
-                <td><input type="date"></td>
-            </tr>
-        </table>
-</div>
-<table class="table">
-    <tr>
-
-    </tr>
+<table border="0" width="970" align="center" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td nowrap="" class="alerthead2" colspan="2"
+                style="padding-left: 0; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium"
+                bordercolor="#990000">
+                Manage Message Center
+            </td>
+        </tr>
+        <tr>
+            <td class="data" width="400" height="25">
+                Select user type and enter message for message center.
+            </td>
+        </tr>
+    </tbody>
 </table>
 <hr>
-<div>
-    <p style="font-size: small;">
-        Enter message for message center:
-    </p>
-</div>
-<div align="center">
-    <textarea name="" id="" rows="5" style="width: 50%;"></textarea>
-</div>
+<table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+    <tbody>
+        <tr>
+            <td class="data" width="150">Select type of user:</td>
+            <td class="data" width="150">
+                <select name="messageCenterDTO.userType" onchange="showHideSuppliers(this);"
+                    id="messageCenterDTO.userType" class="data">
+                    <option value="">--Select user type--</option>
+                    <option value="A">All users</option>
+                    <option value="H">Honda users</option>
+                    <option value="ALL_S">All suppliers</option>
+                    <option value="S" selected="selected">Supplier users</option>
+                </select>
+            </td>
+            <td class="data" align="left" valign="top">
+                <div id="supplierDropdown" style="display: block;">
+
+                    <select name="messageCenterDTO.supplierNoName" onchange="getAndPopulateMessage()"
+                        id="messageCenterDTO.supplierNoName" class="data">
+                        <option value="011620 ALPINE ELECTRONICS OF AMERICA" selected="selected">011620 ALPINE
+                            ELECTRONICS OF AMERICA</option>
+                        <option value="033516 CLARION CORP OF AMERICA">033516 CLARION CORP OF AMERICA</option>
+                        <option value="140290 DENSO INTERNATIONAL AMERICA">140290 DENSO INTERNATIONAL AMERICA</option>
+                        <option value="140660 NTN BEARING CORP OF AMERICA">140660 NTN BEARING CORP OF AMERICA</option>
+                        <option value="161020 PIONEER AUTOMOTIVE TECH">161020 PIONEER AUTOMOTIVE TECH</option>
+                    </select>
+
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="data" width="150">Expiry Date:</td>
+            <td class="data" align="left">
+                <input type="date" name="" id="">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+    <tbody>
+        <tr>
+            <td class="data">Enter message for message center:</td>
+        </tr>
+        <tr>
+            <td height="10"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td class="data" align="center" valign="top">
+                <textarea name="messageCenterDTO.message" cols="80" rows="10" id="messageCenterDTO.message"
+                    class="data"></textarea>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td height="35"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td align="right">
+                <button (click)="toggle()" class="cqp-btn">Save</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

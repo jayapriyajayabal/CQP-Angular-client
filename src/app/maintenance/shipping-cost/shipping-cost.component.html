@@ -1,72 +1,71 @@
-<!-- <div class="screen-title"> 
-Maintenance - SHipping Cost
-</div>
-<br> -->
-
-<div style=" font-weight: bold; ">
-    Suppier Outbound Shipping Cost:
-</div>
-<div class="details">&ensp;Provide outbound shipping cost for each supplier</div>
-<hr>
-
-<table class="table">
-    <tr>
-        <td style="width: 55%;"></td>
-        <td style="color:  brown;font-weight: bold;"> 60 records</td>
-        <td><select name="" id="">
-                <option value="1">1</option>
-            </select><a href="">&nbsp;Next</a></td>
-    </tr>
-</table>
-<table class="table table-borderless table-hover" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 70%;">
-    <thead>
-        <tr class="list-header">
-            <th>Supplier No.</th>
-            <th>Supplier Name</th>
-            <th>Jan 2021</th>
-            <th>Feb 2021</th>
-            <th>Mar 2021</th>
-        </tr>
-    </thead>
+<table border="0" width="970" align="center" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF">
     <tbody>
-        <tr style="text-align: center;">
-            <td align="margin-left"><a href="">016270</a></td>
-            <td align="margin-left">ABC Group</td>
-            <td align="margin-left"></td>
-            <td align="margin-left"></td>
-            <td align="margin-left"><input type="number"></td>
-
+        <tr>
+            <td nowrap="" class="alerthead2" colspan="5"
+                style="padding-left: 0; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium"
+                bordercolor="#990000">Supplier Outbound Shipping Cost:</td>
         </tr>
-        <tr style="text-align: center;">
-            <td align="margin-left"><a href="">016270</a></td>
-            <td align="margin-left">ABC Group</td>
-            <td align="margin-left">0.00</td>
-            <td align="margin-left">0.00</td>
-            <td align="margin-left"><input type="number"></td>
-
+        <tr>
+            <td class="data" colspan="2">Provide outbound shipping cost for each supplier. </td>
         </tr>
-        <tr style="text-align: center;">
-            <td align="margin-left"><a href="">016270</a></td>
-            <td align="margin-left">ABC Group</td>
-            <td align="margin-left">0.00</td>
-            <td align="margin-left">0.00</td>
-            <td align="margin-left"><input type="number" value="0.00"></td>
+    </tbody>
+</table>
+<hr style='margin-top:0em; margin-bottom: 0em;background-color: grey;' />
 
+<table align="center" width="50%">
+    <tbody>
+        <tr>
+            <td width="38%" align="right" class="recordnumber">151&nbsp;records</td>
+            <td width="12%" align="center" class="data"> &nbsp;
+                <select name="listPageSelector" class="data">
+                    <option value="1" selected="selected">1</option>
+                </select> <a href="">Next</a>
+            </td>
         </tr>
-        <tr style="text-align: center;">
-            <td align="margin-left"><a href="">016270</a></td>
-            <td align="margin-left">ABC Group</td>
-            <td align="margin-left"></td>
-            <td align="margin-left"></td>
-            <td align="margin-left"><input type="number"></td>
+    </tbody>
+</table>
 
-        </tr><tr style="text-align: center;">
-            <td align="margin-left"><a href="">016270</a></td>
-            <td align="margin-left">ABC Group</td>
-            <td align="margin-left"></td>
-            <td align="margin-left"></td>
-            <td align="margin-left"><input type="number"></td>
+<table style="table-layout: fixed" border="0" cellspacing="1" cellpadding="4" align="center" width="50%">
+    <tbody>
+        <tr valign="top" bgcolor="#D3D9A4">
+            <td align="center" class="colheadactive">Supplier No.</td>
+            <td class="colheadactive">Supplier Name</td>
+            <td class="colheadactive">JAN&nbsp; 2021</td>
+            <td class="colheadactive">FEB&nbsp; 2021</td>
+            <td class="colheadactive">MAR&nbsp; 2021 </td>
+        </tr>
+        <tr bgcolor="#F6F3B5">
 
+            <td style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                016270</td>
+            <td style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ABC GROUP</td>
+            <td align="right">
+            </td>
+            <td align="right">
+            </td>
+            <td align="center">
+                <input type="text" name="updCost" maxlength="10" size="5" value="" onchange="setTabOut();"
+                    style="text-align:right" class="data">
+            </td>
+        </tr>
+        <tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
+        </tr>
+        <tr bgcolor="#FFFFFF">
+            <td style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                162450</td>
+            <td style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ADIENT US LLC</td>
+            <td align="right">
+                0.00
+            </td>
+            <td align="right">
+                0.00
+            </td>
+            <td align="center">
+                <input type="text" name="updCost" maxlength="10" size="5" value="0.00" onchange="setTabOut();"
+                    style="text-align:right" class="data">
+            </td>
         </tr>
     </tbody>
 </table>

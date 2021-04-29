@@ -1,289 +1,1625 @@
-<!-- <div class="screen-title">
-    Voucher - Current Voucher
-</div>
-<br> -->
-<!-- class="example-screen-title" -->
-<div style=" font-weight: bold; ">
-    Update Current Voucher Summary:
-</div>
-<div class="details">&ensp;Select a Supplier to display their Current Voucher Summary</div>
-
-<table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
-    <tbody>
-        &nbsp;
-        <tr>
-            <td width="2%">Supplier:</td>
-            <td width="45" bgcolor="#ffffff">
-                <select #s (change)="callSupplier(s.value)" style="width: 30%;">
-                    <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
-                        {{supplier.supplierNo}}
-                        {{supplier.supplierName}}</option>
-                </select>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<hr>
-<table class="table table-borderless">
-    <tbody>
-        <tr>
-            <td>
-                <div class="panel-heading">
-                    Supplier Number:
-                </div>
-                <div>
-                    140290
-                </div>
-            </td>
-            <td>
-                <div class="panel-heading">
-                    Voucher Number:
-                </div>
-                <div>
-                    CQ1402900121
-                </div>
-            </td>
-            <td>
-                <div class="panel-heading">
-                    Claim Cluster:
-                </div>
-                <div>
-                    2
-                </div>
-            </td>
-            <td>
-                <div class="panel-heading">
-                    Issue Date:
-                </div>
-                <div>
-
-                </div>
-            </td>
-            <td>
-                <div class="panel-heading">
-                    Due Date:
-                </div>
-                <div>
-
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="panel-heading">
-                    Attention:
-                </div>
-                <div>
-
-                </div>
-            </td>
-            <td>
-                <div class="panel-heading">
-                    Return To:
-                </div>
-                <div>
-
-                </div>
-            </td>
-            <td>
-                <div class="panel-heading">
-                    Phone Number:
-                </div>
-                <div>
-
-                </div>
-            </td>
-            <td>
-                <div class="panel-heading">
-                    Fax Number:
-                </div>
-                <div>
-
-                </div>
-            </td>
-            <td>
-                <div class="panel-heading">
-                    Status:
-                </div>
-                <div>
-                    NEW
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<hr>
-<p style="font-size: smaller;"><b>TITLE:</b> N.A.CQ DENSO INTERNATIONAL AMERICA 97ki Quarter - 2(07-01-20 to 09-30-20)
-</p>
-<div class="slide-left">
-    <table class="table table-bordered bordercolor" style="border: solid; ">
-        <colgroup span="6"></colgroup>
-        <colgroup span="5"></colgroup>
-        <colgroup span="2"></colgroup>
-        <thead>
-            <tr class="list-header">
-                <th class="bordercolor">PART#</th>
-                <th class="bordercolor">MY</th>
-                <th class="bordercolor">MKT</th>
-                <th class="bordercolor">MODEL TYPE</th>
-                <th class="bordercolor">REPLACEMENT / LABOR</th>
-                <th class="bordercolor">CLAIMS</th>
-                <th class="bordercolor" colspan="5" scope="colgroup">WARRANTY COSTS</th>
-                <th class="bordercolor">SUPPLIER RESP</th>
-                <th class="bordercolor">SUPPLIER CHARGE</th>
-            </tr>
-            <tr class="list-header ">
-                <th class="bordercolor" colspan="6" scope="colgroup"></th>
-                <th class="bordercolor">PARTS</th>
-                <th class="bordercolor">LABOR</th>
-                <th class="bordercolor">HANDLING</th>
-                <th class="bordercolor">OTHER</th>
-                <th class="bordercolor">TOTAL</th>
-                <th class="bordercolor" colspan="2" scope="colgroup">* as Fixed Resp exists ** as force create suplr
-                    resp pct exist</th>
+<div style="overflow: auto; width: 100%">
+    <table border="0" width="970" cellspacing="0" cellpadding="0" align="center" bordercolor="#FFFFFF">
+        <tbody>
+            <tr>
+                <td nowrap="" colspan="5" class="alerthead2"
+                    style="padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium"
+                    bordercolor="#990000">Update Current Voucher Summary:</td>
             </tr>
             <tr>
-                <th class="bordercolor" colspan="13">HAM</th>
+                <td class="data" colspan="2" valign="top">Select a Supplier to display their Current Voucher Summary.
+                </td>
             </tr>
-        </thead>
-        <tr class="bordercolor">
-            <td class="bordercolor">190106A0A01</td>
-            <td class="bordercolor">2018</td>
-            <td class="bordercolor">KA</td>
-            <td class="bordercolor">ACCORD</td>
-            <td class="bordercolor">REPLACEMENT</td>
-            <td class="bordercolor">21</td>
-            <td class="bordercolor">$26.00</td>
-            <td class="bordercolor">$270.60</td>
-            <td class="bordercolor">$26.73</td>
-            <td class="bordercolor">$707.57</td>
-            <td class="bordercolor">$7497.50</td>
-            <td class="bordercolor">5.00%</td>
-            <td class="bordercolor">$374.88</td>
-        </tr>
+            <tr>
+                <td class="instructionSmall" colspan="2">&nbsp;</td>
+            </tr>
+
+            <tr valign="top">
+                <td width="85%" align="left" class="data">Supplier : <select name="suppHash" class="data">
+                        <option value="011620 ALPINE ELECTRONICS OF AMERICA" selected="selected">011620 ALPINE
+                            ELECTRONICS OF AMERICA</option>
+                        <option value="033516 CLARION CORP OF AMERICA">033516 CLARION CORP OF AMERICA</option>
+                        <option value="140290 DENSO INTERNATIONAL AMERICA">140290 DENSO INTERNATIONAL AMERICA</option>
+                        <option value="140660 NTN BEARING CORP OF AMERICA">140660 NTN BEARING CORP OF AMERICA</option>
+                        <option value="161020 PIONEER AUTOMOTIVE TECH">161020 PIONEER AUTOMOTIVE TECH</option>
+                    </select>
+                </td>
+                <td class="alertRed" align="right">
+
+                </td>
+            </tr>
+
+
+        </tbody>
     </table>
 </div>
-<table class="table newtable" style="width: 27%; ">
-    <tr>
-        <th>FOR HNA ACCOUNTING USE ONLY:</th>
-        <td></td>
-    </tr>
-    <tr>
-        <th>SUPPLIER NUMBER</th>
-        <td>140290</td>
-    </tr>
-    <tr>
-        <th>INVOICE NUMBER</th>
-        <td>CQ1402900121</td>
-    </tr>
-    <tr>
-        <th>PO#</th>
-        <td>AWARRANTY</td>
-    </tr>
-    <tr>
-        <th>INVOICE DATE</th>
-        <td>01/05/2021</td>
-    </tr>
+
+<hr>
+<table width="970" align="center" border="0" cellspacing="0" cellpadding="0" class="data">
+    <tbody>
+        <tr>
+
+            <td width="20%" class="data" align="left">Supplier Number:</td>
+            <td width="20%" class="data">Voucher Number:</td>
+            <td width="20%" class="data">Claim Quarter:</td>
+            <td width="20%" class="data">Issue Date:</td>
+            <td width="20%" class="data">Due Date:</td>
+        </tr>
+        <tr>
+        </tr>
+        <tr valign="top">
+            <td width="20%" class="data">140290</td>
+            <td width="20%" class="data">CQ1402900121</td>
+            <td width="20%" class="data">2</td>
+            <td width="20%" class="data"></td>
+            <td width="20%" align="left" class="data"></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+            <td width="20%" class="data"></td>
+            <td width="20%" class="data"></td>
+            <td width="20%" class="data"></td>
+            <td width="20%" class="data"></td>
+            <td width="20%" class="data"></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+
+            <td width="20%" align="left" class="data">Attention:</td>
+            <td width="20%" align="left" class="data">Return To:</td>
+            <td width="20%" align="left" class="data">Phone Number: </td>
+            <td width="20%" class="data">Fax Number:</td>
+            <td width="20%" class="data">Status:</td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+
+            <td width="20%" class="data"></td>
+            <td width="20%" class="data"></td>
+            <td width="20%" class="data"></td>
+            <td width="20%" class="data"></td>
+            <td width="20%" class="data">NEW</td>
+        </tr>
+        <tr>
+        </tr>
+    </tbody>
 </table>
-<table class="table newtable" style="width: 40%;">
-    <th>DEPT#</th>
-    <th>ACCOUNT#</th>
-    <th>Plant</th>
-    <th>PROJECT NUMBER</th>
-    <th>TOTAL DEBIT AMOUNT</th>
+<hr>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td align="left" class="data">TITLE:
+                N.A.CQ DENSO INTERNATIONAL AMERICA 97ki Quarter - 2 (07-01-20 to 09-30-20)</td>
+        </tr>
+        <tr>
+            <td height="8" colspan="4"></td>
+        </tr>
+    </tbody>
+
     <tr>
-        <td>A6179</td>
-        <td>69081</td>
-        <td>HAM</td>
-        <td>CQHAM</td>
-        <td>$23,052.68</td>
+        <td>
+            <table width="970" align="center" border="0" cellspacing="0" cellpadding="0" class="data">
+                <tbody>
+                    <tr>
+                        <td colspan="13" align="left">
+                            <table align="left" border="1" cellspacing="0" width="100%">
+                                <tbody>
+                                    <tr align="center" valign="middle" bgcolor="#FFFFFF">
+                                        <td bgcolor="#D3D9A4" class="colhead">
+                                            PART#
+                                        </td>
+                                        <td bgcolor="#D3D9A4" class="colhead">MY</td>
+                                        <td bgcolor="#D3D9A4" class="colhead">MKT</td>
+                                        <td bgcolor="#D3D9A4" class="colhead">MODEL TYPE</td>
+                                        <td bgcolor="#D3D9A4" class="colhead">REPLACEMENT / LABOR</td>
+                                        <td bgcolor="#D3D9A4" class="colhead">CLAIMS</td>
+                                        <td bgcolor="#D3D9A4" class="colhead" colspan="5">WARRANTY COSTS</td>
+
+                                        <td bgcolor="#D3D9A4" class="colhead">SUPPLIER RESP</td>
+                                        <td bgcolor="#D3D9A4" class="colhead">SUPPLIER CHARGE</td>
+                                    </tr>
+                                    <tr align="center" valign="middle" bgcolor="#FFFFFF">
+                                        <td bgcolor="#D3D9A4" class="colhead" colspan="6">&nbsp;</td>
+
+                                        <td bgcolor="#D3D9A4" class="colhead">PARTS</td>
+                                        <td bgcolor="#D3D9A4" class="colhead">LABOR</td>
+                                        <td bgcolor="#D3D9A4" class="colhead">HANDLING</td>
+                                        <td bgcolor="#D3D9A4" class="colhead">OTHER</td>
+                                        <td bgcolor="#D3D9A4" class="colhead">TOTAL</td>
+                                        <td bgcolor="#D3D9A4" class="data" colspan="2">
+                                            <font size="1">* as Fixed Resp Exists ** as force create suplr resp pct
+                                                exists</font>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!--logic to populated the detail table dynamically-->
+                    <tr>
+                        <td colspan="13">
+
+                            <div style="overflow: auto; height: 150px">
+                                <table border="1" width="100%" cellspacing="0" cellpadding="1">
+                                    <tbody>
+                                        <tr>
+                                            <td class="data" colspan="13" align="center"><b>HAM</b></td>
+                                        </tr>
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                190106A0A01&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2018
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                2
+                                            </td>
+                                            <td class="dataLabel">
+                                                $93.63
+                                            </td>
+                                            <td class="dataLabel">
+                                                $233.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $74.90
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $804.46
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                *2.50%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $20.11
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                389246A0A01&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                21
+                                            </td>
+                                            <td class="dataLabel">
+                                                $26.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $270.60
+                                            </td>
+                                            <td class="dataLabel">
+                                                $26.73
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $707.57
+                                            </td>
+                                            <td class="dataLabel">
+                                                $7497.50
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                5.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $374.88
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                389246B2A01&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                5
+                                            </td>
+                                            <td class="dataLabel">
+                                                $26.58
+                                            </td>
+                                            <td class="dataLabel">
+                                                $270.60
+                                            </td>
+                                            <td class="dataLabel">
+                                                $29.49
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1633.35
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                5.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $81.67
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                39870TJBA11&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                RDX
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                6
+                                            </td>
+                                            <td class="dataLabel">
+                                                $316.02
+                                            </td>
+                                            <td class="dataLabel">
+                                                $144.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $316.07
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $70.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $4726.54
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                66.67%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $3151.18
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                39870TJBA11&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2020
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                RDX
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                13
+                                            </td>
+                                            <td class="dataLabel">
+                                                $316.02
+                                            </td>
+                                            <td class="dataLabel">
+                                                $144.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $316.07
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $630.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $10719.17
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                14.29%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1531.77
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TVAA11&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                5
+                                            </td>
+                                            <td class="dataLabel">
+                                                $382.76
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $415.33
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $4543.95
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                35.29%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1603.56
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TVAA12&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2020
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                3
+                                            </td>
+                                            <td class="dataLabel">
+                                                $384.12
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $415.33
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $2730.45
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                50.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1365.23
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TVAA21&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                6
+                                            </td>
+                                            <td class="dataLabel">
+                                                $382.61
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $306.09
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $4796.40
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                35.29%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1692.65
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TVAA22&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2020
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                1
+                                            </td>
+                                            <td class="dataLabel">
+                                                $376.24
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $300.99
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $787.93
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                50.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $393.97
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TVAL21&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2020
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                4
+                                            </td>
+                                            <td class="dataLabel">
+                                                $376.24
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $300.99
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $3151.72
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                50.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1575.86
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TVCA01&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                3
+                                            </td>
+                                            <td class="dataLabel">
+                                                $381.56
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $305.24
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $2392.50
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                35.29%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $844.31
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TVCA21&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                1
+                                            </td>
+                                            <td class="dataLabel">
+                                                $381.56
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $305.24
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $797.50
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                35.29%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $281.44
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TVCA22&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2020
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                2
+                                            </td>
+                                            <td class="dataLabel">
+                                                $376.40
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $301.12
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1576.44
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                50.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $788.22
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TWAA01&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                1
+                                            </td>
+                                            <td class="dataLabel">
+                                                $382.22
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $305.78
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $798.70
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                35.29%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $281.86
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TWAA11&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                3
+                                            </td>
+                                            <td class="dataLabel">
+                                                $385.78
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $431.50
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $245.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $3028.94
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                35.29%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1068.91
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TWAA21&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                2
+                                            </td>
+                                            <td class="dataLabel">
+                                                $381.84
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $305.47
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1596.02
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                35.29%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $563.24
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TWAA22&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2020
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                1
+                                            </td>
+                                            <td class="dataLabel">
+                                                $376.88
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $301.51
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $789.09
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                50.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $394.55
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TWAL21&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2020
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ACCORD
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                1
+                                            </td>
+                                            <td class="dataLabel">
+                                                $376.88
+                                            </td>
+                                            <td class="dataLabel">
+                                                $110.70
+                                            </td>
+                                            <td class="dataLabel">
+                                                $301.51
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $789.09
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                50.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $394.55
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TYSA31&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2020
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                MDX
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                1
+                                            </td>
+                                            <td class="dataLabel">
+                                                $542.84
+                                            </td>
+                                            <td class="dataLabel">
+                                                $57.60
+                                            </td>
+                                            <td class="dataLabel">
+                                                $477.71
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1078.15
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                50.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $539.08
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78100TYSA41&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2020
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                MDX
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                1
+                                            </td>
+                                            <td class="dataLabel">
+                                                $543.84
+                                            </td>
+                                            <td class="dataLabel">
+                                                $57.60
+                                            </td>
+                                            <td class="dataLabel">
+                                                $477.71
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1079.15
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                50.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $539.58
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                78200TJBA01&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                RDX
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                19
+                                            </td>
+                                            <td class="dataLabel">
+                                                $578.16
+                                            </td>
+                                            <td class="dataLabel">
+                                                $432.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $603.32
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $665.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $31321.12
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                16.15%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $5058.36
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td align="right" class="data" colspan="12">PLANT SUBTOTAL</td>
+                                            <td class="dataLabel">$
+
+                                                22,544.98
+
+                                                <br>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td class="data" colspan="13" align="center"><b>HMA</b></td>
+                                        </tr>
+                                        <!--logic to populate voucher line items for respective destination-->
+
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                190105J6A01&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2016
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                MDX
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                1
+                                            </td>
+                                            <td class="dataLabel">
+                                                $89.99
+                                            </td>
+                                            <td class="dataLabel">
+                                                $316.80
+                                            </td>
+                                            <td class="dataLabel">
+                                                $71.99
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $35.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $513.78
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                *9.53%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $48.96
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                31100RV0A12RM&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2016
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ODYSSEY
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                1
+                                            </td>
+                                            <td class="dataLabel">
+                                                $248.92
+                                            </td>
+                                            <td class="dataLabel">
+                                                $147.60
+                                            </td>
+                                            <td class="dataLabel">
+                                                $207.75
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $604.27
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                *54.29%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $328.06
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                39870THRA11&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ODYSSEY
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                2
+                                            </td>
+                                            <td class="dataLabel">
+                                                $320.96
+                                            </td>
+                                            <td class="dataLabel">
+                                                $147.60
+                                            </td>
+                                            <td class="dataLabel">
+                                                $388.51
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1714.14
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                100.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1714.14
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                77960T6ZA03&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2020
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                RIDGELINE
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                1
+                                            </td>
+                                            <td class="dataLabel">
+                                                $97.08
+                                            </td>
+                                            <td class="dataLabel">
+                                                $73.80
+                                            </td>
+                                            <td class="dataLabel">
+                                                $240.95
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $411.83
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                100.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $411.83
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                77960TG7A11&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2017
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                PILOT
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                2
+                                            </td>
+                                            <td class="dataLabel">
+                                                $95.84
+                                            </td>
+                                            <td class="dataLabel">
+                                                $98.40
+                                            </td>
+                                            <td class="dataLabel">
+                                                $351.63
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1091.74
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                100.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1091.74
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                77960TG7A21&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                PILOT
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                3
+                                            </td>
+                                            <td class="dataLabel">
+                                                $95.86
+                                            </td>
+                                            <td class="dataLabel">
+                                                $135.30
+                                            </td>
+                                            <td class="dataLabel">
+                                                $192.46
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $1270.86
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                50.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $635.43
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr bgcolor="#FFFFFF">
+
+                                            <td class="data">
+                                                79170THRA41&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                2019
+                                            </td>
+                                            <td class="data">
+                                                KA&nbsp;
+                                            </td>
+                                            <td class="data">
+                                                ODYSSEY
+                                            </td>
+                                            <td class="dataLabel">REPLACEMENT</td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                3
+                                            </td>
+                                            <td class="dataLabel">
+                                                $14.72
+                                            </td>
+                                            <td class="dataLabel">
+                                                $98.40
+                                            </td>
+                                            <td class="dataLabel">
+                                                $21.16
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                $0.00
+                                            </td>
+                                            <td class="dataLabel">
+                                                $402.84
+                                            </td>
+                                            <td class="dataLabel" bgcolor="#fafad2">
+                                                50.00%
+                                            </td>
+                                            <td class="dataLabel">
+                                                $201.42
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td align="right" class="data" colspan="12">PLANT SUBTOTAL</td>
+                                            <td class="dataLabel">$
+
+                                                4,431.58
+
+                                                <br>
+                                            </td>
+                                        </tr>
+
+
+
+                                        <!--End of detail table -->
+                                        <tr>
+                                            <td class="data">&nbsp;</td>
+                                            <td class="data">&nbsp;</td>
+                                            <td class="data">&nbsp;</td>
+                                            <td class="data">&nbsp;</td>
+                                            <td class="dataLabel">&nbsp;</td>
+                                            <td class="dataLabel">&nbsp;</td>
+                                            <td class="dataLabel">&nbsp;</td>
+                                            <td class="dataLabel">&nbsp;</td>
+                                            <td class="dataLabel">&nbsp;</td>
+                                            <td class="dataLabel">&nbsp;</td>
+                                            <td class="dataLabel">&nbsp;</td>
+                                            <td class="dataLabel">&nbsp;</td>
+                                            <td class="dataLabel">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data" colspan="5" align="center">TOTAL MARKET CLAIMS</td>
+                                            <td class="dataLabel">
+
+                                                114
+
+                                            </td>
+                                            <td align="left" class="data" colspan="6">TOTAL COST</td>
+                                            <td class="dataLabel">
+                                                $
+
+                                                26,976.56
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="13" class="data">&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="13" class="data">&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
     </tr>
+
     <tr>
-        <td>A6179</td>
-        <td>69081</td>
-        <td>HAM</td>
-        <td>CQHAM</td>
-        <td>$23,052.68</td>
+        <td>
+            <table border="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td width="25%" class="data" valign="top">
+                            <table width="100%" border="1" rules="rows">
+                                <tbody>
+                                    <tr width="100%">
+                                        <td width="100%" height="40px">FOR HNA ACCOUNTING USE ONLY: </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px">SUPPLIER NUMBER </td>
+                                        <td height="40px" align="left" width="50%">140290</td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td height="40px">INVOICE NUMBER </td>
+                                        <td height="40px" align="left" width="50%">CQ1402900121</td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td height="40px">PO#</td>
+                                        <td height="40px" align="left" width="50%">AWARRANTY</td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td height="40px">INVOICE DATE</td>
+                                        <td height="40px" align="left" width="50%">01/05/2021</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </td>
+                        <td width="45%" class="data" valign="top">
+                            <table width="100%" border="1" rules="rows">
+                                <tbody>
+                                    <tr>
+                                        <td height="40px" width="08%" align="center" class="data" rowspan="1">DEPT#</td>
+                                        <td height="40px" width="06%" align="center" class="data" rowspan="1">ACCOUNT#
+                                        </td>
+                                        <td height="40px" width="08%" align="center" class="data" rowspan="1">Plant</td>
+                                        <td height="40px" width="15%" align="center" class="data" rowspan="1">PROJECT
+                                            NUMBER</td>
+                                        <td height="40px" width="15%" align="center" rowspan="1">TOTAL DEBIT AMOUNT</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" align="center">A6179</td>
+                                        <td height="40px" align="center">69081</td>
+                                        <td height="40px" align="center">HAM</td>
+                                        <td height="40px" align="center">CQHAM</td>
+                                        <td height="40px" align="center">$23,052.68</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" align="center">960000</td>
+                                        <td height="40px" align="center">69081</td>
+                                        <td height="40px" align="center">HCM KA</td>
+                                        <td height="40px" align="center">CQHCM</td>
+                                        <td height="40px" align="center">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" align="center">960000</td>
+                                        <td height="40px" align="center">69082</td>
+                                        <td height="40px" align="center">HCM KC</td>
+                                        <td height="40px" align="center">CQHCM</td>
+                                        <td height="40px" align="center">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" align="center">A6179</td>
+                                        <td height="40px" align="center">69081</td>
+                                        <td height="40px" align="center">HDM</td>
+                                        <td height="40px" align="center">CQHDM</td>
+                                        <td height="40px" align="center">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" align="center">V8920</td>
+                                        <td height="40px" align="center">69081</td>
+                                        <td height="40px" align="center">HMA</td>
+                                        <td height="40px" align="center">CQHMA</td>
+                                        <td height="40px" align="center">$4,531.38</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" align="center">I8900</td>
+                                        <td height="40px" align="center">69081</td>
+                                        <td height="40px" align="center">HMI</td>
+                                        <td height="40px" align="center">CQHMI</td>
+                                        <td height="40px" align="center">$0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </td>
+                        <td width="30%" class="data" valign="top">
+                            <table width="100%" border="1">
+                                <tbody>
+                                    <tr>
+                                        <td height="40px" width="65%" class="dataLabel">SUB TOTAL THIS VOUCHER US FUNDS
+                                        </td>
+                                        <td height="40px" width="35%" class="dataLabel">$26,976.56</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" class="dataLabel">
+                                            ADDITIONAL SHIPPING CHARGES $
+                                            <input type="text" name="addlShippingCharge" size="4" value="8894.58"
+                                                onchange="setTabOut();" class="data">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" class="dataLabel">SHIPPING PERCENT RESPONSIBILITY : 6.83%</td>
+                                        <td height="40px" class="dataLabel"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" class="dataLabel">ADDITIONAL CHARGES(SHIPPING * RESP)</td>
+                                        <td height="40px" class="dataLabel">$607.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" class="dataLabel">
+                                            <input type="hidden" name="updatedByPlantScr" value="N">
+                                            <a href="javascript:enterAdjByPlant()"
+                                                onmouseover="window.status='Enter overall adjustments by plant'; return true"
+                                                onmouseout="window.status=''; return true">
+                                                OVERALL ADJUSTMENT
+                                            </a>
+                                            <input type="hidden" name="hdnPlantOverallAdjFlag" value="N">
+                                        </td>
+                                        <td height="40px" class="dataLabel">$
+                                            <input type="text" name="overallAdjustment" maxlength="17" size="8"
+                                                value="0.00"
+                                                onchange="setTabOut();if(validateOnChange()){alertOnChange(this, 'Please add comments with this Override Amount')}"
+                                                style="align:right" class="data">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" class="dataLabel">
+                                            DIAGNOSTIC CHARGES</td>
+                                        <td height="40px" class="dataLabel">$
+                                            <input type="text" name="diagnosticCharges" maxlength="17" size="8"
+                                                value="0.00" onchange="setTabOut();" style="align:right" class="data">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40px" class="dataLabel">
+                                            TOTAL THIS VOUCHER US FUNDS</td>
+                                        <td height="40px" class="dataLabel">$27,584.06</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </td>
     </tr>
-    <tr>
-        <td>A6179</td>
-        <td>69081</td>
-        <td>HAM</td>
-        <td>CQHAM</td>
-        <td>$23,052.68</td>
-    </tr>
-    <tr>
-        <td>A6179</td>
-        <td>69081</td>
-        <td>HAM</td>
-        <td>CQHAM</td>
-        <td>$23,052.68</td>
-    </tr>
-    <tr>
-        <td>A6179</td>
-        <td>69081</td>
-        <td>HAM</td>
-        <td>CQHAM</td>
-        <td>$23,052.68</td>
-    </tr>
-    <tr>
-        <td>A6179</td>
-        <td>69081</td>
-        <td>HAM</td>
-        <td>CQHAM</td>
-        <td>$23,052.68</td>
-    </tr>
-    <tr>
-        <td>A6179</td>
-        <td>69081</td>
-        <td>HAM</td>
-        <td>CQHAM</td>
-        <td>$23,052.68</td>
-    </tr>
+
 </table>
-<table class="table newtable" style="width: 32%;">
-    <tr>
-        <th>SUB TOTAL THIS VOUCHER US FUNDS</th>
-        <td>$26,976.56</td>
-    </tr>
-    <tr>
-        <th>ADDITIONAL SHIPPING CHARGES</th>
-        <td>$8894.58</td>
-    </tr>
-    <tr>
-        <th>SHIPPING PERCENT RESPONSIBILITY</th>
-        <td>6.83%</td>
-    </tr>
-    <tr>
-        <th>ADDITIONAL CHARGES(SHIPPING*RESP</th>
-        <td>$607.0</td>
-    </tr>
-    <tr>
-        <th>OVERALL ADJUSTMENTS</th>
-        <td>$0.00</td>
-    </tr>
-    <tr>
-        <th>DIAGNOSTIC CHARGES</th>
-        <td>$0.00</td>
-    </tr>
-    <tr>
-        <th>TOTAL THIS VOUCHER US FUNDS</th>
-        <td>$27</td>
-    </tr>
+<table width="970" align="center" border="0" cellspacing="1" cellpadding="4" class="data">
+    <tbody>
+        <tr>
+            <td width="100%">NOTE: VOUCHERS NOT RETURNED TO MARKET QUALITY DEPARTMENT BY THE DUE DATE WILL RESULT IN AN
+                AUTOMATIC DEBIT AGAINST YOUR MONTHLY OEM CHECK</td>
+        </tr>
+    </tbody>
 </table>
-<div class="slide-left">
-    <p style="font-size: smaller;"><b>NOTE:</b> VOUCHERS NOT RETURNED TO MARKET QUALITY DEPARTMENT BY THE DUE DATE WILL
-        RESULT IN AN AUTOMATIC DEBIT AGAINST YOUR MONTHLY OEM CHECK</p>
-</div>
-<table class="table table-borderless">
-    <tr>
-        <td style="width: 33%;"></td>
-        <td align="right"><button (click)="toggle()" class="cqp-btn">Save</button> &nbsp;
-            &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp; &nbsp;<button
-                class="cqp-btn">Comments</button>&nbsp;&nbsp;<button (click)="toggle()" class="cqp-btn">Send For
-                Approval</button> &nbsp;
-            &nbsp;<button class="cqp-btn">Details</button> &nbsp; &nbsp;<button class="cqp-btn">Export
-                Details</button>&nbsp;&nbsp;<button (click)="toggle()" class="cqp-btn">Export Claim Data</button> &nbsp;
-            &nbsp;<button class="cqp-btn">Print Voucher</button></td>
-    </tr>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td width="280" height="6"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td height="8"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td align="right">
+                <button (click)="toggle()" class="cqp-btn">Save</button> 
+                &nbsp;&nbsp;
+                <button type="reset" class="cqp-btn">Reset</button> 
+                &nbsp; &nbsp;
+                <button class="cqp-btn">Comments</button>
+                &nbsp;&nbsp;
+                <button (click)="toggle()" class="cqp-btn">Send For Approval</button> 
+                &nbsp;&nbsp;
+                <button class="cqp-btn">Details</button> 
+                &nbsp; &nbsp;
+                <button class="cqp-btn">Export Details</button>
+                &nbsp;&nbsp;
+                <button (click)="toggle()" class="cqp-btn">Export Claim Data</button>
+                &nbsp;&nbsp;
+                <button class="cqp-btn">Print Voucher</button>
+            </td>
+        </tr>
+    </tbody>
 </table>
