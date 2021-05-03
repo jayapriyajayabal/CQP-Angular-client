@@ -4,3 +4,6 @@
     width: 190px;
 }
 
+tr:nth-child(even){
+    background-color: #ffff;
+}

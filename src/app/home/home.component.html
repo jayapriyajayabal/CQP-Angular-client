@@ -48,9 +48,9 @@
 			<tr>
 				<td height="1" class="alerthead2"><b>Welcome Message:</b></td>
 			</tr>
-			<tr>
+			<tr *ngFor="let s of inbox">
 				<td height="1" class="alertRed" style="color: #CC0000;font-weight: bold;">
-					{{inbox.message}}<br>
+					{{s.message}}<br>
 				</td>
 			</tr>
 		</tbody>
@@ -63,7 +63,7 @@
 					<b>Alerts List :</b>
 				</td>
 				<td class="alerthead2" align="right">
-					<button valign="top" (click)="newoverrideForm.reset()" type="submit" width="100px"
+					<button valign="top" (click)="getAlerts()" type="submit" width="100px"
 						class="cqp-btn">Refresh</button>
 				</td>
 			</tr>
@@ -79,7 +79,7 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: Voucher</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportVoucher()" type="submit" class="cqp-btn btn-space">Export
+					<button valign="top" (click)="export('Voucher')" type="submit" class="cqp-btn btn-space">Export
 						details
 						- Voucher</button>
 				</td>
@@ -100,7 +100,7 @@
 				</tr>
 
 
-				<tr bgcolor="#F6F3B5" *ngFor="let d of vouchers">
+				<tr bgcolor="#F6F3B5" *ngFor="let d of vouchers" >
 					<td class="data">{{d.suppNo}} </td>
 					<td class="data">{{d.status}}</td>
 					<td class="data">{{d.itemText}}</td>
@@ -134,7 +134,8 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: Call-In</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportCall()" type="submit" class="cqp-btn btn-space">Export details -
+					<button valign="top" (click)="export('CallIn')" type="submit" class="cqp-btn btn-space">Export
+						details -
 						Call-In</button>
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('ciplAlerts')"><img
@@ -148,24 +149,9 @@
 			preserve_style="row" id="call-in-table">
 			<tbody>
 				<tr bgcolor="#D3D9A4">
-					<td class="colheadactive" width="450"><a
-							style="text-decoration: none; font-weight: bold; color: black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Supplier</a></td>
-					<td class="colheadactive" width="50"><a
-							style="text-decoration: none; font-weight: bold; color: black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Status</a></td>
-					<td class="colheadactive"><a style="text-decoration: none; font-weight: bold; color: black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Alert
-							Text</a></td>
+					<td class="colheadactive" width="500">Supplier</td>
+					<td class="colheadactive">Status</td>
+					<td class="colheadactive">Alert Text</td>
 				</tr>
 
 
@@ -199,7 +185,8 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: TPL</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportTpl()" type="submit" class="cqp-btn btn-space">Export details -
+					<button valign="top" (click)="export('TPL')" type="submit" class="cqp-btn btn-space">Export details
+						-
 						TPL</button>
 
 				</td>
@@ -213,24 +200,9 @@
 			preserve_style="row" id="tpl-table">
 			<tbody>
 				<tr bgcolor="#D3D9A4">
-					<td class="colheadactive" width="430"><a
-							style="text-decoration: none; font-weight: bold; color: black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Supplier</a></td>
-					<td class="colheadactive" width="70"><a
-							style="text-decoration: none; font-weight: bold; color: black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Status</a></td>
-					<td class="colheadactive"><a style="text-decoration: none; font-weight: bold; color: black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Alert
-							Text</a></td>
+					<td class="colheadactive" width="500">Supplier</td>
+					<td class="colheadactive" >Status</td>
+					<td class="colheadactive">Alert Text</td>
 				</tr>
 
 
@@ -248,22 +220,13 @@
 
 	</div>
 
-	<!-- Spacer Table -->
-	<table width="870" align="center" border="0" cellspacing="0" cellpadding="0">
-		<tbody>
-			<tr>
-				<td height="30"><img src="../../assets/clear.gif" width="1" height="1" border="0"></td>
-			</tr>
-		</tbody>
-	</table>
 
-	<!-- End - TPL Alerts -->
 	<table _ngcontent-wju-c5="" align="center" border="0" cellpadding="4" cellspacing="0" width="870">
 		<tbody _ngcontent-wju-c5="">
 			<tr _ngcontent-wju-c5="" bgcolor="#D3D9A4">
 				<td _ngcontent-wju-c5="" class="colheadactive" width="550">TPLs Due within 3 business days</td>
 				<td _ngcontent-wju-c5="" align="left" class="colheadactive">&nbsp;</td>
-				<td  align="right">&nbsp;</td>
+				<td align="right">&nbsp;</td>
 			</tr>
 		</tbody>
 	</table>
@@ -273,24 +236,9 @@
 			preserve_style="row" id="tpl-table">
 			<tbody>
 				<tr bgcolor="#D3D9A4">
-					<td class="colheadactive" width="430"><a
-							style="text-decoration: none; font-weight: bold; color: black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Supplier</a></td>
-					<td class="colheadactive" width="70"><a
-							style="text-decoration: none; font-weight: bold; color: black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Status</a></td>
-					<td class="colheadactive"><a style="text-decoration: none; font-weight: bold; color: black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Alert
-							Text</a></td>
+					<td class="colheadactive" width="500">Supplier</td>
+					<td class="colheadactive" >Status</td>
+					<td class="colheadactive">Alert Text</td>
 				</tr>
 
 
@@ -307,7 +255,16 @@
 
 
 	</div>
+	<!-- Spacer Table -->
+	<table width="870" align="center" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr>
+				<td height="30"><img src="../../assets/clear.gif" width="1" height="1" border="0"></td>
+			</tr>
+		</tbody>
+	</table>
 
+	<!-- End - TPL Alerts -->
 
 	<!-- Start - User Role Alerts -->
 
@@ -316,7 +273,8 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: User</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportUser()" type="submit" class="cqp-btn btn-space">Export details -
+					<button valign="top" (click)="export('User')" type="submit" class="cqp-btn btn-space">Export details
+						-
 						User</button>
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('userAlerts')"><img
@@ -332,9 +290,8 @@
 				</tr>
 
 
-				<tr bgcolor="#F6F3B5">
-					<td class="data" colspan="2">
-						{{user.itemText}}</td>
+				<tr bgcolor="#F6F3B5" *ngFor="let ww of user">
+					<td class="data" colspan="2">{{ww.itemText}}</td>
 				</tr>
 
 			</tbody>
@@ -362,7 +319,7 @@
 				<td class="colheadactive" width="550">Alert Type: Voucher With
 					Amount Zero</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportVoucherCost()" type="submit" class="cqp-btn btn-space">Export
+					<button valign="top" (click)="export('VoucherCost')" type="submit" class="cqp-btn btn-space">Export
 						details - Voucher Amounts</button>
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('voucherCostAlerts')"><img
