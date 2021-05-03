@@ -72,60 +72,15 @@
 
 	<!-- Start - Voucher Alerts -->
 
-	<!-- <table width="870" align="center" border="0" cellspacing="0" cellpadding="4">
-		<tbody>
-			<tr bgcolor="#D3D9A4">
 
-				<td bgcolor="#D3D9A4">
-
-					<mat-expansion-panel>
-						<mat-expansion-panel-header>
-							<mat-panel-title>
-								Alert Type: Voucher
-							</mat-panel-title>
-							<mat-panel-description>
-								<button valign="top" (click)="downloadFile()" type="submit"
-									class="cqp-btn btn-space">Export details - Voucher</button>
-							</mat-panel-description>
-						</mat-expansion-panel-header>
-
-						<div class="div-1">
-							<table class="table" id="voucher-table">
-								<thead>
-									<tr bgcolor="#D3D9A4">
-
-										<th>Supplier</th>
-										<th>Status</th>
-										<th>AlertType</th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr *ngFor="let voucher of vouchers">
-										<td>{{voucher.supplierNumber}} </td>
-										<td>{{voucher.supplierDesc}}</td>
-										<td>{{voucher.status}} </td>
-										<td><button mat-button (click)="openDialog()">Delete</button></td>
-									</tr>
-								</tbody>
-							</table>
-
-						</div>
-
-
-					</mat-expansion-panel>
-
-				</td>
-			</tr>
-		</tbody>
-	</table> -->
 
 	<table width="870" align="center" border="0" cellspacing="0" cellpadding="4">
 		<tbody>
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: Voucher</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportVoucher()" type="submit" class="cqp-btn btn-space">Export details
+					<button valign="top" (click)="exportVoucher()" type="submit" class="cqp-btn btn-space">Export
+						details
 						- Voucher</button>
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('ciplAlerts')"><img
@@ -139,284 +94,23 @@
 			preserve_style="row">
 			<tbody>
 				<tr bgcolor="#D3D9A4">
-					<td class="colheadactive" width="500"><a style="text-decoration:none; font-weight:bold; color:black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Supplier</a></td>
-					<td class="colheadactive"><a style="text-decoration:none; font-weight:bold; color:black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Alert Text</a></td>
+					<td class="colheadactive" width="500">Supplier</td>
+					<td class="colheadactive">Status</td>
+					<td class="colheadactive">Alert Text</td>
 				</tr>
 
 
-				<tr bgcolor="#F6F3B5">
-					<td class="data">140290 DENSO INTERNATIONAL AMERICA </td>
-					<td class="data">Voucher Status is: NEW</td>
+				<tr bgcolor="#F6F3B5" *ngFor="let d of vouchers">
+					<td class="data">{{d.suppNo}} </td>
+					<td class="data">{{d.status}}</td>
+					<td class="data">{{d.itemText}}</td>
 				</tr>
 
 			</tbody>
 		</table>
 	</div>
 
-	<div id="voucherAlerts" style="display: none;" height="20">
-		<table width="870" align="center" border="0" cellspacing="1" cellpadding="4" class="sortable"
-			preserve_style="row">
-			<tbody>
-				<tr bgcolor="#D3D9A4">
-					<td class="colheadactive" width="500"><a
-							style="text-decoration: none; font-weight: bold; color: black;"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Supplier</a></td>
-					<td class="colheadactive"><a style="text-decoration: none; font-weight: bold; color: black"
-							onmouseover="this.oldstyle=this.style.cssText;this.style.color='blue'"
-							onmouseout="this.style.cssText=this.oldstyle;" class="abc" href="#"
-							title="Click here to Sort!"
-							onclick="javascript:ml_tsort.resortTable(this.parentNode);return false">Alert
-							Text</a></td>
-				</tr>
 
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">021450 CONTINENTAL AUTOMOTIVE SYSTEMS</td>
-					<td class="data">Voucher Status is: NEW</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">021500 AMERICAN SHOWA BLANCHESTER PLT</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">032380 AMERICAN MITSUBA CORPORATION</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">033670 CARDINGTON YUTAKA TECH INC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">040910 MAGNA MIRRORS OF AMERICA INC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">081160 HITACHI AUTOMOTIVE SYSTEMS AME</td>
-					<td class="data">Voucher Status is: ACK</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">081330 HL-A CO INC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">090580 KEIHIN INDIANA PRECISION TECH</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">100736 ADIENT US-LLC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">131820 GECOM CORPORATION</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">132507 KASAI NORTH AMERICA INC</td>
-					<td class="data">Voucher Status is: ACK</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">132598 TEMIC AUTOMOTIVE OF N A</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">140290 DENSO INTERNATIONAL AMERICA</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">140320 NEATON AUTO PRODUCTS MFG INC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">140480 NS INTERNATIONAL LTD</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">141350 NORTH AMERICAN LIGHTING</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">190650 STANLEY ELECTRIC US CO INC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">191720 AMERICAN SHOWA SUNBURY PLANT</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">191870 SETEX INC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">201030 TS TRIM INDUSTRIES INC</td>
-					<td class="data">Voucher Status is: NEW</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">201409 TRW AEN</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">201800 TS TECH USA CORP</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">202460 JTEKT OF NORTH AMERICA</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">500045 AY MANUFACTURING LTD</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">502350 KEIHIN AIRCON NORTH AMERICA</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">502542 ALPS ELECTRIC NORTH AMERICA</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">502569 KYB MANUFACTURING NA INC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">504858 TS TECH ALABAMA LLC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">508204 BRIDGEWATER INTERIORS LLC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">509227 JOHNAN AMERICA INC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">514282 ALABAMA CULLMAN YUTAKA TECHNOL</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">515062 TS TECH INDIANA LLC</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">516879 BROSE NORTH AMERICA</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">516949 ZF SUSPENSION TECHNOLOGY GUAD</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">517582 MAHLE COMPRESORES S DE RL DE C</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">518227 ZF TRANSMISSIONS GRAY COURT</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">520873 MOTUS AUTOMOTIVE INTERIORS S D</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">521475 DENSO MEXICO SA DE CV</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">577372 YANFENG US AUTOMOTIVE INTERIOR</td>
-					<td class="data">Voucher Status is: APPROVED</td>
-				</tr>
-
-			</tbody>
-		</table>
-	</div>
 
 	<!-- Spacer Table -->
 	<table width="870" align="center" border="0" cellspacing="0" cellpadding="0">
@@ -440,8 +134,8 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: Call-In</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportCall()" type="submit"
-						class="cqp-btn btn-space">Export details - Call-In</button>
+					<button valign="top" (click)="exportCall()" type="submit" class="cqp-btn btn-space">Export details -
+						Call-In</button>
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('ciplAlerts')"><img
 							id="ciplAlertImage" title="Hide" src="../../assets/hide.gif" border="0"></a></td>
@@ -475,10 +169,10 @@
 				</tr>
 
 
-				<tr bgcolor="#F6F3B5">
-					<td class="data">021450 CONTINENTAL AUTOMOTIVE SYSTEMS</td>
-					<td class="data">NEW</td>
-					<td class="data">Number of NEW CPLs not submitted: 2</td>
+				<tr bgcolor="#F6F3B5" *ngFor="let d of callIn">
+					<td class="data">{{d.suppNo}} </td>
+					<td class="data">{{d.status}}</td>
+					<td class="data">{{d.itemText}}</td>
 				</tr>
 
 			</tbody>
@@ -505,8 +199,8 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: TPL</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportTpl()" type="submit"
-						class="cqp-btn btn-space">Export details - TPL</button>
+					<button valign="top" (click)="exportTpl()" type="submit" class="cqp-btn btn-space">Export details -
+						TPL</button>
 
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('tplAlerts')"><img id="tplAlertImage"
@@ -540,343 +234,43 @@
 				</tr>
 
 
-				<tr bgcolor="#F6F3B5">
-					<td class="data">021450 CONTINENTAL AUTOMOTIVE SYSTEMS</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 39</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">021450 CONTINENTAL AUTOMOTIVE SYSTEMS</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 17</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">021500 AMERICAN SHOWA BLANCHESTER PLT</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 2</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">032380 AMERICAN MITSUBA CORPORATION</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 9</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">040910 MAGNA MIRRORS OF AMERICA INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 8</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">060750 NISSIN BRAKE OHIO INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 2</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">060750 NISSIN BRAKE OHIO INC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 2</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">081160 HITACHI AUTOMOTIVE SYSTEMS AME</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 2</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">081330 HL-A CO INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 92</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">081330 HL-A CO INC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 22</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">090580 KEIHIN INDIANA PRECISION TECH</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 25</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">090580 KEIHIN INDIANA PRECISION TECH</td>
-					<td class="data">NEW</td>
-					<td class="data">Number of NEW TPLs : 4</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">090580 KEIHIN INDIANA PRECISION TECH</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 1</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">100736 ADIENT US-LLC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 9</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">100736 ADIENT US-LLC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 1</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">131820 GECOM CORPORATION</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 17</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">140290 DENSO INTERNATIONAL AMERICA</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 400</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">140290 DENSO INTERNATIONAL AMERICA</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 6</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">140320 NEATON AUTO PRODUCTS MFG INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 30</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">140320 NEATON AUTO PRODUCTS MFG INC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 30</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">140480 NS INTERNATIONAL LTD</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 8</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">141350 NORTH AMERICAN LIGHTING</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 21</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">141350 NORTH AMERICAN LIGHTING</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 2</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">190650 STANLEY ELECTRIC US CO INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 7</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">191720 AMERICAN SHOWA SUNBURY PLANT</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 6</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">191870 SETEX INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 7</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">201030 TS TRIM INDUSTRIES INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 25</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">201800 TS TECH USA CORP</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 20</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">201800 TS TECH USA CORP</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 7</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">500045 AY MANUFACTURING LTD</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 5</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">502350 KEIHIN AIRCON NORTH AMERICA</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 100</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">502350 KEIHIN AIRCON NORTH AMERICA</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 8</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">502542 ALPS ELECTRIC NORTH AMERICA</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 9</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">504858 TS TECH ALABAMA LLC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 10</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">504858 TS TECH ALABAMA LLC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 8</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">508204 BRIDGEWATER INTERIORS LLC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 27</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">509227 JOHNAN AMERICA INC</td>
-					<td class="data">NEW</td>
-					<td class="data">Number of NEW TPLs : 9</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">515062 TS TECH INDIANA LLC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 9</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">515062 TS TECH INDIANA LLC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 5</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">516879 BROSE NORTH AMERICA</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 9</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">517582 MAHLE COMPRESORES S DE RL DE C</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 179</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">517582 MAHLE COMPRESORES S DE RL DE C</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 40</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">521475 DENSO MEXICO SA DE CV</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 65</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">521475 DENSO MEXICO SA DE CV</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 1</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">577248 TS TECH CANADA INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of ACTIVE TPLs : 8</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">577248 TS TECH CANADA INC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of REOPENED TPLs : 2</td>
+				<tr bgcolor="#F6F3B5" *ngFor="let d of tpl">
+					<td class="data">{{d.suppNo}} </td>
+					<td class="data">{{d.status}}</td>
+					<td class="data">{{d.itemText}}</td>
 				</tr>
 
 			</tbody>
 		</table>
 
 
-		<table width="870" align="center" border="0" cellspacing="0" cellpadding="4">
-			<tbody>
-				<tr bgcolor="#D3D9A4">
-					<td class="colheadactive" width="550">TPLs Due within 3
-						business days</td>
-					<td class="colheadactive" align="left">&nbsp;</td>
-					<td align="right">&nbsp;</td>
-				</tr>
-			</tbody>
-		</table>
+
+
+	</div>
+
+	<!-- Spacer Table -->
+	<table width="870" align="center" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr>
+				<td height="30"><img src="../../assets/clear.gif" width="1" height="1" border="0"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- End - TPL Alerts -->
+	<table _ngcontent-wju-c5="" align="center" border="0" cellpadding="4" cellspacing="0" width="870">
+		<tbody _ngcontent-wju-c5="">
+			<tr _ngcontent-wju-c5="" bgcolor="#D3D9A4">
+				<td _ngcontent-wju-c5="" class="colheadactive" width="550">TPLs Due within 3 business days</td>
+				<td _ngcontent-wju-c5="" align="left" class="colheadactive">&nbsp;</td>
+				<td  align="right">&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div id="tplAlerts" style="display: block;" height="20">
 		<table width="870" align="center" border="0" cellspacing="1" cellpadding="4&quot;" class="sortable"
-			preserve_style="row">
+			preserve_style="row" id="tpl-table">
 			<tbody>
 				<tr bgcolor="#D3D9A4">
 					<td class="colheadactive" width="430"><a
@@ -900,314 +294,10 @@
 				</tr>
 
 
-				<tr bgcolor="#F6F3B5">
-					<td class="data">021450 CONTINENTAL AUTOMOTIVE SYSTEMS</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 39</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">021450 CONTINENTAL AUTOMOTIVE SYSTEMS</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 17</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">021500 AMERICAN SHOWA BLANCHESTER PLT</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 2</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">032380 AMERICAN MITSUBA CORPORATION</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 9</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">040910 MAGNA MIRRORS OF AMERICA INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 8</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">060750 NISSIN BRAKE OHIO INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 2</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">060750 NISSIN BRAKE OHIO INC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 2</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">081160 HITACHI AUTOMOTIVE SYSTEMS AME</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 2</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">081330 HL-A CO INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 92</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">081330 HL-A CO INC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 22</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">090580 KEIHIN INDIANA PRECISION TECH</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 25</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">090580 KEIHIN INDIANA PRECISION TECH</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 1</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">100736 ADIENT US-LLC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 9</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">100736 ADIENT US-LLC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 1</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">131820 GECOM CORPORATION</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 17</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">140290 DENSO INTERNATIONAL AMERICA</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days:
-						400</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">140290 DENSO INTERNATIONAL AMERICA</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 6</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">140320 NEATON AUTO PRODUCTS MFG INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 30</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">140320 NEATON AUTO PRODUCTS MFG INC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 30</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">140480 NS INTERNATIONAL LTD</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 8</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">141350 NORTH AMERICAN LIGHTING</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 21</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">141350 NORTH AMERICAN LIGHTING</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 2</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">190650 STANLEY ELECTRIC US CO INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 7</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">191720 AMERICAN SHOWA SUNBURY PLANT</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 6</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">191870 SETEX INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 7</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">201030 TS TRIM INDUSTRIES INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 25</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">201800 TS TECH USA CORP</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 20</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">201800 TS TECH USA CORP</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 7</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">500045 AY MANUFACTURING LTD</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 5</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">502350 KEIHIN AIRCON NORTH AMERICA</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days:
-						100</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">502350 KEIHIN AIRCON NORTH AMERICA</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 8</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">502542 ALPS ELECTRIC NORTH AMERICA</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 9</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">504858 TS TECH ALABAMA LLC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 10</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">504858 TS TECH ALABAMA LLC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 8</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">508204 BRIDGEWATER INTERIORS LLC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 27</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">515062 TS TECH INDIANA LLC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 9</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">515062 TS TECH INDIANA LLC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 5</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">516879 BROSE NORTH AMERICA</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 9</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">517582 MAHLE COMPRESORES S DE RL DE C</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days:
-						179</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">517582 MAHLE COMPRESORES S DE RL DE C</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 40</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">521475 DENSO MEXICO SA DE CV</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 65</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">521475 DENSO MEXICO SA DE CV</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 1</td>
-				</tr>
-
-
-				<tr bgcolor="#F6F3B5">
-					<td class="data">577248 TS TECH CANADA INC</td>
-					<td class="data">ACTIVE</td>
-					<td class="data">Number of TPLs Due within 3 business days: 8</td>
-				</tr>
-
-
-				<tr bgcolor="">
-					<td class="data">577248 TS TECH CANADA INC</td>
-					<td class="data">REOPENED</td>
-					<td class="data">Number of TPLs Due within 3 business days: 2</td>
+				<tr bgcolor="#F6F3B5" *ngFor="let d of tplDue">
+					<td class="data">{{d.suppNo}} </td>
+					<td class="data">{{d.status}}</td>
+					<td class="data">{{d.itemText}}</td>
 				</tr>
 
 			</tbody>
@@ -1218,17 +308,6 @@
 
 	</div>
 
-	<!-- Spacer Table -->
-	<table width="870" align="center" border="0" cellspacing="0" cellpadding="0">
-		<tbody>
-			<tr>
-				<td height="30"><img src="../../assets/clear.gif" width="1" height="1" border="0"></td>
-			</tr>
-		</tbody>
-	</table>
-
-	<!-- End - TPL Alerts -->
-
 
 	<!-- Start - User Role Alerts -->
 
@@ -1237,8 +316,8 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: User</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportUser()" type="submit"
-						class="cqp-btn btn-space">Export details - User</button>
+					<button valign="top" (click)="exportUser()" type="submit" class="cqp-btn btn-space">Export details -
+						User</button>
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('userAlerts')"><img
 							id="userAlertImage" title="Hide" src="../../assets/hide.gif" border="0"></a></td>
@@ -1254,8 +333,8 @@
 
 
 				<tr bgcolor="#F6F3B5">
-					<td class="data" colspan="2">Number of users with no roles:
-						{{users}}</td>
+					<td class="data" colspan="2">
+						{{user.itemText}}</td>
 				</tr>
 
 			</tbody>
@@ -1283,8 +362,8 @@
 				<td class="colheadactive" width="550">Alert Type: Voucher With
 					Amount Zero</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportVoucherCost()"
-						type="submit" class="cqp-btn btn-space">Export details - Voucher Amounts</button>
+					<button valign="top" (click)="exportVoucherCost()" type="submit" class="cqp-btn btn-space">Export
+						details - Voucher Amounts</button>
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('voucherCostAlerts')"><img
 							id="voucherCostAlertImage" title="Hide" src="../../assets/hide.gif" border="0"></a></td>

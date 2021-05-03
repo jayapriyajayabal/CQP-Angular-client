@@ -102,4 +102,9 @@ public exportCallin():Observable<any>{
 public getinbox():Observable<any>{
   return this.http.get<any>(this.apiUrl+"inbox")
 }
+
+public getAlerts():Observable<any>{
+  return this.http.get<any>(this.apiUrl+"data")
+}
+
 }
