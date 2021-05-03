@@ -84,4 +84,22 @@ private handleError(error: any): Promise<Array<any>> {
 public getUsers(): Observable<any> {
   return this.http.get<any>(this.apiUrl+"users");
 }
+public exportTpl():Observable<any>{
+  return this.http.get<any>(this.apiUrl+"tpl/export/excel")
+}
+public exportUser():Observable<any>{
+  return this.http.get<any>(this.apiUrl+"user/export/excel")
+}
+public exportVoucher():Observable<any>{
+  return this.http.get<any>(this.apiUrl+"voucher/export/excel")
+}
+public exportVoucherCost():Observable<any>{
+  return this.http.get<any>(this.apiUrl+"vouchercost/export/excel")
+}
+public exportCallin():Observable<any>{
+  return this.http.get<any>(this.apiUrl+"callin/export/excel")
+}
+public getinbox():Observable<any>{
+  return this.http.get<any>(this.apiUrl+"inbox")
+}
 }

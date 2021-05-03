@@ -50,7 +50,7 @@
 			</tr>
 			<tr>
 				<td height="1" class="alertRed" style="color: #CC0000;font-weight: bold;">
-					This is Test Message for PR07258 - WRP Migration Project <br>
+					{{inbox.message}}<br>
 				</td>
 			</tr>
 		</tbody>
@@ -125,7 +125,7 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: Voucher</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="downloadFile()" type="submit" class="cqp-btn btn-space">Export details
+					<button valign="top" (click)="exportVoucher()" type="submit" class="cqp-btn btn-space">Export details
 						- Voucher</button>
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('ciplAlerts')"><img
@@ -440,7 +440,7 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: Call-In</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportexcel('Call-In_Sheet', 'call-in-table')" type="submit"
+					<button valign="top" (click)="exportCall()" type="submit"
 						class="cqp-btn btn-space">Export details - Call-In</button>
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('ciplAlerts')"><img
@@ -505,7 +505,7 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: TPL</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportexcel('tpl_Sheet', 'tpl-table')" type="submit"
+					<button valign="top" (click)="exportTpl()" type="submit"
 						class="cqp-btn btn-space">Export details - TPL</button>
 
 				</td>
@@ -1237,7 +1237,7 @@
 			<tr bgcolor="#D3D9A4">
 				<td class="colheadactive" width="550">Alert Type: User</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportexcel('User_Sheet', 'user-table')" type="submit"
+					<button valign="top" (click)="exportUser()" type="submit"
 						class="cqp-btn btn-space">Export details - User</button>
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('userAlerts')"><img
@@ -1283,7 +1283,7 @@
 				<td class="colheadactive" width="550">Alert Type: Voucher With
 					Amount Zero</td>
 				<td class="colheadactive" align="left">
-					<button valign="top" (click)="exportexcel('Voucher_Amounts_Sheet', 'voucher-amount-table')"
+					<button valign="top" (click)="exportVoucherCost()"
 						type="submit" class="cqp-btn btn-space">Export details - Voucher Amounts</button>
 				</td>
 				<td align="right"><a class="returntotop" href="javascript:showHide('voucherCostAlerts')"><img

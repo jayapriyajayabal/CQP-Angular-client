@@ -17,7 +17,7 @@ import { saveAs } from 'file-saver';
 export class HomeComponent implements OnInit {
 
 
-  private alerts: any[];
+  private inbox: any[];
   private alerts1: object;
   private errorResponse : any;
   constructor(private router: Router,
@@ -28,8 +28,9 @@ export class HomeComponent implements OnInit {
    public users:any;
 
   ngOnInit() {
-    this.getVouchers();
-    this.getUsers();
+    // this.getVouchers();
+    // this.getUsers();
+    this.getinbox();
   }
 
   downloadFile(fileName : String): void {
@@ -64,4 +65,25 @@ export class HomeComponent implements OnInit {
       });
     }
 
+    exportTpl(){
+      this.alertService.exportTpl().subscribe()
+    }
+    exportCall(){
+      this.alertService.exportCallin().subscribe()
+    }
+    exportVoucher(){
+      this.alertService.exportVoucher().subscribe()
+    }
+    exportVoucherCost(){
+      this.alertService.exportVoucherCost().subscribe()
+    }
+    exportUser(){
+      this.alertService.exportUser().subscribe()
+    }
+    getinbox(){
+      this.alertService.getinbox().subscribe(data=>{
+        this.inbox = data;
+        alert(this.inbox)
+      })
+    }
 }
