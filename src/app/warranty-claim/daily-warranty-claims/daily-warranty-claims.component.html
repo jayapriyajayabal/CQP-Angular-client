@@ -1,168 +1,516 @@
-<table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+<ng-container *ngIf="outer">
+    <table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
 
-    <tbody>
-        <tr>
-            <td class="alerthead2">Search for Warranty Claim Items</td>
-        </tr>
-        <tr>
-            <td class="details" colspan="2">Provide search criteria to search for Warranty Claims</td>
-        </tr>
-    </tbody>
-</table>
-
-<table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
-    <tbody>
-        <tr>
-            <td width="2%">Supplier:</td>
-            <td width="45">
-                <select #s (change)="callSupplier(s.value)" style="width: 30%;">
-                    <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
-                        {{supplier.supplierNo}}
-                        {{supplier.supplierName}}</option>
-                </select>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<hr style='margin-top:0em; margin-bottom: 0em;background-color: grey;' />
-<div class="panel panel-primary">
-    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
-        <tbody><tr> <td class="instructionSmall" colspan="2">Choose by limiting criterion:</td></tr>
-        <tr>
-            <td class="data" width="25%">Short Part No:</td>
-            <td width="20%" class="data">DTF Range:</td>
-            <td width="60%" class="data">Received Date Range:</td>
-        </tr>
-        <tr>
-            <td class="data" valign="top">
-                <select name="partNo" style="width: 180px" class="data">
-                    <option value="ALL">ALL</option>
-                </select>
-            </td>
-            <td class="data">
-                <table>
-                    <tbody><tr>
-                        <td class="data">From:</td>
-                        <td>
-                            <input type="date" name="" id="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="data">To:</td>
-                        <td>
-                            <input type="date" name="" id="">
-                        </td>
-                    </tr>
-                </tbody></table>
-            </td>
-              <td colspan="3">
-                <table>
-                    <tbody><tr>
-                        <td bgcolor="#FFFFFF" class="data">From:</td>
-                         <td bgcolor="#FFFFFF" class="data">
-                            <input type="date" name="" id="">
-                         </td>
-                    </tr>
-                    <tr>
-                        <td width="35" class="data">To:</td>
-                        <td bgcolor="#FFFFFF" class="data">
-                            <input type="date" name="" id="">
-                        </td>
-                    </tr>
-                </tbody></table>
-            </td>
-        </tr>
-      </tbody></table>
-      <hr style='margin-top:0em; margin-bottom: 0em;background-color: grey;' />
-      <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
         <tbody>
             <tr>
-                <td class="data" width="524">
-                    <table width="850" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td class="data" width="450" height="25">
-                                    Select Feature(s) to Retrieve By.
-                                </td>
-                                <td align="left" style="display:none" id="imageId">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
+                <td class="alerthead2">Search for Warranty Claim Items</td>
             </tr>
+            <tr>
+                <td class="details" colspan="2">Provide search criteria to search for Warranty Claims</td>
+            </tr>
+        </tbody>
+    </table>
 
+    <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+        <tbody>
             <tr>
-                <td class="data" valign="top">
-                    <table width="850" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td width="16%" class="data" valign="bottom">
-                                    Available Features:
-                                </td>
-                                <td width="35%" class="data" valign="bottom">
-                                    Feature Values:
-                                </td>
-                                <td width="12%" class="data" valign="bottom"></td>
-                                <td width="30%" class="data" valign="bottom">
-                                    Selected Feature Values:
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <!--logic to select feature name and values -->
-            <tr>
-                <td>
-                    <table width="850" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td width="15%" valign="top" class="data">
-                                    <select name="feature" onchange="getFeaturesVal(this);" class="data">
-                                        <option value="MODEL_YEAR" selected="selected">MODEL_YEAR</option>
-                                        <option value="MODEL_NAME">MODEL_NAME</option>
-                                        <option value="FAC_NAME">FAC_NAME</option>
-                                    </select>
-                                </td>
-                                <td width="35%" valign="top" class="data">
-                                    <select class="form-control" [ngModel]="selectedToAdd" multiple
-                                        name="myselecttsms2" (ngModelChange)="chosenCars($event)"
-                                        style="width: 280px;font-size: 11px;">
-                                        <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
-                                    </select>
-                                </td>
-                                <td align="center" width="25%" class="data">
-                                    <div class="panel-heading">
-                                        <button (click)="assigne()" class="cqp-btn">
-                                            -></button>
-                                    </div>
-                                    <br>
-                                    <div class="panel-heading">
-                                        <button (click)="unassigne()" class="cqp-btn">
-                                            <- </button>
-                                    </div>
-                                </td>
-                                <td width="25%" valign="top" class="data">
-                                    <select class="form-control" [ngModel]="selectedToRemove" multiple
-                                        name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)"
-                                        style="width: 280px;font-size: 11px;">
-                                        <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}
-                                        </option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                    &nbsp;<button type="reset" class="cqp-btn">Reset</button>
+                <td width="2%">Supplier:</td>
+                <td width="45">
+                    <select #s (change)="callSupplier(s.value)" style="width: 30%;">
+                        <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
+                            {{supplier.supplierNo}}
+                            {{supplier.supplierName}}</option>
+                    </select>
                 </td>
             </tr>
         </tbody>
     </table>
+    <hr style='margin-top:0em; margin-bottom: 0em;background-color: grey;' />
+        <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="instructionSmall" colspan="2">Choose by limiting criterion:</td>
+                </tr>
+                <tr>
+                    <td class="data" width="25%">Short Part No:</td>
+                    <td width="20%" class="data">DTF Range:</td>
+                    <td width="60%" class="data">Received Date Range:</td>
+                </tr>
+                <tr>
+                    <td class="data" valign="top">
+                        <select name="partNo" style="width: 180px" class="data">
+                            <option value="ALL">ALL</option>
+                        </select>
+                    </td>
+                    <td class="data">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="data">From:</td>
+                                    <td>
+                                        <input type="date" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="data">To:</td>
+                                    <td>
+                                        <input type="date" name="" id="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td colspan="3">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td bgcolor="#FFFFFF" class="data">From:</td>
+                                    <td bgcolor="#FFFFFF" class="data">
+                                        <input type="date" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="35" class="data">To:</td>
+                                    <td bgcolor="#FFFFFF" class="data">
+                                        <input type="date" name="" id="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr style='margin-top:0em; margin-bottom: 0em;background-color: grey;' />
+        <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="data" width="524">
+                        <table width="850" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td class="data" width="450" height="25">
+                                        Select Feature(s) to Retrieve By.
+                                    </td>
+                                    <td align="left" style="display:none" id="imageId">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="data" valign="top">
+                        <table width="850" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td width="16%" class="data" valign="bottom">
+                                        Available Features:
+                                    </td>
+                                    <td width="35%" class="data" valign="bottom">
+                                        Feature Values:
+                                    </td>
+                                    <td width="12%" class="data" valign="bottom"></td>
+                                    <td width="30%" class="data" valign="bottom">
+                                        Selected Feature Values:
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!--logic to select feature name and values -->
+                <tr>
+                    <td>
+                        <table width="850" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td width="15%" valign="top" class="data">
+                                        <select name="feature" onchange="getFeaturesVal(this);" class="data">
+                                            <option value="MODEL_YEAR" selected="selected">MODEL_YEAR</option>
+                                            <option value="MODEL_NAME">MODEL_NAME</option>
+                                            <option value="FAC_NAME">FAC_NAME</option>
+                                        </select>
+                                    </td>
+                                    <td width="35%" valign="top" class="data">
+                                        <select class="form-control" [ngModel]="selectedToAdd" multiple
+                                            name="myselecttsms2" (ngModelChange)="chosenCars($event)"
+                                            style="width: 280px;font-size: 11px;">
+                                            <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
+                                        </select>
+                                    </td>
+                                    <td align="center" width="25%" class="data">
+                                        <div class="panel-heading">
+                                            <button (click)="assigne()" class="cqp-btn">
+                                                -></button>
+                                        </div>
+                                        <br>
+                                        <div class="panel-heading">
+                                            <button (click)="unassigne()" class="cqp-btn">
+                                                <- </button>
+                                        </div>
+                                    </td>
+                                    <td width="25%" valign="top" class="data">
+                                        <select class="form-control" [ngModel]="selectedToRemove" multiple
+                                            name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)"
+                                            style="width: 280px;font-size: 11px;">
+                                            <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                        &nbsp;<button type="reset" class="cqp-btn">Reset</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ng-container *ngIf="show">
+            <hr style='margin-top:0em; margin-bottom: 0em;background-color: grey;' />
+            <table border="0" width="970" align="center" cellspacing="0" cellpadding="0" bordercolor="#000000">
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="alerthead2">
+                            <a name="List"></a>Warranty Claims List:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="instructionSmall">Click on a record to view the details below.</td>
+                    </tr>
+                    <!-- Begin Content Table -->
+                    <tr>
+                        <td class="alertRed" align="left" colspan="4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="20" class="data">Supplier:</td>
+                        <td width="356" class="data" align="left">
+                            140290 DENSO INTERNATIONAL AMERICA
+                        </td>
+                        <td width="38%" align="right" class="recordnumber">
+                            4
+                            records
+                        </td>
+                        <td width="12%" align="center" class="data">
+
+                            &nbsp;
+
+                            <select name="listPageSelector"
+                                onchange="forms[0].action.value='gotoPageForListWarranty';forms[0].submit();"
+                                class="data">
+                                <option value="1" selected="selected">1</option>
+                            </select>
+
+                            &nbsp;
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="table-layout: auto" border="0" cellspacing="1" cellpadding="4" align="center" width="970">
+
+                <tbody>
+                    <tr align="left" valign="top" bgcolor="#D3D9A4">
+                        <td class="colheadactive">PART_NO</td>
+                        <td class="colheadactive">AF_OFF_DATE</td>
+                        <td class="colheadactive">RECEIVED_DATE</td>
+                        <td class="colheadactive">DTF</td>
+                        <td class="colheadactive">ECUCODE</td>
+                        <td class="colheadactive">CUSTOMER_CONTENTION_TEXT</td>
+                        <td class="colheadactive">MODEL_YEAR</td>
+                    </tr>
+                    <tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
+                        <td align="left">
+                            <a (click)="toggle1()">
+                                39540
+                            </a>
+                        </td>
+                        <td align="left">
+                            02/02/2021
+                        </td>
+                        <td align="left">
+                            04/27/2021
+                        </td>
+                        <td align="left">
+                            44
+                        </td>
+                        <td align="left">
+                        </td>
+                        <td align="left">
+                            CUSTOMER STATES ALEXA DISCONNECTS FROM HIS PHONE AT TIMES AND HE HAS TO REBOOT HIS PHONE IN
+                            ORDER TO GET IT TO RECONNECT.
+                        </td>
+                        <td align="left">
+                            2022
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF" bordercolor="#FFFFFF">
+                        <td align="left">
+                            <a (click)="toggle1()">
+                                39540
+                            </a>
+                        </td>
+                        <td align="left">
+                            02/15/2021
+                        </td>
+                        <td align="left">
+                            04/27/2021
+                        </td>
+                        <td align="left">
+                            1
+                        </td>
+                        <td align="left">
+                        </td>
+                        <td align="left">
+                            CUSTOMER STATES NAV NO RESPONDING WHEN USING VERBAL COMMAND FOR ADDRESS - STATES ROUTE
+                            CALCULATION FAILURE
+                        </td>
+                        <td align="left">
+                            2022
+                        </td>
+                    </tr>
+                    <tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
+                        <td align="left">
+                            <a (click)="toggle1()">
+                                39540
+                            </a>
+                        </td>
+                        <td align="left">
+                            03/11/2021
+                        </td>
+                        <td align="left">
+                            04/23/2021
+                        </td>
+                        <td align="left">
+                            6
+                        </td>
+                        <td align="left">
+                        </td>
+                        <td align="left">
+                            CHECK ERROR MESSAGES
+                        </td>
+                        <td align="left">
+                            2022
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF" bordercolor="#FFFFFF">
+                        <td align="left">
+                            <a (click)="toggle1()">
+                                39540
+                            </a>
+                        </td>
+                        <td align="left">
+                            03/13/2021
+                        </td>
+                        <td align="left">
+                            04/23/2021
+                        </td>
+                        <td align="left">
+                            14
+                        </td>
+                        <td align="left">
+                        </td>
+                        <td align="left">
+                            CLIENT STATES INSPECT FOR NAVI SCREEN FREEZES AND DISPLAYS ERROR MESSAGE
+                        </td>
+                        <td align="left">
+                            2022
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td height="8"><img src="/cqp_dev/cqpd/images/clear.gif" width="1%" height="1" border="0"></td>
+                    </tr>
+                    <tr>
+                        <td height="8"><img src="/cqp_dev/cqpd/images/clear.gif" width="1%" height="1" border="0"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+                            bordercolor="#990000"></td>
+                        <td align="right" valign="left" width="100%">
+                            <button type="reset" class="cqp-btn">Export</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+</ng-container>
+<ng-container *ngIf="inner">
+    <table border="0" width="970" align="center" cellspacing="0" cellpadding="0" bordercolor="#000000">
+        <tbody>
+            <tr>
+                <td class="alerthead2"><a name="Details"></a>View Warranty Claim Details:</td>
+
+            </tr>
+            <tr>
+                <td height="8" colspan="2"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="1" border="0">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border="0" width="970" align="center" cellspacing="0" cellpadding="0" bordercolor="#000000">
+        <tbody>
+            <tr>
+                <td width="50" class="data">Supplier:</td>
+                <td class="data">140290 DENSO INTERNATIONAL AMERICA</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr style='margin-top:0em;background-color: grey;' />
+    <table border="0" width="970" align="center" cellspacing="0" cellpadding="0" bordercolor="#000000">
+        <tbody>
+            <tr class="data">
+                <td width="20%" class="data">Queried features:</td>
+                <td width="80%" class="data"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr style='margin-top:0em;background-color: grey;' />
+    <table border="0" width="970" align="center" cellspacing="0" cellpadding="0" bordercolor="#000000">
+        <tbody>
+            <tr class="data">
+                <td width="20%" class="data">Model Year:</td>
+                <td width="20%" class="data">Model Name:</td>
+                <td width="20%" class="data">Factory Name:</td>
+                <td width="20%" class="data">Production Line:</td>
+                <td width="20%" class="data">Retail Sales: </td>
+            </tr>
+            <tr class="data">
+                <td>2022</td>
+                <td>MDX</td>
+                <td>ELP</td>
+                <td>3</td>
+                <td>02/20/2021</td>
+            </tr>
+            <tr class="data">
+                <td colspan="4"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="4" border="0"></td>
+            </tr>
+            <tr class="data">
+                <td class="data">VIN:</td>
+                <td class="data">Engine No:</td>
+                <td class="data">Transmission No: </td>
+            </tr>
+            <tr class="data">
+                <td>5J8YE1H83NL001901</td>
+                <td>J35Y57653454</td>
+                <td>P1DA1002279</td>
+            </tr>
+            <tr class="data">
+                <td colspan="4"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="4" border="0"></td>
+            </tr>
+            <tr class="data">
+                <td class="data">A.F.Off Date:</td>
+                <td class="data">A.F.Off Month:</td>
+                <td class="data">Engine Off Date:</td>
+                <td class="data">Engine Off Month:</td>
+                <td class="data">Transmission Off:</td>
+            </tr>
+            <tr class="data">
+                <td>02/02/2021</td>
+                <td>2021-02</td>
+                <td>2021-02-01</td>
+                <td>2021-02</td>
+                <td>01/14/2021</td>
+            </tr>
+            <tr class="data">
+                <td colspan="4"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="4" border="0"></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr style='margin-top:0em; margin-bottom: 0em;background-color: grey;' />
+    <table border="0" width="970" align="center" cellspacing="0" cellpadding="0" bordercolor="#000000">
+        <tbody>
+            <tr class="data">
+                <td width="20%" class="data">Dealer No:</td>
+                <td width="20%" class="data">Claim No:</td>
+                <td width="20%" class="data">Dealer State:</td>
+                <td width="20%" class="data">Short Part No:</td>
+                <td width="20%" class="data">Part Name:</td>
+            </tr>
+            <tr class="data">
+                <td>251022</td>
+                <td>406310</td>
+                <td>GA</td>
+                <td>39540</td>
+                <td>DVD UNIT, NAVIGATOR</td>
+            </tr>
+            <tr class="data">
+                <td colspan="4"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="4" border="0"></td>
+            </tr>
+            <tr class="data">
+                <td class="data">ROYR:</td>
+                <td class="data">RO Date:</td>
+                <td class="data">Received Date:</td>
+                <td class="data">ODOM:</td>
+                <td class="data">DTF:</td>
+            </tr>
+            <tr class="data">
+                <td>2021</td>
+                <td>04/05/2021</td>
+                <td>04/27/2021</td>
+                <td>1454miles</td>
+                <td>44days</td>
+            </tr>
+            <tr class="data">
+                <td colspan="4"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="4" border="0"></td>
+            </tr>
+            <tr class="data">
+                <td class="data">Total Charge:</td>
+            </tr>
+            <tr class="data">
+                <td>2087.40
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr style='margin-top:0em; margin-bottom: 0em;background-color: grey;' />
+    <table border="0" width="970" align="center" cellspacing="0" cellpadding="0" bordercolor="#000000">
+
+        <tbody>
+            <tr class="data">
+                <td width="20%" class="data">ECU Code:</td>
+                <td width="40%" class="data">Customer Contention:</td>
+                <td width="40%" class="data">Symptom Code:</td>
+            </tr>
+            <tr class="data">
+                <td></td>
+                <td>CUSTOMER STATES ALEXA DISCONNECTS FROM HIS PHONE AT TIMES AND HE HAS TO REBOOT HIS PHONE IN ORDER TO
+                    GET IT TO RECONNECT.</td>
+                <td>NOT WORKING PROPERLY OR AT ALL</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border="0" width="970" align="center" cellspacing="0" cellpadding="0" bordercolor="#000000">
+
+        <tbody>
+            <tr class="data">
+                <td colspan="4"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="4" border="0"></td>
+            </tr>
+            <tr>
+                <td align="right" valign="middle">
+                    <button type="reset" class="cqp-btn" (click)="toggle1()">Ok</button>
+
+                </td>
+            </tr>
+            <tr>
+                <td height="3"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="1" border="0"></td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>

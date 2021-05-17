@@ -7,11 +7,16 @@ import {Chart} from 'node_modules/chart.js'
   styleUrls: ['./warranty-reports.component.css']
 })
 export class WarrantyReportsComponent implements OnInit {
-
+  public show: boolean = false;
+  public hide: boolean = true;
   constructor() { }
 
   ngOnInit() {
   
+  }
+  toggle() {
+    this.show = !this.show;
+    this.hide = !this.hide;
   }
   a:number=1;
   select(n:number){

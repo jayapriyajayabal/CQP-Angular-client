@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageCategoriesComponent implements OnInit {
 
+  public show: boolean = false;
+  public hide: boolean = true;
   constructor() { }
 
   ngOnInit() {
+  }
+  toggle() {
+    this.show = !this.show;
+    this.hide = !this.hide;
   }
 
 }

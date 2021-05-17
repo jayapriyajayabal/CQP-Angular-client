@@ -11,6 +11,19 @@ export class DailyWarrantyClaimsComponent implements OnInit {
 
   ngOnInit() {
   } 
+  
+  public show: boolean = false;
+  public hide: boolean = true;
+  public inner: boolean = false;
+  public outer: boolean = true;
+  toggle() {
+    this.show = !this.show;
+    this.hide = !this.hide;
+  }
+  toggle1() {
+    this.outer = !this.outer;
+    this.inner = !this.inner;
+  }
   items: any[] = [{id: 1, name: 'model1'}, {id: 2, name: 'model2'}, {id:3, name: 'model3'}];
   selectedItems: any[] = [];
   selectedToAdd: any[] = [];
