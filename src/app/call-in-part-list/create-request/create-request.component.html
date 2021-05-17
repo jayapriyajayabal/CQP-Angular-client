@@ -1,228 +1,755 @@
-<!-- <div class="screen-title"> 
+<ng-container *ngIf="outer">
+    <!-- <div class="screen-title"> 
     Call-in Part List - Create Request 
     </div>
     <br> -->
-<div class="panel panel-primary">
-    <table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+    <div class="panel panel-primary">
+        <table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
 
-        <tbody>
-            <tr>
-                <td class="alerthead2">Search for Requested Call-In Part List items:</td>
-            </tr>
-            <tr>
-                <td class="details" colspan="2">Provide criteria to search for Call-In Part List items</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
-        <tbody>
-            &nbsp;
-            <tr>
-                <td width="2%">Supplier:</td>
-                <td width="45">
-                    <select #s (change)="callSupplier(s.value)" style="width: 30%;">
-                        <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
-                            {{supplier.supplierNo}}
-                            {{supplier.supplierName}}</option>
-                    </select>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <hr>
-    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
-        <tbody>
-            <tr>
-                <td width="20%" class="data">Request Status: </td>
-                <td width="25%" class="data">Short Part No:</td>
-                <td width="15%" class="data">Destination Name:</td>
-                <td width="15%" class="data">Date Range: </td>
-                <td width="15%" class="data">Request Number:</td>
-                <td width="10%" class="data">CPL Ref No.:</td>
-            </tr>
-            <tr valign="top">
-                <td width="20%" class="data"><select name="statusId" style="width: 100px" class="data">
-                        <option value="--Select One--">--Select One--</option>
-
-
-                        <option value="NEW">NEW</option>
-                        <option value="SUBMITTED">SUBMITTED</option>
-                        <option value="APPROVED">APPROVED</option>
-                        <option value="AWAIT-ACTIVE">AWAIT-ACTIVE</option>
-                    </select></td>
-                <td width="25%" class="data"><select name="partNo" style="width: 180px" class="data">
-                        <option value="ALL">ALL</option>
-                    </select></td>
-                <td width="15%"><select name="destinationName" class="data">
-                        <option value="ALL">ALL</option>
-
-                        <option value="HAM">HAM</option>
-                    </select></td>
-
-                <td width="15%" class="data">
-                    <input type="checkbox" name="dateRange" checked="" value="current">
-                    Current Quarter <br>
-
-                    <input type="checkbox" name="dateRange" value="next">
-                    Next Quarter
-                </td>
-
-                <td width="15%"><input type="text" name="reqNo" maxlength="7" size="7" value="" class="data"></td>
-                <td width="10%"><input type="text" name="refNo" maxlength="10" size="10" value="" class="data"></td>
-            </tr>
-        </tbody>
-    </table>
-    <hr>
-    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
-        <tbody>
-            <tr>
-                <td class="data" width="524">
-                    <table width="850" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td class="data" width="450" height="25">
-                                    Select Feature(s) to Retrieve By.
-                                </td>
-                                <td align="left" style="display:none" id="imageId">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="data" valign="top">
-                    <table width="850" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td width="16%" class="data" valign="bottom">
-                                    Available Features:
-                                </td>
-                                <td width="35%" class="data" valign="bottom">
-                                    Feature Values:
-                                </td>
-                                <td width="12%" class="data" valign="bottom"></td>
-                                <td width="30%" class="data" valign="bottom">
-                                    Selected Feature Values:
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <!--logic to select feature name and values -->
-            <tr>
-                <td>
-                    <table width="850" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td width="15%" valign="top" class="data">
-                                    <select name="feature" onchange="getFeaturesVal(this);" class="data">
-                                        <option value="MODEL_YEAR" selected="selected">MODEL_YEAR</option>
-                                        <option value="MODEL_NAME">MODEL_NAME</option>
-                                        <option value="FAC_NAME">FAC_NAME</option>
-                                    </select>
-                                </td>
-                                <td width="35%" valign="top" class="data">
-                                    <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
-                                        (ngModelChange)="chosenCars($event)" style="width: 280px;font-size: 11px;">
-                                        <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
-                                    </select>
-                                </td>
-                                <td align="center" width="25%" class="data">
-                                    <div class="panel-heading">
-                                        <button (click)="assigne()" class="cqp-btn">
-                                            -></button>
-                                    </div>
-                                    <br>
-                                    <div class="panel-heading">
-                                        <button (click)="unassigne()" class="cqp-btn">
-                                            <- </button>
-                                    </div>
-                                </td>
-                                <td width="25%" valign="top" class="data">
-                                    <select class="form-control" [ngModel]="selectedToRemove" multiple
-                                        name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)"
-                                        style="width: 280px;font-size: 11px;">
-                                        <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}
-                                        </option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                    &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp; &nbsp;<button
-                        class="cqp-btn">Create</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<ng-container *ngIf="show">
-    <hr>
-    <table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
-        <tbody>
-            <tr>
-                <td colspan="3" height="8"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" class="alertRed" align="left">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" class="alerthead2"><a name="List"></a>List of Requested Call-In Part List Items:</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="data">Click on a record to see the details below or select desired records and an
-                    action to perform on them. </td>
-            </tr>
-            <tr>
-                <td width="356" class="data" align="left">
-                    Supplier :
-                    011620 ALPINE ELECTRONICS OF AMERICA
-                </td>
-
-            </tr>
-            <tr>
-                <td height="10" colspan="3"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0">
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="panel-body">
-        <table class="table table-borderless table-striped" align="center" border="0" cellpadding="0" cellspacing="0">
-            <thead>
-                <tr class="list-header" style="height: 20%;">
-                    <th></th>
-                    <th>Request Status</th>
-                    <th>CPL Ref No.</th>
-                    <th>Short Part No.</th>
-                    <th>Part Name</th>
-                    <th>Model Year</th>
-                    <th>Model Name</th>
-                    <th>Factory Name</th>
-                    <th>VIN Start</th>
-                    <th>VIN End</th>
-                    <th>End Date</th>
-                    <th>Model Description</th>
-                </tr>
-            </thead>
             <tbody>
                 <tr>
-                    <td colspan="12" class="alertRed">Call-in items matching the search criteria could not be found.
+                    <td class="alerthead2">Search for Requested Call-In Part List items:</td>
+                </tr>
+                <tr>
+                    <td class="details" colspan="2">Provide criteria to search for Call-In Part List items</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+            <tbody>
+                &nbsp;
+                <tr>
+                    <td width="2%">Supplier:</td>
+                    <td width="45">
+                        <select #s (change)="callSupplier(s.value)" style="width: 30%;">
+                            <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
+                                {{supplier.supplierNo}}
+                                {{supplier.supplierName}}</option>
+                        </select>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <hr>
+        <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td width="20%" class="data">Request Status: </td>
+                    <td width="25%" class="data">Short Part No:</td>
+                    <td width="15%" class="data">Destination Name:</td>
+                    <td width="15%" class="data">Date Range: </td>
+                    <td width="15%" class="data">Request Number:</td>
+                    <td width="10%" class="data">CPL Ref No.:</td>
+                </tr>
+                <tr valign="top">
+                    <td width="20%" class="data"><select name="statusId" style="width: 100px" class="data">
+                            <option value="--Select One--">--Select One--</option>
+
+
+                            <option value="NEW">NEW</option>
+                            <option value="SUBMITTED">SUBMITTED</option>
+                            <option value="APPROVED">APPROVED</option>
+                            <option value="AWAIT-ACTIVE">AWAIT-ACTIVE</option>
+                        </select></td>
+                    <td width="25%" class="data"><select name="partNo" style="width: 180px" class="data">
+                            <option value="ALL">ALL</option>
+                        </select></td>
+                    <td width="15%"><select name="destinationName" class="data">
+                            <option value="ALL">ALL</option>
+
+                            <option value="HAM">HAM</option>
+                        </select></td>
+
+                    <td width="15%" class="data">
+                        <input type="checkbox" name="dateRange" checked="" value="current">
+                        Current Quarter <br>
+
+                        <input type="checkbox" name="dateRange" value="next">
+                        Next Quarter
+                    </td>
+
+                    <td width="15%"><input type="text" name="reqNo" maxlength="7" size="7" value="" class="data"></td>
+                    <td width="10%"><input type="text" name="refNo" maxlength="10" size="10" value="" class="data"></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="data" width="524">
+                        <table width="850" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td class="data" width="450" height="25">
+                                        Select Feature(s) to Retrieve By.
+                                    </td>
+                                    <td align="left" style="display:none" id="imageId">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="data" valign="top">
+                        <table width="850" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td width="16%" class="data" valign="bottom">
+                                        Available Features:
+                                    </td>
+                                    <td width="35%" class="data" valign="bottom">
+                                        Feature Values:
+                                    </td>
+                                    <td width="12%" class="data" valign="bottom"></td>
+                                    <td width="30%" class="data" valign="bottom">
+                                        Selected Feature Values:
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!--logic to select feature name and values -->
+                <tr>
+                    <td>
+                        <table width="850" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td width="15%" valign="top" class="data">
+                                        <select name="feature" onchange="getFeaturesVal(this);" class="data">
+                                            <option value="MODEL_YEAR" selected="selected">MODEL_YEAR</option>
+                                            <option value="MODEL_NAME">MODEL_NAME</option>
+                                            <option value="FAC_NAME">FAC_NAME</option>
+                                        </select>
+                                    </td>
+                                    <td width="35%" valign="top" class="data">
+                                        <select class="form-control" [ngModel]="selectedToAdd" multiple
+                                            name="myselecttsms2" (ngModelChange)="chosenCars($event)"
+                                            style="width: 280px;font-size: 11px;">
+                                            <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
+                                        </select>
+                                    </td>
+                                    <td align="center" width="25%" class="data">
+                                        <div class="panel-heading">
+                                            <button (click)="assigne()" class="cqp-btn">
+                                                -></button>
+                                        </div>
+                                        <br>
+                                        <div class="panel-heading">
+                                            <button (click)="unassigne()" class="cqp-btn">
+                                                <- </button>
+                                        </div>
+                                    </td>
+                                    <td width="25%" valign="top" class="data">
+                                        <select class="form-control" [ngModel]="selectedToRemove" multiple
+                                            name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)"
+                                            style="width: 280px;font-size: 11px;">
+                                            <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                        &nbsp;<button type="reset" class="cqp-btn">Reset</button> &nbsp; &nbsp;<button
+                            class="cqp-btn">Create</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <ng-container *ngIf="show">
+        <hr>
+        <table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td colspan="3" height="8"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="alertRed" align="left">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="alerthead2"><a name="List"></a>List of Requested Call-In Part List Items:
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="data">Click on a record to see the details below or select desired records
+                        and an
+                        action to perform on them. </td>
+                </tr>
+                <tr>
+                    <td width="356" class="data" align="left">
+                        Supplier :
+                        011620 ALPINE ELECTRONICS OF AMERICA
+                    </td>
+
+                </tr>
+                <tr>
+                    <td height="10" colspan="3"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1"
+                            border="0">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="panel-body">
+            <table border="0" width="970" cellspacing="0" cellpadding="4" align="center" bordercolor="#FFFFFF">
+                <colgroup>
+                    <col width="3%">
+                    <col width="9%">
+                    <col width="6%">
+                    <col width="6%">
+                    <col width="12%">
+                    <col width="5%">
+                    <col width="8%">
+                    <col width="6%">
+                    <col width="12%">
+                    <col width="12%">
+                    <col width="5%">
+                    <col width="22%">
+                </colgroup>
+                <tbody>
+
+                    <tr align="left" valign="top" bgcolor="#D3D9A4">
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" align="center" class="colheadactive">
+                            &nbsp;
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Request Status
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            CPL Ref No.
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Short Part No.
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Part Name
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Model Year
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Model Name
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Factory Name
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            VIN Start
+                        </th>
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            VIN End
+                        </th>
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            <a href="javascript:setSortColumn('end_date');submitFormCQP(false,0,'SortRequest');"
+                                class="colhead">
+                                End Date
+                            </a>
+                        </th>
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            <a href="javascript:setSortColumn('model_description');submitFormCQP(false,0,'SortRequest');"
+                                class="colhead">
+                                Model Description
+                            </a>
+                        </th>
+                    </tr>
+                    <tr bgcolor="#F6F3B5">
+
+                        <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
+
+
+                            <input type="checkbox" name="editCipl" value="0">
+
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+
+                            <a (click)=toggle1()>
+                                SUBMITTED
+                            </a>
+
+                        </td>
+
+
+
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            408399
+                            <input type="hidden" name="ciplId" value="408399">
+                        </td>
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            39011
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            PANEL COMP-PAINTI
+                        </td>
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            2022
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            ACCORD
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            ELP
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            &nbsp;
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            &nbsp;
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            06/30/2021&nbsp;
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+
+                        <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
+
+
+                            <input type="checkbox" name="editCipl" value="1">
+
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+
+                            <a (click)=toggle1()>
+                                SUBMITTED
+                            </a>
+
+                        </td>
+
+
+
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            408404
+                            <input type="hidden" name="ciplId" value="408404">
+                        </td>
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            39010
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            DVD-ROM, NAVIGATOR
+                        </td>
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            2022
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            ACCORD
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            ELP
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            &nbsp;
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            &nbsp;
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            06/30/2021&nbsp;
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            &nbsp;
+                        </td>
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+            <table class="table table-borderless">
+                <tr>
+                    <td width="50%"></td>
+                    <td align="right">
+    
+                        <button (click)="toggle()" class="cqp-btn">Approve</button>
+                        &nbsp;&nbsp;
+                        <button type="reset" class="cqp-btn">Export</button>
+                        &nbsp;&nbsp;
+                        <button (click)="toggle()" class="cqp-btn">Select All</button>
+                        &nbsp;&nbsp;
+                        <button type="reset" class="cqp-btn">Deselect All</button>
+                        &nbsp;&nbsp;
+                        <button (click)="toggle()" class="cqp-btn">Cancel</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </ng-container>
+</ng-container>
+<ng-container *ngIf="inner">
+
+    <table border="0" width="970" cellspacing="0" cellpadding="2" align="center" bordercolor="#FFFFFF">
+        <tbody>
+            <tr>
+                <td nowrap="" colspan="3" class="alerthead2" bordercolor="#990000">
+                    Update Call-In Part List Item Request:
+                </td>
+            </tr>
+            <tr>
+                <td class="data" colspan="3" valign="top" bordercolor="#990000">
+
+                    Provide details to update a Call-In Part List Item.
+                </td>
+            </tr>
+            <tr>
+                <td align="left" width="93%" bordercolor="#990000">
+                    Supplier :
+
+                    011620 ALPINE ELECTRONICS OF AMERICA
+
+                </td>
+                <td class="data" align="right" bordercolor="#990000">Status:</td>
+                <td class="alertRed" align="right" bordercolor="#990000">
+                    SUBMITTED
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="970" align="center" cellpadding="2" cellspacing="0" border="0">
+
+        <tbody>
+            <tr>
+                <td width="25%" class="data">Short Part No:
+                </td>
+                <td width="25%" class="data">Model Year:</td>
+                <td width="25%" class="data">Model Name:</td>
+                <td width="25%" class="data">Factory Name:</td>
+
+            </tr>
+            <tr>
+                <td class="data">
+
+
+                    <select name="updPartNo" onchange="setTabOut();" style="width: 190px" class="data">
+                        <option value="39010">39010-DVD-ROM, NAVIGATOR</option>
+                        <option value="39011" selected="selected">39011-PANEL COMP-PAINTI</option>
+                        <option value="39012">39012-TUNER UNIT ASSY</option>
+                        <option value="39050">39050-MODULE</option>
+                        <option value="39052">39052-SWITCH ASSY.</option>
+                        <option value="39053">39053-SWITCH ASSY.</option>
+                        <option value="39054">39054-BULB, NEO-WEDGE</option>
+                        <option value="39062">39062-SCREW (M2.6X10)</option>
+                        <option value="39063">39063-SCREW</option>
+                        <option value="39064">39064-SCREW (M4X12)</option>
+                        <option value="39069">39069-SCREW</option>
+                        <option value="39071">39071-INSULATOR SIDE R</option>
+                        <option value="39076">39076-INSULATOR SIDE L</option>
+                        <option value="39083">39083-BASE ASSY.</option>
+                        <option value="39095">39095-UNIT ASSY., CP/AA</option>
+                        <option value="39100">39100-TUNER ASSY.</option>
+                        <option value="39101">39101-TUNER, AUTO RADIO</option>
+                        <option value="39102">39102-KNOB</option>
+                        <option value="39103">39103-KNOB, VOLUME</option>
+                        <option value="39104">39104-KNOB, BASS TREBLE</option>
+                        <option value="39105">39105-KNOB, CENTER</option>
+                        <option value="39106">39106-KNOB</option>
+                        <option value="39107">39107-GARNISH, AUTO RADIO</option>
+                        <option value="39113">39113-CORD, RADIO GROUND</option>
+                        <option value="39114">39114-JACK, AUX IN.</option>
+                        <option value="39115">39115-CHANGER ASSY., CD</option>
+                        <option value="39119">39119-MAGAZINE ASSY., CD</option>
+                        <option value="39120">39120-SPEAKER ASSY.</option>
+                        <option value="39125">39125-BOX, SPEAKER</option>
+                        <option value="39170">39170-BASE, POWER</option>
+                        <option value="39171">39171-AUDIO UNIT</option>
+                        <option value="39172">39172-BASE ASSY.</option>
+                        <option value="39173">39173-SHIELD ASSY.</option>
+                        <option value="39175">39175-TUNER ASSY.</option>
+                        <option value="39176">39176-BRACKET, R.</option>
+                        <option value="39177">39177-DISPLAY</option>
+                        <option value="39178">39178-DISPLAY</option>
+                        <option value="39179">39179-PANEL ASSY.</option>
+                        <option value="39183">39183-CONTROL</option>
+                        <option value="39186">39186-AMPLIFIER, AUDIO</option>
+                        <option value="39200">39200-CONTROL UNIT</option>
+                        <option value="39210">39210-HEATER UNIT</option>
+                        <option value="39220">39220-LEVER W/V B</option>
+                        <option value="39540">39540-DVD UNIT, NAVIGATOR</option>
+                        <option value="39541">39541-BRACKET</option>
+                        <option value="39542">39542-COVER, NAVIGATION</option>
+                        <option value="39543">39543-BRACKET, L.</option>
+                        <option value="39544">39544-KNOB,JOY</option>
+                        <option value="39545">39545-COVER,DVD</option>
+                        <option value="39546">39546-DVD UNIT, NAVIGATOR</option>
+                        <option value="39547">39547-BRKT, L. NAVIGATOR</option>
+                        <option value="39548">39548-CAP,CONNECTOR M</option>
+                        <option value="39710">39710-DISPLAY ASSY.</option>
+                        <option value="39711">39711-DISPLAY ASSY,NAVI</option>
+                        <option value="39712">39712-FRONT LENS</option>
+                        <option value="39713">39713-DISPLAY ASSY,CTR(</option>
+                        <option value="39714">39714-CASE, RR.</option>
+                        <option value="39715">39715-ROTARY KNOB ASSY.</option>
+                        <option value="39800">39800-UNIT ASSY,TUNER</option>
+                        <option value="39810">39810-DISPLAY, NAVIGATOR</option>
+                        <option value="39811">39811-DISPLAY, NAVIGATION</option>
+                        <option value="39812">39812-LABEL, MERCURY</option>
+                        <option value="39813">39813-KNOB, JOY</option>
+                        <option value="78200">78200-DISPLAY</option>
+                        <option value="91555">91555-CLIP, CONNECTOR</option>
+                    </select>
+
+
+                </td>
+                <td class="data" width="25%">
+
+
+                    <select name="updModelYear" onchange="setTabOut();" class="data">
+                        <option value="2022" selected="selected">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                        <option value="1999">1999</option>
+                        <option value="1998">1998</option>
+                    </select>
+
+
+                </td>
+                <td class="data">
+
+
+                    <select name="updModelName" onchange="setTabOut();" style="width: 120px" class="data">
+                        <option value="ACCORD" selected="selected">ACCORD</option>
+                        <option value="CIVIC">CIVIC</option>
+                        <option value="CL">CL</option>
+                        <option value="CROSSTOUR">CROSSTOUR</option>
+                        <option value="CRV">CRV</option>
+                        <option value="CSX">CSX</option>
+                        <option value="EL">EL</option>
+                        <option value="ELEMENT">ELEMENT</option>
+                        <option value="FIT">FIT</option>
+                        <option value="HRV">HRV</option>
+                        <option value="ILX">ILX</option>
+                        <option value="INSIGHT">INSIGHT</option>
+                        <option value="MDX">MDX</option>
+                        <option value="NSX">NSX</option>
+                        <option value="ODYSSEY">ODYSSEY</option>
+                        <option value="PASSPORT">PASSPORT</option>
+                        <option value="PILOT">PILOT</option>
+                        <option value="RDX">RDX</option>
+                        <option value="RIDGELINE">RIDGELINE</option>
+                        <option value="TL">TL</option>
+                        <option value="TLX">TLX</option>
+                        <option value="ZDX">ZDX</option>
+                    </select>
+
+
+                </td>
+                <td class="data" width="25%">
+
+
+                    <select name="updFactoryName" onchange="setTabOut();" class="data">
+                        <option value="ELP" selected="selected">ELP</option>
+                        <option value="HCL">HCL</option>
+                        <option value="HCM">HCM</option>
+                        <option value="HDM">HDM</option>
+                        <option value="HMA">HMA</option>
+                        <option value="HMI">HMI</option>
+                        <option value="MAP">MAP</option>
+                        <option value="PMC">PMC</option>
+                    </select>
+
+
+                </td>
+            </tr>
+            <tr>
+                <td class="data" colspan="2">VIN Start:</td>
+                <td class="data">VIN End:</td>
+
+            </tr>
+            <tr>
+
+                <td class="data" colspan="2">
+
+                    <select name="updStartVinList" onchange="selectVinStart();setTabOut();" style="width: 190px"
+                        class="data">
+                        <option value="--Select One--">--Select One--</option>
+                    </select>
+                    <input type="text" name="updStartVinText" maxlength="17" size="25" value="" onchange="setTabOut();"
+                        style="color:blue" class="data">
+                </td>
+
+
+                <td class="data" colspan="2">
+
+                    <select name="updEndVinList" onchange="selectVinEnd();setTabOut();" style="width: 190px"
+                        class="data">
+                        <option value="--Select One--">--Select One--</option>
+                    </select>
+                    <input type="text" name="updEndVinText" maxlength="17" size="25" value="" onchange="setTabOut();"
+                        style="color:blue" class="data">
+                </td>
+
+
+
+
+
+            </tr>
+
+            <tr>
+                <td class="data">Start Date:</td>
+
+                <td class="data">End Date: </td>
+                <td class="data">CPL Ref No.:</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="data" valign="top" width="25%">04/01/2021</td>
+
+                <td class="data" valign="top" width="25%">06/30/2021</td>
+                <td class="data" valign="top" width="25%">408399</td>
+                <td width="25%">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td class="data">Destination Name:</td>
+
+                <td class="data">Requested Quantity:</td>
+
+                <td class="data">Request No.:
+                </td>
+
+                <td class="data">Model Description:
+                </td>
+
+            </tr>
+            <tr>
+                <td class="data" valign="top">
+
+
+                    <select name="updDestinationName" onchange="setTabOut();" class="data">
+                        <option value="HAM" selected="selected">HAM</option>
+                    </select>
+
+
+                </td>
+                <td class="data" valign="top">
+
+
+                    <input type="text" name="updQuantity" maxlength="4" size="4" value="1" onchange="setTabOut();"
+                        class="data">
+
+
+                </td>
+
+                <td valign="top">
+
+
+                    <input type="text" name="updrRequestNo" maxlength="7" size="7" value="" disabled="disabled"
+                        class="data">
+
+                </td>
+
+                <td class="data" valign="top" align="left">
+
+
+                    <textarea name="updModelDesc" cols="40" rows="2" onchange="setTabOut();" class="data"></textarea>
+
+
+
+                </td>
+
+            </tr>
+            <tr>
+                <td class="data" valign="top"></td>
+            </tr>
+            <tr>
+                <td class="data" valign="top">Long Part No.:</td>
+            </tr>
+            <tr>
+                <td class="data" valign="top" align="left">
+
+
+                    <input type="text" name="longPartNo" maxlength="17" size="17" value="" onchange="setTabOut();"
+                        class="data">
+
+
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+        <tbody>
+            <tr>
+                <td class="databold">Following fields are optional:</td>
+            </tr>
+            <tr>
+                <td align="left" style="">IPP Tag # / Ship Date / MIR No.:</td>
+            </tr>
+            <tr>
+                <td class="data" valign="top">
+
+
+
+
+
+                    <textarea name="updIpp" cols="40" rows="2" onchange="setTabOut();" class="data"></textarea>
+
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-borderless">
+        <tr>
+            <td width="50%"></td>
+            <td align="right">
+
+                <button (click)="toggle()" class="cqp-btn">Save</button>
+                &nbsp;&nbsp;
+                <button type="reset" class="cqp-btn">Reset</button>
+                &nbsp;&nbsp;
+                <button (click)="toggle()" class="cqp-btn">Comments</button>
+                &nbsp;&nbsp;
+                <button type="reset" class="cqp-btn">Delete</button>
+                &nbsp;&nbsp;
+                <button (click)="toggle()" class="cqp-btn">Cancel</button>
+            </td>
+        </tr>
+    </table>
 
 </ng-container>

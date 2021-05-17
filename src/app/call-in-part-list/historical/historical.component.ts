@@ -9,6 +9,8 @@ export class HistoricalComponent implements OnInit {
 
   public show: boolean = false;
   public hide: boolean = true;
+  public inner: boolean = false;
+  public outer: boolean = true;
   constructor() { }
 
   ngOnInit() {
@@ -45,5 +47,10 @@ export class HistoricalComponent implements OnInit {
       return this.cars.indexOf(selectedCar) < 0;
     });
     this.selectedToRemove = [];
+  }
+  
+  toggle1() {
+    this.inner = !this.inner;
+    this.outer = !this.outer;
   }
 }

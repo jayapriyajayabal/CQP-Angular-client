@@ -1,103 +1,257 @@
-<!-- <div class="screen-title">
+<ng-container *ngIf="outer">
+	<!-- <div class="screen-title">
 	Administration - CQ Supplier Setup
 </div>
 <br> -->
-<form>
+	<form>
+		<table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+
+			<tbody>
+				<tr>
+					<td class="alerthead2">Search for Users:</td>
+				</tr>
+				<tr>
+					<td class="data" colspan="2">
+						<div class="details">Provide criteria to search for users :</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+
+		<table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+			<tbody>
+				<tr>
+					<td width="25%">First Name:</td>
+					<td width="20%">Last Name:</td>
+					<td width="55%">User Id:</td>
+				</tr>
+				<tr>
+					<td class="data" align="left" valign="top"><input type="text" name="firstName" maxlength="50"
+							size="25" value="" class="data"></td>
+
+					<td class="data" align="left" valign="top"><input type="text" name="lastName" maxlength="50"
+							size="25" value="" class="data"></td>
+					<td class="data" align="left" valign="top"><input type="text" name="userId" maxlength="50" size="25"
+							value="" class="data"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+
+			<tbody>
+				<ng-container *ngIf="hide">
+					<tr>
+						<td height="100"></td>
+					</tr>
+				</ng-container>
+				<tr>
+					<td align="right"
+						style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-width: 1"
+						bordercolor="#990000">
+						<button valign="top" (click)="toggle()" type="submit"
+							class="cqp-btn short-btn-space">Search</button>
+
+						<button valign="top" (click)="newoverrideForm.reset()" type="submit"
+							class="cqp-btn short-btn-space">Reset</button>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+
+		<ng-container *ngIf="show">
+			<tbody>
+				<tr>
+					<td nowrap="" colspan="5" class="alerthead2"
+						style="padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium"
+						bordercolor="#990000">
+						<b>CQ Users List:</b>
+
+					</td>
+				</tr>
+				<tr>
+					<td class="" colspan="2" valign="top">
+						<div class="details">Select a user to assign/unassign role.</div>
+					</td>
+				</tr>
+			</tbody>
+			<div class="panel-body">
+				<table border="0" cellspacing="1" cellpadding="4" align="center" width="500">
+
+
+					<tbody>
+						<tr align="left" valign="top" bgcolor="#D3D9A4">
+							<td class="colheadactive">First Name</td>
+							<td class="colheadactive">Last name</td>
+							<td class="colheadactive">User Id</td>
+							<td class="colheadactive">User Type</td>
+						</tr>
+						<tr bgcolor="#F6F3B5">
+
+							<td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+								<a (click)=toggle1()>
+									Sharon </a>
+							</td>
+							<td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+								Schwinne</td>
+							<td align="left" width="25%"
+								style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+								13033</td>
+							<td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+								SUPPLIER
+							</td>
+
+						</tr>
+						<tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
+						</tr>
+						<tr bgcolor="#FFFFFF">
+
+							<td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+								<a (click)=toggle1()>
+									Niraj </a>
+							</td>
+							<td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+								Pandey</td>
+							<td align="left" width="25%"
+								style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+								36465</td>
+							<td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+
+								HONDA
+							</td>
+						</tr>
+						<tr bgcolor="#FFFFFF" bordercolor="#FFFFFF">
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</ng-container>
+
+	</form>
+</ng-container>
+<ng-container *ngIf="inner">
+
 	<table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
 
 		<tbody>
 			<tr>
-				<td class="alerthead2">Search for Users:</td>
+				<td class="alerthead2">Assigned Suppliers:</td>
 			</tr>
 			<tr>
-				<td class="data" colspan="2">
-					<div class="details">Provide criteria to search for users :</div>
-				</td>
+				<td class="data" colspan="2">Select supplier(s) to unassign or choose option to assign new.</td>
 			</tr>
 		</tbody>
 	</table>
 	<hr>
-
-	<table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+	<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
 		<tbody>
 			<tr>
-				<td width="25%">First Name:</td>
-				<td width="20%">Last Name:</td>
-				<td width="55%">User Id:</td>
+				<td width="20%" class="data">First Name:</td>
+				<td width="20%" class="data">Last Name:</td>
+				<td width="20%" class="data">User Id: </td>
+				<td width="20%" class="data">
+					User Type:
+				</td>
+
+				<td width="20%" class="data">Base Supp No.</td>
 			</tr>
 			<tr>
-				<td class="data" align="left" valign="top"><input type="text" name="firstName" maxlength="50" size="25"
-						value="" class="data"></td>
+				<td class="data" valign="top">Sharon</td>
+				<td class="data" valign="top">Schwinne</td>
+				<td class="data" valign="top">13033</td>
+				<td width="20%" class="data">
+					SUPPLIER
 
-				<td class="data" align="left" valign="top"><input type="text" name="lastName" maxlength="50" size="25"
-						value="" class="data"></td>
-				<td class="data" align="left" valign="top"><input type="text" name="userId" maxlength="50" size="25"
-						value="" class="data"></td>
+				</td>
+
+				<td width="20%" class="data">
+					502542
+				</td>
 			</tr>
 		</tbody>
 	</table>
+	<table width="50%" align="center" border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+			<tr>
 
+				<td width="38%" align="right" class="recordnumber">1 records</td>
+				<td width="12%" align="center" class="data"> &nbsp; <select name="listPageSelector"
+						onchange="document.forms[0].action.value='gotoPageForListAssignedSup';document.forms[0].submit();"
+						class="data">
+						<option value="1" selected="selected">1</option>
+					</select> &nbsp; </td>
+			</tr>
+			<tr>
+				<td height="10"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+			</tr>
+		</tbody>
+	</table>
+	<table style="table-layout: fixed" border="0" cellspacing="1" cellpadding="4" align="center" width="500">
+		<colgroup>
+			<col width="7%">
+			<col width="30%">
+			<col width="60%">
+
+		</colgroup>
+		<tbody>
+			<tr>
+				<th align="center" bgcolor="#D3D9A4" class="colheadactive">&nbsp;</th>
+				<th class="colheadactive" bgcolor="#D3D9A4">Supplier No.</th>
+				<th class="colheadactive" bgcolor="#D3D9A4">Supplier Name</th>
+			</tr>
+
+
+
+
+
+
+			<!-- Logic to get alternate row colors  -->
+
+
+
+
+
+			<tr bgcolor="#F6F3B5">
+
+				<td align="center"
+					style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+					bordercolor="#990000"><input type="checkbox" name="editIndexes" value="0" onchange="setTabOut()">
+				</td>
+				<td align="left"
+					style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+					bordercolor="#990000">132598</td>
+				<td align="left"
+					style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+					bordercolor="#990000">TEMIC AUTOMOTIVE OF N A</td>
+
+			</tr>
+
+
+
+
+		</tbody>
+	</table>
 	<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
 
 		<tbody>
-			<ng-container *ngIf="hide">
-				<tr>
-					<td height="100"></td>
-				</tr>
-			</ng-container>
+			<tr>
+				<td height="40"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+			</tr>
 			<tr>
 				<td align="right"
-					style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-width: 1"
+					style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium;  border-bottom-width: 1"
 					bordercolor="#990000">
 					<button valign="top" (click)="toggle()" type="submit"
-						class="cqp-btn short-btn-space">Search</button>
-
-					<button valign="top" (click)="newoverrideForm.reset()" type="submit"
-						class="cqp-btn short-btn-space">Reset</button>
-
+							class="cqp-btn short-btn-space">Unassign</button>
+					<button valign="top" (click)="toggle()" type="submit"
+							class="cqp-btn short-btn-space">Assign New</button>
+					<button valign="top" (click)="toggle1()" type="submit"
+							class="cqp-btn short-btn-space">Cancel</button>
 				</td>
 			</tr>
 		</tbody>
 	</table>
-	<hr>
-
-	<ng-container *ngIf="show">
-		<tbody>
-			<tr>
-				<td nowrap="" colspan="5" class="alerthead2"
-					style="padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium"
-					bordercolor="#990000">
-					<b>CQ Users List:</b>
-
-				</td>
-			</tr>
-			<tr>
-				<td class="" colspan="2" valign="top">
-					<div class="details">Select a user to assign/unassign role.</div>
-				</td>
-			</tr>
-		</tbody>
-		<div class="panel-body">
-			<table class="table table-borderless" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 50%;">
-				<thead>
-					<tr class="list-header" style="height: 20%;">
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>User Id</th>
-						<th>User Type</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr style="text-align: center;">
-						<td align="margin-left"><a href="">Darpan</a></td>
-						<td align="margin-left">Madia</td>
-						<td align="margin-left">vcc92202</td>
-						<td align="margin-left">HONDA</td>
-
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</ng-container>
-
-</form>
+</ng-container>

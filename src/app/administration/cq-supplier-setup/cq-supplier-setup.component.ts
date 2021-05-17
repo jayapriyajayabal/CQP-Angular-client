@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CqSupplierSetupComponent implements OnInit {
 
   public show: boolean = false;
+  public inner: boolean = false;
+  public outer: boolean = true;
   public hide: boolean = true;
   constructor() { }
 
@@ -16,6 +18,10 @@ export class CqSupplierSetupComponent implements OnInit {
   toggle() {
     this.show = !this.show;
     this.hide = !this.hide;
+  }
+  toggle1() {
+    this.inner = !this.inner;
+    this.outer = !this.outer;
   }
 
 }

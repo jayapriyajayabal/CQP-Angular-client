@@ -1,425 +1,551 @@
-<div class="panel panel-primary">
-    <table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+<ng-container *ngIf="outer">
 
-        <tbody>
-            <tr>
-                <td class="alerthead2">Search for Historical Call-In Part List items:</td>
-            </tr>
-            <tr>
-                <td class="details" colspan="2">Provide criteria to search for Historical Call-In Part List items</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="panel panel-primary">
+        <table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
 
-    <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
-        <tbody>
-            &nbsp;
-            <tr>
-                <td width="2%">Supplier:</td>
-                <td width="45">
-                    <select #s (change)="callSupplier(s.value)" style="width: 30%;">
-                        <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
-                            {{supplier.supplierNo}}
-                            {{supplier.supplierName}}</option>
-                    </select>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <hr>
-    <div class="supplier-panel-body">
-        <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
             <tbody>
                 <tr>
-                    <td width="15%" class="data">Request Status: </td>
-                    <td width="20%" class="data">Short Part No:</td>
-                    <td width="20%" class="data">Destination Name:</td>
-                    <td width="20%" class="data">Expiration Date Range: </td>
-                    <td width="15%" class="data">Request Number:</td>
-                    <td width="10%" class="data">CPL Ref No.:</td>
+                    <td class="alerthead2">Search for Historical Call-In Part List items:</td>
                 </tr>
-                <tr valign="top">
-                    <td width="15%" class="data">Historical</td>
-                    <td width="20%" class="data">
-                        <select name="partNo" style="width: 180px" class="data">
-                            <option value="ALL" selected="selected">ALL</option>
+                <tr>
+                    <td class="details" colspan="2">Provide criteria to search for Historical Call-In Part List items
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-                            <option value="39540-COVER,DVD">39540-COVER,DVD</option>
-                            <option value="39710-DISPLAY ASSY.">39710-DISPLAY ASSY.</option>
+        <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+            <tbody>
+                &nbsp;
+                <tr>
+                    <td width="2%">Supplier:</td>
+                    <td width="45">
+                        <select #s (change)="callSupplier(s.value)" style="width: 30%;">
+                            <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
+                                {{supplier.supplierNo}}
+                                {{supplier.supplierName}}</option>
                         </select>
                     </td>
-                    <td width="20%">
-                        <select name="destinationName" style="width: 100px" class="data">
-                            <option value="ALL" selected="selected">ALL</option>
-
-                            <option value="HAM">HAM</option>
-                        </select>
-                    </td>
-
-                    <td width="20%" class="data">
-                        From &nbsp;&nbsp;:
-                        <input type="date" name="" id="">
-                        <br>
-                        <br>
-                        To &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
-                        <input type="date" name="" id="">
-                    </td>
-                    <td width="15%" class="data"><input type="text" name="reqNo" maxlength="7" size="7" value=""
-                            class="data"></td>
-                    <td width="10%" class="data"><input type="text" name="refNo" maxlength="10" size="10" value=""
-                            class="data"></td>
                 </tr>
             </tbody>
         </table>
         <hr>
-        <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+        <div class="supplier-panel-body">
+            <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td width="15%" class="data">Request Status: </td>
+                        <td width="20%" class="data">Short Part No:</td>
+                        <td width="20%" class="data">Destination Name:</td>
+                        <td width="20%" class="data">Expiration Date Range: </td>
+                        <td width="15%" class="data">Request Number:</td>
+                        <td width="10%" class="data">CPL Ref No.:</td>
+                    </tr>
+                    <tr valign="top">
+                        <td width="15%" class="data">Historical</td>
+                        <td width="20%" class="data">
+                            <select name="partNo" style="width: 180px" class="data">
+                                <option value="ALL" selected="selected">ALL</option>
+
+                                <option value="39540-COVER,DVD">39540-COVER,DVD</option>
+                                <option value="39710-DISPLAY ASSY.">39710-DISPLAY ASSY.</option>
+                            </select>
+                        </td>
+                        <td width="20%">
+                            <select name="destinationName" style="width: 100px" class="data">
+                                <option value="ALL" selected="selected">ALL</option>
+
+                                <option value="HAM">HAM</option>
+                            </select>
+                        </td>
+
+                        <td width="20%" class="data">
+                            From &nbsp;&nbsp;:
+                            <input type="date" name="" id="">
+                            <br>
+                            <br>
+                            To &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                            <input type="date" name="" id="">
+                        </td>
+                        <td width="15%" class="data"><input type="text" name="reqNo" maxlength="7" size="7" value=""
+                                class="data"></td>
+                        <td width="10%" class="data"><input type="text" name="refNo" maxlength="10" size="10" value=""
+                                class="data"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="data" width="524">
+                            <table width="850" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="data" width="450" height="25">
+                                            Select Feature(s) to Retrieve By.
+                                        </td>
+                                        <td align="left" style="display:none" id="imageId">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="data" valign="top">
+                            <table width="850" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td width="16%" class="data" valign="bottom">
+                                            Available Features:
+                                        </td>
+                                        <td width="35%" class="data" valign="bottom">
+                                            Feature Values:
+                                        </td>
+                                        <td width="12%" class="data" valign="bottom"></td>
+                                        <td width="30%" class="data" valign="bottom">
+                                            Selected Feature Values:
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!--logic to select feature name and values -->
+                    <tr>
+                        <td>
+                            <table width="850" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td width="15%" valign="top" class="data">
+                                            <select name="feature" onchange="getFeaturesVal(this);" class="data">
+                                                <option value="MODEL_YEAR" selected="selected">MODEL_YEAR</option>
+                                                <option value="MODEL_NAME">MODEL_NAME</option>
+                                                <option value="FAC_NAME">FAC_NAME</option>
+                                            </select>
+                                        </td>
+                                        <td width="35%" valign="top" class="data">
+                                            <select class="form-control" [ngModel]="selectedToAdd" multiple
+                                                name="myselecttsms2" (ngModelChange)="chosenCars($event)"
+                                                style="width: 280px;font-size: 11px;">
+                                                <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
+                                            </select>
+                                        </td>
+                                        <td align="center" width="25%" class="data">
+                                            <div class="panel-heading">
+                                                <button (click)="assigne()" class="cqp-btn">
+                                                    -></button>
+                                            </div>
+                                            <br>
+                                            <div class="panel-heading">
+                                                <button (click)="unassigne()" class="cqp-btn">
+                                                    <- </button>
+                                            </div>
+                                        </td>
+                                        <td width="25%" valign="top" class="data">
+                                            <select class="form-control" [ngModel]="selectedToRemove" multiple
+                                                name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)"
+                                                style="width: 280px;font-size: 11px;">
+                                                <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}
+                                                </option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                            &nbsp;<button type="reset" class="cqp-btn">Reset</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <ng-container *ngIf="show">
+        <hr>
+        <table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
             <tbody>
                 <tr>
-                    <td class="data" width="524">
-                        <table width="850" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                    <td class="data" width="450" height="25">
-                                        Select Feature(s) to Retrieve By.
-                                    </td>
-                                    <td align="left" style="display:none" id="imageId">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="data" valign="top">
-                        <table width="850" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                    <td width="16%" class="data" valign="bottom">
-                                        Available Features:
-                                    </td>
-                                    <td width="35%" class="data" valign="bottom">
-                                        Feature Values:
-                                    </td>
-                                    <td width="12%" class="data" valign="bottom"></td>
-                                    <td width="30%" class="data" valign="bottom">
-                                        Selected Feature Values:
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <!--logic to select feature name and values -->
-                <tr>
-                    <td>
-                        <table width="850" border="0" cellpadding="0" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                    <td width="15%" valign="top" class="data">
-                                        <select name="feature" onchange="getFeaturesVal(this);" class="data">
-                                            <option value="MODEL_YEAR" selected="selected">MODEL_YEAR</option>
-                                            <option value="MODEL_NAME">MODEL_NAME</option>
-                                            <option value="FAC_NAME">FAC_NAME</option>
-                                        </select>
-                                    </td>
-                                    <td width="35%" valign="top" class="data">
-                                        <select class="form-control" [ngModel]="selectedToAdd" multiple
-                                            name="myselecttsms2" (ngModelChange)="chosenCars($event)"
-                                            style="width: 280px;font-size: 11px;">
-                                            <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
-                                        </select>
-                                    </td>
-                                    <td align="center" width="25%" class="data">
-                                        <div class="panel-heading">
-                                            <button (click)="assigne()" class="cqp-btn">
-                                                -></button>
-                                        </div>
-                                        <br>
-                                        <div class="panel-heading">
-                                            <button (click)="unassigne()" class="cqp-btn">
-                                                <- </button>
-                                        </div>
-                                    </td>
-                                    <td width="25%" valign="top" class="data">
-                                        <select class="form-control" [ngModel]="selectedToRemove" multiple
-                                            name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)"
-                                            style="width: 280px;font-size: 11px;">
-                                            <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}
-                                            </option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <td class="alertRed" align="left" colspan="3">
                     </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td colspan="3" class="alerthead2"><a name="List"></a>List of Historical Call-In Part List Items
+                    </td>
                 </tr>
                 <tr>
-                    <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                        &nbsp;<button type="reset" class="cqp-btn">Reset</button>
+                    <td colspan="3" class="data">Click on a record to see the details below or select desired records
+                        and an
+                        action to perform on them.</td>
+                </tr>
+                <tr>
+                    <td width="60%" align="left">
+                        Supplier :
+                        011620 ALPINE ELECTRONICS OF AMERICA
                     </td>
+                    <td width="28%" align="right" class="recordnumber">
+                        16&nbsp;
+                        records
+                    </td>
+                    <td width="12%" align="center" class="data">
+                        &nbsp;
+                        <select name="listPageSelector" class="data">
+                            <option value="1" selected="selected">1</option>
+                        </select>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td height="3" colspan="3"></td>
                 </tr>
             </tbody>
         </table>
-    </div>
-</div>
 
-<ng-container *ngIf="show">
-    <hr>
-    <table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+        <div class="panel-body">
+            <table class="table table-borderless table-striped" align="center" border="0" cellpadding="0"
+                cellspacing="0">
+                <thead>
+                    <tr class="list-header" style="height: 20%;">
+                        <th></th>
+                        <th>Short Part No.</th>
+                        <th>CPL Ref No.</th>
+                        <th>Part Name</th>
+                        <th>Model Year</th>
+                        <th>Model Name</th>
+                        <th>Factory Name</th>
+                        <th>VIN Start</th>
+                        <th>VIN End</th>
+                        <th>End Date</th>
+                        <th>Fixed Responsibility</th>
+                        <th>Request No.</th>
+                        <th>Model Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
+                            <input type="checkbox" name="editCipl" value="0">
+                        </td>
+                        <td>
+                            <a (click)=toggle1()>
+                                39710
+                            </a>&nbsp;
+                        </td>
+
+                        <td>
+                            408362
+                        </td>
+                        <td>
+                            DISPLAY ASSY.&nbsp;
+                        </td>
+                        <td>
+                            2020&nbsp;
+                        </td>
+                        <td>
+                            ODYSSEY&nbsp;
+                        </td>
+                        <td>
+                            HMA&nbsp;
+                        </td>
+                        <td>
+                            5FNRL????LB000001&nbsp;
+                        </td>
+                        <td>
+                            5FNRL????LB999999&nbsp;
+                        </td>
+                        <td>
+                            03/31/2021&nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            99REMAN&nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
+                            <input type="checkbox" name="editCipl" value="0">
+                        </td>
+                        <td>
+                            <a (click)=toggle1()>
+                                39710
+                            </a>&nbsp;
+                        </td>
+
+                        <td>
+                            408362
+                        </td>
+                        <td>
+                            DISPLAY ASSY.&nbsp;
+                        </td>
+                        <td>
+                            2020&nbsp;
+                        </td>
+                        <td>
+                            ODYSSEY&nbsp;
+                        </td>
+                        <td>
+                            HMA&nbsp;
+                        </td>
+                        <td>
+                            5FNRL????LB000001&nbsp;
+                        </td>
+                        <td>
+                            5FNRL????LB999999&nbsp;
+                        </td>
+                        <td>
+                            03/31/2021&nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            99REMAN&nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
+                            <input type="checkbox" name="editCipl" value="0">
+                        </td>
+                        <td>
+                            <a (click)=toggle1()>
+                                39710
+                            </a>&nbsp;
+                        </td>
+
+                        <td>
+                            408362
+                        </td>
+                        <td>
+                            DISPLAY ASSY.&nbsp;
+                        </td>
+                        <td>
+                            2020&nbsp;
+                        </td>
+                        <td>
+                            ODYSSEY&nbsp;
+                        </td>
+                        <td>
+                            HMA&nbsp;
+                        </td>
+                        <td>
+                            5FNRL????LB000001&nbsp;
+                        </td>
+                        <td>
+                            5FNRL????LB999999&nbsp;
+                        </td>
+                        <td>
+                            03/31/2021&nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            99REMAN&nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
+                            <input type="checkbox" name="editCipl" value="0">
+                        </td>
+                        <td>
+                            <a (click)=toggle1()>
+                                39710
+                            </a>&nbsp;
+                        </td>
+
+                        <td>
+                            408362
+                        </td>
+                        <td>
+                            DISPLAY ASSY.&nbsp;
+                        </td>
+                        <td>
+                            2020&nbsp;
+                        </td>
+                        <td>
+                            ODYSSEY&nbsp;
+                        </td>
+                        <td>
+                            HMA&nbsp;
+                        </td>
+                        <td>
+                            5FNRL????LB000001&nbsp;
+                        </td>
+                        <td>
+                            5FNRL????LB999999&nbsp;
+                        </td>
+                        <td>
+                            03/31/2021&nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            99REMAN&nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <table class="table table-borderless">
+            <tr>
+                <td width="50%"></td>
+                <td align="right">
+
+                    <button (click)="toggle()" class="cqp-btn">Copy To Next Quarter</button>
+                    &nbsp;&nbsp;
+                    <button type="reset" class="cqp-btn">Export</button>
+                    &nbsp;&nbsp;
+                    <button (click)="toggle()" class="cqp-btn">Select All</button>
+                    &nbsp;&nbsp;
+                    <button type="reset" class="cqp-btn">Deselect All</button>
+                    &nbsp;&nbsp;
+                    <button (click)="toggle()" class="cqp-btn">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </ng-container>
+
+</ng-container>
+<ng-container *ngIf="inner">
+    <table border="0" width="970" align="center" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF">
         <tbody>
             <tr>
-                <td class="alertRed" align="left" colspan="3">
-                </td>
+                <td nowrap="" class="alerthead2" colspan="5"
+                    style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium"
+                    bordercolor="#990000">Update Historical Call-In Part List Item:</td>
             </tr>
             <tr>
-                <td colspan="3" class="alerthead2"><a name="List"></a>List of Historical Call-In Part List Items</td>
+                <td class="data" colspan="2">Provide details to update a Call-In Part List Item. </td>
             </tr>
+
             <tr>
-                <td colspan="3" class="data">Click on a record to see the details below or select desired records and an
-                    action to perform on them.</td>
-            </tr>
-            <tr>
-                <td width="60%" align="left">
-                    Supplier :
-                    011620 ALPINE ELECTRONICS OF AMERICA
-                </td>
-                <td width="28%" align="right" class="recordnumber">
-                    16&nbsp;
-                    records
-                </td>
-                <td width="12%" align="center" class="data">
+                <td style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium"
+                    width="93%" align="left">Supplier :
+                    011620
                     &nbsp;
-                    <select name="listPageSelector" class="data">
-                        <option value="1" selected="selected">1</option>
-                    </select>
-                    &nbsp;
+                    ALPINE ELECTRONICS OF AMERICA
                 </td>
-            </tr>
-            <tr>
-                <td height="3" colspan="3"></td>
+
+                <td class="data" align="right">Status:</td>
+                <td class="alertRed" align="right">Historical</td>
             </tr>
         </tbody>
+        <hr>
     </table>
+    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
 
-    <div class="panel-body">
-        <table class="table table-borderless table-striped" align="center" border="0" cellpadding="0" cellspacing="0">
-            <thead>
-                <tr class="list-header" style="height: 20%;">
-                    <th></th>
-                    <th>Short Part No.</th>
-                    <th>CPL Ref No.</th>
-                    <th>Part Name</th>
-                    <th>Model Year</th>
-                    <th>Model Name</th>
-                    <th>Factory Name</th>
-                    <th>VIN Start</th>
-                    <th>VIN End</th>
-                    <th>End Date</th>
-                    <th>Fixed Responsibility</th>
-                    <th>Request No.</th>
-                    <th>Model Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
-                        <input type="checkbox" name="editCipl" value="0">
-                    </td>
-                    <td>
-                        <a href="">
-                            39710
-                        </a>&nbsp;
-                    </td>
+        <tbody>
+            <tr>
+                <td width="25%" class="data">Short Part No:</td>
+                <td width="25%" class="data">Model Year:</td>
+                <td width="25%" class="data">Model Name:</td>
+                <td width="25%" class="data">Factory Name:</td>
+            </tr>
+            <tr>
+                <td class="data">39710-DISPLAY ASSY.</td>
+                <td class="data">2020</td>
+                <td class="data">ODYSSEY</td>
+                <td class="data">HMA</td>
+            </tr>
+            <tr>
+                <td width="25%" class="databold">
+                    <font color="CC0000" size="2">*</font>&nbsp;VIN Start:
+                </td>
+                <td width="25%" class="databold">
+                    <font color="CC0000" size="2">*</font>&nbsp;VIN End:
+                </td>
+                <td width="25%" class="data">Start Date:</td>
+                <td width="25%" class="data">End Date: </td>
 
-                    <td>
-                        408362
-                    </td>
-                    <td>
-                        DISPLAY ASSY.&nbsp;
-                    </td>
-                    <td>
-                        2020&nbsp;
-                    </td>
-                    <td>
-                        ODYSSEY&nbsp;
-                    </td>
-                    <td>
-                        HMA&nbsp;
-                    </td>
-                    <td>
-                        5FNRL????LB000001&nbsp;
-                    </td>
-                    <td>
-                        5FNRL????LB999999&nbsp;
-                    </td>
-                    <td>
-                        03/31/2021&nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td>
-                        99REMAN&nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
-                        <input type="checkbox" name="editCipl" value="0">
-                    </td>
-                    <td>
-                        <a href="">
-                            39710
-                        </a>&nbsp;
-                    </td>
+            </tr>
+            <tr>
+                <td class="data">
+                    <input type="text" name="updVinStart" maxlength="17" size="20" value="5FNRL????LB000001"
+                        onchange="setTabOut();setAddComment();" style="color:blue" class="data">
+                </td>
+                <td class="data">
+                    <input type="text" name="updVinEnd" maxlength="17" size="20" value="5FNRL????LB999999"
+                        onchange="setTabOut();setAddComment();" style="color:blue" class="data">
+                </td>
+                <td class="data" valign="top">01/01/2021</td>
+                <td class="data">03/31/2021</td>
+            </tr>
+            <tr>
+                <td width="25%" class="data">Destination Name:</td>
+                <td width="25%" class="data">Requested Quantity:</td>
+                <td width="25%" class="data">Request Number:</td>
+                <td width="25%" class="data">CPL Ref No.:</td>
+            </tr>
+            <tr>
+                <td class="data">HAM</td>
+                <td class="data" valign="top">1</td>
+                <td class="data">99REMAN</td>
+                <td class="data" valign="top" width="25%">408362</td>
+            </tr>
+            <tr>
+                <td width="25%" class="databold">
+                    <font color="CC0000" size="2">*</font>&nbsp;Fixed Responsibility:
+                </td>
+                <td width="25%" class="data">&nbsp;</td>
+                <td width="25%" class="data">&nbsp;</td>
+                <td width="25%" class="data">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="data">
 
-                    <td>
-                        408362
-                    </td>
-                    <td>
-                        DISPLAY ASSY.&nbsp;
-                    </td>
-                    <td>
-                        2020&nbsp;
-                    </td>
-                    <td>
-                        ODYSSEY&nbsp;
-                    </td>
-                    <td>
-                        HMA&nbsp;
-                    </td>
-                    <td>
-                        5FNRL????LB000001&nbsp;
-                    </td>
-                    <td>
-                        5FNRL????LB999999&nbsp;
-                    </td>
-                    <td>
-                        03/31/2021&nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td>
-                        99REMAN&nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
-                        <input type="checkbox" name="editCipl" value="0">
-                    </td>
-                    <td>
-                        <a href="">
-                            39710
-                        </a>&nbsp;
-                    </td>
+                    <input type="text" name="fxdresponsibility" maxlength="5" size="4" value=""
+                        onchange="setTabOut();setAddComment();" class="data">
+                    %
 
-                    <td>
-                        408362
-                    </td>
-                    <td>
-                        DISPLAY ASSY.&nbsp;
-                    </td>
-                    <td>
-                        2020&nbsp;
-                    </td>
-                    <td>
-                        ODYSSEY&nbsp;
-                    </td>
-                    <td>
-                        HMA&nbsp;
-                    </td>
-                    <td>
-                        5FNRL????LB000001&nbsp;
-                    </td>
-                    <td>
-                        5FNRL????LB999999&nbsp;
-                    </td>
-                    <td>
-                        03/31/2021&nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td>
-                        99REMAN&nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
-                        <input type="checkbox" name="editCipl" value="0">
-                    </td>
-                    <td>
-                        <a href="">
-                            39710
-                        </a>&nbsp;
-                    </td>
+                </td>
+            </tr>
+            <tr>
+                <td width="25%" class="data">Model Description:</td>
+                <td width="25%" class="data">Long Part No.:</td>
+                <td width="25%" class="data">&nbsp;</td>
+                <td width="25%" class="data">&nbsp;</td>
 
-                    <td>
-                        408362
-                    </td>
-                    <td>
-                        DISPLAY ASSY.&nbsp;
-                    </td>
-                    <td>
-                        2020&nbsp;
-                    </td>
-                    <td>
-                        ODYSSEY&nbsp;
-                    </td>
-                    <td>
-                        HMA&nbsp;
-                    </td>
-                    <td>
-                        5FNRL????LB000001&nbsp;
-                    </td>
-                    <td>
-                        5FNRL????LB999999&nbsp;
-                    </td>
-                    <td>
-                        03/31/2021&nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td>
-                        99REMAN&nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                </tr>
+            </tr>
+            <tr>
+                <td class="data" align="left"></td>
+                <td class="data" colspan="3" align="left"></td>
 
-            </tbody>
-        </table>
-    </div>
-    <table class="table table-borderless">
-        <tr>
-            <td width="50%"></td>
-            <td align="right">
+            </tr>
+            <tr>
+                <td width="25%" class="data">IPP Tag # / Ship Date / MIR No.:</td>
+                <td width="25%" class="data">&nbsp;</td>
+                <td width="25%" class="data">&nbsp;</td>
+                <td width="25%" class="data">&nbsp;</td>
 
-                <button (click)="toggle()" class="cqp-btn">Copy To Next Quarter</button>
-                &nbsp;&nbsp;
-                <button type="reset" class="cqp-btn">Export</button>
-                &nbsp;&nbsp;
-                <button (click)="toggle()" class="cqp-btn">Select All</button>
-                &nbsp;&nbsp;
-                <button type="reset" class="cqp-btn">Deselect All</button>
-                &nbsp;&nbsp;
-                <button (click)="toggle()" class="cqp-btn">Cancel</button>
-            </td>
-        </tr>
+            </tr>
+            <tr>
+                <td class="data" colspan="4"></td>
+            </tr>
+        </tbody>
     </table>
 </ng-container>

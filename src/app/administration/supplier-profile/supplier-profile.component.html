@@ -1,6 +1,5 @@
 <form>
-	<table width="970" align="center" border="0" cellspacing="0"
-		cellpadding="0">
+	<table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
 
 		<tbody>
 			<tr>
@@ -12,9 +11,8 @@
 			</tr>
 		</tbody>
 	</table>
-<hr>
-	<table width="970" align="center" border="0" cellpadding="2"
-		cellspacing="0">
+	<hr>
+	<table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
 		<tbody>
 			<tr>
 				<td width="25%">Supplier Name:</td>
@@ -22,21 +20,20 @@
 				<td width="55%">Supplier Status:</td>
 			</tr>
 			<tr>
-				<td class="data" align="left" valign="top"><input type="text"
-					name="firstName" maxlength="50" size="25" value="" class="data"></td>
+				<td class="data" align="left" valign="top"><input type="text" name="firstName" maxlength="50" size="25"
+						value="" class="data"></td>
 
-				<td class="data" align="left" valign="top"><input type="text"
-					name="lastName" maxlength="50" size="25" value="" class="data"></td>
+				<td class="data" align="left" valign="top"><input type="text" name="lastName" maxlength="50" size="25"
+						value="" class="data"></td>
 				<td><input type="radio" name="radio" value="N">&nbsp;Non-Participating
 					<br> <input type="radio" name="radio" value="inactive">&nbsp;Inactive
-					<br> <input type="radio" name="radio" value="active"
-					checked="checked">&nbsp;Active</td>
+					<br> <input type="radio" name="radio" value="active" checked="checked">&nbsp;Active
+				</td>
 			</tr>
 		</tbody>
 	</table>
 
-	<table width="970" align="center" border="0" cellpadding="0"
-		cellspacing="0">
+	<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
 
 		<tbody>
 			<ng-container *ngIf="hide">
@@ -46,11 +43,12 @@
 			</ng-container>
 			<tr>
 				<td align="right">
-					<button valign="top" (click)="toggle()" type="submit" 
-					class="cqp-btn short-btn-space">Search</button>
-					
-				<button valign="top" (click)="newoverrideForm.reset()" type="submit" 
-					class="cqp-btn short-btn-space">Reset</button>	</td>
+					<button valign="top" (click)="toggle()" type="submit"
+						class="cqp-btn short-btn-space">Search</button>
+
+					<button valign="top" (click)="newoverrideForm.reset()" type="submit"
+						class="cqp-btn short-btn-space">Reset</button>
+				</td>
 			</tr>
 		</tbody>
 	</table>
@@ -71,43 +69,136 @@
 		</tr>
 	</tbody>
 	<div class="panel-body">
-		<table class="table table-borderless table-striped" align="center" border="0" cellpadding="0" cellspacing="0" style="width: 50%;">
-			<thead>
-				<tr class="list-header" style="height: 20%;">
-					<th></th>
-					<th>Supplier No.</th>
-					<th>Supplier Name</th>
-					<th>Status</th>
-				</tr>
-			</thead>
+		<table width="500" align="center" border="0" cellpadding="0" cellspacing="0">
 			<tbody>
-				<tr style="text-align: center;">
-					<td align="margin-left"><input type="checkbox" name="" id=""></td>
-					<td align="margin-left">011330</td>
-					<td align="margin-left">AGC AUTOMOTIVE AMERICAS</td>
-					<td align="margin-left">ACTIVE</td>
+				<tr>
+
+					<td width="30%" align="right" class="recordnumber">139 records</td>
+					<td width="25%" align="right" class="data"> &nbsp; <select name="listPageSelector"
+							onchange="document.forms[0].action.value='gotoPageForListActiveSup';document.forms[0].submit();"
+							class="data">
+							<option value="1" selected="selected">1</option>
+
+							<option value="2">2</option>
+
+							<option value="3">3</option>
+
+							<option value="4">4</option>
+
+							<option value="5">5</option>
+
+							<option value="6">6</option>
+
+							<option value="7">7</option>
+						</select> <a href="">Next</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table style="table-layout: fixed" border="0" cellspacing="1" cellpadding="4" align="center" width="500">
+			<colgroup>
+				<col width="6%">
+				<col width="12%">
+				<col width="62%">
+				<col width="20%">
+
+			</colgroup>
+			<tbody>
+				<tr>
+					<th align="left" bgcolor="#D3D9A4" class="colheadactive">&nbsp;</th>
+					<th align="left" class="colheadactive" bgcolor="#D3D9A4">Supplier No.</th>
+					<th align="left" class="colheadactive" bgcolor="#D3D9A4">Supplier Name</th>
+					<th align="left" class="colheadactive" bgcolor="#D3D9A4">Status </th>
+				</tr>
+				<tr bgcolor="#F6F3B5">
+
+					<td align="center"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000"><input type="checkbox" name="editIndex" value="0" onchange="setTabOut()">
+					</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">011330</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">AGC AUTOMOTIVE AMERICAS</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">Active</td>
+
+				</tr>
+				<tr bgcolor="#FFFFFF">
+
+					<td align="center"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000"><input type="checkbox" name="editIndex" value="1" onchange="setTabOut()">
+					</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">011620</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">ALPINE ELECTRONICS OF AMERICA</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">Active</td>
+
+				</tr>
+				<tr bgcolor="#F6F3B5">
+
+					<td align="center"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000"><input type="checkbox" name="editIndex" value="2" onchange="setTabOut()">
+					</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">011630</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">AKEBONO BRAKE CORPORATION</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">Active</td>
+
+				</tr>
+				<tr bgcolor="#FFFFFF">
+
+					<td align="center"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000"><input type="checkbox" name="editIndex" value="3" onchange="setTabOut()">
+					</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">012829</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">AISIN USA MFG INC</td>
+					<td align="left"
+						style="padding-left: 4; padding-top: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0"
+						bordercolor="#990000">Active</td>
+
+				</tr>
+			</tbody>
+		</table>
+		<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+
+			<tbody>
+				<tr>
+					<td height="64"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+				</tr>
+				<tr>
+					<td align="right"
+						style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium;  border-bottom-width: 1"
+						bordercolor="#99000">
+						<button valign="top" type="submit"
+							class="cqp-btn short-btn-space">Inactivate</button>
+						<button valign="top" (click)="toggle1()" type="submit"
+							class="cqp-btn short-btn-space">Cancel</button>
+
+					</td>
 				</tr>
 
-				<tr style="text-align: center;">
-					<td align="margin-left"><input type="checkbox" name="" id=""></td>
-					<td align="margin-left">011330</td>
-					<td align="margin-left">AGC AUTOMOTIVE AMERICAS</td>
-					<td align="margin-left">ACTIVE</td>
-				</tr>
 
-				<tr style="text-align: center;">
-					<td align="margin-left"><input type="checkbox" name="" id=""></td>
-					<td align="margin-left">011330</td>
-					<td align="margin-left">AGC AUTOMOTIVE AMERICAS</td>
-					<td align="margin-left">ACTIVE</td>
-				</tr>
-
-				<tr style="text-align: center;">
-					<td align="margin-left"><input type="checkbox" name="" id=""></td>
-					<td align="margin-left">011330</td>
-					<td align="margin-left">AGC AUTOMOTIVE AMERICAS</td>
-					<td align="margin-left">ACTIVE</td>
-				</tr>
 			</tbody>
 		</table>
 	</div>
