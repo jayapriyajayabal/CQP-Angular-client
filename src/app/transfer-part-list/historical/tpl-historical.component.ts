@@ -6,19 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tpl-historical.component.css']
 })
 export class TplHistoricalComponent implements OnInit {
-  public show:boolean = false;
-  public Search:any = 'Show';
+  public show: boolean = false;
+  public hide: boolean = true;
+  public inner: boolean = false;
+  public outer: boolean = true;
   constructor() { }
 
   ngOnInit() {
   }
   toggle() {
     this.show = !this.show;
+    this.hide = !this.hide;
+  }
 
-    // CHANGE THE NAME OF THE BUTTON.
-    if(this.show)  
-      this.Search = "Hide";
-    else
-      this.Search = "Show";
+  toggle1() {
+    this.inner = !this.inner;
+    this.outer = !this.outer;
   }
 }

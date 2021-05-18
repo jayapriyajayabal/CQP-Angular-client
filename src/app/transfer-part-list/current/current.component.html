@@ -3,6 +3,8 @@
 </div>
 <br>
  -->
+
+ <ng-container *ngIf="outer">
 <div class="panel panel-primary">
     <table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
 
@@ -263,8 +265,7 @@
                                 <input type="checkbox" name="checkedPartno" value="0">
                             </td>
                             <!--Start - Enhancement - Highlight links after reviewing-->
-                            <td><a href="/cqp_qa/cqpq/manageTPL.do?action=Update&amp;checkedPartno=0"
-                                    class="allLinkData">
+                            <td><a class="allLinkData"  (click)="toggle1()">
                                     NEW</a></td>
                             <!--End - Enhancement - Highlight links after reviewing-->
                             <td align="right">
@@ -291,8 +292,7 @@
                                 <input type="checkbox" name="checkedPartno" value="1">
                             </td>
                             <!--Start - Enhancement - Highlight links after reviewing-->
-                            <td><a href="/cqp_qa/cqpq/manageTPL.do?action=Update&amp;checkedPartno=1"
-                                    class="allLinkData">
+                            <td><a class="allLinkData" (click)="toggle1()">
                                     NEW</a></td>
                             <!--End - Enhancement - Highlight links after reviewing-->
                             <td align="right">
@@ -312,11 +312,6 @@
                             <td align="left">KA</td>
                         </tr>
 
-
-
-
-
-
                         <tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
 
                             <td>
@@ -324,8 +319,7 @@
                                 <input type="checkbox" name="checkedPartno" value="2">
                             </td>
                             <!--Start - Enhancement - Highlight links after reviewing-->
-                            <td><a href="/cqp_qa/cqpq/manageTPL.do?action=Update&amp;checkedPartno=2"
-                                    class="allLinkData">
+                            <td><a class="allLinkData"  (click)="toggle1()">
                                     NEW</a></td>
                             <!--End - Enhancement - Highlight links after reviewing-->
                             <td align="right">
@@ -340,71 +334,6 @@
                             <td></td>
                             <td align="right">208229</td>
                             <td align="right">701751</td>
-                            <td align="right">2020</td>
-                            <td align="left"></td>
-                            <td align="left">KA</td>
-                        </tr>
-
-
-
-
-
-                        <tr bgcolor="#FFFFFF" bordercolor="#FFFFFF">
-
-                            <td>
-
-                                <input type="checkbox" name="checkedPartno" value="3">
-                            </td>
-                            <!--Start - Enhancement - Highlight links after reviewing-->
-                            <td><a href="/cqp_qa/cqpq/manageTPL.do?action=Update&amp;checkedPartno=3"
-                                    class="allLinkData">
-                                    NEW</a></td>
-                            <!--End - Enhancement - Highlight links after reviewing-->
-                            <td align="right">
-                                <script>tplRefNoArray[cnt++] = '774410';</script>774410
-                            </td>
-                            <td align="right">33500</td>
-                            <td align="right">1/1</td>
-                            <td align="right">2020</td>
-                            <td>CRV</td>
-                            <td>01/11/2021</td>
-                            <td>02/08/2021</td>
-                            <td></td>
-                            <td align="right">208315</td>
-                            <td align="right">010444</td>
-                            <td align="right">2020</td>
-                            <td align="left"></td>
-                            <td align="left">KA</td>
-                        </tr>
-
-
-
-
-
-
-                        <tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
-
-                            <td>
-
-                                <input type="checkbox" name="checkedPartno" value="4">
-                            </td>
-                            <!--Start - Enhancement - Highlight links after reviewing-->
-                            <td><a href="/cqp_qa/cqpq/manageTPL.do?action=Update&amp;checkedPartno=4"
-                                    class="allLinkData">
-                                    NEW</a></td>
-                            <!--End - Enhancement - Highlight links after reviewing-->
-                            <td align="right">
-                                <script>tplRefNoArray[cnt++] = '774411';</script>774411
-                            </td>
-                            <td align="right">33550</td>
-                            <td align="right">1/1</td>
-                            <td align="right">2020</td>
-                            <td>CRV</td>
-                            <td>01/11/2021</td>
-                            <td>02/08/2021</td>
-                            <td></td>
-                            <td align="right">208507</td>
-                            <td align="right">516767</td>
                             <td align="right">2020</td>
                             <td align="left"></td>
                             <td align="left">KA</td>
@@ -442,12 +371,11 @@
             </div>
 
         </ng-container>
-
-
     </div>
 </div>
+</ng-container>
 
-<ng-container *ngIf=false>
+<ng-container *ngIf="inner">
     <table border="0" width="970" align="center" cellpadding="2" cellspacing="0">
 
         <tbody>
