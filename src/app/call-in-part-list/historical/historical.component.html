@@ -548,4 +548,109 @@
             </tr>
         </tbody>
     </table>
+    <table _ngcontent-tjl-c5="" class="table table-borderless ng-star-inserted">
+        <tr _ngcontent-tjl-c5="">
+            <td _ngcontent-tjl-c5="" width="50%"></td>
+            <td _ngcontent-tjl-c5="" align="right">
+                <button _ngcontent-tjl-c5="" class="cqp-btn">Update</button> &nbsp;&nbsp;
+                <button _ngcontent-tjl-c5="" (click)="toggle2()" class="cqp-btn">Comment</button> &nbsp;&nbsp;
+                <button _ngcontent-tjl-c5="" class="cqp-btn" type="reset">Reset</button> &nbsp;&nbsp;
+                <button _ngcontent-tjl-c5="" (click)="toggle1()" class="cqp-btn">Cancel</button>
+            </td>
+        </tr>
+    </table>
+</ng-container>
+<ng-container *ngIf="comment">
+    <table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td colspan="2" class="alerthead2"><a name="List"></a>Comments:</td>
+            </tr>
+            <tr>
+                <td class="data" colspan="3">Enter a comment and select submit.</td>
+            </tr>
+            <tr>
+                <td width="300" class="data">Supplier:
+                    011620 ALPINE ELECTRONICS OF AMERICA
+                </td>
+            </tr>
+
+            <tr>
+                <td width="76" class="data" align="left"></td>
+                <td width="38%" align="right" class="recordnumber">
+                    1
+                    records
+                </td>
+                <td width="12%" align="center" class="data">
+
+                    &nbsp;
+
+                    <select name="listPageSelector"
+                        onchange="document.forms[0].action.value='gotoPageForListSup';document.forms[0].submit();"
+                        class="data">
+                        <option value="1" selected="selected">1</option>
+                    </select>
+
+                    &nbsp;
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="table-layout: fixed" border="0" cellspacing="1" cellpadding="4" align="center" width="970">
+        <colgroup>
+            <col width="20%">
+            <col width="50%">
+            <col width="30%">
+
+        </colgroup>
+        <tbody>
+            <tr align="left" valign="top" bgcolor="#D3D9A4" style="height: 23px; padding-left: 4px">
+                <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">Date Time</th>
+                <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">Comment</th>
+                <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">Login Id</th>
+            </tr>
+
+            <tr bgcolor="#F6F3B5">
+                <td align="left" width="20%" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                    05/05/2021 8:45 AM</td>
+                <td align="left" width="60%"
+                    style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                    cscsadsadsads</td>
+                <td align="left" width="10%" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                    Test&nbsp;User 145<br>
+                    VCC74145</td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table width="970" align="center" border="0" cellspacing="0" cellpadding="2">
+        <tbody>
+            <tr>
+                <td class="databold">Comment:</td>
+                <td class="databold">Visible To: </td>
+            </tr>
+            <tr>
+                <td align="left" class="data">
+                    <textarea name="comments1" cols="160" rows="4" onchange="setTabOut();" class="data"></textarea>
+                </td>
+                <td class="data" valign="top">
+                    <select name="visibilityFlag" class="data">
+                        <option value="All" selected="selected">All</option>
+                        <option value="Honda User Only">Honda User Only</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table _ngcontent-tjl-c5="" class="table table-borderless ng-star-inserted">
+        <tr _ngcontent-tjl-c5="">
+            <td _ngcontent-tjl-c5="" width="50%"></td>
+            <td _ngcontent-tjl-c5="" align="right">
+                <button _ngcontent-tjl-c5="" class="cqp-btn">Submit</button> &nbsp;&nbsp;
+                <button _ngcontent-tjl-c5="" class="cqp-btn">Reset</button> &nbsp;&nbsp;
+                <button _ngcontent-tjl-c5="" (click)="toggle2()" class="cqp-btn">Cancel</button>
+            </td>
+        </tr>
+    </table>
 </ng-container>

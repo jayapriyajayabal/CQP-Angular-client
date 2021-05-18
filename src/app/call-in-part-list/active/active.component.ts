@@ -9,6 +9,9 @@ export class ActiveComponent implements OnInit {
 
   public show: boolean = false;
   public hide: boolean = true;
+  public inner: boolean = false;
+  public outer: boolean = true;
+  public comment: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -16,6 +19,14 @@ export class ActiveComponent implements OnInit {
   toggle() {
     this.show = !this.show;
     this.hide = !this.hide;
+  }
+  toggle1() {
+    this.inner = !this.inner;
+    this.outer = !this.outer;
+  }
+  toggle2() {
+    this.comment = !this.comment;
+    this.inner = !this.inner;
   }
   cars: any[] = [{id: 1, name: 'MODEL_YEAR-2021'}, {id: 2, name: 'MODEL_YEAR-2019'}, {id:3, name: 'MODEL_YEAR-2018'},{id:4, name: 'MODEL_YEAR-2017'}];
   selectedCars: any[] = [];
