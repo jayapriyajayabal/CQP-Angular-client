@@ -11,6 +11,7 @@ export class HistoricalComponent implements OnInit {
   public hide: boolean = true;
   public inner: boolean = false;
   public outer: boolean = true;
+  public comment: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -52,5 +53,9 @@ export class HistoricalComponent implements OnInit {
   toggle1() {
     this.inner = !this.inner;
     this.outer = !this.outer;
+  }
+  toggle2() {
+    this.inner = !this.inner;
+    this.comment = !this.comment;
   }
 }

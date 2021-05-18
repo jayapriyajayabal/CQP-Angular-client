@@ -1,232 +1,687 @@
-<!-- <div class="screen-title">
+<ng-container *ngIf="outer">
+    <!-- <div class="screen-title">
     Call-in Part List - Active
 </div>
 <br> -->
 
-<div class="panel panel-primary">
+    <div class="panel panel-primary">
 
-    <table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+        <table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
 
-        <tbody>
-            <tr>
-                <td class="alerthead2">Search for Active Call-In Part List items:</td>
-            </tr>
-            <tr>
-                <td class="details" colspan="2">Provide criteria to search for Call-In Part List items</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
-        <tbody>
-            &nbsp;
-            <tr>
-                <td width="2%">Supplier:</td>
-                <td width="45">
-                    <select #s (change)="callSupplier(s.value)" style="width: 30%;">
-                        <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
-                            {{supplier.supplierNo}}
-                            {{supplier.supplierName}}</option>
-                    </select>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <hr>
-    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
-        <tbody>
-            <tr>
-                <td width="15%" class="data">Request Status: </td>
-                <td width="15%" class="data">Expiration Date Range: </td>
-                <td width="25%" class="data">Short Part No:</td>
-                <td width="20%" class="data">Destination Name:</td>
-                <td width="15%" class="data">Request Number:</td>
-                <td width="10%" class="data">CPL Ref No.:</td>
-            </tr>
-            <tr>
-                <td width="15%" class="data">Active</td>
-                <td width="15%" class="data">
-                    From&nbsp;
-                    :
-                    04/01/2021
-                </td>
-                <td width="25%" class="data">
-                    <select name="partNo" style="width: 180px" class="data">
-                        <option value="ALL">ALL</option>
-
-                        <option value="39540-COVER,DVD">39540-COVER,DVD</option>
-                        <option value="39540-DVD UNIT, NAVIGATOR">39540-DVD UNIT, NAVIGATOR</option>
-                        <option value="39710-DISPLAY ASSY.">39710-DISPLAY ASSY.</option>
-                    </select>
-                </td>
-                <td width="20%" class="data">
-                    <select name="destinationName" style="width: 100px" class="data">
-                        <option value="ALL">ALL</option>
-
-                        <option value="HAM">HAM</option>
-                    </select>
-                </td>
-                <td width="15%" class="data"> <input type="text" name="reqNo" maxlength="7" size="7" value=""
-                        class="data"> </td>
-                <td width="10%" class="data"> <input type="text" name="refNo" maxlength="10" size="10" value=""
-                        class="data"> </td>
-            </tr>
-            <tr>
-                <td width="20%" class="data"></td>
-                <td width="5%" class="data">
-                    To &nbsp;&nbsp;&nbsp;&nbsp;
-                    :
-                    06/30/2021
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <hr>
-    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
-        <tbody>
-            <tr>
-                <td class="data" width="524">
-                    <table width="850" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td class="data" width="450" height="25">
-                                    Select Feature(s) to Retrieve By.
-                                </td>
-                                <td align="left" style="display:none" id="imageId">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="data" valign="top">
-                    <table width="850" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td width="16%" class="data" valign="bottom">
-                                    Available Features:
-                                </td>
-                                <td width="35%" class="data" valign="bottom">
-                                    Feature Values:
-                                </td>
-                                <td width="12%" class="data" valign="bottom"></td>
-                                <td width="30%" class="data" valign="bottom">
-                                    Selected Feature Values:
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <!--logic to select feature name and values -->
-            <tr>
-                <td>
-                    <table width="850" border="0" cellpadding="0" cellspacing="0">
-                        <tbody>
-                            <tr>
-                                <td width="15%" valign="top" class="data">
-                                    <select name="feature" onchange="getFeaturesVal(this);" class="data">
-                                        <option value="MODEL_YEAR" selected="selected">MODEL_YEAR</option>
-                                        <option value="MODEL_NAME">MODEL_NAME</option>
-                                        <option value="FAC_NAME">FAC_NAME</option>
-                                    </select>
-                                </td>
-                                <td width="35%" valign="top" class="data">
-                                    <select class="form-control" [ngModel]="selectedToAdd" multiple name="myselecttsms2"
-                                        (ngModelChange)="chosenCars($event)" style="width: 280px;font-size: 11px;">
-                                        <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
-                                    </select>
-                                </td>
-                                <td align="center" width="25%" class="data">
-                                    <div class="panel-heading">
-                                        <button (click)="assigne()" class="cqp-btn">
-                                            -></button>
-                                    </div>
-                                    <br>
-                                    <div class="panel-heading">
-                                        <button (click)="unassigne()" class="cqp-btn">
-                                            <- </button>
-                                    </div>
-                                </td>
-                                <td width="25%" valign="top" class="data">
-                                    <select class="form-control" [ngModel]="selectedToRemove" multiple
-                                        name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)"
-                                        style="width: 280px;font-size: 11px;">
-                                        <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}
-                                        </option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                    &nbsp;<button type="reset" class="cqp-btn">Reset</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<ng-container *ngIf="show">
-    <hr>
-    <table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
-        <tbody>
-            <tr>
-                <td colspan="3" class="alertRed" align="left">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" class="alerthead2"> <a name="List"></a>List of Active Call-In Part List Items</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="data">
-                    Click on a record to see the details below or select desired records and an action to perform on
-                    them.
-                </td>
-            </tr>
-            <tr>
-                <td width="356" class="data" align="left">
-                    Supplier :
-                    011620 ALPINE ELECTRONICS OF AMERICA
-                </td>
-
-            </tr>
-            <tr>
-                <td height="10" colspan="3"></td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="panel-body">
-        <table class="table table-borderless table-striped" align="center" border="0" cellpadding="0" cellspacing="0">
-            <thead>
-                <tr class="list-header" style="height: 20%;">
-                    <th></th>
-                    <th>Short Part No.</th>
-                    <th>CPL Ref No.</th>
-                    <th>Part Name</th>
-                    <th>Model Year</th>
-                    <th>Model Name</th>
-                    <th>Factory Name</th>
-                    <th>VIN Start</th>
-                    <th>VIN End</th>
-                    <th>End Date</th>
-                    <th>Fixed Responsibility</th>
-                    <th>Request No.</th>
-                    <th>Model Description</th>
-                </tr>
-            </thead>
             <tbody>
                 <tr>
-                    <td colspan="13">Call-in items matching the search criteria could not be found.</td>
+                    <td class="alerthead2">Search for Active Call-In Part List items:</td>
+                </tr>
+                <tr>
+                    <td class="details" colspan="2">Provide criteria to search for Call-In Part List items</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table border="0" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+            <tbody>
+                &nbsp;
+                <tr>
+                    <td width="2%">Supplier:</td>
+                    <td width="45">
+                        <select #s (change)="callSupplier(s.value)" style="width: 30%;">
+                            <option *ngFor="let supplier of suppliers" value="{{supplier.supplierNo}}">
+                                {{supplier.supplierNo}}
+                                {{supplier.supplierName}}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td width="15%" class="data">Request Status: </td>
+                    <td width="15%" class="data">Expiration Date Range: </td>
+                    <td width="25%" class="data">Short Part No:</td>
+                    <td width="20%" class="data">Destination Name:</td>
+                    <td width="15%" class="data">Request Number:</td>
+                    <td width="10%" class="data">CPL Ref No.:</td>
+                </tr>
+                <tr>
+                    <td width="15%" class="data">Active</td>
+                    <td width="15%" class="data">
+                        From&nbsp;
+                        :
+                        04/01/2021
+                    </td>
+                    <td width="25%" class="data">
+                        <select name="partNo" style="width: 180px" class="data">
+                            <option value="ALL">ALL</option>
+
+                            <option value="39540-COVER,DVD">39540-COVER,DVD</option>
+                            <option value="39540-DVD UNIT, NAVIGATOR">39540-DVD UNIT, NAVIGATOR</option>
+                            <option value="39710-DISPLAY ASSY.">39710-DISPLAY ASSY.</option>
+                        </select>
+                    </td>
+                    <td width="20%" class="data">
+                        <select name="destinationName" style="width: 100px" class="data">
+                            <option value="ALL">ALL</option>
+
+                            <option value="HAM">HAM</option>
+                        </select>
+                    </td>
+                    <td width="15%" class="data"> <input type="text" name="reqNo" maxlength="7" size="7" value=""
+                            class="data"> </td>
+                    <td width="10%" class="data"> <input type="text" name="refNo" maxlength="10" size="10" value=""
+                            class="data"> </td>
+                </tr>
+                <tr>
+                    <td width="20%" class="data"></td>
+                    <td width="5%" class="data">
+                        To &nbsp;&nbsp;&nbsp;&nbsp;
+                        :
+                        06/30/2021
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="data" width="524">
+                        <table width="850" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td class="data" width="450" height="25">
+                                        Select Feature(s) to Retrieve By.
+                                    </td>
+                                    <td align="left" style="display:none" id="imageId">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="data" valign="top">
+                        <table width="850" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td width="16%" class="data" valign="bottom">
+                                        Available Features:
+                                    </td>
+                                    <td width="35%" class="data" valign="bottom">
+                                        Feature Values:
+                                    </td>
+                                    <td width="12%" class="data" valign="bottom"></td>
+                                    <td width="30%" class="data" valign="bottom">
+                                        Selected Feature Values:
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!--logic to select feature name and values -->
+                <tr>
+                    <td>
+                        <table width="850" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td width="15%" valign="top" class="data">
+                                        <select name="feature" onchange="getFeaturesVal(this);" class="data">
+                                            <option value="MODEL_YEAR" selected="selected">MODEL_YEAR</option>
+                                            <option value="MODEL_NAME">MODEL_NAME</option>
+                                            <option value="FAC_NAME">FAC_NAME</option>
+                                        </select>
+                                    </td>
+                                    <td width="35%" valign="top" class="data">
+                                        <select class="form-control" [ngModel]="selectedToAdd" multiple
+                                            name="myselecttsms2" (ngModelChange)="chosenCars($event)"
+                                            style="width: 280px;font-size: 11px;">
+                                            <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
+                                        </select>
+                                    </td>
+                                    <td align="center" width="25%" class="data">
+                                        <div class="panel-heading">
+                                            <button (click)="assigne()" class="cqp-btn">
+                                                -></button>
+                                        </div>
+                                        <br>
+                                        <div class="panel-heading">
+                                            <button (click)="unassigne()" class="cqp-btn">
+                                                <- </button>
+                                        </div>
+                                    </td>
+                                    <td width="25%" valign="top" class="data">
+                                        <select class="form-control" [ngModel]="selectedToRemove" multiple
+                                            name="myselecttsms" (ngModelChange)="chosenCarsToRemove($event)"
+                                            style="width: 280px;font-size: 11px;">
+                                            <option *ngFor="let car of selectedCars" [ngValue]="car">{{car.name}}
+                                            </option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="right" colspan="6"><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                        &nbsp;<button type="reset" class="cqp-btn">Reset</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <ng-container *ngIf="show">
+        <hr>
+        <div class="panel-body">
+            <table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td colspan="3" class="alertRed" align="left">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="alerthead2"> <a name="List"></a>List of Active Call-In Part List Items
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="data">
+                            Click on a record to see the details below or select desired records and an action to
+                            perform on
+                            them.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="356" class="data" align="left">
+                            Supplier :
+                            140290 DENSO INTERNATIONAL AMERICA
+                        </td>
+                        <td width="356" class="data" align="left"></td>
+                        <td width="38%" align="right" class="recordnumber">
+                            9&nbsp;
+                            records
+                        </td>
+                        <td width="12%" align="center" class="data">
+                            &nbsp;
+                            <select name="listPageSelector"
+                                onchange="forms[0].action.value='gotopage';forms[0].submit();" class="data">
+                                <option value="1" selected="selected">1</option>
+                            </select>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="10" colspan="3"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="1"
+                                border="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table border="0" width="970" align="center" cellspacing="0" cellpadding="4" bordercolor="#FFFFFF">
+                <colgroup>
+                    <col width="3%">
+                    <col width="8%">
+                    <col width="8%">
+                    <col width="10%">
+                    <col width="4%">
+                    <col width="8%">
+                    <col width="5%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="7%">
+                    <col width="5%">
+                    <!--col width="5%"-->
+                </colgroup>
+                <tbody>
+                    <tr align="left" valign="top" bgcolor="#D3D9A4">
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" align="center" class="colheadactive">
+                            &nbsp;
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Short Part No.
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            CPL Ref No.
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Part Name
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Model Year
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Model Name
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Factory Name
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            VIN Start
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            VIN End
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            End Date
+                        </th>
+
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Request No.
+                        </th>
+                        <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">
+                            Model Description
+                        </th>
+                    </tr>
+                    <tr bgcolor="#F6F3B5">
+                        <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
+                            <input type="checkbox" name="editCipl" value="0">
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+
+                            <a (click)="toggle1()" class="allLinkData">
+                                79106</a>&nbsp;
+                        </td>
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            409187
+                            <input type="hidden" name="ciplId" value="409187">
+                        </td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            SUB-HEATER
+                            UNIT&nbsp;</td>
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            2021&nbsp;</td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            ODYSSEY&nbsp;</td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            HMA&nbsp;
+                        </td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            5FNRL6H??MB000001&nbsp;</td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            5FNRL6H??MB999999&nbsp;</td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            06/30/2021&nbsp;</td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            2CQ7359&nbsp;</td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            FRAME&nbsp;</td>
+
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+                        <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
+                            <input type="checkbox" name="editCipl" value="1">
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+
+                            <a (click)="toggle1()" class="allLinkData">
+                                79106</a>&nbsp;
+                        </td>
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            409193
+                            <input type="hidden" name="ciplId" value="409193">
+                        </td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            SUB-HEATER
+                            UNIT&nbsp;</td>
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            2020&nbsp;</td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            RDX&nbsp;
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            ELP&nbsp;
+                        </td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            5J8TC????LL000001&nbsp;</td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            5J8TC????LL999999&nbsp;</td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            06/30/2021&nbsp;</td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            BCQ5825&nbsp;</td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            FRAME&nbsp;</td>
+
+                    </tr>
+                    <tr bgcolor="#F6F3B5">
+                        <td align="center" height="25px" style="border-bottom-width: 1; border-left-style: none">
+                            <input type="checkbox" name="editCipl" value="2">
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+
+                            <a (click)="toggle1()" class="allLinkData">
+                                79106</a>&nbsp;
+                        </td>
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            409194
+                            <input type="hidden" name="ciplId" value="409194">
+                        </td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            SUB-HEATER
+                            UNIT&nbsp;</td>
+                        <td align="right" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            2021&nbsp;</td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            RDX&nbsp;
+                        </td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            ELP&nbsp;
+                        </td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            5J8TC????ML000001&nbsp;</td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            5J8TC????ML999999&nbsp;</td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            06/30/2021&nbsp;</td>
+
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            BCQ5826&nbsp;</td>
+                        <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                            FRAME&nbsp;</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+            <table _ngcontent-tjl-c5="" class="table table-borderless ng-star-inserted">
+                <tr _ngcontent-tjl-c5="">
+                    <td _ngcontent-tjl-c5="" width="50%"></td>
+                    <td _ngcontent-tjl-c5="" align="right">
+                        <button _ngcontent-tjl-c5="" class="cqp-btn">Copy To Next Quarter</button> &nbsp;&nbsp;
+                        <button _ngcontent-tjl-c5="" class="cqp-btn">Export</button> &nbsp;&nbsp;
+                        <button _ngcontent-tjl-c5="" class="cqp-btn">Select All</button> &nbsp;&nbsp;
+                        <button _ngcontent-tjl-c5="" class="cqp-btn">Deselect All</button> &nbsp;&nbsp;
+                        <button _ngcontent-tjl-c5="" (click)="toggle1()" class="cqp-btn">Cancel</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </ng-container>
+</ng-container>
+<ng-container *ngIf="inner">
+    <table border="0" width="970" cellspacing="0" cellpadding="0" align="center" bordercolor="#FFFFFF">
+        <tbody>
+            <tr>
+                <td nowrap="" colspan="5" class="alerthead2"
+                    style="padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium"
+                    bordercolor="#990000">Update Call-In Part List Item Active:</td>
+            </tr>
+            <tr>
+                <td class="data" colspan="2" valign="top">Provide details to update a Call-In Part List Item. </td>
+            </tr>
+
+            <tr>
+                <td style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-bottom-style: none; border-bottom-width: medium"
+                    width="93%" align="left">Supplier :
+                    <!--changed by Subhashis on 25/10 to fix supplier issue-->140290 DENSO INTERNATIONAL AMERICA
+                </td>
+                <td class="data" align="right">Status:</td>
+                <td class="alertRed" align="right">Active</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+
+        <tbody>
+            <tr>
+                <td width="25%" class="data">Short Part No:
+                </td>
+                <td width="25%" class="data">Model Year:</td>
+                <td width="25%" class="data">Model Name:</td>
+                <td width="25%" class="data">Factory Name:</td>
+            </tr>
+            <tr>
+                <td class="data">38616</td>
+                <td class="data">2019</td>
+                <td class="data">ODYSSEY</td>
+                <td class="data">HMA</td>
+            </tr>
+            <tr>
+                <td colspan="4"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="4" border="0"></td>
+            </tr>
+            <!--Start - Enhancement - Edit VIN for active CIPL-->
+            <tr>
+                <td class="data" colspan="2">VIN Start:</td>
+                <td class="data" colspan="2">VIN End:</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <select name="updStartVinList" onchange="selectVinStart();setTabOut();" style="width: 190px"
+                        class="data">
+                        <option value="--Select One--" selected="selected">--Select One--</option>
+                        <option value="5FNRL6H2?KB000001" class="data">5FNRL6H2?KB000001</option>
+                        <option value="5FNRL6H4?KB000001" class="data">5FNRL6H4?KB000001</option>
+                        <option value="5FNRL6H5?KB000001" class="data">5FNRL6H5?KB000001</option>
+                        <option value="5FNRL6H6?KB000001" class="data">5FNRL6H6?KB000001</option>
+                        <option value="5FNRL6H7?KB000001" class="data">5FNRL6H7?KB000001</option>
+                        <option value="5FNRL6H8?KB000001" class="data">5FNRL6H8?KB000001</option>
+                        <option value="5FNRL6H9?KB000001" class="data">5FNRL6H9?KB000001</option>
+                        <option value="5KBRL682?KB000001" class="data">5KBRL682?KB000001</option>
+                        <option value="5KBRL686?KB000001" class="data">5KBRL686?KB000001</option>
+                        <option value="5KBRL688?KB000001" class="data">5KBRL688?KB000001</option>
+                        <option value="5KBRL689?KB000001" class="data">5KBRL689?KB000001</option>
+                    </select>
+                    <input type="text" name="updVinStart" maxlength="17" size="25" value="5FNRL6H??KB000001"
+                        onchange="setTabOut();" style="color:blue" class="data">
+                </td>
+                <td class="data" colspan="2">
+                    <select name="updEndVinList" onchange="selectVinEnd();setTabOut();" style="width: 190px"
+                        class="data">
+                        <option value="--Select One--" selected="selected">--Select One--</option>
+                        <option value="5FNRL6H2?KB999999">5FNRL6H2?KB999999</option>
+                        <option value="5FNRL6H4?KB999999">5FNRL6H4?KB999999</option>
+                        <option value="5FNRL6H5?KB999999">5FNRL6H5?KB999999</option>
+                        <option value="5FNRL6H6?KB999999">5FNRL6H6?KB999999</option>
+                        <option value="5FNRL6H7?KB999999">5FNRL6H7?KB999999</option>
+                        <option value="5FNRL6H8?KB999999">5FNRL6H8?KB999999</option>
+                        <option value="5FNRL6H9?KB999999">5FNRL6H9?KB999999</option>
+                        <option value="5KBRL682?KB999999">5KBRL682?KB999999</option>
+                        <option value="5KBRL686?KB999999">5KBRL686?KB999999</option>
+                        <option value="5KBRL688?KB999999">5KBRL688?KB999999</option>
+                        <option value="5KBRL689?KB999999">5KBRL689?KB999999</option>
+                    </select>
+                    <input type="text" name="updVinEnd" maxlength="17" size="25" value="5FNRL6H??KB999999"
+                        onchange="setTabOut();" style="color:blue" class="data">
+                </td>
+            </tr>
+            <tr>
+                <td width="25%" class="data">Start Date:</td>
+                <td width="25%" class="data">End Date: </td>
+                <td colspan="2" class="data">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="data" valign="top">04/01/2021</td>
+                <td class="data">
+                    <input type="text" name="updEndDate" maxlength="10" size="8" value="06/30/2021" readonly="readonly"
+                        class="readonlyTextbox"> <input type="button" name="calendar" tabindex="6" value="..."
+                        onclick="resetDate(document.forms[0].updEndDate);popUpCalendar(document.forms[0].updEndDate,document.forms[0].updEndDate, 'mm/dd/yyyy')"
+                        style="border: 1px solid rgb(128,128,128);  border-radius : 4px;HEIGHT: 20px; WIDTH: 25px"
+                        class="instruction">
+                </td>
+                <td colspan="2" class="data">&nbsp;</td>
+            </tr>
+            <!--End - Enhancement - Edit VIN for active CIPL-->
+            <tr>
+                <td colspan="4"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="4" border="0"></td>
+            </tr>
+            <tr>
+                <td width="25%" class="data">Destination Name:</td>
+
+                <td width="25%" class="data">Requested Quantity:</td>
+                <td width="25%" class="data">Request Number:</td>
+                <td width="25%" class="data">CPL Ref No.:</td>
+
+            </tr>
+            <tr>
+                <td class="data">HAM</td>
+
+                <td class="data" valign="top">
+                    20
+                </td>
+                <td class="data">2CQ7362</td>
+                <td class="data" valign="top" width="25%">409177</td>
+            </tr>
+            <tr>
+                <td colspan="4"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="4" border="0"></td>
+            </tr>
+            <tr>
+                <td width="25%" class="data">Model Description:</td>
+                <td width="25%" class="data">Long Part No.:</td>
+                <td width="25%" class="data">&nbsp;</td>
+                <td width="25%" class="data">&nbsp;</td>
+
+            </tr>
+            <tr>
+                <td class="data" align="left">FRAME</td>
+                <td class="data" colspan="3" align="left">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"><img src="/cqp_dev/cqpd/images/clear.gif" width="1" height="4" border="0"></td>
+            </tr>
+            <tr>
+                <td width="25%" class="data">IPP Tag # / Ship Date / MIR No.:</td>
+                <td width="25%" class="data">&nbsp;</td>
+                <td width="25%" class="data">&nbsp;</td>
+                <td width="25%" class="data">&nbsp;</td>
+
+            </tr>
+            <tr>
+                <td class="data" colspan="4"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table _ngcontent-tjl-c5="" class="table table-borderless ng-star-inserted">
+        <tr _ngcontent-tjl-c5="">
+            <td _ngcontent-tjl-c5="" width="50%"></td>
+            <td _ngcontent-tjl-c5="" align="right">
+                <button _ngcontent-tjl-c5="" class="cqp-btn">Submit</button> &nbsp;&nbsp;
+                <button _ngcontent-tjl-c5="" (click)="toggle2()" class="cqp-btn">Comment</button> &nbsp;&nbsp;
+                <button _ngcontent-tjl-c5="" class="cqp-btn" type="reset">Reset</button> &nbsp;&nbsp;
+                <button _ngcontent-tjl-c5="" (click)="toggle1()" class="cqp-btn">Cancel</button>
+            </td>
+        </tr>
+    </table>
+</ng-container>
+<ng-container *ngIf="comment">
+    <table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td colspan="2" class="alerthead2"><a name="List"></a>Comments:</td>
+            </tr>
+            <tr>
+                <td class="data" colspan="3">Enter a comment and select submit.</td>
+            </tr>
+            <tr>
+                <td width="300" class="data">Supplier:
+                    011620 ALPINE ELECTRONICS OF AMERICA
+                </td>
+            </tr>
+
+            <tr>
+                <td width="76" class="data" align="left"></td>
+                <td width="38%" align="right" class="recordnumber">
+                    1
+                    records
+                </td>
+                <td width="12%" align="center" class="data">
+
+                    &nbsp;
+
+                    <select name="listPageSelector"
+                        onchange="document.forms[0].action.value='gotoPageForListSup';document.forms[0].submit();"
+                        class="data">
+                        <option value="1" selected="selected">1</option>
+                    </select>
+
+                    &nbsp;
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="table-layout: fixed" border="0" cellspacing="1" cellpadding="4" align="center" width="970">
+        <colgroup>
+            <col width="20%">
+            <col width="50%">
+            <col width="30%">
+
+        </colgroup>
+        <tbody>
+            <tr align="left" valign="top" bgcolor="#D3D9A4" style="height: 23px; padding-left: 4px">
+                <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">Date Time</th>
+                <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">Comment</th>
+                <th bordercolor="#FFFFFF" style="border-bottom-width: 1" class="colheadactive">Login Id</th>
+            </tr>
+
+            <tr bgcolor="#F6F3B5">
+                <td align="left" width="20%" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                    05/05/2021 8:45 AM</td>
+                <td align="left" width="60%"
+                    style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                    cscsadsadsads</td>
+                <td align="left" width="10%" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                    Test&nbsp;User 145<br>
+                    VCC74145</td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table width="970" align="center" border="0" cellspacing="0" cellpadding="2">
+        <tbody>
+            <tr>
+                <td class="databold">Comment:</td>
+                <td class="databold">Visible To: </td>
+            </tr>
+            <tr>
+                <td align="left" class="data">
+                    <textarea name="comments1" cols="160" rows="4" onchange="setTabOut();" class="data"></textarea>
+                </td>
+                <td class="data" valign="top">
+                    <select name="visibilityFlag" class="data">
+                        <option value="All" selected="selected">All</option>
+                        <option value="Honda User Only">Honda User Only</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table _ngcontent-tjl-c5="" class="table table-borderless ng-star-inserted">
+        <tr _ngcontent-tjl-c5="">
+            <td _ngcontent-tjl-c5="" width="50%"></td>
+            <td _ngcontent-tjl-c5="" align="right">
+                <button _ngcontent-tjl-c5="" class="cqp-btn">Submit</button> &nbsp;&nbsp;
+                <button _ngcontent-tjl-c5="" class="cqp-btn">Reset</button> &nbsp;&nbsp;
+                <button _ngcontent-tjl-c5="" (click)="toggle2()" class="cqp-btn">Cancel</button>
+            </td>
+        </tr>
+    </table>
 </ng-container>
