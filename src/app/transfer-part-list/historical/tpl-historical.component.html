@@ -289,6 +289,33 @@
                         </tr>
                     </tbody>
                 </table>
+                <table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+                    <tbody><tr>
+                        <td height="8"><img src="/cqp_qa/cqpq/images/clear.gif" width="1%" height="1" border="0"></td>
+                    </tr>
+                    <tr>
+                        <td height="8"><img src="/cqp_qa/cqpq/images/clear.gif" width="1%" height="1" border="0"></td>
+                    </tr>
+                    <tr>
+                        
+                            <td style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-style: solid; border-bottom-width: 0" bordercolor="#990000"></td>
+                            <td align="right" valign="top" width="100%">
+                            <!-- 
+                            start--Request conclusion report button
+                            -->
+                            
+                                                <input type="button" name="actiondummy" value="Request conclusion report" onclick="javascript:setDisableAll(false);submitFormCQP(false,0,'Exportcqconclusion')" class="buttonStyle"> <!--
+                             End Requst conclusion reprt button
+                                                -->
+                            
+                            
+                            <input type="button" name="actiondummy" value="Request excel report" onclick="javascript:setDisableAll(false);submitFormCQP(false,0,'Exportcq')" class="buttonStyle">   <input name="btnSelectAll" type="button" class="buttonStyle" id="btnSelectAll3" onclick="selectAll(0,'checkedPartno');" value="Select All">  
+                            <input name="btnDeselectAll" type="button" class="buttonStyle" id="btnDeselectAll3" onclick="deSelectAll(0,'checkedPartno');" value="Deselect All">  
+                            </td>
+                        
+                        <td align="right" valign="top" width="100%" nowrap="">&nbsp; <input type="button" name="actiondummy" value="Cancel" (click) = toggle() class="buttonStyle"></td>
+                    </tr>
+                </tbody></table>
             </div>
         </ng-container>
     </div>
@@ -612,9 +639,9 @@
                         
                         
                         
-                        <input type="button" name="actiondummy" value="Comments" onclick="javascript:submitAction('Commentscq')" class="buttonStyle">
+                        <input type="button" name="actiondummy" value="Comments" (click) = toggleComments() class="buttonStyle">
                         
-                        <input type="button" name="actiondummy" value="Cancel" onclick="javascript:submitAction('histOKcq')" class="buttonStyle">
+                        <input type="button" name="actiondummy" value="Cancel" (click) = toggle1() class="buttonStyle">
                 </td>
               </tr>
               <tr>
@@ -626,23 +653,10 @@
               </tbody></table>
 </ng-container>
 
-<ng-container *ngIf=false>
+<ng-container *ngIf="external">
 
     <table width="970" align="center" border="0" cellspacing="0" cellpadding="0" height="18">
         <tbody>
-            <tr>
-                <td width="10%">
-
-
-                    <a name="linkgotobottom" class="returntotop" href="javascript:goToBottom()">go to bottom of the
-                        page</a>
-
-                </td>
-                <td width="10%" align="right">
-                    Logged in as
-                    VCC74145
-                </td>
-            </tr>
             <tr>
                 <td class="alertRed" align="left">
 
@@ -833,42 +847,9 @@
 
 
 
-                    <input type="button" name="actiondummy" value="Cancel" onclick="javascript:submitAction('Cancel')"
+                    <input type="button" name="actiondummy" value="Cancel" (click)=toggleComments()
                         class="buttonStyle">
                 </td>
-            </tr>
-            <tr>
-                <td colspan="13" align="right"
-                    style="padding-right: 4; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: solid; border-top-width: 0; border-bottom-style: solid; border-bottom-width: 0"
-                    bordercolor="#990000">
-
-                    <a name="linkgototop" class="returntotop" href="javascript:goToTop()">return to top of the page </a>
-                    &nbsp;<table width="100%" bgcolor="#000000" border="0">
-                        <tbody>
-                            <tr></tr>
-                            <tr>
-                                <td align="left">
-                                    <font face="Arial" color="#ffffff" size="1">&nbsp;<a class="appnav"
-                                            href="javascript:popupWindowResized('/cqpq/html/honda_privacy.htm','newWindow',500,780);">Privacy&nbsp;</a>&nbsp;
-                                        <a class="appnav"
-                                            href="javascript:popupWindowResized('/cqpq/html/terms_of_use.htm','newWindow',500,780);">Terms
-                                            of Use</a>
-                                    </font>
-                                </td>
-                                <td align="right">
-                                    <font face="Arial" color="#ffffff" size="1">Copyright </font>
-                                    <font face="Times New Roman" color="#ffffff" size="1">© </font>
-                                    <font face="Arial" color="#ffffff" size="1">2005 - 2016 Honda of America Mfg.,
-                                        Inc.</font>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </td>
-            </tr>
-            <tr>
-                <td><a name="bottom"></a></td>
             </tr>
         </tbody>
     </table>

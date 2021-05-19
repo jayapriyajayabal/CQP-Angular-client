@@ -10,6 +10,7 @@ export class CurrentComponent implements OnInit {
   public hide: boolean = true;
   public inner: boolean = false;
   public outer: boolean = true;
+  public external: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -22,5 +23,9 @@ export class CurrentComponent implements OnInit {
   toggle1() {
     this.inner = !this.inner;
     this.outer = !this.outer;
+  }
+  toggleComments() {
+    this.external = !this.external;
+    this.inner = !this.inner;
   }
 }
