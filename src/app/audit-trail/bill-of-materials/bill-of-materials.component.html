@@ -1,36 +1,352 @@
-<!-- <div class="screen-title"> 
-    Audit Trail - Bill Of Material
-    </div>
-    <br> -->
-    
-    
-    <div class="title" style="font-size: medium;">Search for Audit records for Bill of Materials:</div>
-    <p class="panel-heading">Enter Supplier No or Part No to search audit records for Bill of Materials.</p>
-    <hr>
-    
-    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+
+<table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
         <tr>
-            <td style="width: 26%;">
-                <div class="panel-heading">
-                   Supplier No:
-                </div>
-                <div>
-                    <input type="text" style="width: 50%;">
-                </div>
-            </td>  
-            <td style="width: 26%;">
-                <div class="panel-heading">
-                  Short Part No:
-                </div>
-                <div>
-                    <input type="text" style="width: 50%;">
-                </div>
-            </td>   
-            <td style="width: 26%;"></td>
-            </tr>
-            <tr>
-                <td align="right" colspan="3" ><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                    &nbsp;<button type="reset" class="cqp-btn">Reset</button></td>
-            </tr>
-    </table>
-    
+            <td class="alerthead2">Search for Audit records for Bill Of Materials:
+                <!--Search for Audit records for Bill Of Materials:-->
+            </td>
+        </tr>
+        <tr>
+            <hr>
+            <!-- <td height="10"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td> -->
+        </tr>
+
+        <tr>
+            <td class="data" colspan="2">Enter Supplier No or Part No to search audit records for Bill Of Materials.
+                <!--Enter Supplier No or Part No to search audit records for Bill Of Materials.-->
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td colspan="2" height="8"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td colspan="2" height="8"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+    <tbody>
+        <tr>
+            <td width="25%">Supplier No.</td>
+            <td width="55%">Short Part No.</td>
+        </tr>
+        <tr>
+            <td class="data" align="left" valign="top">
+                <input type="text" name="auditTrailDTO.serviceSK" maxlength="6" size="25" value="" class="data">
+            </td>
+            <td>
+                <input type="text" name="auditTrailDTO.param1" maxlength="5" size="25" value="" class="data">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td height="35"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td align="right"
+                style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                bordercolor="#990000">
+                <button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+            &nbsp;<button type="reset" class="cqp-btn">Reset</button>
+            </td>
+        </tr>
+        <tr>
+            <hr>
+        </tr>
+    </tbody>
+</table>
+
+
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td class="alerthead2">Audit records for Bill Of Materials:
+                <!--Audit records for Bill Of Materials:-->
+            </td>
+        </tr>
+
+        <tr>
+            <td class="alertRed" align="left">
+            </td>
+        </tr>
+
+        <tr>
+            <td width="76" class="data" align="left"></td>
+            <td width="38%" align="right" class="recordnumber">
+                5&nbsp;records
+            </td>
+
+
+            <td width="12%" align="center" class="data">
+
+                &nbsp;
+
+
+                <select name="listPageSelector"
+                    onchange="forms[0].action.value='gotoPageBillOfMaterials';forms[0].submit();" class="data">
+                    <option value="1" selected="selected">1</option>
+
+                    <option value="2">2</option>
+
+                    <option value="3">3</option>
+
+                    <option value="4">4</option>
+
+                    <option value="5">5</option>
+
+                    <option value="6">6</option>
+
+                    <option value="7">7</option>
+
+                    <option value="8">8</option>
+
+                    <option value="9">9</option>
+                </select>
+
+
+                <a href="/cqp_qa/cqpq/manageAuditTrail.do?action=gotoNextBillOfMaterials">Next</a>
+
+            </td>
+
+
+        </tr>
+        <tr>
+            <td height="10"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+
+    </tbody>
+</table>
+<table style="table-layout: fixed" border="0" cellspacing="1" cellpadding="4" align="center" width="970">
+    <tbody>
+        <tr align="left" valign="top" bgcolor="#D3D9A4">
+            <td class="colheadactive" width="8%">Supplier No.
+                <!--Supplier No-->
+            </td>
+            <td class="colheadactive" width="10%">Short Part No.
+                <!--Part No-->
+            </td>
+            <td class="colheadactive" width="8%">MTC Model
+                <!--MTC Model-->
+            </td>
+            <td class="colheadactive" width="10%">MTC Type
+                <!--MTC Type-->
+            </td>
+            <td class="colheadactive" width="10%">MTC Option
+                <!--MTC Option-->
+            </td>
+            <td class="colheadactive" width="20%">Comments
+                <!--Comments-->
+            </td>
+            <td class="colheadactive" width="10%">Action
+                <!--Action-->
+            </td>
+            <td class="colheadactive" width="10%">Changed By
+                <!--Changed By-->
+            </td>
+            <td class="colheadactive" width="20%">Changed Date
+                <!--Changed Date-->
+            </td>
+        </tr>
+
+
+
+
+
+
+        <tr bgcolor="#F6F3B5">
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                140290
+            </td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                17045
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ?TJB
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ???
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ??
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                RDX
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                INSERT
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                VC037857
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                10/14/2019 2:33 PM
+            </td>
+        </tr>
+
+
+
+        <tr bgcolor="#FFFFFF">
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                140290
+            </td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                17045
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ?TJC
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ???
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ??
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                RDX
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                INSERT
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                VC037857
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                10/14/2019 2:33 PM
+            </td>
+        </tr>
+
+
+
+        <tr bgcolor="#F6F3B5">
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                140290
+            </td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                17045
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ?T7X
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ???
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ??
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                Adding HRV
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                INSERT
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                VC037857
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                06/20/2019 11:46 AM
+            </td>
+        </tr>
+
+
+
+        <tr bgcolor="#FFFFFF">
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                140290
+            </td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                17045
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ?T7W
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ???
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ??
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                Adding HRV
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                INSERT
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                VC037857
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                06/20/2019 11:46 AM
+            </td>
+        </tr>
+
+
+
+        <tr bgcolor="#F6F3B5">
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                140290
+            </td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                17045
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ?T8M
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ???
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                ??
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                Adding HRV
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                INSERT
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                VC037857
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                06/20/2019 11:45 AM
+            </td>
+        </tr>
+
+
+
+
+
+
+
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td height="32"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td align="right"
+                style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-width: 1"
+                bordercolor="#990000">
+                <button type="reset" class="cqp-btn">Cancel</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

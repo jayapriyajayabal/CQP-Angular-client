@@ -1,6 +1,32 @@
-.title{
-    font-weight: bold;
+
+.short-btn-space {
+    margin-right: 1px;
+    margin-bottom: 4px;
+    width: 100px;
 }
-.panel-heading{
-    font-size: small;
+.details{
+    color: #000000;
+    font-family: Arial, helvetica, sans serif, MS Sans Serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-decoration: none;
+}
+.list-row {
+    background-color: #F6F3B5;
+}
+ 
+.list-header {
+    background-color: #D3D9A4;
+}
+ 
+.table1 {
+    border-spacing: 0em;
+    
+}
+.alerthead2{
+    color: #000000;
+    font-family: Arial, helvetica, sans serif, MS Sans Serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
 }

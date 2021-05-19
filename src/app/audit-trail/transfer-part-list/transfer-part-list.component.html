@@ -1,26 +1,279 @@
-<!-- <div class="screen-title"> 
-    Audit Trail - Transfer Part List
-    </div>
-    <br> -->
-    
-    
-    <div class="title" style="font-size: medium;">Search for Audit records for TPL:</div>
-    <p class="panel-heading">Enter reference number to search for audit records.</p>
-    <hr>
-    
-    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+<table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+
+    <tbody>
         <tr>
-            <td style="width: 26%;">
-                <div class="panel-heading">
-                   Ref No:
-                </div>
-                <div>
-                    <input type="text" style="width: 16%;">
-                </div>
-            </td>     
-            </tr>
-            <tr>
-                <td align="right" ><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                    &nbsp;<button type="reset" class="cqp-btn">Reset</button></td>
-            </tr>
-    </table>
+            <td class="alerthead2">Search for Audit records for TPL:</td>
+        </tr>
+        <tr>
+            <td class="data" colspan="2">Enter reference number to search for
+                audit records.</td>
+        </tr>
+        <!--
+      <tr>
+      <td class="alertRed" colspan="2">Action Status goes here</td>
+    </tr>
+    -->
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <hr>
+        </tr>
+
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+    <tbody>
+        <tr>
+            <td width="25%">Ref. No.:</td>
+        </tr>
+        <tr>
+            <td class="data" align="left" valign="top"><input type="text" name="serviceSK" maxlength="50" size="25"
+                    value="" class="data"></td>
+
+
+        </tr>
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td height="35"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td align="right"
+                style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                bordercolor="#990000">
+                <button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                &nbsp;<button type="reset" class="cqp-btn">Reset</button>
+            </td>
+        </tr>
+        <tr>
+            <hr>
+        </tr>
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td class="alerthead2">Audit records for TPL:</td>
+        </tr>
+
+        <tr>
+            <td class="alertRed" align="left">
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td width="76" class="data" align="left"></td>
+            <td width="38%" align="right" class="recordnumber">5&nbsp;records</td>
+
+
+
+            <td width="12%" align="center" class="data"> &nbsp; <select name="listPageSelector"
+                    onchange="forms[0].action.value='gotopage';forms[0].submit();">
+                    <option value="1" selected="selected">1</option>
+                </select> &nbsp; </td>
+
+
+
+        </tr>
+        <tr>
+            <td height="10"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+
+    </tbody>
+</table>
+<table style="table-layout: fixed" border="0" cellspacing="1" cellpadding="4" align="center" width="970">
+
+
+    <tbody>
+        <tr align="left" valign="top" bgcolor="#D3D9A4">
+            <td class="colheadactive">User Login</td>
+            <td class="colheadactive">Action</td>
+            <td class="colheadactive">Date</td>
+            <td class="colheadactive">Conclusion</td>
+            <!--Start - Enhancement - Reopen an already reopened TPL-->
+
+
+            <td class="colheadactive">Reopened Date</td>
+            <td class="colheadactive">Reopened Due Date</td>
+            <td class="colheadactive">Reopened Submitted Date</td>
+
+
+            <!--End - Enhancement - Reopen an already reopened TPL-->
+        </tr>
+
+
+
+
+
+
+        <!-- Logic to get alternate row colors  -->
+
+
+        <tr bgcolor="#F6F3B5">
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">V9033162</td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">Submit
+                to Honda</td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">12/01/2020 4:40 PM
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">Customer abuse-0%
+            </td>
+            <!--Start - Enhancement - Reopen an already reopened TPL-->
+
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+
+
+            <!--End - Enhancement - Reopen an already reopened TPL-->
+
+
+        </tr>
+        <tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
+
+
+        </tr>
+
+        <!-- Logic to get alternate row colors  -->
+
+        <tr bgcolor="#FFFFFF">
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">V9025032</td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">Update
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">11/12/2020 7:44 AM
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">Customer abuse-0%
+            </td>
+            <!--Start - Enhancement - Reopen an already reopened TPL-->
+
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+
+
+            <!--End - Enhancement - Reopen an already reopened TPL-->
+
+
+        </tr>
+        <tr bgcolor="#FFFFFF" bordercolor="#FFFFFF">
+
+
+        </tr>
+
+        <!-- Logic to get alternate row colors  -->
+
+
+        <tr bgcolor="#F6F3B5">
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">VC037857</td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">Reopen
+                x2</td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">11/04/2020 10:35
+                AM</td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">No Reply-100%</td>
+            <!--Start - Enhancement - Reopen an already reopened TPL-->
+
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">08/10/2020</td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">09/08/2020</td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">09/09/2020</td>
+
+
+            <!--End - Enhancement - Reopen an already reopened TPL-->
+
+
+        </tr>
+        <tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
+
+
+        </tr>
+
+        <!-- Logic to get alternate row colors  -->
+
+        <tr bgcolor="#FFFFFF">
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">V9025032</td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">Update
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">08/18/2020 10:16
+                AM</td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">Customer abuse-0%
+            </td>
+            <!--Start - Enhancement - Reopen an already reopened TPL-->
+
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+
+
+            <!--End - Enhancement - Reopen an already reopened TPL-->
+
+
+        </tr>
+        <tr bgcolor="#FFFFFF" bordercolor="#FFFFFF">
+
+
+        </tr>
+
+        <!-- Logic to get alternate row colors  -->
+
+
+        <tr bgcolor="#F6F3B5">
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">VC037857</td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">Reopen
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">08/10/2020 0:36 PM
+            </td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">No Reply-100%</td>
+            <!--Start - Enhancement - Reopen an already reopened TPL-->
+
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+
+
+            <!--End - Enhancement - Reopen an already reopened TPL-->
+
+
+        </tr>
+        <tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
+
+
+        </tr>
+
+
+
+
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td height="32"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td align="right"
+                style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-width: 1"
+                bordercolor="#990000">
+                <button type="reset" class="cqp-btn">Cancel</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

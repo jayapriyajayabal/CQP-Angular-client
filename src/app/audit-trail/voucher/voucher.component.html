@@ -1,43 +1,156 @@
-<!-- <div class="screen-title"> 
-    Audit Trail - Voucher
-    </div>
-    <br> -->
-    
-    
-    <div class="title" style="font-size: medium;">Search for Audit records for Voucher:</div>
-    <p class="panel-heading">Enter reference number to search for audit records.</p>
-    <hr>
-    
-    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+<table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+
+    <tbody>
         <tr>
-            <td style="width: 26%;">
-                <div class="panel-heading">
-                   Supplier No:
-                </div>
-                <div>
-                    <input type="text" style="width: 50%;">
-                </div>
-            </td>    
-            <td style="width: 26%;">
-                <div class="panel-heading">
-                   Qtr No:
-                </div>
-                <div>
-                    <input type="text" style="width: 50%;">
-                </div>
+            <td class="alerthead2">Search for Audit records for Voucher:</td>
+        </tr>
+        <tr>
+            <td class="data" colspan="2">Enter reference number to search for
+                audit records.</td>
+        </tr>
+        <!--
+      <tr>
+      <td class="alertRed" colspan="2">Action Status goes here</td>
+    </tr>
+    -->
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <hr>
+        </tr>
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+    <tbody>
+        <tr>
+            <td width="25%">Supplier No.:</td>
+            <td width="25%">Qtr No.:</td>
+            <td width="25%">Qtr Year:</td>
+
+        </tr>
+        <tr>
+            <td class="data" align="left" valign="top"><input type="text" name="serviceSK" maxlength="50" size="25"
+                    value="" class="data"></td>
+            <td class="data" align="left" valign="top"><input type="text" name="qtrNo" maxlength="4" size="25" value=""
+                    class="data"></td>
+            <td class="data" align="left" valign="top"><input type="text" name="qtrYr" maxlength="4" size="25" value=""
+                    class="data"></td>
+        </tr>
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td height="35"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td align="right"
+                style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                bordercolor="#990000">
+                <button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                &nbsp;<button type="reset" class="cqp-btn">Reset</button>
             </td>
-            <td style="width: 26%;">
-                <div class="panel-heading">
-                   Qtr Year:
-                </div>
-                <div>
-                    <input type="text" style="width: 50%;">
-                </div>
-            </td> 
-            </tr>
-            <tr>
-                <td align="right" colspan="3" ><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                    &nbsp;<button type="reset" class="cqp-btn">Reset</button></td>
-            </tr>
-    </table>
-    
+        </tr>
+        <tr>
+            <hr>
+        </tr>
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td class="alerthead2">Audit records for Voucher:</td>
+        </tr>
+
+        <tr>
+            <td class="alertRed" align="left">
+
+            </td>
+        </tr>
+
+        <tr>
+            <td width="76" class="data" align="left"></td>
+            <td width="38%" align="right" class="recordnumber">1&nbsp;records</td>
+
+
+
+            <td width="12%" align="center" class="data"> &nbsp; <select name="listPageSelector"
+                    onchange="forms[0].action.value='gotovoucheraudit';forms[0].submit();">
+                    <option value="1" selected="selected">1</option>
+                </select> &nbsp; </td>
+
+
+
+        </tr>
+        <tr>
+            <td height="10"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+
+    </tbody>
+</table>
+<table style="table-layout: fixed" border="0" cellspacing="1" cellpadding="4" align="center" width="970">
+
+
+    <tbody>
+        <tr align="left" valign="top" bgcolor="#D3D9A4">
+            <td class="colheadactive">User Login</td>
+            <td class="colheadactive">Action</td>
+            <td class="colheadactive">Date</td>
+            <td class="colheadactive">Approve Date</td>
+            <td class="colheadactive">Overall Adjustment</td>
+            <td class="colheadactive">Diagnostic Charges</td>
+            <td class="colheadactive">Voucher line item sk - Override</td>
+
+        </tr>
+
+
+
+
+
+
+        <!-- Logic to get alternate row colors  -->
+
+
+        <tr bgcolor="#F6F3B5">
+
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">VC037857</td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                Approve</td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">01/06/2020 1:40 PM
+            </td>
+            <td align="left"
+                style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">
+                01/06/2020 1:40 PM</td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+            <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+
+
+        </tr>
+        <tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
+
+
+        </tr>
+
+
+
+
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td height="32"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td align="right"
+                style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-width: 1"
+                bordercolor="#990000">
+                <button type="reset" class="cqp-btn">Cancel</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

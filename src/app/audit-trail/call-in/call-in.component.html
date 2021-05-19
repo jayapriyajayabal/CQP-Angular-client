@@ -2,25 +2,138 @@
     Audit Trail - Call-In
     </div>
     <br> -->
-    <form >
-    <div class="title" style="font-size: medium;">Search for Audit records for Call-in:</div>
-    <p class="panel-heading">Enter reference number to search for audit records.</p>
-    <hr>
-    
-    <table class="table table-borderless" width="970" cellpadding="4" cellspacing="0" class="supplier-panel-body">
+<table width="970" align="center" border="0" cellspacing="0" cellpadding="0">
+
+    <tbody>
         <tr>
-            <td style="width: 26%;">
-                <div class="panel-heading">
-                   Ref No:
-                </div>
-                <div>
-                    <input type="text" style="width: 16%;">
-                </div>
-            </td>     
+            <td class="alerthead2">Search for Audit records for Call-In:</td>
+        </tr>
+        <tr>
+            <td class="data" colspan="2">Enter reference number to search for
+                audit records.</td>
+        </tr>
+
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <hr>
+        </tr>
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="2" cellspacing="0">
+    <tbody>
+        <tr>
+            <td width="25%">Ref. No.:</td>
+        </tr>
+        <tr>
+            <td class="data" align="left" valign="top"><input type="text" name="serviceSK" maxlength="50" size="25"
+                    value="" class="data"></td>
+
+
+        </tr>
+    </tbody>
+</table>
+
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td height="35"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td align="right"
+                style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; "
+                bordercolor="#990000">
+                <button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
+                &nbsp;<button type="reset" class="cqp-btn">Reset</button>
+            </td>
+        </tr>
+        <tr>
+            <hr>
+        </tr>
+    </tbody>
+</table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+<td class="alerthead2">Audit records for Call-In:</td>
+</tr>
+    
+    <tr>
+        <td class="alertRed" align="left">
+
+            </td>
+    </tr>
+
+        
+        <tr>
+            <td width="76" class="data" align="left"></td>
+            <td width="38%" align="right" class="recordnumber">1&nbsp;records</td>
+                
+    
+
+            <td width="12%" align="center" class="data"> &nbsp;  <select name="listPageSelector" onchange="forms[0].action.value='goto';forms[0].submit();"><option value="1" selected="selected">1</option></select>  &nbsp; </td>
+            
+    
+
+        </tr>
+        <tr>
+            <td height="10"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+    
+</tbody></table>
+<table style="table-layout: fixed" border="0" cellspacing="1" cellpadding="4" align="center" width="970">
+
+
+    <tbody><tr align="left" valign="top" bgcolor="#D3D9A4">
+        <td class="colheadactive">User Login</td>
+        <td class="colheadactive">Action</td>
+        <td class="colheadactive">Date</td>
+        <td class="colheadactive">VIN Start</td>
+        <td class="colheadactive">VIN End</td>
+            <td class="colheadactive">Fixed Responsibility</td>
+
+    </tr>
+
+    
+    
+        
+        
+        
+            <!-- Logic to get alternate row colors  -->
+            
+            
+            <tr bgcolor="#F6F3B5">
+                
+                <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">VCC74145</td>
+                <td align="left" style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4">CREATED</td>
+                <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4">05/04/2021 7:34 AM</td>
+                <td align="left" style="page-break-after: always;border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+                <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+                    <td align="left" style="border-bottom-width: 1; border-left-style: none; padding-left: 4"></td>
+
+                
             </tr>
-            <tr>
-                <td align="right" ><button (click)="toggle()" class="cqp-btn">Search</button> &nbsp;
-                    &nbsp;<button type="reset" class="cqp-btn">Reset</button></td>
+            <tr bgcolor="#F6F3B5" bordercolor="#FFFFFF">
+                
+
             </tr>
-    </table>
-    </form>
+            
+            
+    
+    
+</tbody></table>
+<table width="970" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td height="32"><img src="/cqp_qa/cqpq/images/clear.gif" width="1" height="1" border="0"></td>
+        </tr>
+        <tr>
+            <td align="right"
+                style="padding-left: 3; padding-top: 3; padding-bottom: 3; border-left-style: none; border-left-width: medium; border-right-style: none; border-right-width: medium; border-top-style: none; border-top-width: medium; border-bottom-width: 1"
+                bordercolor="#990000">
+                <button type="reset" class="cqp-btn">Cancel</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
