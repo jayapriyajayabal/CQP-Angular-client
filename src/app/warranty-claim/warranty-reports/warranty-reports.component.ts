@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import {Chart} from 'node_modules/chart.js'
-
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { WarrantyReportService } from '../../service/warrantyReport.service';
+import { Label } from 'ng2-charts'; 
 @Component({
   selector: 'app-warranty-reports',
   templateUrl: './warranty-reports.component.html',
-  styleUrls: ['./warranty-reports.component.css']
+  styleUrls: ['./warranty-reports.component.css'],
+  providers: [WarrantyReportService]
 })
 export class WarrantyReportsComponent implements OnInit {
   public show: boolean = false;
   public hide: boolean = true;
-  constructor() { }
+  public chart ;
+  public barChartData  = new Array();
+  constructor(private warrantyReportService: WarrantyReportService) { }
 
   ngOnInit() {
-  
+    this.getWarrantyreport();
   }
   toggle() {
     this.show = !this.show;
@@ -23,22 +27,34 @@ export class WarrantyReportsComponent implements OnInit {
     this.a=n;
   }
 
-  public barChartOptions:any = {
-    scaleShowVerticalLines: false,
-    responsive: false,
-    scales: {
-      xAxes: [{
-          stacked: true
-      }],
-      yAxes: [{
-          stacked: true
-      }]
-            }
-  };
+  getWarrantyreport() {
+ 
+    this.warrantyReportService.getWarrantyreport().subscribe(
+      data => {
+        console.log(data);
+        for (var d of data) {
+          this.chart= {"data":d.data,"label":d.modelfactory,"stack":d.part}
+          this.barChartData.push(this.chart);
+          this.barChartData1 = this.barChartData;
+        }
+      }
+      )
+     return  this.barChartData;
+    
+    }
+    public barChartOptions:ChartOptions ={
+      responsive: true,
+      scales: {
+        xAxes: [{
+            stacked: true
+        }],
+        yAxes: [{
+            stacked: true
+        }]
+              }
+    };
 
-    public mbarChartLabels:string[] = ['2012', '2013', '2014', '2015', '2016', '2017', '2018'];
-    public barChartType:string = 'bar';
-    public barChartLegend:boolean = true;
+   
   
     public barChartColors:Array<any> = [
     {
@@ -59,11 +75,11 @@ export class WarrantyReportsComponent implements OnInit {
     }
   ];
   
-    public barChartData:any[] = [
-      {data: [55, 60, 75, 82, 56, 62, 80], label: 'Company A'},
-      {data: [58, 55, 60, 79, 66, 57, 90], label: 'Company B'}
-    ];
-  
+  public barChartData1: ChartDataSets[] ;
+  public barChartLabels: Label[] = ["39710","39540","39545","39200","39544","39810","39542","39541"];
+  public barChartType: ChartType = 'bar';
+  public barChartLegend = true;
+  public barChartPlugins = [];
     // events
     public chartClicked(e:any):void {
       console.log(e);

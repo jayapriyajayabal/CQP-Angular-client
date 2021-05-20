@@ -71,8 +71,7 @@ import { VoucherComponent } from './audit-trail/voucher/voucher.component';
 import { AdministrationComponent } from './audit-trail/administration/administration.component';
 import { CategoryComponent } from './audit-trail/category/category.component';
 import { BillOfMaterialsComponent } from './audit-trail/bill-of-materials/bill-of-materials.component';
-import { ChartsModule } from 'ng2-charts';
-
+import { ChartsModule, ThemeService } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -156,7 +155,7 @@ import { ChartsModule } from 'ng2-charts';
       ChartsModule,
 	   
     ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

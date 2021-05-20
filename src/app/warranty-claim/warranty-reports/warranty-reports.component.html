@@ -43,13 +43,22 @@
 <hr>
 <ng-container *ngIf="a==1">
     <div>
-        <div style="display: block">
+        <!--<div style="display: block">
             <canvas baseChart [datasets]="barChartData" [labels]="mbarChartLabels" [options]="barChartOptions"
                 [colors]="barChartColors" [legend]="barChartLegend" [chartType]="barChartType"
                 (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"
                 style="height: 400px; width:500px"></canvas>
-        </div>
-
+        </div>-->
+        <div style="display: block;" *ngIf="barChartData1">
+            <canvas baseChart 
+              [datasets]="barChartData1"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+            </canvas>
+          </div>
 
     </div>
 </ng-container>
